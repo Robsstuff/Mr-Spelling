@@ -72,6 +72,54 @@
       letter-spacing: 1px;
     }
 
+    .hero .subtagline {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.5px;
+      font-style: italic;
+    }
+
+    /* ── HERO BUTTONS ── */
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-btns a {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      letter-spacing: 2px;
+      background: #ef4444;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 32px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .hero-btns a:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .hero-btns a.btn-alt {
+      background: #1a1a1a;
+      color: #facc15;
+    }
+
     /* ── ABOUT ── */
     .about {
       display: flex;
@@ -202,6 +250,11 @@
     <img class="hero-logo" src="logo.jpg" alt="Mr Spelling logo" />
     <h1>MR SPELLING</h1>
     <span class="tagline">Not Misspelling</span>
+    <span class="subtagline">this website teaches spelling rules because spelling rules</span>
+    <div class="hero-btns">
+      <a href="videos.html">Videos</a>
+      <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
+    </div>
   </section>
 
   <!-- ABOUT -->
