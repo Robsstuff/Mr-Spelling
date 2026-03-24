@@ -16,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* ── HEADER ── */
     .page-header {
       background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
       padding: 32px 24px 28px;
@@ -56,43 +55,41 @@
       opacity: 0.75;
     }
 
-    /* ── MAIN ── */
+    /* NAV PILLS */
+    .cat-nav {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      background: #333;
+      color: #facc15;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 2px solid #facc15;
+      transition: background 0.15s;
+    }
+
+    .cat-nav a:hover {
+      background: #facc15;
+      color: #1a1a1a;
+    }
+
+    /* MAIN */
     main {
       max-width: 860px;
       margin: 0 auto;
       padding: 40px 20px 60px;
     }
 
-    /* ── COMING SOON NOTICE ── */
-    .notice {
-      background: #1a1a1a;
-      color: #facc15;
-      border-radius: 16px;
-      padding: 32px 28px;
-      text-align: center;
-      margin-bottom: 48px;
-      border: 4px solid #facc15;
-      box-shadow: 6px 6px 0 #ef4444;
-    }
-
-    .notice h2 {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      letter-spacing: 2px;
-      text-shadow: 3px 3px 0 #ef4444;
-      margin-bottom: 12px;
-    }
-
-    .notice p {
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.6;
-      color: #f1f5f9;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    /* ── SECTION ── */
     .cat-section {
       margin-bottom: 48px;
     }
@@ -108,7 +105,12 @@
       border-bottom: 3px solid #1a1a1a;
     }
 
-    /* ── PPT LIST ── */
+    .cat-count {
+      font-size: 0.7em;
+      color: #1a1a1a;
+      text-shadow: none;
+    }
+
     .ppt-list {
       list-style: none;
       display: flex;
@@ -123,23 +125,23 @@
       background: #fff;
       border: 3px solid #1a1a1a;
       border-radius: 10px;
-      padding: 12px 16px;
+      padding: 10px 14px;
       box-shadow: 3px 3px 0 #1a1a1a;
     }
 
     .ppt-icon {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       flex-shrink: 0;
     }
 
     .ppt-name {
       flex: 1;
       font-weight: 900;
-      font-size: 0.95rem;
-      line-height: 1.3;
+      font-size: 0.92rem;
+      line-height: 1.35;
     }
 
-    .ppt-link {
+    .ppt-btn {
       font-family: 'Bangers', cursive;
       font-size: 0.9rem;
       letter-spacing: 1px;
@@ -153,18 +155,11 @@
       transition: background 0.15s;
     }
 
-    .ppt-link:hover {
+    .ppt-btn:hover {
       background: #ef4444;
       color: #fff;
     }
 
-    .ppt-link.soon {
-      background: #94a3b8;
-      color: #fff;
-      cursor: default;
-    }
-
-    /* ── FOOTER ── */
     footer {
       background: #facc15;
       text-align: center;
@@ -181,82 +176,317 @@
   <header class="page-header">
     <a class="back-link" href="index.html">&#8592; Home</a>
     <h1>Mr Spelling PowerPoints</h1>
-    <p>Lesson slides you can download and use in your classroom</p>
+    <p>49 downloadable lesson slides — click View to open in Google Drive</p>
   </header>
+
+  <nav class="cat-nav">
+    <a href="#phonics">Phonics Rules</a>
+    <a href="#vowels">Vowel Sounds</a>
+    <a href="#plurals">Plurals</a>
+    <a href="#suffixes">Suffixes &amp; Prefixes</a>
+    <a href="#grammar">Grammar</a>
+    <a href="#homophones">Homophones</a>
+    <a href="#syllables">Syllables</a>
+    <a href="#lists">Spelling Lists</a>
+    <a href="#other">Other</a>
+  </nav>
 
   <main>
 
-    <div class="notice">
-      <h2>PowerPoints Coming Soon</h2>
-      <p>
-        Downloadable lesson PowerPoints are being added to this page.
-        Check back soon &mdash; slides for phonics, spelling rules, plurals,
-        suffixes, grammar and more are on the way.
-      </p>
-    </div>
-
+    <!-- PHONICS RULES -->
     <section class="cat-section" id="phonics">
-      <h2 class="cat-heading">Phonics Rules</h2>
+      <h2 class="cat-heading">Phonics Rules <span class="cat-count">(8)</span></h2>
       <ul class="ppt-list">
         <li>
           <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Phonics Rules Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
+          <span class="ppt-name">DGE OR GE By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1Bl5C4wt82ULF_6NxZicUG4elTqNaKgpc/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">English Words Don't End in I U Q V J</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1MF8ydaOcfD3kO1n2Dv2Gxis3mvnkKg5x/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">OUGH By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1t1G2N_1dxOJbgsDwzfERkIjyC4S7r80V/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">QU Spelling Rules</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1apO6sYZiklqq_SgdLIHYTqi9UKtnk1Px/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Swaggy Phonics By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/13C5zje2C2m5cw9DCbMrhHfH_xCRPwU3M/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">TH Words</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1Y9sB21b7dmpKSQMbOs0kpMFxs_iiWjd4/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling The Final J Sound</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1VLz3nYtAnpkCKyWq36mSW495RfOgZmD5/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling CT IT ESS OR ATE</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1rG18sS_3ycfB9tykMQygwpW6VYOBWXCu/view?usp=sharing" target="_blank" rel="noopener">View</a>
         </li>
       </ul>
     </section>
 
-    <section class="cat-section" id="plurals">
-      <h2 class="cat-heading">Plurals</h2>
-      <ul class="ppt-list">
-        <li>
-          <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Plurals Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="cat-section" id="suffixes">
-      <h2 class="cat-heading">Suffixes</h2>
-      <ul class="ppt-list">
-        <li>
-          <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Suffixes Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
-        </li>
-      </ul>
-    </section>
-
+    <!-- VOWEL SOUNDS -->
     <section class="cat-section" id="vowels">
-      <h2 class="cat-heading">Vowel Sounds &amp; Patterns</h2>
+      <h2 class="cat-heading">Vowel Sounds &amp; Patterns <span class="cat-count">(16)</span></h2>
       <ul class="ppt-list">
         <li>
           <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Vowel Sounds &amp; Patterns Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
+          <span class="ppt-name">Y1T1W1 — A as in Apple</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/15lBtEz1Mj35lrD8pw3Wi9a9M_oMxJ5vC/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Graph 'A' Making the Sound "a" as in Hat</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1sxyBPVydKLwXkbQDT4CZKBxoiFcX1Xs4/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Y1T1W3 — E as in Bed</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1-3zd_CpeBh9-wkzqSnKdtFp6XYdtq345/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Graph 'E' Making the Sound "e" as in Egg</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1-nAMle4cLODHuLXv15PbvDydgJ42le5V/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">G1T1W2 — I as in Ink</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1JXLho6b50RVw7md71OX1b2k1d9BWRK90/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">I as in Tin</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1YiWjeQOHwoek7_YSXFilSoc-LL9V5MNb/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">G1T1W4 — O as in Shop</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1CeZlPTMeKDtvpKhKbIfiwpciphSeu9Py/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Letter 'O' Making the Sound O as in Frog</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1vxa2_-QMGCKBZByz-SjbvyUp6JuEubxK/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Different Ways to Make the Long O Sound (Grade 2 Spelling List 3)</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1mPoHM5ZXm6W8RjOtU7PmUnunH9V2uO4R/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">G1T1W5 — U as in Bus</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1NS01LWkl-OUa6uIyewX3KtUJS0yJaUNP/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Letter 'U' Making the Sound 'u' as in Run</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1-w1qpEH6cdzk8ioOsE4hI_Xwq1gs4yVF/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Digraph 'OU' Making the Sound "ou" as in House</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1siXf7mHfRaWtQUnpIJAQROb2tX1G_AgG/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling The Sounds 'OI' and 'OY'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1UBCWnyzgAKwuYOGBFxia36mHpEJZejtV/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The Sound AIR By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1Bk2j-cheS7V9npva8LSXvcSpDAjKYvue/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">The 4 Main Sounds of the Letter Y</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/18T7MTpl_4y2UE2AJdzHjGAv-NhcT0Fmb/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Spelling List — 'ER' as in Fern</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1FBZeJGMzaNWDsgRzIyUsBzh-HBAf5Sx5/view?usp=sharing" target="_blank" rel="noopener">View</a>
         </li>
       </ul>
     </section>
 
+    <!-- PLURALS -->
+    <section class="cat-section" id="plurals">
+      <h2 class="cat-heading">Plurals <span class="cat-count">(6)</span></h2>
+      <ul class="ppt-list">
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Irregular Plurals</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1UsBsVPW4cv8fvX1SRL4xGOoJPbjUeVHs/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Plural Rule 2 — Adding 'ES'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1hyRPwQN5c6S9udbgw9HFW9iczDPkwDLg/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Adding 'ES' to Make Plurals (Edition 2)</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1cbdW4HUb-v7SkcGbvbfkHf4p4R1bc-BG/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Making Plurals — Words Ending in 'O'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1ENoeG0-q5QuqOt3Zwzmhk3hWqqz_G6TQ/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Plural Rule 4 — Adding 'VES' to Make Plurals</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1OM-NNluSRcfRrjl4mCIwzvx52a2rRQ8y/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Plural Rule 5 — Drop the 'Y' Add 'IES'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1GBY1BtDo90GcS80TjlfHqDEtErHF2_cj/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SUFFIXES & PREFIXES -->
+    <section class="cat-section" id="suffixes">
+      <h2 class="cat-heading">Suffixes &amp; Prefixes <span class="cat-count">(5)</span></h2>
+      <ul class="ppt-list">
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Adding the Suffixes 'FUL' and 'FULLY'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1282Clr9groBNbPxOs5fjSrbnzMWdlkrK/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Double the Last Consonant</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1Sx3b1JVfdizfy4j2mWiIZ001YNMkIDwv/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Drop the E, Add ING</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1sPSrYqcK2W53LRnAYgm531Ap4w-EATL2/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Year 2 — The Prefix RE- (Repeating or Backwards)</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1dMJhlQw8VvTW2tmRczELAdXDmKpOTWSi/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Grade 1 Spelling List 16 — Split Digraphs</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1WELY-KIeCNxklL7L7MFZcV9urkuuOVRf/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- GRAMMAR -->
     <section class="cat-section" id="grammar">
-      <h2 class="cat-heading">Grammar</h2>
+      <h2 class="cat-heading">Grammar <span class="cat-count">(4)</span></h2>
       <ul class="ppt-list">
         <li>
           <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Grammar Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
+          <span class="ppt-name">Apostrophe of Possession By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1yC-BSuIgPWpp7_vipuuf8JfOw-1_fg7O/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling — The Articles 'A' and 'AN'</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1spqaV-r2s_ObwkQTX4WAirX1kG4OrXtv/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Making Adverbs — Base Word Ends in Y</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1PlImnUrR5Kt6hWV8g57x_FZjXqINkXiO/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Mr Spelling Making Adverbs That End in ALLY</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1eWOW3BI7YvesT6tiYlnDaSFXc-7FwMjI/view?usp=sharing" target="_blank" rel="noopener">View</a>
         </li>
       </ul>
     </section>
 
+    <!-- HOMOPHONES -->
     <section class="cat-section" id="homophones">
-      <h2 class="cat-heading">Homophones</h2>
+      <h2 class="cat-heading">Homophones <span class="cat-count">(1)</span></h2>
       <ul class="ppt-list">
         <li>
           <span class="ppt-icon">&#128196;</span>
-          <span class="ppt-name">Homophones Lesson Slides</span>
-          <span class="ppt-link soon">Coming Soon</span>
+          <span class="ppt-name">Homophones By Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1sr21U1hJuVXJGh-IjTdya7BJeeKj4qX8/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SYLLABLES -->
+    <section class="cat-section" id="syllables">
+      <h2 class="cat-heading">Syllables <span class="cat-count">(2)</span></h2>
+      <ul class="ppt-list">
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Introduction to Syllables by Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1jP5f6dE15O7yPwf00gO-Q3juujv50wnG/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Open and Closed Syllables</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1fJ53frMi7jSVfUJJkV3dcTXKt7WpsTn5/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SPELLING LISTS -->
+    <section class="cat-section" id="lists">
+      <h2 class="cat-heading">Spelling Lists <span class="cat-count">(3)</span></h2>
+      <ul class="ppt-list">
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Grade 1 Spelling Lists 6–10 — Y, Y, TH, SH, OY</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1_CrOXJHzo2aDd6SNL8hBFKWh1S6GLMcv/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Grade 1 Spelling Lists 11–15 — OI, AI, AY, CH, OR</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1MkMibtYIcigVT9zjVtGuk249t4RW1HXK/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Grade 2 Spelling Lists 1 &amp; 2 — IGH</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1curtySdFzLqJ5btvJTdgDKVnXWHHE49D/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- OTHER -->
+    <section class="cat-section" id="other">
+      <h2 class="cat-heading">Other <span class="cat-count">(2)</span></h2>
+      <ul class="ppt-list">
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Spot the Spelling Mistake 1</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1N-bM_nZAmoS1x3khT1w4JXMTdKg-vEXs/view?usp=sharing" target="_blank" rel="noopener">View</a>
+        </li>
+        <li>
+          <span class="ppt-icon">&#128196;</span>
+          <span class="ppt-name">Stage 3 Maths Concept Revision by Mr Spelling</span>
+          <a class="ppt-btn" href="https://drive.google.com/file/d/1KxWkMxHoek0nJmjKXlVvlmoLDN7BhiSh/view?usp=sharing" target="_blank" rel="noopener">View</a>
         </li>
       </ul>
     </section>
