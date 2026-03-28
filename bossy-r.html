@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — Bossy R</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.8rem, 9vw, 5rem);
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header p {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #1a1a1a;
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    /* NAV PILLS */
+    .cat-nav {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      background: #333;
+      color: #facc15;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 2px solid #facc15;
+      transition: background 0.15s;
+    }
+
+    .cat-nav a:hover {
+      background: #facc15;
+      color: #1a1a1a;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* SECTIONS */
+    .content-section {
+      margin-bottom: 52px;
+    }
+
+    .section-heading {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1a1a1a;
+    }
+
+    /* VIDEO */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: 4px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* DOWNLOAD BUTTON */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .download-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #ef4444;
+    }
+
+    /* LYRICS */
+    .lyrics-box {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    .lyrics-box p {
+      margin-bottom: 4px;
+    }
+
+    .lyrics-box .lyric-break {
+      margin: 14px 0 10px;
+      border-top: 2px dashed #e5e7eb;
+    }
+
+    /* SLIDE GRID */
+    .slide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 20px;
+    }
+
+    .slide-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+
+    .slide-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .slide-card .slide-label {
+      font-weight: 900;
+      font-size: 0.88rem;
+      padding: 8px 14px;
+      background: #1a1a1a;
+      color: #facc15;
+      letter-spacing: 0.5px;
+    }
+
+    /* INTRO CONCEPT — single wide slide */
+    .slide-single {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+
+    .slide-single img {
+      width: 100%;
+      display: block;
+    }
+
+    .slide-single .slide-label {
+      font-weight: 900;
+      font-size: 0.88rem;
+      padding: 8px 14px;
+      background: #1a1a1a;
+      color: #facc15;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>Bossy R</h1>
+    <p>R-controlled vowels — AR, OR, ER, IR &amp; UR</p>
+  </header>
+
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#powerpoint">PowerPoint</a>
+    <a href="#lyrics">Song Lyrics</a>
+    <a href="#sounds">The Sounds</a>
+    <a href="#rules">Spelling Rules</a>
+  </nav>
+
+  <main>
+
+    <!-- VIDEO -->
+    <section class="content-section" id="video">
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/5oL13uJNUAg" title="Bossy R by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- POWERPOINT -->
+    <section class="content-section" id="powerpoint">
+      <h2 class="section-heading">Download the PowerPoint</h2>
+      <a class="download-btn" href="https://docs.google.com/presentation/d/1gbhMAMjuXfN8DccS6FRDcqglBZtFAR7A/edit?usp=drive_link&ouid=109193247342571554306&rtpof=true&sd=true" target="_blank" rel="noopener">
+        &#128196; Open Bossy R PowerPoint
+      </a>
+    </section>
+
+    <!-- SONG LYRICS -->
+    <section class="content-section" id="lyrics">
+      <h2 class="section-heading">Song Lyrics</h2>
+      <div class="lyrics-box">
+        <p>Are you ready to learn about R controlled vowels? Also known as Bossy R.</p>
+        <div class="lyric-break"></div>
+        <p>When it's after a vowel the letter R,</p>
+        <p>can change the sound of the vowel by far.</p>
+        <div class="lyric-break"></div>
+        <p>AR can say 'ar'.</p>
+        <p>'ar' as in car.</p>
+        <p>OR can say 'or'.</p>
+        <p>'or' as in fork.</p>
+        <p>ER, IR, UR can say 'ir'.</p>
+        <p>'ir' as in bird.</p>
+        <p>And now you know about Bossy R.</p>
+        <div class="lyric-break"></div>
+        <p>A can say 'a' but add the letter R.</p>
+        <p>It makes a new sound:</p>
+        <p>'ar' as in car.</p>
+        <div class="lyric-break"></div>
+        <p>barn &nbsp; star &nbsp; card &nbsp; march &nbsp; far</p>
+        <div class="lyric-break"></div>
+        <p>And now you know about Bossy R.</p>
+        <div class="lyric-break"></div>
+        <p>O can say 'o', we know that from before.</p>
+        <p>But add the letter R, and now it can say 'or'.</p>
+        <div class="lyric-break"></div>
+        <p>corn &nbsp; north &nbsp; horn &nbsp; sport &nbsp; for</p>
+        <div class="lyric-break"></div>
+        <p>These vowels are short, but I hope you infer</p>
+        <p>If you add the letter R, they now can say 'ur'.</p>
+        <div class="lyric-break"></div>
+        <p>fern &nbsp; germ &nbsp; girl &nbsp; third &nbsp; fur</p>
+      </div>
+    </section>
+
+    <!-- THE SOUNDS OF BOSSY R -->
+    <section class="content-section" id="sounds">
+      <h2 class="section-heading">The Sounds of Bossy R</h2>
+
+      <div class="slide-single" style="margin-bottom: 20px;">
+        <img src="slides/bossy-r/slide067.png" alt="R bosses all five vowels — a e i o u" />
+        <div class="slide-label">R can boss all five vowels: A, E, I, O, U</div>
+      </div>
+
+      <div class="slide-single" style="margin-bottom: 20px;">
+        <img src="slides/bossy-r/slide071.png" alt="The five Bossy R patterns: AR ER IR OR UR" />
+        <div class="slide-label">The five Bossy R patterns — AR, ER, IR, OR, UR</div>
+      </div>
+
+      <div class="slide-grid">
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide085.png" alt="AR makes the ar sound — car, farm" />
+          <div class="slide-label">AR — makes the 'ar' sound (car, farm)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide086.png" alt="OR makes the or sound — corn, horn" />
+          <div class="slide-label">OR — makes the 'or' sound (corn, horn)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide087.png" alt="ER makes the er sound — her, fern" />
+          <div class="slide-label">ER — makes the 'er' sound (her, fern)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide088.png" alt="IR makes the er sound — bird, girl" />
+          <div class="slide-label">IR — also makes the 'er' sound (bird, girl)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide089.png" alt="UR makes the er sound — fur, nurse" />
+          <div class="slide-label">UR — also makes the 'er' sound (fur, nurse)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPELLING RULES -->
+    <section class="content-section" id="rules">
+      <h2 class="section-heading">Spelling Rules for Bossy R</h2>
+
+      <div class="slide-grid">
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide090.png" alt="Double R is not bossy — carry, berry" />
+          <div class="slide-label">Double R — R is not bossy when doubled (carry, berry)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide091.png" alt="Syllable Wall — R only bosses its own syllable" />
+          <div class="slide-label">Syllable Wall — R can only boss the vowel in its own syllable (spi-rit, ve-ry)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide092.png" alt="W + OR changes to ur sound — word, world" />
+          <div class="slide-label">W + OR — changes the sound to 'ur' (word, world)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide093.png" alt="W + AR changes to or sound — war, warm" />
+          <div class="slide-label">W + AR — changes the sound to 'or' (war, warm)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide094.png" alt="Schwa + R — unstressed syllables — butter, doctor" />
+          <div class="slide-label">Schwa + R — R is not bossy in some unstressed syllables (butter, doctor)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide095.png" alt="Consonant blocks R — secret, hungry" />
+          <div class="slide-label">Consonant Blocks R — a consonant between the vowel and R stops it being bossy (secret, hungry)</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Bangers',cursive; font-size:1.6rem; letter-spacing:2px; color:#1a1a1a; margin: 32px 0 16px;">Silent E + R Patterns</h3>
+
+      <div class="slide-grid">
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide099.png" alt="ARE — silent E makes it say air — care, share" />
+          <div class="slide-label">ARE — silent E makes it say 'air' (care, share)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide100.png" alt="IRE — silent E makes it say eye-er — fire, hire" />
+          <div class="slide-label">IRE — silent E makes it say 'eye-er' (fire, hire)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide101.png" alt="ORE — silent E makes it say or — more, shore" />
+          <div class="slide-label">ORE — silent E makes it say 'or' (more, shore)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide102.png" alt="ERE — silent E makes it say ear — here, sphere" />
+          <div class="slide-label">ERE — silent E makes it say 'ear' (here, sphere)</div>
+        </div>
+        <div class="slide-card">
+          <img src="slides/bossy-r/slide103.png" alt="URE — silent E makes it say yoor — pure, cure" />
+          <div class="slide-label">URE — silent E makes it say 'yoor' (pure, cure)</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>
