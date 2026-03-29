@@ -231,6 +231,87 @@
       box-shadow: 6px 6px 0 #facc15;
     }
 
+    /* ── LATEST VIDEO ── */
+    .latest-video {
+      max-width: 760px;
+      margin: 52px auto 0;
+      padding: 0 24px;
+    }
+
+    .latest-video h2 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2rem, 6vw, 3rem);
+      letter-spacing: 3px;
+      color: #ef4444;
+      text-shadow: 3px 3px 0 #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .latest-video .new-badge {
+      display: inline-block;
+      font-family: 'Bangers', cursive;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      background: #ef4444;
+      color: #fff;
+      padding: 2px 12px;
+      border-radius: 999px;
+      border: 2px solid #1a1a1a;
+      margin-bottom: 14px;
+      vertical-align: middle;
+    }
+
+    .latest-video .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: 4px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .latest-video .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .latest-video .video-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .latest-video .video-footer p {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .latest-video .video-footer a {
+      font-family: 'Bangers', cursive;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 18px;
+      border-radius: 999px;
+      border: 2px solid #1a1a1a;
+      box-shadow: 3px 3px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+      white-space: nowrap;
+    }
+
+    .latest-video .video-footer a:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 #ef4444;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: #facc15;
@@ -256,6 +337,18 @@
       <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
       <a href="bossy-r.html" class="btn-alt">Bossy R</a>
       <a href="request.html" class="btn-alt">Request a Song</a>
+    </div>
+  </section>
+
+  <!-- LATEST VIDEO -->
+  <section class="latest-video">
+    <h2>Latest Video <span class="new-badge">NEW</span></h2>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/5oL13uJNUAg" title="Bossy R by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-footer">
+      <p>Bossy R — AR, OR, ER, IR &amp; UR explained</p>
+      <a href="bossy-r.html">Full Bossy R Page &#8594;</a>
     </div>
   </section>
 
