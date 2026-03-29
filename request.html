@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — Request a Song</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.4rem, 8vw, 4.5rem);
+      letter-spacing: 3px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header p {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #1a1a1a;
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* SECTION HEADING */
+    .section-heading {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1a1a1a;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 28px 28px 32px;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .form-card .form-intro {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      color: #374151;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 900;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      border: 2.5px solid #1a1a1a;
+      border-radius: 8px;
+      background: #fef9c3;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #f97316;
+      box-shadow: 3px 3px 0 #f97316;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .submit-btn {
+      font-family: 'Bangers', cursive;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      background: #ef4444;
+      color: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 999px;
+      padding: 10px 36px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      transition: transform 0.1s, box-shadow 0.1s;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    .submit-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    /* DRAWING SECTION */
+    .draw-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 28px 28px 32px;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .draw-card p {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+
+    .draw-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* EXAMPLE VIDEO */
+    .example-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+      margin-top: 16px;
+    }
+
+    .example-link:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #ef4444;
+    }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>Request a Song</h1>
+    <p>Got a spelling topic you want turned into a banger? Let us know!</p>
+  </header>
+
+  <main>
+
+    <!-- REQUEST FORM -->
+    <section>
+      <h2 class="section-heading">Request a Song</h2>
+      <div class="form-card">
+        <p class="form-intro">Is there a spelling rule or phonics topic you'd love to see covered? Send in your suggestion and Mr Spelling will do his best to make it happen!</p>
+        <form action="mailto:itsmrspelling@gmail.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="Name" placeholder="e.g. Mrs Johnson" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email (so we can get back to you)</label>
+            <input type="email" id="email" name="Email" placeholder="e.g. you@school.edu.au" required />
+          </div>
+          <div class="form-group">
+            <label for="topic">What spelling topic would you like a song about?</label>
+            <input type="text" id="topic" name="Topic" placeholder="e.g. Silent letters, The igh trigraph, Adding -ed to words..." required />
+          </div>
+          <div class="form-group">
+            <label for="details">Any extra details? (optional)</label>
+            <textarea id="details" name="Details" placeholder="Year level, specific words you want included, anything else..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Request</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- GET INVOLVED — DRAWING -->
+    <section>
+      <h2 class="section-heading">Get Involved — Draw for a Video!</h2>
+      <div class="draw-card">
+        <p>If your class would like to be involved and draw pictures for one of Mr Spelling's videos, suggest a video topic using the form above and I'll get back to you with details about how your students can contribute their drawings.</p>
+        <p>To see an example of a Mr Spelling video featuring student artwork, have a look at the <strong>Apostrophe of Possession</strong> video below — it's a great example of how your class's drawings can bring a spelling lesson to life!</p>
+        <a class="example-link" href="https://www.youtube.com/watch?v=x9ec3Mzh9KE" target="_blank" rel="noopener">
+          &#9654; Watch the Apostrophe of Possession Video
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>
