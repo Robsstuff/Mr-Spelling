@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — Support</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.6rem, 8vw, 4.5rem);
+      letter-spacing: 3px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header p {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #1a1a1a;
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #374151;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .intro strong {
+      color: #1a1a1a;
+    }
+
+    /* SUPPORT CARDS */
+    .support-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 32px 28px 28px;
+      box-shadow: 6px 6px 0 #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-num {
+      font-family: 'Bangers', cursive;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      background: #ef4444;
+      color: #fff;
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 999px;
+      border: 2px solid #1a1a1a;
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      text-shadow: 2px 2px 0 #ef4444;
+      line-height: 1.1;
+    }
+
+    .card-body {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.75;
+      color: #374151;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      align-self: flex-start;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .card-btn:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    .card-btn--yt {
+      background: #ef4444;
+      color: #fff;
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .card-btn--yt:hover {
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .card-btn--kofi {
+      background: #ff5e5b;
+      color: #fff;
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .card-btn--kofi:hover {
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>Support Mr Spelling</h1>
+    <p>Help keep the spelling bangers coming!</p>
+  </header>
+
+  <main>
+
+    <p class="intro">
+      Mr Spelling is a one-person mission to make spelling genuinely fun for every student.
+      There are <strong>two great ways</strong> you can help — and both make a real difference.
+    </p>
+
+    <!-- CARD 1 — SUBSCRIBE -->
+    <div class="support-card">
+      <span class="card-num">Best Thing #1</span>
+      <h2 class="card-title">Subscribe on YouTube</h2>
+      <p class="card-body">
+        Subscribing is completely free and it is one of the most powerful ways to support the channel.
+        Every subscriber helps Mr Spelling reach more classrooms, get recommended by the YouTube algorithm,
+        and keep making new spelling songs. If you enjoy the videos, hit subscribe and turn on
+        notifications so you never miss a new banger.
+      </p>
+      <a class="card-btn card-btn--yt" href="https://www.youtube.com/@mrspelling1?sub_confirmation=1" target="_blank" rel="noopener">
+        &#9654; Subscribe on YouTube
+      </a>
+    </div>
+
+    <!-- CARD 2 — DONATE -->
+    <div class="support-card">
+      <span class="card-num">Best Thing #2</span>
+      <h2 class="card-title">Donate via Ko-fi</h2>
+      <p class="card-body">
+        Making high-quality spelling videos takes time, equipment, and a lot of creativity.
+        If Mr Spelling's songs have helped your students — or your own kids — even a small
+        donation on Ko-fi goes a long way towards keeping the content free for everyone.
+        Every coffee counts!
+      </p>
+      <a class="card-btn card-btn--kofi" href="https://ko-fi.com/mrspelling" target="_blank" rel="noopener">
+        &#9749; Donate on Ko-fi
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>
