@@ -16,6 +16,54 @@
       min-height: 100vh;
     }
 
+    /* ── SUPPORT BANNER ── */
+    .support-banner {
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 20px;
+      border-bottom: 3px solid #facc15;
+    }
+
+    .support-text {
+      font-family: 'Bangers', cursive;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      color: #facc15;
+    }
+
+    .support-btn {
+      font-family: 'Bangers', cursive;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 4px 16px;
+      border-radius: 999px;
+      border: 2px solid;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .support-btn:hover {
+      transform: translate(-1px, -1px);
+    }
+
+    .support-btn--kofi {
+      background: #ff5e5b;
+      color: #fff;
+      border-color: #ff5e5b;
+      box-shadow: 2px 2px 0 #facc15;
+    }
+
+    .support-btn--yt {
+      background: #fff;
+      color: #1a1a1a;
+      border-color: #fff;
+      box-shadow: 2px 2px 0 #facc15;
+    }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, #facc15 0%, #fbbf24 50%, #f97316 100%);
@@ -325,6 +373,13 @@
   </style>
 </head>
 <body>
+
+  <!-- SUPPORT BANNER -->
+  <div class="support-banner">
+    <span class="support-text">Support Mr Spelling</span>
+    <a href="https://ko-fi.com/mrspelling" target="_blank" rel="noopener" class="support-btn support-btn--kofi">&#9749; Donate on Ko-fi</a>
+    <a href="https://www.youtube.com/@mrspelling1?sub_confirmation=1" target="_blank" rel="noopener" class="support-btn support-btn--yt">&#9654; Subscribe on YouTube</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
