@@ -88,7 +88,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 40px 20px 60px;
     }
@@ -123,24 +123,6 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-    }
-
-    /* TWO VIDEO GRID */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 20px;
-    }
-
-    .video-grid .video-wrap {
-      box-shadow: 4px 4px 0 #1a1a1a;
-    }
-
-    .video-label {
-      font-weight: 900;
-      font-size: 0.88rem;
-      padding: 8px 0 0;
-      color: #374151;
     }
 
     /* EXPLAINER BOX */
@@ -227,28 +209,6 @@
       line-height: 1.6;
     }
 
-    /* WORD CARD VISUAL */
-    .slide-single {
-      background: #fff;
-      border: 3px solid #1a1a1a;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 5px 5px 0 #1a1a1a;
-    }
-
-    .slide-single img {
-      width: 100%;
-      display: block;
-    }
-
-    .slide-single .slide-label {
-      font-weight: 900;
-      font-size: 0.88rem;
-      padding: 8px 14px;
-      background: #1a1a1a;
-      color: #facc15;
-    }
-
     /* STRATEGY BOX */
     .strategy-box {
       background: #1a1a1a;
@@ -297,27 +257,42 @@
       border: 2px solid #facc15;
     }
 
-    /* POWERPOINT BTN */
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Bangers', cursive;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      background: #1a1a1a;
-      color: #facc15;
-      text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 999px;
-      border: 3px solid #1a1a1a;
-      box-shadow: 4px 4px 0 #ef4444;
-      transition: transform 0.1s, box-shadow 0.1s;
+    /* SLIDES */
+    .word-group {
+      margin-bottom: 44px;
     }
 
-    .download-btn:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #ef4444;
+    .word-group-title {
+      font-family: 'Bangers', cursive;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      background: #facc15;
+      border: 3px solid #1a1a1a;
+      border-radius: 8px;
+      padding: 6px 18px;
+      display: inline-block;
+      margin-bottom: 14px;
+      box-shadow: 3px 3px 0 #1a1a1a;
+    }
+
+    .slides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .slide-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .slide-card img {
+      width: 100%;
+      display: block;
     }
 
     footer {
@@ -340,32 +315,21 @@
   </header>
 
   <nav class="cat-nav">
-    <a href="#videos">Videos</a>
+    <a href="#video">Video</a>
     <a href="#what-is-schwa">What Is Schwa?</a>
     <a href="#which-vowels">Which Vowels?</a>
     <a href="#examples">Examples</a>
     <a href="#strategy">Spelling Strategy</a>
-    <a href="#word-cards">Word Cards</a>
+    <a href="#slides">Slide Deck</a>
   </nav>
 
   <main>
 
-    <!-- VIDEOS -->
-    <section class="content-section" id="videos">
-      <h2 class="section-heading">Watch the Videos</h2>
-      <div class="video-grid">
-        <div>
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/aEpy3UR20mU" title="The Schwa Phonics Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <p class="video-label">The Schwa Phonics Song /&#x259;/ — Sound Out the Most Common Vowel Sound in English</p>
-        </div>
-        <div>
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/VjIkSI-KJnY" title="The Schwa — The Most Common Sound in English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <p class="video-label">The Schwa — The Most Common Sound in English</p>
-        </div>
+    <!-- VIDEO -->
+    <section class="content-section" id="video">
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/aEpy3UR20mU" title="The Schwa Phonics Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -373,7 +337,7 @@
     <section class="content-section" id="what-is-schwa">
       <h2 class="section-heading">What Is the Schwa?</h2>
       <div class="explainer-box">
-        <p>The schwa (symbol: <strong>/&#x259;/</strong>) is the most common sound in the English language. It is a short, unstressed "uh" sound that appears in the unstressed syllables of multisyllabic words. The tricky thing about the schwa is that <strong>any vowel letter can make it</strong> — A, E, I, O, and U can all say "uh" when they are in an unstressed syllable. This is why words like <em>butter</em>, <em>second</em>, <em>depend</em>, and <em>eleven</em> are so commonly misspelled — the schwa vowel is almost impossible to hear clearly when you say the word naturally. Knowing about the schwa is a powerful spelling tool because it explains why so many vowels in multisyllabic words are hard to predict.</p>
+        <p>The schwa (symbol: <strong>/&#x259;/</strong>) is the most common sound in the English language. It is a short, unstressed "uh" sound that appears in the unstressed syllables of multisyllabic words. The tricky thing about the schwa is that <strong>any vowel letter can make it</strong> — a, e, i, o, and u can all say "uh" when they are in an unstressed syllable. This is why words like <em>butter</em>, <em>second</em>, <em>depend</em>, and <em>eleven</em> are so commonly misspelled — the schwa vowel is almost impossible to hear clearly when you say the word naturally. Knowing about the schwa is a powerful spelling tool because it explains why so many vowels in multisyllabic words are hard to predict.</p>
       </div>
     </section>
 
@@ -411,42 +375,42 @@
         <div class="example-card">
           <span class="ex-word">butter</span>
           <span class="ex-break">but · t<u>er</u></span>
-          <span class="ex-schwa">E says "uh"</span>
+          <span class="ex-schwa">e says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">second</span>
           <span class="ex-break">sec · <u>o</u>nd</span>
-          <span class="ex-schwa">O says "uh"</span>
+          <span class="ex-schwa">o says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">depend</span>
           <span class="ex-break"><u>de</u> · pend</span>
-          <span class="ex-schwa">E says "uh"</span>
+          <span class="ex-schwa">e says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">eleven</span>
           <span class="ex-break"><u>e</u> · lev · <u>e</u>n</span>
-          <span class="ex-schwa">Both E's say "uh"</span>
+          <span class="ex-schwa">both e's say "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">about</span>
           <span class="ex-break"><u>a</u> · bout</span>
-          <span class="ex-schwa">A says "uh"</span>
+          <span class="ex-schwa">a says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">doctor</span>
           <span class="ex-break">doc · t<u>or</u></span>
-          <span class="ex-schwa">O says "uh"</span>
+          <span class="ex-schwa">o says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">pencil</span>
           <span class="ex-break">pen · c<u>i</u>l</span>
-          <span class="ex-schwa">I says "uh"</span>
+          <span class="ex-schwa">i says "uh"</span>
         </div>
         <div class="example-card">
           <span class="ex-word">support</span>
           <span class="ex-break">s<u>u</u>p · port</span>
-          <span class="ex-schwa">U says "uh"</span>
+          <span class="ex-schwa">u says "uh"</span>
         </div>
       </div>
     </section>
@@ -466,13 +430,130 @@
       </div>
     </section>
 
-    <!-- WORD CARDS -->
-    <section class="content-section" id="word-cards">
+    <!-- SLIDE DECK -->
+    <section class="content-section" id="slides">
       <h2 class="section-heading">Schwa Word Cards</h2>
-      <div class="slide-single">
-        <img src="slides/schwa/slide001.png" alt="Schwa word card template by Mr Spelling" />
-        <div class="slide-label">Mr Spelling Schwa Word Card Template</div>
+
+      <div class="word-group">
+        <div class="word-group-title">sofa</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide001.png" alt="sofa - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide002.png" alt="sofa - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide005.png" alt="sofa - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide009.png" alt="sofa - schwa" loading="lazy" /></div>
+        </div>
       </div>
+
+      <div class="word-group">
+        <div class="word-group-title">panda</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide010.png" alt="panda - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide011.png" alt="panda - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide013.png" alt="panda - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide018.png" alt="panda - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">alarm</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide019.png" alt="alarm - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide020.png" alt="alarm - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide023.png" alt="alarm - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide027.png" alt="alarm - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">police</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide028.png" alt="police - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide029.png" alt="police - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide032.png" alt="police - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide038.png" alt="police - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">cabbage</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide039.png" alt="cabbage - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide040.png" alt="cabbage - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide043.png" alt="cabbage - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide048.png" alt="cabbage - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">carpet</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide049.png" alt="carpet - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide050.png" alt="carpet - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide053.png" alt="carpet - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide058.png" alt="carpet - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">maggot</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide059.png" alt="maggot - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide060.png" alt="maggot - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide063.png" alt="maggot - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide068.png" alt="maggot - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">salad</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide069.png" alt="salad - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide070.png" alt="salad - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide073.png" alt="salad - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide078.png" alt="salad - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">the</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide079.png" alt="the - word" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide080.png" alt="the - stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide082.png" alt="the - sounds" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide084.png" alt="the - schwa" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">vowels</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide085.png" alt="vowels" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide086.png" alt="vowels - a" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide087.png" alt="vowels - e" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide088.png" alt="vowels - i" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide089.png" alt="vowels - o" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide090.png" alt="vowels - u" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide091.png" alt="vowels - y" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">syllable stress</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide092.png" alt="syllable stress" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide093.png" alt="stressed vs unstressed" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide095.png" alt="schwa in unstressed syllable" loading="lazy" /></div>
+          <div class="slide-card"><img src="slides/schwa/slide098.png" alt="carpet - syllable stress" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <div class="word-group-title">summary</div>
+        <div class="slides-grid">
+          <div class="slide-card"><img src="slides/schwa/slide099.png" alt="today we are learning" loading="lazy" /></div>
+        </div>
+      </div>
+
     </section>
 
   </main>
