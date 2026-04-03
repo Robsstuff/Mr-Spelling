@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — The Schwa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.8rem, 9vw, 5rem);
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header .ipa {
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      background: #1a1a1a;
+      color: #facc15;
+      padding: 4px 18px;
+      border-radius: 999px;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    .cat-nav {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      background: #333;
+      color: #facc15;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 2px solid #facc15;
+      transition: background 0.15s;
+    }
+
+    .cat-nav a:hover {
+      background: #facc15;
+      color: #1a1a1a;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .content-section {
+      margin-bottom: 52px;
+    }
+
+    .section-heading {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1a1a1a;
+    }
+
+    /* VIDEO */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: 4px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* TWO VIDEO GRID */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 20px;
+    }
+
+    .video-grid .video-wrap {
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .video-label {
+      font-weight: 900;
+      font-size: 0.88rem;
+      padding: 8px 0 0;
+      color: #374151;
+    }
+
+    /* EXPLAINER BOX */
+    .explainer-box {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* EXAMPLES GRID */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .example-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      text-align: center;
+    }
+
+    .example-card .ex-word {
+      font-family: 'Bangers', cursive;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .example-card .ex-break {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #ef4444;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .example-card .ex-schwa {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #6b7280;
+    }
+
+    /* VOWEL CARDS */
+    .vowel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 14px;
+    }
+
+    .vowel-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 16px 10px;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      text-align: center;
+    }
+
+    .vowel-card .v-letter {
+      font-family: 'Bangers', cursive;
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      display: block;
+    }
+
+    .vowel-card .v-examples {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* WORD CARD VISUAL */
+    .slide-single {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+
+    .slide-single img {
+      width: 100%;
+      display: block;
+    }
+
+    .slide-single .slide-label {
+      font-weight: 900;
+      font-size: 0.88rem;
+      padding: 8px 14px;
+      background: #1a1a1a;
+      color: #facc15;
+    }
+
+    /* STRATEGY BOX */
+    .strategy-box {
+      background: #1a1a1a;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #ef4444;
+    }
+
+    .strategy-box h3 {
+      font-family: 'Bangers', cursive;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: #facc15;
+      margin-bottom: 12px;
+    }
+
+    .strategy-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .strategy-steps li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #f1f5f9;
+    }
+
+    .step-num {
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      background: #ef4444;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid #facc15;
+    }
+
+    /* POWERPOINT BTN */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .download-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #ef4444;
+    }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>The Schwa</h1>
+    <span class="ipa">The /&#x259;/ sound — the most common sound in English</span>
+  </header>
+
+  <nav class="cat-nav">
+    <a href="#videos">Videos</a>
+    <a href="#what-is-schwa">What Is Schwa?</a>
+    <a href="#which-vowels">Which Vowels?</a>
+    <a href="#examples">Examples</a>
+    <a href="#strategy">Spelling Strategy</a>
+    <a href="#word-cards">Word Cards</a>
+  </nav>
+
+  <main>
+
+    <!-- VIDEOS -->
+    <section class="content-section" id="videos">
+      <h2 class="section-heading">Watch the Videos</h2>
+      <div class="video-grid">
+        <div>
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/aEpy3UR20mU" title="The Schwa Phonics Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="video-label">The Schwa Phonics Song /&#x259;/ — Sound Out the Most Common Vowel Sound in English</p>
+        </div>
+        <div>
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/VjIkSI-KJnY" title="The Schwa — The Most Common Sound in English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="video-label">The Schwa — The Most Common Sound in English</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS SCHWA -->
+    <section class="content-section" id="what-is-schwa">
+      <h2 class="section-heading">What Is the Schwa?</h2>
+      <div class="explainer-box">
+        <p>The schwa (symbol: <strong>/&#x259;/</strong>) is the most common sound in the English language. It is a short, unstressed "uh" sound that appears in the unstressed syllables of multisyllabic words. The tricky thing about the schwa is that <strong>any vowel letter can make it</strong> — A, E, I, O, and U can all say "uh" when they are in an unstressed syllable. This is why words like <em>butter</em>, <em>second</em>, <em>depend</em>, and <em>eleven</em> are so commonly misspelled — the schwa vowel is almost impossible to hear clearly when you say the word naturally. Knowing about the schwa is a powerful spelling tool because it explains why so many vowels in multisyllabic words are hard to predict.</p>
+      </div>
+    </section>
+
+    <!-- WHICH VOWELS -->
+    <section class="content-section" id="which-vowels">
+      <h2 class="section-heading">Any Vowel Can Be a Schwa</h2>
+      <div class="vowel-grid">
+        <div class="vowel-card">
+          <span class="v-letter">A</span>
+          <span class="v-examples">about<br>balloon<br>sofa</span>
+        </div>
+        <div class="vowel-card">
+          <span class="v-letter">E</span>
+          <span class="v-examples">butter<br>second<br>garden</span>
+        </div>
+        <div class="vowel-card">
+          <span class="v-letter">I</span>
+          <span class="v-examples">pencil<br>animal<br>April</span>
+        </div>
+        <div class="vowel-card">
+          <span class="v-letter">O</span>
+          <span class="v-examples">second<br>doctor<br>lesson</span>
+        </div>
+        <div class="vowel-card">
+          <span class="v-letter">U</span>
+          <span class="v-examples">supply<br>support<br>focus</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="content-section" id="examples">
+      <h2 class="section-heading">Schwa in Action</h2>
+      <div class="examples-grid">
+        <div class="example-card">
+          <span class="ex-word">butter</span>
+          <span class="ex-break">but · t<u>er</u></span>
+          <span class="ex-schwa">E says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">second</span>
+          <span class="ex-break">sec · <u>o</u>nd</span>
+          <span class="ex-schwa">O says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">depend</span>
+          <span class="ex-break"><u>de</u> · pend</span>
+          <span class="ex-schwa">E says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">eleven</span>
+          <span class="ex-break"><u>e</u> · lev · <u>e</u>n</span>
+          <span class="ex-schwa">Both E's say "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">about</span>
+          <span class="ex-break"><u>a</u> · bout</span>
+          <span class="ex-schwa">A says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">doctor</span>
+          <span class="ex-break">doc · t<u>or</u></span>
+          <span class="ex-schwa">O says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">pencil</span>
+          <span class="ex-break">pen · c<u>i</u>l</span>
+          <span class="ex-schwa">I says "uh"</span>
+        </div>
+        <div class="example-card">
+          <span class="ex-word">support</span>
+          <span class="ex-break">s<u>u</u>p · port</span>
+          <span class="ex-schwa">U says "uh"</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPELLING STRATEGY -->
+    <section class="content-section" id="strategy">
+      <h2 class="section-heading">Spelling Strategy</h2>
+      <div class="strategy-box">
+        <h3>Say It For Spelling</h3>
+        <ul class="strategy-steps">
+          <li><span class="step-num">1</span> Find the schwa vowel in the word — listen for the "uh" sound</li>
+          <li><span class="step-num">2</span> Say the word in syllables: <em>"but-ter", "sec-ond", "pen-cil"</em></li>
+          <li><span class="step-num">3</span> "Say it for spelling" — pronounce every vowel clearly: <em>"but-TER", "SEC-ond"</em></li>
+          <li><span class="step-num">4</span> Use that exaggerated pronunciation to spell the word syllable by syllable</li>
+          <li><span class="step-num">5</span> Rule check — does the spelling look right?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WORD CARDS -->
+    <section class="content-section" id="word-cards">
+      <h2 class="section-heading">Schwa Word Cards</h2>
+      <div class="slide-single">
+        <img src="slides/schwa/slide001.png" alt="Schwa word card template by Mr Spelling" />
+        <div class="slide-label">Mr Spelling Schwa Word Card Template</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>
