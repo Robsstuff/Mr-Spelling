@@ -134,14 +134,32 @@
     }
 
     /* ── HERO BUTTONS ── */
+    .hero-btn-groups {
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .btn-group-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      opacity: 0.6;
+      margin-bottom: -6px;
+    }
+
     .hero-btns {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 28px;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-btns a {
@@ -387,13 +405,19 @@
     <h1>MR SPELLING</h1>
     <span class="tagline">Not Misspelling</span>
     <span class="subtagline">This website teaches spelling rules because spelling rules.</span>
-    <div class="hero-btns">
-      <a href="videos.html">Videos</a>
-      <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
-      <a href="bossy-r.html" class="btn-alt">Bossy R</a>
-      <a href="schwa.html" class="btn-alt">The Schwa</a>
-      <a href="request.html" class="btn-alt">Request a Song</a>
-      <a href="support.html" class="btn-alt">Support Mr Spelling</a>
+    <div class="hero-btn-groups">
+      <span class="btn-group-label">Spelling Rules</span>
+      <div class="hero-btns">
+        <a href="bossy-r.html">Bossy R</a>
+        <a href="schwa.html">The Schwa</a>
+      </div>
+      <span class="btn-group-label">Explore</span>
+      <div class="hero-btns">
+        <a href="videos.html" class="btn-alt">Videos</a>
+        <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
+        <a href="request.html" class="btn-alt">Request a Song</a>
+        <a href="support.html" class="btn-alt">Support Mr Spelling</a>
+      </div>
     </div>
   </section>
 
@@ -422,22 +446,6 @@
         tricky words into unforgettable bars so every student walks away spelling
         like a champion. Learning has never sounded this good.
       </p>
-    </div>
-  </section>
-
-  <!-- COMING SOON -->
-  <section class="coming-soon">
-    <h2>Website Coming Soon</h2>
-    <p>
-      Something big is being built. Stay tuned for resources, lessons,
-      and tracks that make spelling seriously fun.
-    </p>
-    <div class="progress-wrap">
-      <div class="progress-fill"></div>
-    </div>
-    <p class="progress-label">35% complete &mdash; keep watching this space</p>
-    <div class="text-logo-section">
-      <img src="text-logo.jpg" alt="Mr Spelling - Not Misspelling" />
     </div>
   </section>
 
