@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — Contractions</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.8rem, 9vw, 5rem);
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header .subtitle {
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      background: #1a1a1a;
+      color: #facc15;
+      padding: 4px 18px;
+      border-radius: 999px;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* ── NAV ── */
+    .cat-nav {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      background: #333;
+      color: #facc15;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 2px solid #facc15;
+      transition: background 0.15s;
+    }
+
+    .cat-nav a:hover { background: #facc15; color: #1a1a1a; }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .content-section { margin-bottom: 52px; }
+
+    .section-heading {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1a1a1a;
+    }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: 4px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* ── EXPLAINER ── */
+    .explainer-box {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* ── GAME ── */
+    .game-box {
+      background: #fff;
+      border: 4px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 7px 7px 0 #1a1a1a;
+      text-align: center;
+    }
+
+    .game-progress {
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+
+    .game-progress span {
+      color: #ef4444;
+      font-size: 1.3rem;
+    }
+
+    /* word cards row */
+    .cards-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      min-height: 110px;
+      position: relative;
+    }
+
+    .word-card {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      letter-spacing: 2px;
+      background: #facc15;
+      color: #1a1a1a;
+      border: 4px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 14px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      min-width: 100px;
+      display: inline-block;
+      transition: transform 0.4s ease-in, opacity 0.3s ease;
+      position: relative;
+    }
+
+    .word-card.card-right {
+      background: #fde68a;
+    }
+
+    .plus-sign {
+      font-family: 'Bangers', cursive;
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: opacity 0.2s;
+    }
+
+    /* result card (hidden initially) */
+    .result-card {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2rem, 6vw, 3rem);
+      letter-spacing: 3px;
+      background: #ef4444;
+      color: #fff;
+      border: 4px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 18px 40px;
+      box-shadow: 6px 6px 0 #1a1a1a;
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    /* input row */
+    .input-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .game-input {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      padding: 10px 20px;
+      border: 3px solid #1a1a1a;
+      border-radius: 999px;
+      outline: none;
+      width: 220px;
+      text-align: center;
+      box-shadow: 3px 3px 0 #1a1a1a;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .game-input:focus { border-color: #ef4444; box-shadow: 3px 3px 0 #ef4444; }
+    .game-input.wrong { border-color: #ef4444; box-shadow: 3px 3px 0 #ef4444; background: #fee2e2; }
+
+    .check-btn {
+      font-family: 'Bangers', cursive;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      background: #ef4444;
+      color: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 999px;
+      padding: 10px 28px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .check-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #1a1a1a; }
+    .check-btn:active { transform: translate(0,0); box-shadow: 2px 2px 0 #1a1a1a; }
+
+    /* feedback hint */
+    .hint-text {
+      margin-top: 14px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #ef4444;
+      min-height: 1.4em;
+    }
+
+    /* ── COMPLETION SCREEN ── */
+    .complete-screen {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .complete-screen h3 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      letter-spacing: 3px;
+      color: #ef4444;
+      text-shadow: 3px 3px 0 #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .complete-screen p {
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+
+    .play-again-btn {
+      font-family: 'Bangers', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      background: #1a1a1a;
+      color: #facc15;
+      border: 3px solid #1a1a1a;
+      border-radius: 999px;
+      padding: 12px 36px;
+      cursor: pointer;
+      box-shadow: 5px 5px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .play-again-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #ef4444; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes shake {
+      0%  { transform: translateX(0); }
+      15% { transform: translateX(-10px); }
+      30% { transform: translateX(10px); }
+      45% { transform: translateX(-8px); }
+      60% { transform: translateX(8px); }
+      75% { transform: translateX(-4px); }
+      90% { transform: translateX(4px); }
+      100%{ transform: translateX(0); }
+    }
+
+    .shake { animation: shake 0.45s ease; }
+
+    @keyframes collide-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(calc(50% + 8px)); opacity: 0; }
+    }
+
+    @keyframes collide-right {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 8px)); opacity: 0; }
+    }
+
+    @keyframes pop-in {
+      0%   { transform: translateX(-50%) scale(0.6); opacity: 0; }
+      60%  { transform: translateX(-50%) scale(1.08); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+
+    .collide-left  { animation: collide-left  0.45s ease-in forwards; }
+    .collide-right { animation: collide-right 0.45s ease-in forwards; }
+    .pop-in        { display: block !important; animation: pop-in 0.4s ease-out 0.4s both; }
+
+    /* ── SLIDES ── */
+    .slides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .slide-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 4px 4px 0 #1a1a1a;
+    }
+
+    .slide-card img { width: 100%; display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>Contractions</h1>
+    <span class="subtitle">Two words become one!</span>
+  </header>
+
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#what-is">What Is a Contraction?</a>
+    <a href="#game">Play the Game</a>
+    <a href="#slides">Reference Slides</a>
+  </nav>
+
+  <main>
+
+    <!-- VIDEO -->
+    <section class="content-section" id="video">
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/XXjt8CLBHWw" title="Contractions by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- WHAT IS A CONTRACTION -->
+    <section class="content-section" id="what-is">
+      <h2 class="section-heading">What Is a Contraction?</h2>
+      <div class="explainer-box">
+        <p>A contraction is when two words are joined together by removing one or more letters and replacing them with an apostrophe (<strong>'</strong>). For example, <em>do not</em> becomes <em>don't</em> — the <strong>o</strong> is removed and replaced with an apostrophe. Contractions are used all the time in everyday speech and informal writing to make language flow faster. The trick is knowing <strong>which letters get dropped</strong> and where the apostrophe goes.</p>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="content-section" id="game">
+      <h2 class="section-heading">Collision Game</h2>
+      <div class="game-box">
+        <div class="game-area">
+          <p class="game-progress">Question <span id="q-num">1</span> of <span id="q-total">16</span></p>
+
+          <div class="cards-row" id="cards-row">
+            <div class="word-card" id="card-left">I</div>
+            <div class="plus-sign" id="plus">+</div>
+            <div class="word-card card-right" id="card-right">am</div>
+            <div class="result-card" id="result-card">I'm</div>
+          </div>
+
+          <div class="input-row" id="input-row">
+            <input class="game-input" id="game-input" type="text" placeholder="type the contraction" autocomplete="off" autocorrect="off" spellcheck="false" />
+            <button class="check-btn" id="check-btn">Check</button>
+          </div>
+
+          <p class="hint-text" id="hint-text"></p>
+        </div>
+
+        <div class="complete-screen" id="complete-screen">
+          <h3>Well Done!</h3>
+          <p>You matched all 16 contractions.</p>
+          <button class="play-again-btn" id="play-again-btn">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCE SLIDES -->
+    <section class="content-section" id="slides">
+      <h2 class="section-heading">Reference Slides</h2>
+      <div class="slides-grid">
+        <div class="slide-card"><img src="slides/contractions/slide001.png" alt="I am - I'm" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide002.png" alt="I have - I've" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide003.png" alt="You are - You're" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide004.png" alt="You have - You've" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide005.png" alt="He is - He's" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide006.png" alt="She is - She's" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide007.png" alt="It is - It's" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide008.png" alt="We are - We're" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide009.png" alt="We have - We've" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide010.png" alt="They are - They're" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide011.png" alt="They have - They've" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide012.png" alt="That is - That's" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide013.png" alt="There is - There's" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide014.png" alt="Do not - Don't" loading="lazy" /></div>
+        <div class="slide-card"><img src="slides/contractions/slide015.png" alt="Would not - Wouldn't" loading="lazy" /></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+  <script>
+    const contractions = [
+      { w1: "I",     w2: "am",       answer: "I'm"      },
+      { w1: "I",     w2: "have",     answer: "I've"     },
+      { w1: "You",   w2: "are",      answer: "You're"   },
+      { w1: "You",   w2: "have",     answer: "You've"   },
+      { w1: "He",    w2: "is",       answer: "He's"     },
+      { w1: "She",   w2: "is",       answer: "She's"    },
+      { w1: "It",    w2: "is",       answer: "It's"     },
+      { w1: "We",    w2: "are",      answer: "We're"    },
+      { w1: "We",    w2: "have",     answer: "We've"    },
+      { w1: "They",  w2: "are",      answer: "They're"  },
+      { w1: "They",  w2: "have",     answer: "They've"  },
+      { w1: "That",  w2: "is",       answer: "That's"   },
+      { w1: "There", w2: "is",       answer: "There's"  },
+      { w1: "Do",    w2: "not",      answer: "Don't"    },
+      { w1: "Can",   w2: "not",      answer: "Can't"    },
+      { w1: "Will",  w2: "not",      answer: "Won't"    },
+    ];
+
+    // Shuffle
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // Normalise apostrophes for comparison
+    function normalise(s) {
+      return s.trim().toLowerCase().replace(/[\u2018\u2019\u201A\u201B\u0060\u00B4]/g, "'");
+    }
+
+    let queue = [];
+    let current = 0;
+
+    const cardLeft   = document.getElementById('card-left');
+    const cardRight  = document.getElementById('card-right');
+    const plus       = document.getElementById('plus');
+    const resultCard = document.getElementById('result-card');
+    const gameInput  = document.getElementById('game-input');
+    const checkBtn   = document.getElementById('check-btn');
+    const hintText   = document.getElementById('hint-text');
+    const qNum       = document.getElementById('q-num');
+    const qTotal     = document.getElementById('q-total');
+    const gameArea   = document.querySelector('.game-area');
+    const completeScreen = document.getElementById('complete-screen');
+    const playAgainBtn   = document.getElementById('play-again-btn');
+
+    function startGame() {
+      queue = shuffle(contractions);
+      current = 0;
+      qTotal.textContent = queue.length;
+      gameArea.style.display = '';
+      completeScreen.style.display = 'none';
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const q = queue[current];
+      qNum.textContent = current + 1;
+
+      // Reset cards
+      cardLeft.className  = 'word-card';
+      cardRight.className = 'word-card card-right';
+      cardLeft.style.cssText  = '';
+      cardRight.style.cssText = '';
+      plus.style.opacity = '1';
+      resultCard.className = 'result-card';
+      resultCard.style.cssText = '';
+
+      cardLeft.textContent  = q.w1;
+      cardRight.textContent = q.w2;
+      resultCard.textContent = q.answer;
+
+      hintText.textContent = '';
+      gameInput.value = '';
+      gameInput.className = 'game-input';
+      document.getElementById('input-row').style.display = '';
+
+      // Focus after a tiny delay (avoid mobile keyboard issues)
+      setTimeout(() => gameInput.focus(), 80);
+    }
+
+    function checkAnswer() {
+      const val = normalise(gameInput.value);
+      const ans = normalise(queue[current].answer);
+
+      if (val === ans) {
+        // Correct — run collision
+        hintText.textContent = '';
+        gameInput.disabled = true;
+        checkBtn.disabled  = true;
+        document.getElementById('input-row').style.display = 'none';
+        plus.style.opacity = '0';
+
+        // Animate cards colliding
+        cardLeft.classList.add('collide-left');
+        cardRight.classList.add('collide-right');
+
+        // After cards meet, show result
+        setTimeout(() => {
+          resultCard.classList.add('pop-in');
+        }, 380);
+
+        // After result shown, load next
+        setTimeout(() => {
+          gameInput.disabled = false;
+          checkBtn.disabled  = false;
+          current++;
+          if (current >= queue.length) {
+            gameArea.style.display = 'none';
+            completeScreen.style.display = '';
+          } else {
+            loadQuestion();
+          }
+        }, 1700);
+
+      } else {
+        // Wrong — shake
+        gameInput.classList.add('wrong');
+        cardLeft.classList.add('shake');
+        cardRight.classList.add('shake');
+        hintText.textContent = 'Not quite — try again!';
+
+        setTimeout(() => {
+          gameInput.classList.remove('wrong');
+          cardLeft.classList.remove('shake');
+          cardRight.classList.remove('shake');
+        }, 500);
+
+        gameInput.value = '';
+        gameInput.focus();
+      }
+    }
+
+    checkBtn.addEventListener('click', checkAnswer);
+    gameInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkAnswer();
+    });
+    playAgainBtn.addEventListener('click', startGame);
+
+    startGame();
+  </script>
+
+</body>
+</html>
