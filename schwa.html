@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr Spelling — The Schwa</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&family=Nunito:wght@400;700;900&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -304,6 +304,209 @@
       color: #1a1a1a;
       border-top: 4px solid #1a1a1a;
     }
+
+    /* ── FIND THE SCHWA GAME ── */
+    .game-outer {
+      background: #fff;
+      border: 4px solid #1a1a1a;
+      border-radius: 20px;
+      padding: 28px 20px 32px;
+      box-shadow: 7px 7px 0 #1a1a1a;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .game-meta {
+      margin-bottom: 4px;
+    }
+
+    .game-prog {
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #6b7280;
+    }
+
+    .game-prog strong { color: #ef4444; }
+
+    .progress-track {
+      max-width: 300px;
+      margin: 6px auto 20px;
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      border: 2px solid #1a1a1a;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #facc15, #f97316);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .game-emoji {
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
+      margin-bottom: 16px;
+      line-height: 1;
+      display: block;
+    }
+
+    .letter-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(5px, 1.5vw, 10px);
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .letter-btn {
+      font-family: 'Boogaloo', cursive;
+      font-size: clamp(1.8rem, 5.5vw, 3rem);
+      width: clamp(44px, 8.5vw, 70px);
+      height: clamp(62px, 12vw, 90px);
+      background: #facc15;
+      color: #1a1a1a;
+      border: 3px solid #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 #1a1a1a;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 8px;
+      transition: transform 0.1s, background 0.15s;
+      position: relative;
+    }
+
+    .letter-btn:hover:not(:disabled) { transform: translateY(-4px); }
+    .letter-btn:active:not(:disabled) { transform: translateY(0); box-shadow: 1px 1px 0 #1a1a1a; }
+
+    .letter-char {
+      display: block;
+      line-height: 1;
+    }
+
+    .schwa-under {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      color: #16a34a;
+      margin-top: 4px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .letter-btn.correct {
+      background: #bbf7d0;
+      border-color: #16a34a;
+      box-shadow: 3px 3px 0 #16a34a;
+      cursor: default;
+    }
+
+    .letter-btn.correct .schwa-under { opacity: 1; }
+
+    .letter-btn.wrong-flash {
+      background: #fee2e2;
+      border-color: #ef4444;
+      box-shadow: 3px 3px 0 #ef4444;
+    }
+
+    .game-instruction {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    /* feedback tick / cross */
+    .fb-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .fb-icon {
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0;
+      transform: scale(0.4);
+      transition: opacity 0.15s, transform 0.2s;
+    }
+
+    .fb-icon.show {
+      opacity: 0.88;
+      transform: scale(1);
+    }
+
+    .fb-tick  { color: #16a34a; }
+    .fb-cross { color: #ef4444; }
+
+    /* shake animation */
+    @keyframes schwa-shake {
+      0%   { transform: translateX(0); }
+      15%  { transform: translateX(-9px); }
+      35%  { transform: translateX(9px); }
+      55%  { transform: translateX(-5px); }
+      75%  { transform: translateX(5px); }
+      90%  { transform: translateX(-2px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake-row { animation: schwa-shake 0.42s ease; }
+
+    /* complete screen */
+    .game-complete {
+      padding: 10px 0;
+    }
+
+    .complete-big-emoji {
+      font-size: clamp(3rem, 10vw, 5rem);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .game-complete h3 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      letter-spacing: 3px;
+      color: #ef4444;
+      text-shadow: 3px 3px 0 #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .game-complete p {
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: #374151;
+      margin-bottom: 20px;
+    }
+
+    .restart-btn {
+      font-family: 'Bangers', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      background: #1a1a1a;
+      color: #facc15;
+      border: 3px solid #1a1a1a;
+      border-radius: 999px;
+      padding: 12px 36px;
+      cursor: pointer;
+      box-shadow: 5px 5px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #ef4444; }
   </style>
 </head>
 <body>
@@ -316,6 +519,7 @@
 
   <nav class="cat-nav">
     <a href="#video">Video</a>
+    <a href="#game">Find the Schwa Game</a>
     <a href="#what-is-schwa">What Is Schwa?</a>
     <a href="#which-vowels">Which Vowels?</a>
     <a href="#examples">Examples</a>
@@ -330,6 +534,39 @@
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
         <iframe src="https://www.youtube.com/embed/aEpy3UR20mU" title="The Schwa Phonics Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- FIND THE SCHWA GAME -->
+    <section class="content-section" id="game">
+      <h2 class="section-heading">Find the Schwa Game</h2>
+      <div class="game-outer">
+
+        <!-- feedback overlay (tick / cross) -->
+        <div class="fb-overlay" id="fb-overlay">
+          <span class="fb-icon fb-tick"  id="fb-tick">&#10003;</span>
+          <span class="fb-icon fb-cross" id="fb-cross">&#10007;</span>
+        </div>
+
+        <!-- active game UI -->
+        <div id="game-ui">
+          <div class="game-meta">
+            <p class="game-prog">Word <strong id="g-cur">1</strong> of 30</p>
+            <div class="progress-track"><div class="progress-fill" id="g-prog-fill" style="width:0%"></div></div>
+          </div>
+          <span class="game-emoji" id="g-emoji">&#127996;</span>
+          <div class="letter-row" id="letter-row"></div>
+          <p class="game-instruction">Click the letter that makes the <strong>/&#x259;/</strong> sound</p>
+        </div>
+
+        <!-- completion screen -->
+        <div class="game-complete" id="game-complete" style="display:none">
+          <span class="complete-big-emoji">&#127881;</span>
+          <h3>Amazing Work!</h3>
+          <p>You found all 30 schwas!</p>
+          <button class="restart-btn" id="restart-btn">Play Again</button>
+        </div>
+
       </div>
     </section>
 
@@ -561,6 +798,154 @@
   <footer>
     &copy; 2026 Mr Spelling &mdash; Not Misspelling
   </footer>
+
+  <script>
+    const WORDS = [
+      { word: "panda",    schwa: 4, emoji: "🐼" },
+      { word: "sofa",     schwa: 3, emoji: "🛋️" },
+      { word: "alarm",    schwa: 0, emoji: "⏰" },
+      { word: "police",   schwa: 1, emoji: "🚓" },
+      { word: "maggot",   schwa: 4, emoji: "🐛" },
+      { word: "salad",    schwa: 3, emoji: "🥗" },
+      { word: "about",    schwa: 0, emoji: "💬" },
+      { word: "balloon",  schwa: 1, emoji: "🎈" },
+      { word: "butter",   schwa: 4, emoji: "🧈" },
+      { word: "pencil",   schwa: 4, emoji: "✏️" },
+      { word: "lemon",    schwa: 3, emoji: "🍋" },
+      { word: "garden",   schwa: 4, emoji: "🌱" },
+      { word: "tiger",    schwa: 3, emoji: "🐯" },
+      { word: "doctor",   schwa: 4, emoji: "🩺" },
+      { word: "button",   schwa: 4, emoji: "🔘" },
+      { word: "second",   schwa: 3, emoji: "⏱️" },
+      { word: "animal",   schwa: 4, emoji: "🦁" },
+      { word: "banana",   schwa: 5, emoji: "🍌" },
+      { word: "camera",   schwa: 5, emoji: "📷" },
+      { word: "dinosaur", schwa: 3, emoji: "🦕" },
+      { word: "elephant", schwa: 5, emoji: "🐘" },
+      { word: "kangaroo", schwa: 4, emoji: "🦘" },
+      { word: "dragon",   schwa: 4, emoji: "🐉" },
+      { word: "kitten",   schwa: 4, emoji: "🐱" },
+      { word: "rocket",   schwa: 4, emoji: "🚀" },
+      { word: "chicken",  schwa: 5, emoji: "🐔" },
+      { word: "winter",   schwa: 4, emoji: "❄️" },
+      { word: "spider",   schwa: 4, emoji: "🕷️" },
+      { word: "camel",    schwa: 3, emoji: "🐪" },
+      { word: "cotton",   schwa: 4, emoji: "🧵" },
+    ];
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    let queue = [], idx = 0, locked = false;
+
+    const gCur      = document.getElementById('g-cur');
+    const gEmoji    = document.getElementById('g-emoji');
+    const letterRow = document.getElementById('letter-row');
+    const progFill  = document.getElementById('g-prog-fill');
+    const fbTick    = document.getElementById('fb-tick');
+    const fbCross   = document.getElementById('fb-cross');
+    const gameUI    = document.getElementById('game-ui');
+    const gameEnd   = document.getElementById('game-complete');
+    const restartBtn = document.getElementById('restart-btn');
+
+    function startGame() {
+      queue = shuffle(WORDS);
+      idx = 0;
+      locked = false;
+      gameUI.style.display = '';
+      gameEnd.style.display = 'none';
+      fbTick.classList.remove('show');
+      fbCross.classList.remove('show');
+      loadWord();
+    }
+
+    function loadWord() {
+      locked = false;
+      const q = queue[idx];
+
+      gCur.textContent = idx + 1;
+      progFill.style.width = (idx / WORDS.length * 100) + '%';
+      gEmoji.textContent = q.emoji;
+
+      // Clear feedback icons
+      fbTick.classList.remove('show');
+      fbCross.classList.remove('show');
+
+      // Build letter buttons
+      letterRow.innerHTML = '';
+      letterRow.classList.remove('shake-row');
+
+      [...q.word].forEach((ch, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'letter-btn';
+        btn.innerHTML =
+          '<span class="letter-char">' + ch + '</span>' +
+          '<span class="schwa-under">&#x259;</span>';
+        btn.addEventListener('click', () => handleClick(i, btn));
+        letterRow.appendChild(btn);
+      });
+    }
+
+    function handleClick(i, btn) {
+      if (locked) return;
+      const q = queue[idx];
+
+      if (i === q.schwa) {
+        locked = true;
+
+        // Mark correct letter
+        btn.classList.add('correct');
+
+        // Disable all buttons
+        letterRow.querySelectorAll('.letter-btn').forEach(b => {
+          b.style.pointerEvents = 'none';
+        });
+
+        // Show green tick
+        fbTick.classList.add('show');
+
+        setTimeout(() => {
+          idx++;
+          if (idx >= WORDS.length) {
+            showComplete();
+          } else {
+            loadWord();
+          }
+        }, 1400);
+
+      } else {
+        // Wrong — flash the clicked button and shake the row
+        btn.classList.add('wrong-flash');
+        fbCross.classList.add('show');
+
+        // Trigger shake (force reflow to restart animation)
+        letterRow.classList.remove('shake-row');
+        void letterRow.offsetWidth;
+        letterRow.classList.add('shake-row');
+
+        setTimeout(() => {
+          btn.classList.remove('wrong-flash');
+          fbCross.classList.remove('show');
+        }, 520);
+      }
+    }
+
+    function showComplete() {
+      progFill.style.width = '100%';
+      fbTick.classList.remove('show');
+      gameUI.style.display = 'none';
+      gameEnd.style.display = '';
+    }
+
+    restartBtn.addEventListener('click', startGame);
+    startGame();
+  </script>
 
 </body>
 </html>
