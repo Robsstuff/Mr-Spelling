@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling — Plural Rule 3</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&family=Nunito:wght@400;700;900&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #fef08a; font-family: 'Nunito', sans-serif; color: #1a1a1a; min-height: 100vh; }
+
+    .page-header { background: linear-gradient(135deg, #facc15 0%, #f97316 100%); padding: 32px 24px 28px; text-align: center; border-bottom: 4px solid #1a1a1a; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Bangers', cursive; font-size: 1.1rem; letter-spacing: 1px; background: #1a1a1a; color: #facc15; text-decoration: none; padding: 6px 16px; border-radius: 999px; }
+    .page-header h1 { font-family: 'Bangers', cursive; font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: 4px; color: #1a1a1a; text-shadow: 4px 4px 0 #ef4444; }
+    .page-header .subtitle { display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(0.9rem, 2.8vw, 1.2rem); background: #1a1a1a; color: #facc15; padding: 4px 18px; border-radius: 999px; margin-top: 8px; letter-spacing: 1px; }
+
+    .cat-nav { background: #1a1a1a; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .cat-nav a { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.8rem; background: #333; color: #facc15; text-decoration: none; padding: 4px 12px; border-radius: 999px; border: 2px solid #facc15; transition: background 0.15s; }
+    .cat-nav a:hover { background: #facc15; color: #1a1a1a; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+    .content-section { margin-bottom: 52px; }
+    .section-heading { font-family: 'Bangers', cursive; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: 2px; color: #ef4444; text-shadow: 2px 2px 0 #1a1a1a; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #1a1a1a; }
+
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 4px solid #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0 #1a1a1a; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    .rule-box { border: 4px solid #1a1a1a; border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0 #1a1a1a; }
+    .rule-box-header { background: #ef4444; padding: 10px 22px; font-family: 'Bangers', cursive; letter-spacing: 3px; font-size: 1.15rem; color: #fff; }
+    .rule-formula { background: #1a1a1a; padding: 22px 24px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .formula-chip { font-family: 'Boogaloo', cursive; font-size: clamp(1.3rem, 4vw, 2rem); background: #facc15; color: #1a1a1a; padding: 10px 18px; border-radius: 10px; border: 3px solid #facc15; letter-spacing: 2px; text-align: center; }
+    .formula-chip.red  { background: #ef4444; color: #fff; border-color: #ef4444; }
+    .formula-chip.grey { background: #6b7280; color: #fff; border-color: #6b7280; text-decoration: line-through; }
+    .formula-op { font-family: 'Bangers', cursive; font-size: 2rem; color: #facc15; }
+    .rule-desc { background: #fff; padding: 20px 24px; }
+    .rule-desc p { font-weight: 700; font-size: 1rem; color: #374151; line-height: 1.75; margin-bottom: 14px; }
+    .rule-desc p:last-child { margin-bottom: 0; }
+    .rule-examples { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+    .rule-eg { font-family: 'Boogaloo', cursive; font-size: 1.1rem; background: #fef08a; color: #1a1a1a; padding: 5px 14px; border-radius: 999px; border: 2px solid #1a1a1a; box-shadow: 2px 2px 0 #1a1a1a; }
+
+    .lyrics-box { background: #1a1a1a; border: 3px solid #1a1a1a; border-radius: 14px; padding: 28px; box-shadow: 5px 5px 0 #ef4444; }
+    .lyric-block { margin-bottom: 20px; }
+    .lyric-block:last-child { margin-bottom: 0; }
+    .lyric-chorus { color: #facc15; font-weight: 900; font-size: 1.02rem; line-height: 1.75; }
+    .lyric-verse  { color: #f1f5f9; font-weight: 700; font-size: 0.97rem; line-height: 1.75; padding-left: 16px; border-left: 3px solid #ef4444; }
+    .lyric-intro  { color: #94a3b8; font-weight: 700; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+    .lyric-outro  { color: #6b7280; font-weight: 700; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+
+    .quiz-outer { background: #fff; border: 4px solid #1a1a1a; border-radius: 20px; padding: 28px 20px 32px; box-shadow: 7px 7px 0 #1a1a1a; text-align: center; }
+    .quiz-meta { margin-bottom: 6px; }
+    .quiz-prog { font-family: 'Bangers', cursive; font-size: 1.1rem; letter-spacing: 1px; color: #6b7280; }
+    .quiz-prog strong { color: #ef4444; }
+    .q-progress-track { max-width: 300px; margin: 6px auto 20px; height: 10px; background: #e5e7eb; border-radius: 999px; border: 2px solid #1a1a1a; overflow: hidden; }
+    .q-progress-fill { height: 100%; background: linear-gradient(90deg, #facc15, #f97316); border-radius: 999px; transition: width 0.4s ease; }
+    .quiz-word-card { background: #1a1a1a; border-radius: 16px; padding: 22px 32px; display: inline-block; min-width: 180px; margin-bottom: 24px; box-shadow: 4px 4px 0 #ef4444; }
+    .quiz-emoji { font-size: clamp(2.8rem, 8vw, 4rem); display: block; margin-bottom: 6px; }
+    .quiz-word  { font-family: 'Boogaloo', cursive; font-size: clamp(2rem, 7vw, 3rem); color: #facc15; letter-spacing: 3px; display: block; }
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 500px; margin: 0 auto; }
+    .opt-btn { font-family: 'Boogaloo', cursive; font-size: clamp(1.2rem, 4vw, 1.6rem); background: #facc15; color: #1a1a1a; border: 3px solid #1a1a1a; border-radius: 12px; padding: 14px 8px; cursor: pointer; box-shadow: 3px 3px 0 #1a1a1a; transition: transform 0.1s, background 0.15s; letter-spacing: 1px; }
+    .opt-btn:hover:not(:disabled) { transform: translateY(-3px); }
+    .opt-btn.correct { background: #bbf7d0 !important; border-color: #16a34a !important; box-shadow: 3px 3px 0 #16a34a !important; cursor: default; }
+    .opt-btn.wrong   { background: #fee2e2 !important; border-color: #ef4444 !important; box-shadow: 3px 3px 0 #ef4444 !important; animation: qshake 0.4s ease; }
+    @keyframes qshake { 0%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} 100%{transform:translateX(0)} }
+
+    .quiz-complete { padding: 10px 0; }
+    .quiz-complete-emoji { font-size: clamp(3rem, 10vw, 5rem); display: block; margin-bottom: 10px; }
+    .quiz-complete h3 { font-family: 'Bangers', cursive; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 3px; color: #ef4444; text-shadow: 3px 3px 0 #1a1a1a; margin-bottom: 8px; }
+    .quiz-complete p { font-weight: 900; font-size: 1.05rem; color: #374151; margin-bottom: 20px; }
+    .restart-btn { font-family: 'Bangers', cursive; font-size: 1.4rem; letter-spacing: 2px; background: #1a1a1a; color: #facc15; border: 3px solid #1a1a1a; border-radius: 999px; padding: 12px 36px; cursor: pointer; box-shadow: 5px 5px 0 #ef4444; transition: transform 0.1s, box-shadow 0.1s; }
+    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #ef4444; }
+
+    footer { background: #facc15; text-align: center; padding: 20px; font-weight: 900; font-size: 0.95rem; color: #1a1a1a; border-top: 4px solid #1a1a1a; }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; Home</a>
+    <h1>Plural Rule 3</h1>
+    <span class="subtitle">Consonant + Y? Change Y to I and add &#8209;ES</span>
+  </header>
+
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#rule">The Rule</a>
+    <a href="#lyrics">Song Lyrics</a>
+    <a href="#game">Play the Game</a>
+  </nav>
+
+  <main>
+
+    <!-- VIDEO -->
+    <section class="content-section" id="video">
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/ecFwJRskU8E" title="Plural Rule 3 by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- THE RULE -->
+    <section class="content-section" id="rule">
+      <h2 class="section-heading">The Rule</h2>
+      <div class="rule-box">
+        <div class="rule-box-header">PLURAL RULE 3</div>
+        <div class="rule-formula">
+          <span class="formula-chip">consonant</span>
+          <span class="formula-op">+</span>
+          <span class="formula-chip grey">Y</span>
+          <span class="formula-op">&#8594;</span>
+          <span class="formula-chip">consonant</span>
+          <span class="formula-op">+</span>
+          <span class="formula-chip red">IES</span>
+        </div>
+        <div class="rule-desc">
+          <p>When a noun ends in a <strong>consonant followed by Y</strong>, change the Y to I and add <strong>-ES</strong>. The Y is replaced — it does not stay in the word.</p>
+          <p><strong>Exception:</strong> if the letter before the Y is a vowel (a, e, i, o, u), just add -S instead — for example, toy &#8594; toys, monkey &#8594; monkeys, key &#8594; keys.</p>
+          <div class="rule-examples">
+            <span class="rule-eg">baby &#8594; babies</span>
+            <span class="rule-eg">pony &#8594; ponies</span>
+            <span class="rule-eg">city &#8594; cities</span>
+            <span class="rule-eg">story &#8594; stories</span>
+            <span class="rule-eg">puppy &#8594; puppies</span>
+            <span class="rule-eg">berry &#8594; berries</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONG LYRICS -->
+    <section class="content-section" id="lyrics">
+      <h2 class="section-heading">Song Lyrics</h2>
+      <div class="lyrics-box">
+        <div class="lyric-block">
+          <p class="lyric-intro">Are you ready to learn plural rule number three?<br>Here we go.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-chorus">Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.<br>
+          Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does baby end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Babies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-chorus">Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.<br>
+          Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does pony end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Ponies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does berry end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Berries.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-chorus">Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.<br>
+          Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does puppy end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Puppies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does bunny end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Bunnies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does story end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Stories.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does daisy end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Daisies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does bully end with a consonant followed by a Y? Yes.<br>
+          Change the Y to an I. Add ES. Bullies.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-chorus">Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.<br>
+          Does the base word end with a consonant followed by a Y?<br>
+          If yes, change the Y to an I and add ES.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-verse">Does the base word end with a consonant followed by a Y? No.<br>
+          Well, I guess there are six more plural rules that we should know.</p>
+        </div>
+        <div class="lyric-block">
+          <p class="lyric-outro">Mr. Spelling. Silly.<br>Bye-bye.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ GAME -->
+    <section class="content-section" id="game">
+      <h2 class="section-heading">What Is the Plural?</h2>
+      <div class="quiz-outer">
+        <div id="quiz-ui">
+          <div class="quiz-meta">
+            <p class="quiz-prog">Question <strong id="q-cur">1</strong> of 30</p>
+            <div class="q-progress-track"><div class="q-progress-fill" id="q-fill" style="width:0%"></div></div>
+          </div>
+          <div class="quiz-word-card">
+            <span class="quiz-emoji" id="q-emoji">&#128118;</span>
+            <span class="quiz-word" id="q-word">baby</span>
+          </div>
+          <div class="options-grid" id="options-grid"></div>
+        </div>
+        <div class="quiz-complete" id="quiz-complete" style="display:none">
+          <span class="quiz-complete-emoji">&#127881;</span>
+          <h3>You Did It!</h3>
+          <p>You matched all 30 plurals!</p>
+          <button class="restart-btn" id="restart-btn">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
+
+  <script>
+    // Rule 3: consonant + y → remove y, add ies
+    const WORDS = [
+      { word:"baby",      emoji:"👶",    plural:"babies"      },
+      { word:"pony",      emoji:"🐴",    plural:"ponies"      },
+      { word:"berry",     emoji:"🫐",    plural:"berries"     },
+      { word:"puppy",     emoji:"🐶",    plural:"puppies"     },
+      { word:"bunny",     emoji:"🐰",    plural:"bunnies"     },
+      { word:"story",     emoji:"📖",    plural:"stories"     },
+      { word:"daisy",     emoji:"🌼",    plural:"daisies"     },
+      { word:"city",      emoji:"🏙️",   plural:"cities"      },
+      { word:"party",     emoji:"🎉",    plural:"parties"     },
+      { word:"penny",     emoji:"🪙",    plural:"pennies"     },
+      { word:"candy",     emoji:"🍬",    plural:"candies"     },
+      { word:"cherry",    emoji:"🍒",    plural:"cherries"    },
+      { word:"country",   emoji:"🌍",    plural:"countries"   },
+      { word:"body",      emoji:"🫀",    plural:"bodies"      },
+      { word:"fairy",     emoji:"🧚",    plural:"fairies"     },
+      { word:"lady",      emoji:"👩",    plural:"ladies"      },
+      { word:"lily",      emoji:"🌷",    plural:"lilies"      },
+      { word:"lorry",     emoji:"🚛",    plural:"lorries"     },
+      { word:"family",    emoji:"👨‍👩‍👧",  plural:"families"    },
+      { word:"butterfly", emoji:"🦋",    plural:"butterflies" },
+      { word:"hobby",     emoji:"🎨",    plural:"hobbies"     },
+      { word:"jelly",     emoji:"🍮",    plural:"jellies"     },
+      { word:"poppy",     emoji:"🌺",    plural:"poppies"     },
+      { word:"study",     emoji:"📚",    plural:"studies"     },
+      { word:"trophy",    emoji:"🏆",    plural:"trophies"    },
+      { word:"worry",     emoji:"😰",    plural:"worries"     },
+      { word:"copy",      emoji:"📋",    plural:"copies"      },
+      { word:"army",      emoji:"💂",    plural:"armies"      },
+      { word:"diary",     emoji:"📔",    plural:"diaries"     },
+      { word:"injury",    emoji:"🤕",    plural:"injuries"    },
+    ];
+
+    function getWrongs(item) {
+      const w = item.word;
+      // common mistakes: keep y and add s, keep y and add es, no change
+      return [ w + "s", w + "es", w ];
+    }
+
+    function shuffle(a) {
+      const b=[...a];
+      for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}
+      return b;
+    }
+
+    let queue=[], idx=0, locked=false;
+    const qCur=document.getElementById("q-cur"), qEmoji=document.getElementById("q-emoji"),
+          qWord=document.getElementById("q-word"), qFill=document.getElementById("q-fill"),
+          grid=document.getElementById("options-grid"), quizUI=document.getElementById("quiz-ui"),
+          quizEnd=document.getElementById("quiz-complete");
+
+    function startGame() {
+      queue=shuffle(WORDS); idx=0; locked=false;
+      quizUI.style.display=""; quizEnd.style.display="none"; loadQ();
+    }
+
+    function loadQ() {
+      locked=false;
+      const q=queue[idx];
+      qCur.textContent=idx+1;
+      qFill.style.width=(idx/WORDS.length*100)+"%";
+      qEmoji.textContent=q.emoji;
+      qWord.textContent=q.word;
+      const opts=shuffle([q.plural,...getWrongs(q)]);
+      grid.innerHTML="";
+      opts.forEach(opt=>{
+        const btn=document.createElement("button");
+        btn.className="opt-btn"; btn.textContent=opt;
+        btn.addEventListener("click",()=>handleOpt(btn, opt===q.plural));
+        grid.appendChild(btn);
+      });
+    }
+
+    function handleOpt(btn, isCorrect) {
+      if(locked) return;
+      if(isCorrect) {
+        locked=true;
+        btn.classList.add("correct");
+        grid.querySelectorAll(".opt-btn").forEach(b=>b.disabled=true);
+        setTimeout(()=>{ idx++; idx>=WORDS.length ? showEnd() : loadQ(); }, 800);
+      } else {
+        btn.classList.add("wrong");
+        setTimeout(()=>btn.classList.remove("wrong"), 500);
+      }
+    }
+
+    function showEnd() {
+      qFill.style.width="100%";
+      quizUI.style.display="none"; quizEnd.style.display="";
+    }
+
+    document.getElementById("restart-btn").addEventListener("click", startGame);
+    startGame();
+  </script>
+
+</body>
+</html>
