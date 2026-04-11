@@ -82,9 +82,9 @@
 
   <nav class="cat-nav">
     <a href="#video">Video</a>
+    <a href="#game">Play the Game</a>
     <a href="#rule">The Rule</a>
     <a href="#lyrics">Song Lyrics</a>
-    <a href="#game">Play the Game</a>
   </nav>
 
   <main>
@@ -96,6 +96,32 @@
         <iframe src="https://www.youtube.com/embed/ecFwJRskU8E" title="Plural Rule 3 by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
+
+
+    <!-- QUIZ GAME -->
+    <section class="content-section" id="game">
+      <h2 class="section-heading">What Is the Plural?</h2>
+      <div class="quiz-outer">
+        <div id="quiz-ui">
+          <div class="quiz-meta">
+            <p class="quiz-prog">Question <strong id="q-cur">1</strong> of 30</p>
+            <div class="q-progress-track"><div class="q-progress-fill" id="q-fill" style="width:0%"></div></div>
+          </div>
+          <div class="quiz-word-card">
+            <span class="quiz-emoji" id="q-emoji">&#128118;</span>
+            <span class="quiz-word" id="q-word">baby</span>
+          </div>
+          <div class="options-grid" id="options-grid"></div>
+        </div>
+        <div class="quiz-complete" id="quiz-complete" style="display:none">
+          <span class="quiz-complete-emoji">&#127881;</span>
+          <h3>You Did It!</h3>
+          <p>You matched all 30 plurals!</p>
+          <button class="restart-btn" id="restart-btn">Play Again</button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- THE RULE -->
     <section class="content-section" id="rule">
@@ -125,6 +151,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- SONG LYRICS -->
     <section class="content-section" id="lyrics">
@@ -195,30 +222,6 @@
         </div>
         <div class="lyric-block">
           <p class="lyric-outro">Mr. Spelling. Silly.<br>Bye-bye.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUIZ GAME -->
-    <section class="content-section" id="game">
-      <h2 class="section-heading">What Is the Plural?</h2>
-      <div class="quiz-outer">
-        <div id="quiz-ui">
-          <div class="quiz-meta">
-            <p class="quiz-prog">Question <strong id="q-cur">1</strong> of 30</p>
-            <div class="q-progress-track"><div class="q-progress-fill" id="q-fill" style="width:0%"></div></div>
-          </div>
-          <div class="quiz-word-card">
-            <span class="quiz-emoji" id="q-emoji">&#128118;</span>
-            <span class="quiz-word" id="q-word">baby</span>
-          </div>
-          <div class="options-grid" id="options-grid"></div>
-        </div>
-        <div class="quiz-complete" id="quiz-complete" style="display:none">
-          <span class="quiz-complete-emoji">&#127881;</span>
-          <h3>You Did It!</h3>
-          <p>You matched all 30 plurals!</p>
-          <button class="restart-btn" id="restart-btn">Play Again</button>
         </div>
       </div>
     </section>
