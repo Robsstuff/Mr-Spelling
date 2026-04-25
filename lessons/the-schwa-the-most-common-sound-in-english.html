@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling &mdash; The Schwa, The Most Common Sound in English</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.4rem, 8vw, 4.5rem);
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .cat-nav {
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      background: #333;
+      color: #facc15;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 2px solid #facc15;
+      transition: background 0.15s;
+    }
+
+    .cat-nav a:hover { background: #facc15; color: #1a1a1a; }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .content-section { margin-bottom: 52px; }
+
+    .section-heading {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #ef4444;
+      text-shadow: 2px 2px 0 #1a1a1a;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1a1a1a;
+    }
+
+    .video-label {
+      font-family: 'Bangers', cursive;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+      margin: 22px 0 10px;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: 4px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .description-box {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: 3px solid #1a1a1a;
+      box-shadow: 4px 4px 0 #ef4444;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .download-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #ef4444;
+    }
+
+    .no-ppt {
+      font-weight: 700;
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    .lyrics-box {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    .lyrics-box p { margin-bottom: 4px; }
+
+    .lyrics-box .lyric-break {
+      margin: 14px 0 10px;
+      border-top: 2px dashed #e5e7eb;
+    }
+
+    .lyrics-placeholder { color: #9ca3af; font-style: italic; }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="index.html">&#8592; All Topics</a>
+    <h1>The Schwa, The Most Common Sound in English</h1>
+  </header>
+
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#description">Spelling Rule</a>
+    <a href="#powerpoint">PowerPoint</a>
+    <a href="#lyrics">Lyrics</a>
+  </nav>
+
+  <main>
+
+    <section class="content-section" id="video">
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/VjIkSI-KJnY" title="The Schwa, The Most Common Sound in English. #phonics #eslteacher#scienceofreading" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="content-section" id="description">
+      <h2 class="section-heading">The Spelling Rule</h2>
+      <div class="description-box">
+        <p>A spelling rule video by Mr Spelling about The Schwa, The Most Common Sound in English.</p>
+      </div>
+    </section>
+
+    <section class="content-section" id="powerpoint">
+      <h2 class="section-heading">PowerPoint</h2>
+      <p class="no-ppt">No PowerPoint available for this topic yet.</p>
+    </section>
+
+    <section class="content-section" id="lyrics">
+      <h2 class="section-heading">Song Lyrics</h2>
+      <div class="lyrics-box">
+        <p class="lyrics-placeholder">Lyrics coming soon.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>

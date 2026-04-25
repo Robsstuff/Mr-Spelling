@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Spelling &mdash; All Spelling Topics</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fef08a;
+      font-family: 'Nunito', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+      border-bottom: 4px solid #1a1a1a;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      background: #1a1a1a;
+      color: #facc15;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .page-header h1 {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2.4rem, 8vw, 4.5rem);
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-shadow: 4px 4px 0 #ef4444;
+    }
+
+    .page-header p {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-top: 8px;
+      opacity: 0.8;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: #fff;
+      border: 3px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #1a1a1a;
+      text-decoration: none;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .topic-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 #1a1a1a;
+    }
+
+    .topic-card-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .topic-card-thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #facc15, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bangers', cursive;
+      font-size: 2rem;
+      color: #1a1a1a;
+      letter-spacing: 2px;
+    }
+
+    .topic-card-body {
+      padding: 14px 16px 18px;
+      flex: 1;
+    }
+
+    .topic-card-title {
+      font-family: 'Bangers', cursive;
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fef08a;
+      border: 2px solid #1a1a1a;
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-right: 4px;
+      margin-top: 4px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    footer {
+      background: #facc15;
+      text-align: center;
+      padding: 20px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      border-top: 4px solid #1a1a1a;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="back-link" href="../index.html">&#8592; Home</a>
+    <h1>All Spelling Topics</h1>
+    <p>99 topics with videos, lyrics &amp; PowerPoints</p>
+  </header>
+
+  <main>
+    <div class="topics-grid">
+      <a class="topic-card" href="ck-or-k-for-the-final-k-sound.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/4MHSHugYLc8/hqdefault.jpg" alt="'ck' or 'k' For The Final /k/ Sound" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">'ck' or 'k' For The Final /k/ Sound</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="add-ies-to-make-plurals-with-words-that-end-in-y.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/RMhMLSa5XGg/hqdefault.jpg" alt="Add 'ies' to make plurals with words that end in 'y'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Add 'ies' to make plurals with words that end in 'y'</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="add-s-to-make-a-plural-an-educational.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/duZ-eu0aI7E/hqdefault.jpg" alt="Add -S to make a plural: An Educational" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Add -S to make a plural: An Educational</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="add-ves-to-english-nouns-ending-in-f-or-fe-to-make-a-plural.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/rYIZoTUjzBI/hqdefault.jpg" alt="Add VES to English nouns ending in F or FE to make a plural" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Add VES to English nouns ending in F or FE to make a plural</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adding-ed-and-ing.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/tsQcGZreUPw/hqdefault.jpg" alt="Adding 'ed' and 'ing'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adding 'ed' and 'ing'</div>
+          <div><span class="badge">2 songs</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adding-es-to-make-plurals-an-educational.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/W9M6T-dMG8E/hqdefault.jpg" alt="Adding 'es' to make plurals: An educational" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adding 'es' to make plurals: An educational</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adding-or-instead-of-er.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/Lpg4jRFFkjQ/hqdefault.jpg" alt="Adding 'or' instead of 'er'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adding 'or' instead of 'er'</div>
+          <div><span class="badge">2 songs</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adding-ves-to-make-plurals-from-words-that-in-f-or-fe.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/nIjhAuUzQ1k/hqdefault.jpg" alt="Adding -ves to make plurals from words that in 'f' or 'fe'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adding -ves to make plurals from words that in 'f' or 'fe'</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adding-the-suffixes-ful-and-fully.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/nHNU1-jANVM/hqdefault.jpg" alt="Adding the Suffixes -ful and -fully" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adding the Suffixes -ful and -fully</div>
+          <div><span class="badge">1 song</span><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="adverb-spelling-rule-lesson-drop-the-y-add-ily.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/Jqc5q1oyRho/hqdefault.jpg" alt="Adverb Spelling Rule Lesson: Drop The 'y' Add 'ily'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Adverb Spelling Rule Lesson: Drop The 'y' Add 'ily'</div>
+          <div><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="air.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/R3lG61bgAs8/hqdefault.jpg" alt="AIR" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">AIR</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="all-plural-spelling-rules-in-a.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/kk-h7Y0O3xw/hqdefault.jpg" alt="All Plural Spelling Rules in a" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">All Plural Spelling Rules in a</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="apostrophe-of-possession.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/x9ec3Mzh9KE/hqdefault.jpg" alt="Apostrophe of Possession" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Apostrophe of Possession</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="articles-a-and-an-spelling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/bZq3Ou7E0rg/hqdefault.jpg" alt="Articles 'A' and 'An.' Spelling Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Articles 'A' and 'An.' Spelling Rule</div>
+          <div><span class="badge">1 song</span><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="bossy-r.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/korz2wR6AOw/hqdefault.jpg" alt="Bossy R" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Bossy R</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="collective-nouns.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/m6RAFyTSicg/hqdefault.jpg" alt="Collective Nouns" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Collective Nouns</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="contractions-rap-song-i-can-t-stop-singing.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/XXjt8CLBHWw/hqdefault.jpg" alt="Contractions Rap Song! I CAN'T STOP SINGING" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Contractions Rap Song! I CAN'T STOP SINGING</div>
+          <div><span class="badge">1 lesson</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="desert-and-dessert.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/A7E-w7sMZKQ/hqdefault.jpg" alt="Desert and Dessert" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Desert and Dessert</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="dge-or-ge-the-final-j-sound-d.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/qZmaK_xjS9w/hqdefault.jpg" alt="DGE or GE? The Final 'j' Sound d͡ʒ" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">DGE or GE? The Final 'j' Sound d͡ʒ</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="digraph-ch-makes-three-sounds.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/0amigSygcC8/hqdefault.jpg" alt="Digraph CH makes three sounds" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Digraph CH makes three sounds</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="double-the-last-consonant-spelling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/NXgsbrIXFdM/hqdefault.jpg" alt="Double the Last Consonant Spelling Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Double the Last Consonant Spelling Rule</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="drop-the-e-add-ing.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/m-EH-AgXw6A/hqdefault.jpg" alt="Drop the 'e' add 'ing'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Drop the 'e' add 'ing'</div>
+          <div><span class="badge">2 songs</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="drop-the-f-and-add-ves-to-make-plurals.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/I1wf88z49tA/hqdefault.jpg" alt="Drop the 'f' and add 'ves' to make plurals" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Drop the 'f' and add 'ves' to make plurals</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="drop-the-y-add-ily-to-make-adverbs.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/cFuYZ7y3K2I/hqdefault.jpg" alt="Drop the 'y' add 'ily' to make adverbs" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Drop the 'y' add 'ily' to make adverbs</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ea.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/BDH0DOi9eHM/hqdefault.jpg" alt="EA" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">EA</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ear-phonics.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/tKBEtk0lKj8/hqdefault.jpg" alt="EAR Phonics" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">EAR Phonics</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ending-sounds-for-y.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/he64qf_YKiw/hqdefault.jpg" alt="Ending sounds for Y" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Ending sounds for Y</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="english-words-don-t-end-with-the-letter-i.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/jutOKyKaK-s/hqdefault.jpg" alt="English words don't end with the letter I" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">English words don't end with the letter I</div>
+          <div><span class="badge">3 songs</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="every-syllable-needs-a-vowel.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/wJbSEpIWfqU/hqdefault.jpg" alt="Every Syllable Needs A Vowel" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Every Syllable Needs A Vowel</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="f-sound.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/7meIekvVDmk/hqdefault.jpg" alt="F Sound" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">F Sound</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="homophones.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/zFn9Nj1ThDA/hqdefault.jpg" alt="Homophones" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Homophones</div>
+          <div><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="how-to-spell-words-that-end-in-a-j-sound.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/AFM8EBD199c/hqdefault.jpg" alt="How to Spell Words That End in a /j/ Sound" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">How to Spell Words That End in a /j/ Sound</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="how-to-spell-words-with-the-sounds-oi-and-oy-spelling-rule-lesson.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/g9znxk0JQB4/hqdefault.jpg" alt="How to spell words with the sounds 'oi' and 'oy.' Spelling rule lesson." loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">How to spell words with the sounds 'oi' and 'oy.' Spelling rule lesson.</div>
+          <div><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ies-english-plurals.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/6q4zrdFXIEo/hqdefault.jpg" alt="IES English Plurals" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">IES English Plurals</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="irregular-past-tense-verbs.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/5gSilgIWc58/hqdefault.jpg" alt="Irregular Past Tense Verbs" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Irregular Past Tense Verbs</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="irregular-plurals-a.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/kSmEWsFktTA/hqdefault.jpg" alt="Irregular Plurals: A" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Irregular Plurals: A</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="iuvj-english-words-don-t-end-in-i-u-v-j.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/PzNUvna1TCw/hqdefault.jpg" alt="IUVJ: English Words Don't End In I, U, V,  & J" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">IUVJ: English Words Don't End In I, U, V,  & J</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="jolly-phonics-type.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/tHPhXu5Vozw/hqdefault.jpg" alt="Jolly Phonics Type" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Jolly Phonics Type</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="kn-gn-digraphs.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/dqUxdYBvK0o/hqdefault.jpg" alt="KN GN DIGRAPHS" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">KN GN DIGRAPHS</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="letter-b.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/tFq6jNBhJJ4/hqdefault.jpg" alt="Letter B" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Letter B</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="letter-l.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/heH0zU5gSDI/hqdefault.jpg" alt="Letter L" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Letter L</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="letter-p.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/zdL1aoyiY8A/hqdefault.jpg" alt="Letter P" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Letter P</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="letter-s.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/gT6ut47Dskg/hqdefault.jpg" alt="Letter S" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Letter S</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="long-and-short-vowels.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/dvq5OVLmexo/hqdefault.jpg" alt="Long and Short Vowels" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Long and Short Vowels</div>
+          <div><span class="badge">1 lesson</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="long-vowel-a.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/9FXaFmg1nhY/hqdefault.jpg" alt="Long Vowel A" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Long Vowel A</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="long-vowel-i-spelling-patterns-and-spelling-rules.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/fhlcAw5q8ls/hqdefault.jpg" alt="Long Vowel I Spelling Patterns and Spelling Rules." loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Long Vowel I Spelling Patterns and Spelling Rules.</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="long-vowel-o-spelling-patterns-and-spelling-rules.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/HsUYOFLXYBg/hqdefault.jpg" alt="Long Vowel O Spelling Patterns and Spelling Rules" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Long Vowel O Spelling Patterns and Spelling Rules</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="making-adverbs-with-words-that-end-in-ic.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/IMf9iOMlHJA/hqdefault.jpg" alt="Making Adverbs With Words That End in 'ic'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Making Adverbs With Words That End in 'ic'</div>
+          <div><span class="badge">1 song</span><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="making-plurals-by-adding-ies.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/NCPcEFs6Ytc/hqdefault.jpg" alt="Making Plurals by Adding 'ies'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Making Plurals by Adding 'ies'</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="making-plurals-by-adding-the-suffix-es.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/DSGjqoi2BwI/hqdefault.jpg" alt="Making Plurals By Adding the Suffix -es" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Making Plurals By Adding the Suffix -es</div>
+          <div><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="making-plurals-from-words-that-end-in-the-letter-o.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/DsEPF57btI8/hqdefault.jpg" alt="Making plurals from words that end in the letter 'o'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Making plurals from words that end in the letter 'o'</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="oes-plurals.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/8pBJIXe3Kho/hqdefault.jpg" alt="OES Plurals" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">OES Plurals</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="oo-phonics.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/6xhJramIiMQ/hqdefault.jpg" alt="OO Phonics" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">OO Phonics</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="open-and-closed-syllables.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/X5tvfVd13pQ/hqdefault.jpg" alt="Open and Closed Syllables" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Open and Closed Syllables</div>
+          <div><span class="badge">1 lesson</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ough.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/prCGdftlWfc/hqdefault.jpg" alt="OUGH" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">OUGH</div>
+          <div><span class="badge">2 songs</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ow.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/WIgiQLqaKdk/hqdefault.jpg" alt="OW" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">OW</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="oy-and-oi.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/MQnVS9lgfd4/hqdefault.jpg" alt="OY and OI" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">OY and OI</div>
+          <div><span class="badge">2 songs</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="phonics-song-spelling-rules-for-the-final-j-sound.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/B6VdHofHWlk/hqdefault.jpg" alt="Phonics song, Spelling Rules for the final J sound" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Phonics song, Spelling Rules for the final J sound</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plural-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/TR8F1HtfBsk/hqdefault.jpg" alt="Plural Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plural Rule</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plural-rule-1-add-s-to-make-most-english-nouns-plural.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/z7uBm-2oSNk/hqdefault.jpg" alt="Plural Rule 1: Add -S To Make Most English Nouns Plural" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plural Rule 1: Add -S To Make Most English Nouns Plural</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plural-rule-2-add-suffix-es-to-nouns-ending-in-ch-sh-z-s-x-to-make-plurals.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/ueGcFPZPuic/hqdefault.jpg" alt="Plural Rule 2: Add Suffix -ES to Nouns Ending in CH, SH , Z ,S & X to Make Plurals" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plural Rule 2: Add Suffix -ES to Nouns Ending in CH, SH , Z ,S & X to Make Plurals</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plural-rule-3-ies-plurals.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/ecFwJRskU8E/hqdefault.jpg" alt="Plural Rule 3: -IES Plurals" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plural Rule 3: -IES Plurals</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plural-rule-4-add-ves-to-make-english-plurals-for-nouns-ending-in-f-and-fe.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/6Bq1buYm0cs/hqdefault.jpg" alt="Plural Rule 4: Add -VES to Make English Plurals for Nouns Ending In F and FE" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plural Rule 4: Add -VES to Make English Plurals for Nouns Ending In F and FE</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plurals-from-words-that-end-in-o.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/-Qe49PoJ6go/hqdefault.jpg" alt="Plurals From Words That End in 'o'" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plurals From Words That End in 'o'</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="plurals-that-use-the-same-word-song-defective-nouns.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/nLcpZsZX6yM/hqdefault.jpg" alt="Plurals That Use The Same Word Song (Defective Nouns)" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Plurals That Use The Same Word Song (Defective Nouns)</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="qu.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/PB79xnrTGfU/hqdefault.jpg" alt="QU" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">QU</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="qu-sound-a-spelling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/CaeGp41StcM/hqdefault.jpg" alt="QU Sound: A spelling rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">QU Sound: A spelling rule</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="silent-e-spelling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/BZbYM9KOaHY/hqdefault.jpg" alt="Silent 'e' Spelling Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Silent 'e' Spelling Rule</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="silent-final-e.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/fO04lVQN21o/hqdefault.jpg" alt="Silent Final E" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Silent Final E</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="silly-syllable.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/xaUo5GmFqRE/hqdefault.jpg" alt="Silly Syllable" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Silly Syllable</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="soft-c-g.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/GylCbrvYZNY/hqdefault.jpg" alt="SOFT C & G" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">SOFT C & G</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="soft-c-soft-g.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/dio4XkyqVcQ/hqdefault.jpg" alt="Soft C & Soft G" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Soft C & Soft G</div>
+          <div><span class="badge">2 songs</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="spelling-rule-for-ch-and-tch.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/3HmsslLpl6Y/hqdefault.jpg" alt="Spelling rule for CH and TCH" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Spelling rule for CH and TCH</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="spelling-rules-drop-the-e-add-ing.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/AlQ9CBY65sc/hqdefault.jpg" alt="Spelling Rules - Drop the 'e' add 'ing" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Spelling Rules - Drop the 'e' add 'ing</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="swaggy-phonics-rap-the-letter-h-sound.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/jwuzC1-BmWY/hqdefault.jpg" alt="Swaggy Phonics Rap: The Letter H Sound" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Swaggy Phonics Rap: The Letter H Sound</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="tch-or-ch.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/EqjOdCKCa_s/hqdefault.jpg" alt="TCH or CH?" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">TCH or CH?</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="th.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/lkupZZ6yj00/hqdefault.jpg" alt="TH" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">TH</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-air-sound-made-by-the-trigraphs-air-are-ear.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/8q-qJYq46oA/hqdefault.jpg" alt="The 'air' Sound Made By The Trigraphs AIR, ARE & EAR" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The 'air' Sound Made By The Trigraphs AIR, ARE & EAR</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-alphabet-is-made-from-vowels-and-consonantsl.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/hhkya-wZ69g/hqdefault.jpg" alt="The alphabet is made from vowels and consonantsl" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The alphabet is made from vowels and consonantsl</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-cat-kite-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/iDK58R4QzUY/hqdefault.jpg" alt="The Cat Kite Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Cat Kite Rule</div>
+          <div><span class="badge">1 lesson</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-digraphs-ow-ou-a-spelling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/i4R_eapalGk/hqdefault.jpg" alt="The Digraphs 'ow' & 'ou." A Spelling Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Digraphs 'ow' & 'ou." A Spelling Rule</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-doubling-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/aakvH79zzSU/hqdefault.jpg" alt="The Doubling Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Doubling Rule</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-final-j-sound-dge-and-ge.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/uXA3PfE_4Qc/hqdefault.jpg" alt="The Final /j/ sound -dge and -ge" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Final /j/ sound -dge and -ge</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-floss-rule.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/lIfc-s97mhM/hqdefault.jpg" alt="The Floss Rule" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Floss Rule</div>
+          <div><span class="badge">1 song</span><span class="badge">1 lesson</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-letter-y-has-four-main-sounds.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/4ot3NH4Wpos/hqdefault.jpg" alt="The Letter Y Has Four Main Sounds" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Letter Y Has Four Main Sounds</div>
+          <div><span class="badge">1 song</span><span class="badge">PowerPoint</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-schwa-phonics-song.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/aEpy3UR20mU/hqdefault.jpg" alt="The Schwa Phonics Song /ə/" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Schwa Phonics Song /ə/</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-schwa-the-most-common-sound-in-english.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/VjIkSI-KJnY/hqdefault.jpg" alt="The Schwa, The Most Common Sound in English" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Schwa, The Most Common Sound in English</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-seven-plural-rules-in-a.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/koucv8ZUHzk/hqdefault.jpg" alt="The Seven Plural Rules in a" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Seven Plural Rules in a</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-sound-y-makes-when-it-is-at-the-end-of-a-word.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/ALaf3fxcK6A/hqdefault.jpg" alt="The sound 'y' makes when it is at the end of a word" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The sound 'y' makes when it is at the end of a word</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-suffix-ed.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/GMdIbocy150/hqdefault.jpg" alt="THE SUFFIX -ED" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">THE SUFFIX -ED</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-suffix-er.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/O_lVtJT5VMY/hqdefault.jpg" alt="THE SUFFIX -ER" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">THE SUFFIX -ER</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-suffix-ing.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/FzoQBogIrb0/hqdefault.jpg" alt="THE SUFFIX -ING" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">THE SUFFIX -ING</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-suffix-ly.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/WVBMwwzYY4Q/hqdefault.jpg" alt="THE SUFFIX -LY" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">THE SUFFIX -LY</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="the-vowel-digraph-recall-rock.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/E4S4ZyZaq3A/hqdefault.jpg" alt="The Vowel Digraph Recall Rock" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">The Vowel Digraph Recall Rock</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="top-10-spelling-hacks-for-common-words.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/FZ2s2SbF39A/hqdefault.jpg" alt="Top 10 Spelling Hacks For Common Words" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Top 10 Spelling Hacks For Common Words</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="trigraph-ear-phonics.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/u4CZOQhrn5w/hqdefault.jpg" alt="Trigraph EAR Phonics" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Trigraph EAR Phonics</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="using-a-or-an.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/Yq_W13GTcD8/hqdefault.jpg" alt="Using A or An" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">Using A or An</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="v-needs-e.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/jGjMJ_YZKeE/hqdefault.jpg" alt="V Needs E" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">V Needs E</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+      <a class="topic-card" href="ve-spelling-pattern.html">
+        <img class="topic-card-thumb" src="https://i.ytimg.com/vi/yHK2iIiinfQ/hqdefault.jpg" alt="VE Spelling Pattern" loading="lazy" />
+        <div class="topic-card-body">
+          <div class="topic-card-title">VE Spelling Pattern</div>
+          <div><span class="badge">1 song</span></div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mr Spelling &mdash; Not Misspelling
+  </footer>
+
+</body>
+</html>
