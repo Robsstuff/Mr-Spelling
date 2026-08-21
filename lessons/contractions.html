@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V Needs E | Mr Spelling</title>
+  <title>Contractions | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
@@ -30,9 +30,15 @@
     .word-group-label.yellow { color: #C0392B; }
     .word-group-label.cyan   { color: #12A594; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 6px; border: 2px solid #191320; letter-spacing: 0.5px; }
     .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
     .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    /* Contraction pairs table */
+    .contraction-pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 28px; }
+    .pair-card { background: rgba(25,19,32,0.04); border: 2px solid rgba(255,201,60,0.3); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+    .pair-original { font-family: 'Figtree', sans-serif; font-size: 0.9rem; color: #4A4155; font-weight: 600; }
+    .pair-arrow { color: rgba(255,230,0,0.5); font-size: 0.9rem; }
+    .pair-result { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1rem; color: #FFC93C; }
     .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
     .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
     .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
@@ -41,7 +47,7 @@
     .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
     .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
     .rule-formula-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 20px 24px; }
-    .pattern-block { display: flex; align-items: center; gap: 8px; }
+    .pattern-block { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .formula-chip { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.1rem, 3vw, 1.5rem); padding: 8px 16px; border-radius: 8px; border: 2px solid #191320; }
     .formula-chip.yellow { background: #FFC93C; color: #191320; }
     .formula-chip.cyan   { background: #C9E4FF; color: #191320; }
@@ -72,70 +78,82 @@
 
   <header class="page-header">
     <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>V Needs E</h1>
-    <p class="subtitle">English Words Never End in V &mdash; Don't Let V Be Lonely!</p>
+    <h1>Contractions</h1>
+    <p class="subtitle">Take Two Words, Make Them One</p>
   </header>
 
   <nav class="cat-nav">
     <a href="#video">Video</a>
     <a href="#words">Words</a>
     <a href="#rule">The Rule</a>
-    <a href="#exceptions">Exceptions</a>
+    <a href="#exceptions">Watch Out</a>
     <a href="#lyrics">Lyrics</a>
   </nav>
 
   <main>
 
     <section class="content-section" id="video">
-      <p class="section-eyebrow">PHONICS RULE</p>
+      <p class="section-eyebrow">GRAMMAR &amp; SPELLING</p>
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/jGjMJ_YZKeE"
-                title="V Needs E Spelling Rule Rap by Mr Spelling"
+        <iframe src="https://www.youtube.com/embed/XXjt8CLBHWw"
+                title="Contractions Rap Song by Mr Spelling"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
       </div>
       <div class="video-description">
-        <p>In English, no word ever ends with the letter V on its own. V is a social letter &mdash; it always needs its best buddy <strong>Silent E</strong> beside it. This rap follows Letter V who is lonely at the end of a word, and every time we rescue it by adding a silent E. Words in the video include <strong>cave, hive, glove, brave, save,</strong> and <strong>give</strong>.</p>
+        <p>A <strong>contraction</strong> joins two words together, removes some letters, and places an <strong>apostrophe (')</strong> exactly where those letters were removed. This rap teaches 14 common contractions in groups &mdash; including I'm, you're, he's, she's, it's, we're, they're, and negatives like don't and wouldn't &mdash; with actions to help you remember each one.</p>
       </div>
     </section>
 
     <section class="content-section" id="words">
       <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">Words in This Song</h2>
+      <h2 class="section-heading">Contractions in This Song</h2>
 
-      <div class="word-group">
-        <p class="word-group-label yellow">From the video</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">cave</span>
-          <span class="word-chip yellow">hive</span>
-          <span class="word-chip yellow">glove</span>
-          <span class="word-chip yellow">grave</span>
-          <span class="word-chip yellow">brave</span>
-          <span class="word-chip yellow">save</span>
-          <span class="word-chip yellow">give</span>
-        </div>
+      <div class="contraction-pairs">
+        <div class="pair-card"><span class="pair-original">I am</span><span class="pair-arrow">&#8594;</span><span class="pair-result">I'm</span></div>
+        <div class="pair-card"><span class="pair-original">I have</span><span class="pair-arrow">&#8594;</span><span class="pair-result">I've</span></div>
+        <div class="pair-card"><span class="pair-original">you are</span><span class="pair-arrow">&#8594;</span><span class="pair-result">you're</span></div>
+        <div class="pair-card"><span class="pair-original">you have</span><span class="pair-arrow">&#8594;</span><span class="pair-result">you've</span></div>
+        <div class="pair-card"><span class="pair-original">he is</span><span class="pair-arrow">&#8594;</span><span class="pair-result">he's</span></div>
+        <div class="pair-card"><span class="pair-original">she is</span><span class="pair-arrow">&#8594;</span><span class="pair-result">she's</span></div>
+        <div class="pair-card"><span class="pair-original">it is</span><span class="pair-arrow">&#8594;</span><span class="pair-result">it's</span></div>
+        <div class="pair-card"><span class="pair-original">we are</span><span class="pair-arrow">&#8594;</span><span class="pair-result">we're</span></div>
+        <div class="pair-card"><span class="pair-original">they are</span><span class="pair-arrow">&#8594;</span><span class="pair-result">they're</span></div>
+        <div class="pair-card"><span class="pair-original">they have</span><span class="pair-arrow">&#8594;</span><span class="pair-result">they've</span></div>
+        <div class="pair-card"><span class="pair-original">that is</span><span class="pair-arrow">&#8594;</span><span class="pair-result">that's</span></div>
+        <div class="pair-card"><span class="pair-original">there is</span><span class="pair-arrow">&#8594;</span><span class="pair-result">there's</span></div>
+        <div class="pair-card"><span class="pair-original">do not</span><span class="pair-arrow">&#8594;</span><span class="pair-result">don't</span></div>
+        <div class="pair-card"><span class="pair-original">would not</span><span class="pair-arrow">&#8594;</span><span class="pair-result">wouldn't</span></div>
+        <div class="pair-card"><span class="pair-original">cannot</span><span class="pair-arrow">&#8594;</span><span class="pair-result">can't</span></div>
       </div>
 
       <div class="word-group">
-        <p class="word-group-label cyan">More -ve words</p>
+        <p class="word-group-label yellow">Contractions to practise</p>
         <div class="chip-row">
-          <span class="word-chip cyan">love</span>
-          <span class="word-chip cyan">live</span>
-          <span class="word-chip cyan">dive</span>
-          <span class="word-chip cyan">drive</span>
-          <span class="word-chip cyan">wave</span>
-          <span class="word-chip cyan">stove</span>
-          <span class="word-chip cyan">shove</span>
-          <span class="word-chip cyan">dove</span>
+          <span class="word-chip yellow">I'm</span>
+          <span class="word-chip yellow">I've</span>
+          <span class="word-chip yellow">you're</span>
+          <span class="word-chip yellow">you've</span>
+          <span class="word-chip yellow">he's</span>
+          <span class="word-chip yellow">she's</span>
+          <span class="word-chip yellow">it's</span>
+          <span class="word-chip yellow">we're</span>
+          <span class="word-chip cyan">they're</span>
+          <span class="word-chip cyan">they've</span>
+          <span class="word-chip cyan">that's</span>
+          <span class="word-chip cyan">there's</span>
+          <span class="word-chip cyan">don't</span>
+          <span class="word-chip cyan">wouldn't</span>
+          <span class="word-chip cyan">can't</span>
         </div>
       </div>
 
       <div class="download-card">
         <h3>Spelling Word List</h3>
-        <p>All 15 -VE words from the song and beyond &mdash; V always needs its silent E friend!</p>
-        <a href="../downloads/v-needs-e-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+        <p>All 15 contractions from the rap &mdash; practise writing each one with an apostrophe in the right place!</p>
+        <a href="../downloads/contractions-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
       </div>
     </section>
 
@@ -143,41 +161,42 @@
       <p class="section-eyebrow">HOW IT WORKS</p>
       <h2 class="section-heading">The Rule</h2>
       <div class="rule-box">
-        <div class="rule-box-header">English Words Never End in Bare V &mdash; Add Silent E</div>
+        <div class="rule-box-header">Take Two Words &mdash; Remove Letters &mdash; Add an Apostrophe</div>
         <div class="rule-formula-row">
           <div class="pattern-block">
-            <span class="formula-chip yellow">word</span>
+            <span class="formula-chip yellow">word 1</span>
             <span class="formula-arrow">+</span>
-            <span class="formula-chip cyan">V</span>
+            <span class="formula-chip yellow">word 2</span>
             <span class="formula-arrow">&#8594;</span>
-            <span class="formula-chip yellow">word</span>
-            <span class="formula-chip cyan">VE</span>
+            <span class="formula-chip cyan">word 1</span>
+            <span class="formula-chip red">'</span>
+            <span class="formula-chip cyan">short 2</span>
           </div>
         </div>
-        <p class="rule-desc">The letter V never appears at the very end of an English word without a silent E beside it. Whenever a word ends in the /v/ sound, you must add a silent E to keep V company. The silent E does <em>not</em> change the vowel sound in words like <em>give, love, glove</em> &mdash; it is just there to follow the VE rule.</p>
+        <p class="rule-desc">To make a contraction: <strong>1)</strong> Take two words and push them together. <strong>2)</strong> Remove some letters from the second word. <strong>3)</strong> Put an <strong>apostrophe (')</strong> exactly where those letters were removed. The apostrophe is a placeholder that says "letters are missing here." Example: <em>I am &rarr; I'm</em> (the "a" is removed and replaced with an apostrophe).</p>
       </div>
     </section>
 
     <section class="content-section" id="exceptions">
       <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Exceptions to the Rule</h2>
+      <h2 class="section-heading">Tricky Contractions</h2>
       <div class="exceptions-box">
-        <div class="exceptions-box-header">Nearly no exceptions &mdash; V always needs its E!</div>
+        <div class="exceptions-box-header">These contractions can trip you up</div>
         <div class="exceptions-inner">
 
           <div class="exception-item">
-            <span class="exception-word">give / live / love</span>
-            <p class="exception-note">These follow the VE rule but the silent E does <strong>NOT</strong> make the vowel long. <em>give</em> has a short /i/ sound, <em>love</em> and <em>shove</em> have a short /u/ sound &mdash; the E is there only for V's sake, not to change the vowel.</p>
+            <span class="exception-word">won't</span>
+            <p class="exception-note"><em>won't</em> = <strong>will not</strong> &mdash; but the spelling changes from "will" to "wo". This is a historical quirk; the word "will" was once spelled "woll". The apostrophe marks where the "o" from "not" was removed, but the unusual spelling must simply be memorised.</p>
           </div>
 
           <div class="exception-item">
-            <span class="exception-word">of</span>
-            <p class="exception-note">The word <em>of</em> ends in F but the F is <strong>pronounced like /v/</strong>. It sounds like "ov" but is spelled with F &mdash; a rare historical quirk. It does not end in V or VE.</p>
+            <span class="exception-word">it's vs its</span>
+            <p class="exception-note"><strong>it's</strong> (with apostrophe) = <em>it is</em> or <em>it has</em>. <strong>its</strong> (no apostrophe) = belonging to it. The apostrophe means "letters missing," NOT possession. This is the most common apostrophe mistake in English!</p>
           </div>
 
           <div class="exception-item">
-            <span class="exception-word">rev (informal)</span>
-            <p class="exception-note">Very informal short forms like <em>rev</em> (for revolution) can end in bare V, but these are abbreviations, not standard English words. In all regular written English, V always has a silent E.</p>
+            <span class="exception-word">they're / their / there</span>
+            <p class="exception-note"><strong>they're</strong> = they are. <strong>their</strong> = belonging to them. <strong>there</strong> = a place. Three words that sound identical but are spelled differently and mean different things. Only <em>they're</em> is a contraction.</p>
           </div>
 
         </div>
@@ -188,51 +207,52 @@
       <p class="section-eyebrow">SONG LYRICS</p>
       <h2 class="section-heading">Lyrics</h2>
       <div class="lyrics-box">
-        <div class="lyrics-box-header">V Needs E &mdash; Don't Let V Be Lonely!</div>
+        <div class="lyrics-box-header">Contractions Rap Song &mdash; I Can't Stop Singing!</div>
         <div class="lyrics-inner">
 
-          <p class="lyric-label">INTRO</p>
-          <p class="lyric-intro">V doesn't like to be at the end of a word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. A silent E.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Here we go. Sing my song. Follow my actions.<br>
+          Let's go and make contractions.<br>
+          Take two words, make them one.<br>
+          Take out some letters and we're almost done.<br>
+          But where those letters used to be, mark it with an apostrophe.<br>
+          Now you know about contractions. Copy my actions.</p>
 
           <p class="lyric-label">VERSE 1</p>
-          <p class="lyric-verse">Cave is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Cave &mdash; C A V E.</p>
-
-          <p class="lyric-verse">Hive is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Hive &mdash; H I V E.</p>
-
-          <p class="lyric-verse">Glove is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Glove &mdash; G L O V E.</p>
-
-          <p class="lyric-verse">Grave is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Brave &mdash; B R A V E.</p>
+          <p class="lyric-verse">I... am... I'm... I'm<br>
+          I... have... I've... I've<br>
+          you... are... you're... you're<br>
+          you... have... you've... you've<br>
+          he... is... he's... he's<br>
+          she... is... she's... she's<br>
+          it... is... it's... it's<br>
+          we... are... we're... we're</p>
 
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">V doesn't like to be at the end of a word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. Add silent E.</p>
+          <p class="lyric-chorus">Sing my song. Follow my actions.<br>
+          Let's go and make contractions.<br>
+          Take two words, make them one.<br>
+          Take out some letters and we're almost done.<br>
+          But where those letters used to be, mark it with an apostrophe.<br>
+          Now you know about contractions. Copy my actions.</p>
 
           <p class="lyric-label">VERSE 2</p>
-          <p class="lyric-verse">Save is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Save &mdash; S A V E.</p>
-
-          <p class="lyric-verse">Give is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Give &mdash; G I V E.</p>
+          <p class="lyric-verse">they... are... they're... they're<br>
+          they... have... they've... they've<br>
+          that... is... that's... that's<br>
+          there... is... there's... there's<br>
+          do... not... don't... don't<br>
+          would... not... wouldn't... wouldn't</p>
 
           <p class="lyric-label">OUTRO</p>
-          <p class="lyric-chorus">V doesn't like to be at the end of the word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. Add silent E.</p>
+          <p class="lyric-chorus">Sing my song. Follow my actions.<br>
+          Let's go and make contractions.<br>
+          Take two words, make them one.<br>
+          Take out some letters and we're almost done.<br>
+          But where those letters used to be, mark it with an apostrophe.<br>
+          Now you know about contractions. Copy my actions.</p>
 
-          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+          <p class="lyric-outro">Mr. Spelling. What did you say? Bye-bye.</p>
 
         </div>
       </div>

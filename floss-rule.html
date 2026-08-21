@@ -4,78 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr Spelling — The FLOSS Rule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&family=Nunito:wght@400;700;900&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #fef08a; font-family: 'Nunito', sans-serif; color: #1a1a1a; min-height: 100vh; }
+    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
 
-    .page-header { background: linear-gradient(135deg, #facc15 0%, #f97316 100%); padding: 32px 24px 28px; text-align: center; border-bottom: 4px solid #1a1a1a; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Bangers', cursive; font-size: 1.1rem; letter-spacing: 1px; background: #1a1a1a; color: #facc15; text-decoration: none; padding: 6px 16px; border-radius: 999px; }
-    .page-header h1 { font-family: 'Bangers', cursive; font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: 4px; color: #1a1a1a; text-shadow: 4px 4px 0 #ef4444; }
-    .page-header .subtitle { display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(0.85rem, 2.5vw, 1.1rem); background: #1a1a1a; color: #facc15; padding: 4px 18px; border-radius: 999px; margin-top: 8px; letter-spacing: 1px; }
+    .page-header { background: #FFE9A8; padding: 32px 24px 28px; text-align: center; border-bottom: 3px solid #191320; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 6px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: -0.02em; color: #191320; }
+    .page-header .subtitle { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: clamp(0.85rem, 2.5vw, 1.1rem); background: #191320; color: #FFF7EC; padding: 4px 18px; border-radius: 999px; margin-top: 8px; }
 
-    .cat-nav { background: #1a1a1a; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .cat-nav a { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.8rem; background: #333; color: #facc15; text-decoration: none; padding: 4px 12px; border-radius: 999px; border: 2px solid #facc15; transition: background 0.15s; }
-    .cat-nav a:hover { background: #facc15; color: #1a1a1a; }
+    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
 
     main { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
     .content-section { margin-bottom: 52px; }
-    .section-heading { font-family: 'Bangers', cursive; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: 2px; color: #ef4444; text-shadow: 2px 2px 0 #1a1a1a; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #1a1a1a; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -0.02em; color: #191320; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #191320; }
 
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 4px solid #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0 #1a1a1a; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .video-note { margin-top: 10px; font-size: 0.82rem; font-weight: 700; color: #6b7280; text-align: center; }
 
-    .rule-box { border: 4px solid #1a1a1a; border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0 #1a1a1a; }
-    .rule-box-header { background: #ef4444; padding: 10px 22px; font-family: 'Bangers', cursive; letter-spacing: 3px; font-size: 1.15rem; color: #fff; }
-    .trigger-row { background: #1a1a1a; padding: 20px 24px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .trigger-chip { font-family: 'Bangers', cursive; font-size: 2.2rem; letter-spacing: 2px; background: #ef4444; color: #fff; padding: 8px 22px; border-radius: 10px; border: 3px solid #ef4444; box-shadow: 3px 3px 0 #facc15; }
-    .rule-formula { background: #1a1a1a; padding: 20px 24px 22px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .formula-chip { font-family: 'Boogaloo', cursive; font-size: clamp(1.1rem, 3.5vw, 1.7rem); background: #facc15; color: #1a1a1a; padding: 10px 18px; border-radius: 10px; border: 3px solid #facc15; letter-spacing: 2px; text-align: center; }
-    .formula-chip.red { background: #ef4444; color: #fff; border-color: #ef4444; }
-    .formula-op { font-family: 'Bangers', cursive; font-size: 2rem; color: #facc15; }
+    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
+    .rule-box-header { background: #C0392B; padding: 10px 22px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
+    .trigger-row { background: #191320; padding: 20px 24px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .trigger-chip { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.2rem; letter-spacing: 2px; background: #C0392B; color: #fff; padding: 8px 22px; border-radius: 10px; border: 3px solid #C0392B; box-shadow: 3px 3px 0 #FFC93C; }
+    .rule-formula { background: #191320; padding: 20px 24px 22px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .formula-chip { font-family: 'Figtree', sans-serif; font-size: clamp(1.1rem, 3.5vw, 1.7rem); background: #FFC93C; color: #191320; padding: 10px 18px; border-radius: 10px; border: 3px solid #FFC93C; letter-spacing: 2px; text-align: center; }
+    .formula-chip.red { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .formula-op { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2rem; color: #FFC93C; }
     .rule-desc { background: #fff; padding: 20px 24px; }
     .rule-desc p { font-weight: 700; font-size: 1rem; color: #374151; line-height: 1.75; margin-bottom: 14px; }
     .rule-desc p:last-child { margin-bottom: 0; }
     .rule-examples { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
-    .rule-eg { font-family: 'Boogaloo', cursive; font-size: 1.1rem; background: #fef08a; color: #1a1a1a; padding: 5px 14px; border-radius: 999px; border: 2px solid #1a1a1a; box-shadow: 2px 2px 0 #1a1a1a; }
+    .rule-eg { font-family: 'Figtree', sans-serif; font-size: 1.1rem; background: #FFF7EC; color: #191320; padding: 5px 14px; border-radius: 999px; border: 2px solid #191320; box-shadow: 2px 2px 0 #191320; }
 
-    .lyrics-box { background: #1a1a1a; border: 3px solid #1a1a1a; border-radius: 14px; padding: 28px; box-shadow: 5px 5px 0 #ef4444; }
+    .lyrics-box { background: #191320; border: 3px solid #191320; border-radius: 14px; padding: 28px; box-shadow: 5px 5px 0 #C0392B; }
     .lyric-block { margin-bottom: 20px; }
     .lyric-block:last-child { margin-bottom: 0; }
-    .lyric-chorus { color: #facc15; font-weight: 900; font-size: 1.02rem; line-height: 1.75; }
-    .lyric-verse  { color: #f1f5f9; font-weight: 700; font-size: 0.97rem; line-height: 1.75; padding-left: 16px; border-left: 3px solid #ef4444; }
+    .lyric-chorus { color: #FFC93C; font-weight: 900; font-size: 1.02rem; line-height: 1.75; }
+    .lyric-verse  { color: #f1f5f9; font-weight: 700; font-size: 0.97rem; line-height: 1.75; padding-left: 16px; border-left: 3px solid #C0392B; }
     .lyric-intro  { color: #94a3b8; font-weight: 700; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
     .lyric-outro  { color: #6b7280; font-weight: 700; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .lyric-label  { color: #ef4444; font-family: 'Bangers', cursive; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 4px; display: block; }
+    .lyric-label  { color: #C0392B; font-family: 'Bricolage Grotesque', sans-serif; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 4px; display: block; }
 
     /* quiz */
-    .quiz-intro { font-weight: 700; font-size: 0.95rem; color: #374151; margin-bottom: 20px; background: #fef9c3; border: 2px solid #1a1a1a; border-radius: 10px; padding: 10px 16px; }
-    .quiz-outer { background: #fff; border: 4px solid #1a1a1a; border-radius: 20px; padding: 28px 20px 32px; box-shadow: 7px 7px 0 #1a1a1a; text-align: center; }
+    .quiz-intro { font-weight: 700; font-size: 0.95rem; color: #374151; margin-bottom: 20px; background: #fef9c3; border: 2px solid #191320; border-radius: 10px; padding: 10px 16px; }
+    .quiz-outer { background: #fff; border: 4px solid #191320; border-radius: 20px; padding: 28px 20px 32px; box-shadow: 7px 7px 0 #191320; text-align: center; }
     .quiz-meta { margin-bottom: 6px; }
-    .quiz-prog { font-family: 'Bangers', cursive; font-size: 1.1rem; letter-spacing: 1px; color: #6b7280; }
-    .quiz-prog strong { color: #ef4444; }
-    .q-progress-track { max-width: 300px; margin: 6px auto 20px; height: 10px; background: #e5e7eb; border-radius: 999px; border: 2px solid #1a1a1a; overflow: hidden; }
-    .q-progress-fill { height: 100%; background: linear-gradient(90deg, #facc15, #f97316); border-radius: 999px; transition: width 0.4s ease; }
-    .quiz-word-card { background: #1a1a1a; border-radius: 16px; padding: 22px 32px; display: inline-block; min-width: 180px; margin-bottom: 16px; box-shadow: 4px 4px 0 #ef4444; }
+    .quiz-prog { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: #6b7280; }
+    .quiz-prog strong { color: #C0392B; }
+    .q-progress-track { max-width: 300px; margin: 6px auto 20px; height: 10px; background: #e5e7eb; border-radius: 999px; border: 2px solid #191320; overflow: hidden; }
+    .q-progress-fill { height: 100%; background: linear-gradient(90deg, #FFC93C, #C0392B); border-radius: 999px; transition: width 0.4s ease; }
+    .quiz-word-card { background: #191320; border-radius: 16px; padding: 22px 32px; display: inline-block; min-width: 180px; margin-bottom: 16px; box-shadow: 4px 4px 0 #C0392B; }
     .quiz-emoji { font-size: clamp(2.8rem, 8vw, 4rem); display: block; margin-bottom: 6px; }
-    .quiz-word  { font-family: 'Boogaloo', cursive; font-size: clamp(2rem, 7vw, 3rem); color: #facc15; letter-spacing: 3px; display: block; }
+    .quiz-word  { font-family: 'Figtree', sans-serif; font-size: clamp(2rem, 7vw, 3rem); color: #FFC93C; letter-spacing: 3px; display: block; }
     .quiz-hint  { font-size: 0.78rem; font-weight: 700; color: #94a3b8; margin-bottom: 20px; letter-spacing: 1px; }
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 500px; margin: 0 auto; }
-    .opt-btn { font-family: 'Boogaloo', cursive; font-size: clamp(1.2rem, 4vw, 1.6rem); background: #facc15; color: #1a1a1a; border: 3px solid #1a1a1a; border-radius: 12px; padding: 14px 8px; cursor: pointer; box-shadow: 3px 3px 0 #1a1a1a; transition: transform 0.1s, background 0.15s; letter-spacing: 1px; }
+    .opt-btn { font-family: 'Figtree', sans-serif; font-size: clamp(1.2rem, 4vw, 1.6rem); background: #FFC93C; color: #191320; border: 3px solid #191320; border-radius: 12px; padding: 14px 8px; cursor: pointer; box-shadow: 3px 3px 0 #191320; transition: transform 0.1s, background 0.15s; letter-spacing: 1px; }
     .opt-btn:hover:not(:disabled) { transform: translateY(-3px); }
     .opt-btn.correct { background: #bbf7d0 !important; border-color: #16a34a !important; box-shadow: 3px 3px 0 #16a34a !important; cursor: default; }
-    .opt-btn.wrong   { background: #fee2e2 !important; border-color: #ef4444 !important; box-shadow: 3px 3px 0 #ef4444 !important; animation: qshake 0.4s ease; }
+    .opt-btn.wrong   { background: #fee2e2 !important; border-color: #C0392B !important; box-shadow: 3px 3px 0 #C0392B !important; animation: qshake 0.4s ease; }
     @keyframes qshake { 0%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} 100%{transform:translateX(0)} }
 
     .quiz-complete { padding: 10px 0; }
     .quiz-complete-emoji { font-size: clamp(3rem, 10vw, 5rem); display: block; margin-bottom: 10px; }
-    .quiz-complete h3 { font-family: 'Bangers', cursive; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 3px; color: #ef4444; text-shadow: 3px 3px 0 #1a1a1a; margin-bottom: 8px; }
+    .quiz-complete h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 3px; color: #C0392B; text-shadow: 3px 3px 0 #191320; margin-bottom: 8px; }
     .quiz-complete p { font-weight: 900; font-size: 1.05rem; color: #374151; margin-bottom: 20px; }
-    .restart-btn { font-family: 'Bangers', cursive; font-size: 1.4rem; letter-spacing: 2px; background: #1a1a1a; color: #facc15; border: 3px solid #1a1a1a; border-radius: 999px; padding: 12px 36px; cursor: pointer; box-shadow: 5px 5px 0 #ef4444; transition: transform 0.1s, box-shadow 0.1s; }
-    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #ef4444; }
+    .restart-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; letter-spacing: 2px; background: #191320; color: #FFC93C; border: 3px solid #191320; border-radius: 999px; padding: 12px 36px; cursor: pointer; box-shadow: 5px 5px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
+    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #C0392B; }
 
-    footer { background: #facc15; text-align: center; padding: 20px; font-weight: 900; font-size: 0.95rem; color: #1a1a1a; border-top: 4px solid #1a1a1a; }
+    footer { background: #191320; text-align: center; padding: 20px; font-weight: 900; font-size: 0.95rem; color: #191320; border-top: 3px solid #191320; color: #FFF7EC; }
   </style>
 </head>
 <body>

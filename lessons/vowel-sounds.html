@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V Needs E | Mr Spelling</title>
+  <title>Vowel Sounds | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
@@ -29,10 +29,14 @@
     .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .word-group-label.yellow { color: #C0392B; }
     .word-group-label.cyan   { color: #12A594; }
+    .word-group-label.pink   { color: #7A5AF8; }
+    .word-group-label.purple { color: #7A5AF8; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
     .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
     .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.pink   { background: #F2E7FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.purple { background: #7A5AF8; color: #fff;    box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
     .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
     .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
     .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
@@ -40,14 +44,18 @@
     .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
     .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
     .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
-    .rule-formula-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 20px 24px; }
-    .pattern-block { display: flex; align-items: center; gap: 8px; }
-    .formula-chip { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.1rem, 3vw, 1.5rem); padding: 8px 16px; border-radius: 8px; border: 2px solid #191320; }
-    .formula-chip.yellow { background: #FFC93C; color: #191320; }
-    .formula-chip.cyan   { background: #C9E4FF; color: #191320; }
-    .formula-chip.red    { background: #C0392B; color: #fff; }
-    .formula-arrow { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; color: #4A4155; }
-    .formula-sound { font-family: 'Figtree', sans-serif; font-size: 1.1rem; color: #FFC93C; }
+    .vowel-type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; padding: 20px 24px; }
+    .vowel-type-card { border-radius: 10px; padding: 14px 16px; border: 2px solid #191320; }
+    .vowel-type-card.short  { background: rgba(255,230,0,0.12); border-color: #FFC93C; }
+    .vowel-type-card.long   { background: rgba(0,194,255,0.12); border-color: #12A594; }
+    .vowel-type-card.schwa  { background: rgba(255,43,214,0.12); border-color: #C0392B; }
+    .vowel-type-card.bossy  { background: rgba(155,81,224,0.12); border-color: #7A5AF8; }
+    .vowel-type-label { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 1px; margin-bottom: 6px; }
+    .vowel-type-card.short  .vowel-type-label { color: #FFC93C; }
+    .vowel-type-card.long   .vowel-type-label { color: #12A594; }
+    .vowel-type-card.schwa  .vowel-type-label { color: #C0392B; }
+    .vowel-type-card.bossy  .vowel-type-label { color: #7A5AF8; }
+    .vowel-type-desc { font-size: 0.82rem; color: rgba(243,242,234,0.75); font-weight: 600; line-height: 1.5; }
     .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
     .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
     .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
@@ -72,112 +80,132 @@
 
   <header class="page-header">
     <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>V Needs E</h1>
-    <p class="subtitle">English Words Never End in V &mdash; Don't Let V Be Lonely!</p>
+    <h1>Vowel Sounds</h1>
+    <p class="subtitle">Short, Long, Schwa and R-Controlled Vowels</p>
   </header>
 
   <nav class="cat-nav">
     <a href="#video">Video</a>
     <a href="#words">Words</a>
-    <a href="#rule">The Rule</a>
-    <a href="#exceptions">Exceptions</a>
+    <a href="#rule">The Four Types</a>
+    <a href="#exceptions">Tips</a>
     <a href="#lyrics">Lyrics</a>
   </nav>
 
   <main>
 
     <section class="content-section" id="video">
-      <p class="section-eyebrow">PHONICS RULE</p>
+      <p class="section-eyebrow">VOWEL REVIEW</p>
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/jGjMJ_YZKeE"
-                title="V Needs E Spelling Rule Rap by Mr Spelling"
+        <iframe src="https://www.youtube.com/embed/KumMG3zKbYM"
+                title="Vowel Sounds Rap Song by Mr Spelling"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
       </div>
       <div class="video-description">
-        <p>In English, no word ever ends with the letter V on its own. V is a social letter &mdash; it always needs its best buddy <strong>Silent E</strong> beside it. This rap follows Letter V who is lonely at the end of a word, and every time we rescue it by adding a silent E. Words in the video include <strong>cave, hive, glove, brave, save,</strong> and <strong>give</strong>.</p>
+        <p>This review rap covers all four main types of vowel sound: <strong>SHORT</strong> vowels (quick sounds), <strong>LONG</strong> vowels (saying their alphabet name), the <strong>SCHWA</strong> (the lazy "uh" in unstressed syllables), and <strong>R-CONTROLLED</strong> vowels (where Bossy R changes the sound). A great song for reviewing all vowel types together.</p>
       </div>
     </section>
 
     <section class="content-section" id="words">
       <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">Words in This Song</h2>
+      <h2 class="section-heading">One Word for Each Vowel Type</h2>
 
       <div class="word-group">
-        <p class="word-group-label yellow">From the video</p>
+        <p class="word-group-label yellow">Short vowels (quick sound)</p>
         <div class="chip-row">
-          <span class="word-chip yellow">cave</span>
-          <span class="word-chip yellow">hive</span>
-          <span class="word-chip yellow">glove</span>
-          <span class="word-chip yellow">grave</span>
-          <span class="word-chip yellow">brave</span>
-          <span class="word-chip yellow">save</span>
-          <span class="word-chip yellow">give</span>
+          <span class="word-chip yellow">cat</span>
+          <span class="word-chip yellow">bed</span>
+          <span class="word-chip yellow">sit</span>
+          <span class="word-chip yellow">hop</span>
+          <span class="word-chip yellow">bug</span>
         </div>
       </div>
 
       <div class="word-group">
-        <p class="word-group-label cyan">More -ve words</p>
+        <p class="word-group-label cyan">Long vowels (say the letter name)</p>
         <div class="chip-row">
-          <span class="word-chip cyan">love</span>
-          <span class="word-chip cyan">live</span>
-          <span class="word-chip cyan">dive</span>
-          <span class="word-chip cyan">drive</span>
-          <span class="word-chip cyan">wave</span>
-          <span class="word-chip cyan">stove</span>
-          <span class="word-chip cyan">shove</span>
-          <span class="word-chip cyan">dove</span>
+          <span class="word-chip cyan">cake</span>
+          <span class="word-chip cyan">feet</span>
+          <span class="word-chip cyan">kite</span>
+          <span class="word-chip cyan">rope</span>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <p class="word-group-label pink">Schwa (lazy "uh" sound)</p>
+        <div class="chip-row">
+          <span class="word-chip pink">sofa</span>
+          <span class="word-chip pink">panda</span>
+          <span class="word-chip pink">lemon</span>
+        </div>
+      </div>
+
+      <div class="word-group">
+        <p class="word-group-label purple">R-controlled / Bossy R</p>
+        <div class="chip-row">
+          <span class="word-chip purple">barn</span>
+          <span class="word-chip purple">bird</span>
+          <span class="word-chip purple">corn</span>
         </div>
       </div>
 
       <div class="download-card">
         <h3>Spelling Word List</h3>
-        <p>All 15 -VE words from the song and beyond &mdash; V always needs its silent E friend!</p>
-        <a href="../downloads/v-needs-e-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+        <p>15 words covering all four vowel sound types &mdash; short, long, schwa, and R-controlled.</p>
+        <a href="../downloads/vowel-sounds-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
       </div>
     </section>
 
     <section class="content-section" id="rule">
       <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">The Rule</h2>
+      <h2 class="section-heading">The Four Vowel Types</h2>
       <div class="rule-box">
-        <div class="rule-box-header">English Words Never End in Bare V &mdash; Add Silent E</div>
-        <div class="rule-formula-row">
-          <div class="pattern-block">
-            <span class="formula-chip yellow">word</span>
-            <span class="formula-arrow">+</span>
-            <span class="formula-chip cyan">V</span>
-            <span class="formula-arrow">&#8594;</span>
-            <span class="formula-chip yellow">word</span>
-            <span class="formula-chip cyan">VE</span>
+        <div class="rule-box-header">A E I O U &mdash; Four Ways Vowels Can Sound</div>
+        <div class="vowel-type-grid">
+          <div class="vowel-type-card short">
+            <div class="vowel-type-label">Short</div>
+            <div class="vowel-type-desc">Vowels say their quick sound: /a/ /e/ /i/ /o/ /u/.<br>Examples: <em>cat, bed, sit, hop, bug</em></div>
+          </div>
+          <div class="vowel-type-card long">
+            <div class="vowel-type-label">Long</div>
+            <div class="vowel-type-desc">Vowels say their alphabet name: /ay/ /ee/ /eye/ /oh/ /you/.<br>Examples: <em>cake, feet, kite, rope</em></div>
+          </div>
+          <div class="vowel-type-card schwa">
+            <div class="vowel-type-label">Schwa /&#601;/</div>
+            <div class="vowel-type-desc">Vowels get lazy and say "uh" in unstressed syllables.<br>Examples: <em>sofa, panda, lemon</em></div>
+          </div>
+          <div class="vowel-type-card bossy">
+            <div class="vowel-type-label">Bossy R</div>
+            <div class="vowel-type-desc">R changes the vowel sound: ar, er, ir, or, ur.<br>Examples: <em>barn, bird, corn</em></div>
           </div>
         </div>
-        <p class="rule-desc">The letter V never appears at the very end of an English word without a silent E beside it. Whenever a word ends in the /v/ sound, you must add a silent E to keep V company. The silent E does <em>not</em> change the vowel sound in words like <em>give, love, glove</em> &mdash; it is just there to follow the VE rule.</p>
+        <p class="rule-desc">Every vowel in every English word fits into one of these four categories. When you can identify which type you are dealing with, you can work out how to say &mdash; or spell &mdash; the word.</p>
       </div>
     </section>
 
     <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Exceptions to the Rule</h2>
+      <p class="section-eyebrow">IMPORTANT TO KNOW</p>
+      <h2 class="section-heading">Tips for Vowel Sounds</h2>
       <div class="exceptions-box">
-        <div class="exceptions-box-header">Nearly no exceptions &mdash; V always needs its E!</div>
+        <div class="exceptions-box-header">Things that can trick you</div>
         <div class="exceptions-inner">
 
           <div class="exception-item">
-            <span class="exception-word">give / live / love</span>
-            <p class="exception-note">These follow the VE rule but the silent E does <strong>NOT</strong> make the vowel long. <em>give</em> has a short /i/ sound, <em>love</em> and <em>shove</em> have a short /u/ sound &mdash; the E is there only for V's sake, not to change the vowel.</p>
+            <span class="exception-word">vowel teams</span>
+            <p class="exception-note">Two vowels together can make a <strong>long vowel sound</strong> (like AI in <em>rain</em>, EE in <em>feet</em>, OA in <em>boat</em>). These are called vowel teams or digraphs. They are still "long" vowels &mdash; just spelled with two letters.</p>
           </div>
 
           <div class="exception-item">
-            <span class="exception-word">of</span>
-            <p class="exception-note">The word <em>of</em> ends in F but the F is <strong>pronounced like /v/</strong>. It sounds like "ov" but is spelled with F &mdash; a rare historical quirk. It does not end in V or VE.</p>
+            <span class="exception-word">same letter, different sounds</span>
+            <p class="exception-note">The same vowel can make different sounds in different words. The letter A can be short (<em>cat</em>), long (<em>cake</em>), schwa (<em>sofa</em>), or R-controlled (<em>car</em>). Context and spelling patterns tell you which one to use.</p>
           </div>
 
           <div class="exception-item">
-            <span class="exception-word">rev (informal)</span>
-            <p class="exception-note">Very informal short forms like <em>rev</em> (for revolution) can end in bare V, but these are abbreviations, not standard English words. In all regular written English, V always has a silent E.</p>
+            <span class="exception-word">silent E rule</span>
+            <p class="exception-note">A magic E at the end of a word often makes the vowel before it <strong>long</strong>: <em>cap &rarr; cape, bit &rarr; bite, hop &rarr; hope</em>. This is one of the most common ways long vowels are spelled in English.</p>
           </div>
 
         </div>
@@ -188,51 +216,55 @@
       <p class="section-eyebrow">SONG LYRICS</p>
       <h2 class="section-heading">Lyrics</h2>
       <div class="lyrics-box">
-        <div class="lyrics-box-header">V Needs E &mdash; Don't Let V Be Lonely!</div>
+        <div class="lyrics-box-header">Vowel Sounds Rap &mdash; Short, Long, Schwa and Bossy R</div>
         <div class="lyrics-inner">
 
-          <p class="lyric-label">INTRO</p>
-          <p class="lyric-intro">V doesn't like to be at the end of a word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. A silent E.</p>
-
-          <p class="lyric-label">VERSE 1</p>
-          <p class="lyric-verse">Cave is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Cave &mdash; C A V E.</p>
-
-          <p class="lyric-verse">Hive is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Hive &mdash; H I V E.</p>
-
-          <p class="lyric-verse">Glove is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Glove &mdash; G L O V E.</p>
-
-          <p class="lyric-verse">Grave is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Brave &mdash; B R A V E.</p>
+          <p class="lyric-intro">Are you ready? To review the sounds of the vowels! Here we go.</p>
 
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">V doesn't like to be at the end of a word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. Add silent E.</p>
+          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
+          Vowels can be short and vowels can be long.<br>
+          Vowels can be lazy &mdash; that's called the schwa.<br>
+          Vowels can be controlled by R.</p>
 
-          <p class="lyric-label">VERSE 2</p>
-          <p class="lyric-verse">Save is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Save &mdash; S A V E.</p>
+          <p class="lyric-label">VERSE 1 &mdash; SHORT VOWELS</p>
+          <p class="lyric-verse">A E I O U &mdash; short vowels!<br>
+          A E I O U &mdash; short vowels!<br>
+          A E I O U &mdash; short vowels!</p>
 
-          <p class="lyric-verse">Give is misspelled. V is lonely.<br>
-          Don't let V be lonely. Add silent E.<br>
-          Give &mdash; G I V E.</p>
+          <p class="lyric-label">VERSE 2 &mdash; LONG VOWELS</p>
+          <p class="lyric-verse">A E I O U &mdash; long vowels!<br>
+          A E I O U &mdash; long vowels!<br>
+          A E I O U &mdash; long vowels!</p>
+
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
+          Vowels can be short and vowels can be long.<br>
+          Vowels can be lazy &mdash; that's called the schwa.<br>
+          Vowels can be controlled by R.</p>
+
+          <p class="lyric-label">VERSE 3 &mdash; THE SCHWA</p>
+          <p class="lyric-verse">Uh... uh... uh... uh... lazy vowels!<br>
+          Uh... uh... uh... uh... lazy vowels!</p>
+
+          <p class="lyric-label">VERSE 4 &mdash; BOSSY R</p>
+          <p class="lyric-verse">Uh... uh... uh... or... er... er... Bossy R!<br>
+          R &mdash; or... er... er... Bossy R!<br>
+          R &mdash; or... er... er... Bossy R!</p>
+
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
+          Vowels can be short and vowels can be long.<br>
+          Vowels can be lazy, that's called the schwa.<br>
+          Vowels can be controlled by R.</p>
 
           <p class="lyric-label">OUTRO</p>
-          <p class="lyric-chorus">V doesn't like to be at the end of the word because he gets lonely.<br>
-          He needs his best buddy, his good friend &mdash; Silent E.<br>
-          So we don't let V be lonely. Add silent E.</p>
+          <p class="lyric-verse">A... E... I... O... U...<br>
+          A... E... I... O... U...<br>
+          U... U... U... U...<br>
+          U... or... er... er...</p>
 
-          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+          <p class="lyric-outro">Mr. Spelling! Mr. Spelling, bye-bye.</p>
 
         </div>
       </div>
