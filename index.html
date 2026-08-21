@@ -5,411 +5,535 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     /* ── BASE ── */
     body {
-      background: #1e1b2e;
-      font-family: 'Poppins', sans-serif;
-      color: #f3f2ea;
+      background: #FFF7EC;
+      font-family: 'Figtree', system-ui, sans-serif;
+      color: #191320;
+      font-size: 20px;
+      line-height: 1.6;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* ── ANIMATIONS ── */
-    @keyframes pulse {
-      0%, 100% { opacity: 0.85; transform: scale(1); }
-      50%       { opacity: 1;    transform: scale(1.05); }
-    }
+    a { color: #C0392B; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover { color: #12A594; }
 
     /* ── SUPPORT BANNER ── */
     .support-banner {
-      background: #12101a;
+      background: #191320;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
       padding: 10px 20px;
-      border-bottom: 3px solid #FFE600;
     }
 
     .support-text {
-      font-family: 'Bungee', cursive;
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
-      color: #FFE600;
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #FFF7EC;
     }
 
     .support-btn {
-      font-family: 'Bungee', cursive;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
       text-decoration: none;
-      padding: 5px 18px;
-      border-radius: 6px;
-      border: 2px solid;
-      transition: transform 0.1s, box-shadow 0.1s;
+      padding: 6px 16px;
+      border-radius: 8px;
+      border: 2px solid #191320;
+      transition: transform 0.1s;
+      display: inline-block;
     }
 
     .support-btn:hover { transform: translate(-2px, -2px); }
 
     .support-btn--kofi {
-      background: #FF2BD6;
-      color: #12101a;
-      border-color: #FF2BD6;
-      box-shadow: 3px 3px 0 #000;
+      background: #FFC93C;
+      color: #191320;
+      box-shadow: 3px 3px 0 #C0392B;
     }
 
     .support-btn--yt {
-      background: #FFE600;
-      color: #12101a;
-      border-color: #FFE600;
-      box-shadow: 3px 3px 0 #000;
+      background: #C0392B;
+      color: #FFF7EC;
+      box-shadow: 3px 3px 0 #FFF7EC;
     }
+
+    /* ── SITE HEADER ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #FFF7EC;
+      border-bottom: 3px solid #191320;
+    }
+
+    .site-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-right: auto;
+      text-decoration: none;
+      color: #191320;
+    }
+
+    .site-logo:hover { color: #191320; }
+
+    .site-logo-box {
+      width: 46px;
+      height: 46px;
+      border: 3px solid #191320;
+      border-radius: 12px;
+      background: #FFC93C;
+      display: grid;
+      place-items: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .site-logo-text {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      background: none;
+      border: 3px solid transparent;
+      border-radius: 10px;
+      padding: 7px 14px;
+      color: #191320;
+      text-decoration: none;
+      transition: background 0.12s, border-color 0.12s;
+      display: inline-block;
+    }
+
+    .nav-link:hover { background: #FFE9A8; border-color: #191320; color: #191320; }
+
+    .nav-cta {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      text-decoration: none;
+      color: #FFF7EC;
+      background: #C0392B;
+      border: 3px solid #191320;
+      border-radius: 10px;
+      padding: 8px 18px;
+      box-shadow: 4px 4px 0 #191320;
+      transition: background 0.12s;
+      display: inline-block;
+    }
+
+    .nav-cta:hover { background: #12A594; color: #FFF7EC; }
 
     /* ── HERO ── */
     .hero {
-      position: relative;
-      padding: 80px 6vw 70px;
+      border-bottom: 3px solid #191320;
+      background: #FFE9A8;
       overflow: hidden;
-      background: repeating-linear-gradient(135deg, #21202f 0 2px, #1e1b2e 2px 40px);
-    }
-
-    /* Glow orbs */
-    .hero-glow-a {
-      position: absolute;
-      top: -60px; left: -80px;
-      width: 340px; height: 340px;
-      background: radial-gradient(circle, #00C2FF 0%, transparent 70%);
-      opacity: 0.35;
-      filter: blur(6px);
-      animation: pulse 6s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .hero-glow-b {
-      position: absolute;
-      bottom: -100px; right: -60px;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle, #FF2BD6 0%, transparent 70%);
-      opacity: 0.3;
-      filter: blur(6px);
-      animation: pulse 7s ease-in-out infinite 1s;
-      pointer-events: none;
     }
 
     .hero-inner {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
+      padding: 64px 28px 0;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
+      align-items: end;
     }
 
-    /* ── HERO TEXT ── */
-    .hero-text {
-      flex: 1 1 400px;
-      min-width: 280px;
-    }
+    .hero-text { padding-bottom: 72px; }
 
-    .hero-tag {
+    .hero-pill {
       display: inline-block;
-      font-family: 'Permanent Marker', cursive;
-      font-size: 18px;
-      color: #FF2BD6;
-      background: rgba(0, 0, 0, 0.5);
+      background: #7A5AF8;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       padding: 6px 14px;
-      border-radius: 4px;
-      transform: rotate(-3deg);
-      margin-bottom: 20px;
+      border: 3px solid #191320;
+      border-radius: 999px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-family: 'Bungee', cursive;
-      font-size: clamp(52px, 8vw, 96px);
-      line-height: 1.0;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 9vw, 80px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
       margin: 0 0 18px;
-      color: #f8f7f0;
-      text-shadow: 4px 4px 0 #00C2FF, 8px 8px 0 #FF2BD6;
+      color: #191320;
     }
 
-    .hero-tagline {
-      display: inline-block;
-      font-family: 'Bungee', cursive;
-      font-size: clamp(0.95rem, 2.2vw, 1.2rem);
-      letter-spacing: 1px;
-      background: #FFE600;
-      color: #1e1b2e;
-      padding: 6px 22px;
-      border-radius: 6px;
-      box-shadow: 3px 3px 0 #000;
-      margin-bottom: 12px;
+    .hero h1 em {
+      font-style: normal;
+      color: #C0392B;
+      text-decoration: underline wavy #FFC93C 5px;
+      text-underline-offset: 10px;
     }
 
-    .hero-subtagline {
-      display: block;
-      font-size: clamp(0.82rem, 1.8vw, 0.98rem);
-      color: rgba(243, 242, 234, 0.65);
-      margin-bottom: 34px;
-      font-style: italic;
-      font-weight: 600;
+    .hero-sub {
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 500;
+      margin: 0 0 28px;
+      max-width: 28ch;
     }
 
-    /* ── HERO BUTTON GROUPS ── */
-    .hero-btn-groups {
+    .hero-cta-row {
       display: flex;
-      flex-direction: column;
       gap: 14px;
-    }
-
-    .btn-group-label {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 0.82rem;
-      letter-spacing: 2px;
-      color: #00C2FF;
-      text-transform: uppercase;
-      margin-bottom: -4px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .hero-btns a {
-      font-family: 'Bungee', cursive;
-      font-size: clamp(0.82rem, 2.2vw, 0.98rem);
-      letter-spacing: 1px;
-      background: #FFE600;
-      color: #1e1b2e;
+    .btn-dark {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      color: #FFF7EC;
+      background: #191320;
+      border: 3px solid #191320;
+      border-radius: 12px;
+      padding: 13px 24px;
+      box-shadow: 5px 5px 0 #C0392B;
       text-decoration: none;
-      padding: 9px 20px;
-      border-radius: 6px;
-      border: 2px solid #000;
-      box-shadow: 4px 4px 0 #FF2BD6;
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-
-    .hero-btns a:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #FF2BD6;
-    }
-
-    .hero-btns a.btn-alt {
-      background: transparent;
-      color: #f3f2ea;
-      border-color: #00C2FF;
-      box-shadow: 4px 4px 0 rgba(0, 194, 255, 0.2);
-    }
-
-    .hero-btns a.btn-alt:hover {
-      background: rgba(0, 194, 255, 0.12);
-      box-shadow: 6px 6px 0 rgba(0, 194, 255, 0.4);
-    }
-
-    /* ── HERO CHARACTER CARD ── */
-    .hero-card {
-      flex: 1 1 320px;
-      min-width: 260px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      background: #f8f7f0;
-      border-radius: 8px;
-      padding: 20px 18px 14px;
-      transform: rotate(2deg);
-      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.55);
-    }
-
-    /* Hole-punch dot strip (lined paper effect) */
-    .hero-card-inner::before {
-      content: '';
-      position: absolute;
-      top: -12px; left: 22px; right: 22px;
-      height: 24px;
-      background: repeating-radial-gradient(circle, #bbb 0 3px, transparent 4px 26px);
-      background-size: 26px 26px;
-    }
-
-    .hero-card-inner img {
-      width: 100%;
-      display: block;
-      border-radius: 4px;
-    }
-
-    .hero-card-caption {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 17px;
-      color: #9b51e0;
-      text-align: center;
-      margin-top: 10px;
-      transform: rotate(-1deg);
-    }
-
-    /* ── LATEST VIDEO ── */
-    .latest-video {
-      max-width: 820px;
-      margin: 70px auto 0;
-      padding: 0 24px;
-    }
-
-    .latest-video h2 {
-      font-family: 'Bungee', cursive;
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
-      letter-spacing: 2px;
-      color: #FFE600;
-      text-shadow: 3px 3px 0 #FF2BD6;
-      margin-bottom: 6px;
-    }
-
-    .new-badge {
+      transition: box-shadow 0.12s;
       display: inline-block;
-      font-family: 'Bungee', cursive;
-      font-size: 0.78rem;
-      letter-spacing: 1px;
-      background: #FF2BD6;
-      color: #fff;
-      padding: 2px 12px;
-      border-radius: 6px;
-      border: 2px solid #000;
-      margin-left: 8px;
-      vertical-align: middle;
-      margin-bottom: 3px;
     }
 
-    .video-wrap {
+    .btn-dark:hover { box-shadow: 5px 5px 0 #12A594; color: #FFF7EC; }
+
+    .btn-outline {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      color: #191320;
+      background: #FFF7EC;
+      border: 3px solid #191320;
+      border-radius: 12px;
+      padding: 13px 24px;
+      box-shadow: 5px 5px 0 #191320;
+      text-decoration: none;
+      transition: background 0.12s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { background: #fff; color: #191320; }
+
+    .hero-img {
+      align-self: end;
+    }
+
+    .hero-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      border-bottom: 3px solid #191320;
+      background: #191320;
+      color: #FFF7EC;
+    }
+
+    .stats-bar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 28px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* ── SPELLING RULES SECTION ── */
+    .rules-section {
+      border-bottom: 3px solid #191320;
+      background: #F2E7FF;
+    }
+
+    .rules-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 28px;
+    }
+
+    .section-h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(34px, 5vw, 46px);
+      letter-spacing: -0.02em;
+      margin: 0 0 32px;
+    }
+
+    .group-label {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7A5AF8;
+      margin: 0 0 10px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .chip {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      color: #191320;
+      background: #FFF7EC;
+      border: 3px solid #191320;
+      border-radius: 10px;
+      padding: 8px 18px;
+      box-shadow: 4px 4px 0 #191320;
+      transition: transform 0.1s, box-shadow 0.1s;
+      display: inline-block;
+    }
+
+    .chip:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #191320;
+      color: #191320;
+    }
+
+    .chip.alt {
+      background: transparent;
+      color: #191320;
+      border-color: #7A5AF8;
+      box-shadow: 4px 4px 0 #7A5AF8;
+    }
+
+    .chip.alt:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #7A5AF8;
+      background: rgba(122, 90, 248, 0.07);
+      color: #191320;
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 76px 28px;
+    }
+
+    .video-section-h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+    }
+
+    .video-section-sub {
+      font-size: 20px;
+      margin: 0 0 32px;
+      max-width: 60ch;
+    }
+
+    .video-card {
+      max-width: 760px;
+      border: 3px solid #191320;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #191320;
+      box-shadow: 8px 8px 0 #FFC93C;
+    }
+
+    .video-embed {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      border: 4px solid #FFE600;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 #FF2BD6;
-      margin-bottom: 16px;
     }
 
-    .video-wrap iframe {
+    .video-embed iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
+      border: none;
     }
 
-    .video-footer {
+    .video-card-body {
+      padding: 20px 24px;
+      background: #FFF7EC;
+      border-top: 3px solid #191320;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 12px;
     }
 
-    .video-footer p {
+    .video-card-body h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      margin: 0 0 4px;
+    }
+
+    .video-card-body p {
+      font-size: 16px;
+      margin: 0;
+      color: #4A4155;
+    }
+
+    .btn-dark-sm {
+      font-family: 'Figtree', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      color: rgba(243, 242, 234, 0.75);
-    }
-
-    .video-footer a {
-      font-family: 'Bungee', cursive;
-      font-size: 0.88rem;
-      letter-spacing: 1px;
-      background: #FFE600;
-      color: #1e1b2e;
+      font-size: 16px;
+      color: #FFF7EC;
+      background: #191320;
+      border: 3px solid #191320;
+      border-radius: 10px;
+      padding: 10px 18px;
+      box-shadow: 4px 4px 0 #C0392B;
       text-decoration: none;
-      padding: 8px 20px;
-      border-radius: 6px;
-      border: 2px solid #000;
-      box-shadow: 3px 3px 0 #FF2BD6;
-      transition: transform 0.1s, box-shadow 0.1s;
+      transition: box-shadow 0.12s;
+      display: inline-block;
       white-space: nowrap;
     }
 
-    .video-footer a:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 5px 5px 0 #FF2BD6;
+    .btn-dark-sm:hover { box-shadow: 4px 4px 0 #12A594; color: #FFF7EC; }
+
+    /* ── ABOUT SECTION ── */
+    .about-section {
+      border-top: 3px solid #191320;
     }
 
-    /* ── ABOUT ── */
-    .about {
-      display: flex;
-      flex-wrap: wrap-reverse;
+    .about-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 76px 28px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 56px;
       align-items: center;
-      gap: 50px;
-      max-width: 1100px;
-      margin: 80px auto 0;
-      padding: 0 6vw;
     }
 
-    .about-img {
-      flex: 1 1 260px;
-      min-width: 220px;
+    .about-img-wrap {
+      border: 3px solid #191320;
+      border-radius: 20px;
+      background: #C9E4FF;
+      box-shadow: 8px 8px 0 #191320;
+      overflow: hidden;
     }
 
-    .about-img-inner {
-      background: #f8f7f0;
-      border-radius: 8px;
-      padding: 14px;
-      transform: rotate(-2deg);
-      box-shadow: 8px 8px 0 rgba(0, 194, 255, 0.35);
-    }
-
-    .about-img-inner img {
-      width: 100%;
+    .about-img-wrap img {
       display: block;
-      border-radius: 4px;
-    }
-
-    .about-text {
-      flex: 2 1 340px;
-      min-width: 260px;
-    }
-
-    .about-eyebrow {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 15px;
-      color: #00C2FF;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
     }
 
     .about-text h2 {
-      font-family: 'Bungee', cursive;
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: #f8f7f0;
-      margin-bottom: 16px;
-      line-height: 1.1;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px, 4.5vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px;
     }
 
     .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: rgba(243, 242, 234, 0.78);
-      max-width: 480px;
-      font-weight: 600;
+      font-size: 20px;
+      margin: 0 0 16px;
+      line-height: 1.6;
     }
+
+    .about-text p:last-child { margin: 0; }
 
     /* ── FOOTER ── */
     footer {
-      background: #12101a;
+      background: #191320;
       text-align: center;
-      padding: 24px 20px;
+      padding: 26px 20px;
       font-weight: 700;
-      font-size: 0.9rem;
-      color: #FFE600;
-      border-top: 4px solid #FFE600;
-      margin-top: 80px;
+      font-size: 16px;
+      color: #FFF7EC;
+      border-top: 3px solid #191320;
+    }
+
+    footer a { color: #FFC93C; }
+    footer a:hover { color: #12A594; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-bottom: 0;
+      }
+      .hero-text { padding-bottom: 0; }
+      .hero-img {
+        order: -1;
+        max-height: 320px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-img img { max-height: 320px; width: auto; object-fit: contain; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header-inner { padding: 12px 16px; }
+      .site-logo-text { font-size: 18px; }
+      .hero-inner { padding: 36px 16px 0; }
+      .rules-inner { padding: 48px 16px; }
+      .video-section { padding: 48px 16px; }
+      .about-inner { padding: 48px 16px; }
+      .stats-bar-inner { padding: 16px; gap: 14px; font-size: 16px; }
     }
   </style>
 </head>
@@ -422,103 +546,131 @@
     <a href="https://www.youtube.com/@mrspelling1?sub_confirmation=1" target="_blank" rel="noopener" class="support-btn support-btn--yt">&#9654; Subscribe on YouTube</a>
   </div>
 
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-logo">
+        <div class="site-logo-box">S</div>
+        <span class="site-logo-text">Mr Spelling</span>
+      </a>
+      <nav class="site-nav">
+        <a href="#rules" class="nav-link">Spelling rules</a>
+        <a href="#video" class="nav-link">Videos</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+      <a href="https://www.youtube.com/@mrspelling1?sub_confirmation=1" target="_blank" rel="noopener" class="nav-cta">Subscribe</a>
+    </div>
+  </header>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-glow-a"></div>
-    <div class="hero-glow-b"></div>
     <div class="hero-inner">
-
-      <!-- Left: text + buttons -->
       <div class="hero-text">
-        <div class="hero-tag">#SpellingBattle</div>
-        <h1>MR<br>SPELLING</h1>
-        <span class="hero-tagline">Not Misspelling</span>
-        <span class="hero-subtagline">This website teaches spelling rules because spelling rules.</span>
-
-        <div class="hero-btn-groups">
-          <span class="btn-group-label">Spelling Rules</span>
-          <div class="hero-btns">
-            <a href="plural-rule-1.html">Plural Rule 1</a>
-            <a href="floss-rule.html">The FLOSS Rule</a>
-            <a href="sound-of-vowels.html">Sound of the Vowels</a>
-            <a href="lessons/ck-says-k.html">CK Says /k/</a>
-            <a href="lessons/v-needs-e.html">V Needs E</a>
-            <a href="lessons/consonant-le.html">Consonant-LE</a>
-            <a href="lessons/schwa.html">The Schwa</a>
-            <a href="lessons/vowel-sounds.html">Vowel Sounds Review</a>
-            <a href="lessons/contractions.html">Contractions</a>
-            <a href="lessons/ai-ay.html">AI and AY</a>
-            <a href="lessons/syllables.html">Syllables</a>
-            <a href="lessons/bossy-r.html">Bossy R</a>
-            <a href="lessons/plural-rule-2.html">Plural Rule 2</a>
-            <a href="lessons/plural-rule-3.html">Plural Rule 3</a>
-            <a href="lessons/plural-rule-4.html">Plural Rule 4</a>
-            <a href="lessons/soft-c-soft-g.html">Soft C and G</a>
-            <a href="lessons/letter-y.html">Letter Y</a>
-            <a href="lessons/apostrophe.html">Apostrophe</a>
-            <a href="lessons/every-syllable.html">Every Syllable</a>
-            <a href="lessons/dge-ge.html">DGE and GE</a>
-          </div>
-
-          <span class="btn-group-label">Explore</span>
-          <div class="hero-btns">
-            <a href="lessons/index.html" class="btn-alt">All Topics</a>
-            <a href="videos.html" class="btn-alt">Videos</a>
-            <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
-            <a href="request.html" class="btn-alt">Request a Song</a>
-            <a href="support.html" class="btn-alt">Support Mr Spelling</a>
-          </div>
+        <div class="hero-pill">Spelling songs for the classroom</div>
+        <h1>Mr Spelling<br>Not <em>Missspelling</em>.</h1>
+        <p class="hero-sub">I teach spelling rules because spelling rules.</p>
+        <div class="hero-cta-row">
+          <a href="#video" class="btn-dark">Watch the videos</a>
+          <a href="#rules" class="btn-outline">Free worksheets</a>
         </div>
       </div>
+      <div class="hero-img">
+        <img src="assets/mrspelling-cheer.jpg" alt="Mr Spelling cheering with a microphone" />
+      </div>
+    </div>
+  </section>
 
-      <!-- Right: character card -->
-      <div class="hero-card">
-        <div class="hero-card-inner">
-          <img src="assets/mrspelling-point.jpg" alt="Mr Spelling pointing" />
-          <div class="hero-card-caption">"you got this &#8212; spell it!"</div>
-        </div>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div>20 spelling-rule songs</div>
+      <div>Printable worksheet for every song</div>
+      <div>Curriculum-aligned, Years 1&ndash;6</div>
+      <div>Free for classroom use</div>
+    </div>
+  </div>
+
+  <!-- SPELLING RULES -->
+  <section class="rules-section" id="rules">
+    <div class="rules-inner">
+      <h2 class="section-h2">Spelling Rules</h2>
+
+      <div class="group-label">Lessons</div>
+      <div class="chip-row">
+        <a href="plural-rule-1.html" class="chip">Plural Rule 1</a>
+        <a href="floss-rule.html" class="chip">The FLOSS Rule</a>
+        <a href="sound-of-vowels.html" class="chip">Sound of the Vowels</a>
+        <a href="lessons/ck-says-k.html" class="chip">CK Says /k/</a>
+        <a href="lessons/v-needs-e.html" class="chip">V Needs E</a>
+        <a href="lessons/consonant-le.html" class="chip">Consonant-LE</a>
+        <a href="lessons/schwa.html" class="chip">The Schwa</a>
+        <a href="lessons/vowel-sounds.html" class="chip">Vowel Sounds Review</a>
+        <a href="lessons/contractions.html" class="chip">Contractions</a>
+        <a href="lessons/ai-ay.html" class="chip">AI and AY</a>
+        <a href="lessons/syllables.html" class="chip">Syllables</a>
+        <a href="lessons/bossy-r.html" class="chip">Bossy R</a>
+        <a href="lessons/plural-rule-2.html" class="chip">Plural Rule 2</a>
+        <a href="lessons/plural-rule-3.html" class="chip">Plural Rule 3</a>
+        <a href="lessons/plural-rule-4.html" class="chip">Plural Rule 4</a>
+        <a href="lessons/soft-c-soft-g.html" class="chip">Soft C and G</a>
+        <a href="lessons/letter-y.html" class="chip">Letter Y</a>
+        <a href="lessons/apostrophe.html" class="chip">Apostrophe</a>
+        <a href="lessons/every-syllable.html" class="chip">Every Syllable</a>
+        <a href="lessons/dge-ge.html" class="chip">DGE and GE</a>
       </div>
 
+      <div class="group-label">Explore</div>
+      <div class="chip-row">
+        <a href="lessons/index.html" class="chip alt">All Topics</a>
+        <a href="videos.html" class="chip alt">Videos</a>
+        <a href="powerpoints.html" class="chip alt">PowerPoints</a>
+        <a href="request.html" class="chip alt">Request a Song</a>
+        <a href="support.html" class="chip alt">Support Mr Spelling</a>
+      </div>
     </div>
   </section>
 
   <!-- LATEST VIDEO -->
-  <section class="latest-video">
-    <h2>Latest Video <span class="new-badge">NEW</span></h2>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/korz2wR6AOw"
-              title="Bossy R by Mr Spelling"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <div class="video-footer">
-      <p>Bossy R &#8212; AR, OR, ER, IR &amp; UR explained</p>
-      <a href="lessons/bossy-r.html">Full Bossy R Page &#8594;</a>
+  <section id="video">
+    <div class="video-section">
+      <h2 class="video-section-h2">Latest Song</h2>
+      <p class="video-section-sub">Play it straight from here or from the channel. Each one names the rule in the first ten seconds.</p>
+      <article class="video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/korz2wR6AOw"
+                  title="Bossy R by Mr Spelling"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="video-card-body">
+          <div>
+            <h3>Bossy R</h3>
+            <p>AR, OR, ER, IR and UR explained</p>
+          </div>
+          <a href="lessons/bossy-r.html" class="btn-dark-sm">Full page &rarr;</a>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
-    <div class="about-img">
-      <div class="about-img-inner">
-        <img src="assets/mrspelling-shaka.jpg" alt="Mr Spelling" />
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <img src="assets/mrspelling-point.jpg" alt="Mr Spelling pointing" />
       </div>
-    </div>
-    <div class="about-text">
-      <div class="about-eyebrow">WHO'S BEHIND THE MIC?</div>
-      <h2>Who Is Mr Spelling?</h2>
-      <p>
-        Mr Spelling is the coolest teacher in the room &mdash; dropping spelling knowledge
-        with the energy of a hip-hop MC. Part educator, part performer, he turns
-        tricky words into unforgettable bars so every student walks away spelling
-        like a champion. Learning has never sounded this good.
-      </p>
+      <div class="about-text">
+        <h2>About Mr Spelling</h2>
+        <p>Mr Spelling is the coolest teacher in the room &mdash; dropping spelling knowledge with the energy of a hip-hop MC. Part educator, part performer, he turns tricky words into unforgettable bars so every student walks away spelling like a champion.</p>
+        <p>The songs run 60 to 90 seconds, so they fit a starter, a transition, or the last five minutes of a lesson. Every song has a matching worksheet on this site.</p>
+        <p>Nothing here is behind a login. Play the videos, print the sheets, use them however your class needs.</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2026 Mr Spelling &mdash; Not Misspelling
+    &copy; 2026 Mr Spelling &mdash; Not Misspelling &mdash;
+    <a href="https://ko-fi.com/mrspelling" target="_blank" rel="noopener">Support on Ko-fi</a>
   </footer>
 
 </body>
