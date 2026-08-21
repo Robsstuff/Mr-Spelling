@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bossy R | Mr Spelling</title>
+  <title>Final J Sound: DGE and GE | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -24,16 +24,27 @@
     .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 4px solid #FFE600; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FF2BD6; margin-bottom: 20px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .video-description { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,230,0,0.3); border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: rgba(243,242,234,0.85); font-weight: 600; }
+    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+    @media(max-width:540px){ .split-grid { grid-template-columns: 1fr; } }
+    .split-card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px 18px; }
+    .split-card.dge { border: 2px solid #FFE600; }
+    .split-card.ge  { border: 2px solid #00C2FF; }
+    .split-card-title { font-family: 'Bungee', cursive; font-size: 1.8rem; margin-bottom: 4px; }
+    .split-card.dge .split-card-title { color: #FFE600; }
+    .split-card.ge  .split-card-title { color: #00C2FF; }
+    .split-card-rule { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.6); margin-bottom: 8px; }
+    .split-word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .split-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 5px; border: 2px solid #000; text-transform: lowercase; }
+    .split-card.dge .split-chip { background: #FFE600; color: #1e1b2e; }
+    .split-card.ge  .split-chip { background: #00C2FF; color: #1e1b2e; }
     .word-group { margin-bottom: 28px; }
     .word-group-label { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .word-group-label.yellow { color: #FFE600; }
-    .word-group-label.cyan { color: #00C2FF; }
-    .word-group-label.pink { color: #FF2BD6; }
+    .word-group-label.cyan   { color: #00C2FF; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .word-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 6px; border: 2px solid #000; letter-spacing: 0.5px; text-transform: lowercase; }
     .word-chip.yellow { background: #FFE600; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
     .word-chip.cyan   { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
-    .word-chip.pink   { background: #FF2BD6; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
     .download-card { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #FF2BD6; margin-top: 28px; }
     .download-card h3 { font-family: 'Bungee', cursive; font-size: 1rem; color: #FFE600; margin-bottom: 8px; }
     .download-card p { font-size: 0.88rem; color: rgba(243,242,234,0.7); margin-bottom: 16px; line-height: 1.5; font-weight: 600; }
@@ -41,19 +52,10 @@
     .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #FF2BD6; }
     .rule-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FF2BD6; }
     .rule-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
-    .r-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 20px 24px; }
-    .r-pair { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 14px; text-align: center; }
-    .r-pair.ar { border: 2px solid #FFE600; }
-    .r-pair.or { border: 2px solid #00C2FF; }
-    .r-pair.er { border: 2px solid #FF2BD6; }
-    .r-pair-letters { font-family: 'Bungee', cursive; font-size: 1.8rem; }
-    .r-pair.ar .r-pair-letters { color: #FFE600; }
-    .r-pair.or .r-pair-letters { color: #00C2FF; }
-    .r-pair.er .r-pair-letters { color: #FF2BD6; }
-    .r-pair-sound { font-size: 0.8rem; font-weight: 800; color: rgba(243,242,234,0.6); margin: 2px 0; }
-    .r-pair-ex { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.5); }
-    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
+    .rule-desc { padding: 20px 24px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
     .rule-desc strong { color: #FFE600; }
+    .rule-desc ul { margin: 10px 0 0 20px; }
+    .rule-desc li { margin-bottom: 6px; }
     .exceptions-box { background: #12101a; border: 3px solid #ef4444; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(239,68,68,0.35); }
     .exceptions-box-header { background: #ef4444; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #fff; letter-spacing: 1px; }
     .exceptions-inner { padding: 20px 24px; }
@@ -76,8 +78,8 @@
 <body>
   <header class="page-header">
     <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Bossy R</h1>
-    <p class="subtitle">R-Controlled Vowels: AR, OR, ER, IR, UR</p>
+    <h1>Final J: DGE and GE</h1>
+    <p class="subtitle">Native English Words Never End in the Letter J</p>
   </header>
   <nav class="cat-nav">
     <a href="#video">Video</a>
@@ -88,86 +90,110 @@
   </nav>
   <main>
     <section class="content-section" id="video">
-      <p class="section-eyebrow">R-CONTROLLED VOWELS</p>
+      <p class="section-eyebrow">THE /J/ SOUND AT THE END</p>
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R Phonics Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/qZmaK_xjS9w" title="Final J Sound DGE and GE by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video-description">
-        <p>When the letter <strong>R</strong> comes after a vowel, it changes the vowel's sound completely. That's why R is called <strong>Bossy R</strong> &mdash; it bosses the vowel and makes it say something new. <strong>A+R = /ar/</strong> (car), <strong>O+R = /or/</strong> (fork), and <strong>E/I/U + R = /er/</strong> (fern, girl, turn).</p>
+        <p>Native English words <strong>never end in the letter J</strong>. When you hear the /j/ sound at the end of a word, you spell it <strong>DGE</strong> (after a short vowel) or <strong>GE</strong> (after a long vowel or consonant). <em>Judge, lodge, fridge</em> use DGE. <em>Page, cage, huge</em> use GE.</p>
       </div>
     </section>
     <section class="content-section" id="words">
       <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">R-Controlled Words</h2>
-      <div class="word-group">
-        <p class="word-group-label yellow">-AR words</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">barn</span>
-          <span class="word-chip yellow">stars</span>
-          <span class="word-chip yellow">cards</span>
-          <span class="word-chip yellow">march</span>
-          <span class="word-chip yellow">far</span>
+      <h2 class="section-heading">DGE and GE Words</h2>
+      <div class="split-grid">
+        <div class="split-card dge">
+          <div class="split-card-title">DGE</div>
+          <div class="split-card-rule">after a short vowel</div>
+          <div class="split-word-chips">
+            <span class="split-chip">judge</span>
+            <span class="split-chip">badge</span>
+            <span class="split-chip">fridge</span>
+            <span class="split-chip">bridge</span>
+            <span class="split-chip">hedge</span>
+            <span class="split-chip">lodge</span>
+            <span class="split-chip">ridge</span>
+            <span class="split-chip">nudge</span>
+          </div>
+        </div>
+        <div class="split-card ge">
+          <div class="split-card-title">GE</div>
+          <div class="split-card-rule">after a long vowel or consonant</div>
+          <div class="split-word-chips">
+            <span class="split-chip">page</span>
+            <span class="split-chip">cage</span>
+            <span class="split-chip">rage</span>
+            <span class="split-chip">age</span>
+            <span class="split-chip">stage</span>
+            <span class="split-chip">huge</span>
+            <span class="split-chip">bulge</span>
+          </div>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label cyan">-OR words</p>
+        <p class="word-group-label yellow">DGE words (short vowel + DGE)</p>
         <div class="chip-row">
-          <span class="word-chip cyan">corn</span>
-          <span class="word-chip cyan">north</span>
-          <span class="word-chip cyan">horns</span>
-          <span class="word-chip cyan">sports</span>
-          <span class="word-chip cyan">four</span>
+          <span class="word-chip yellow">judge</span>
+          <span class="word-chip yellow">badge</span>
+          <span class="word-chip yellow">fridge</span>
+          <span class="word-chip yellow">bridge</span>
+          <span class="word-chip yellow">hedge</span>
+          <span class="word-chip yellow">lodge</span>
+          <span class="word-chip yellow">ridge</span>
+          <span class="word-chip yellow">nudge</span>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label pink">ER / IR / UR words</p>
+        <p class="word-group-label cyan">GE words (long vowel or consonant + GE)</p>
         <div class="chip-row">
-          <span class="word-chip pink">fern</span>
-          <span class="word-chip pink">germ</span>
-          <span class="word-chip pink">girl</span>
-          <span class="word-chip pink">third</span>
-          <span class="word-chip pink">turn</span>
+          <span class="word-chip cyan">page</span>
+          <span class="word-chip cyan">cage</span>
+          <span class="word-chip cyan">rage</span>
+          <span class="word-chip cyan">age</span>
+          <span class="word-chip cyan">stage</span>
+          <span class="word-chip cyan">huge</span>
+          <span class="word-chip cyan">bulge</span>
         </div>
       </div>
       <div class="download-card">
         <h3>Spelling Word List</h3>
-        <p>15 R-controlled vowel words &mdash; AR, OR, and ER/IR/UR.</p>
-        <a href="../downloads/bossy-r-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+        <p>15 words using DGE and GE to spell the final /j/ sound.</p>
+        <a href="../downloads/dge-ge-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
       </div>
     </section>
     <section class="content-section" id="rule">
       <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">Bossy R</h2>
+      <h2 class="section-heading">DGE vs GE</h2>
       <div class="rule-box">
-        <div class="rule-box-header">Vowel + R = a Completely New Sound</div>
-        <div class="r-pairs">
-          <div class="r-pair ar"><div class="r-pair-letters">AR</div><div class="r-pair-sound">/ar/ sound</div><div class="r-pair-ex">car, barn, star</div></div>
-          <div class="r-pair or"><div class="r-pair-letters">OR</div><div class="r-pair-sound">/or/ sound</div><div class="r-pair-ex">fork, corn, sport</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">ER</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">fern, her, term</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">IR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">girl, bird, third</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">UR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">turn, fur, burn</div></div>
+        <div class="rule-box-header">Native English words never end in J &mdash; use DGE or GE</div>
+        <div class="rule-desc">
+          Both DGE and GE spell the /j/ sound at the end of a word. The vowel before it tells you which to use:
+          <ul>
+            <li><strong>Short vowel before /j/</strong>: use <strong>DGE</strong> &mdash; <em>badge, fridge, lodge, judge, hedge, nudge</em>. The D bridges the short vowel and the GE. Think of it as the FLOSS-style rule for J: short vowel = extra letter.</li>
+            <li><strong>Long vowel before /j/</strong>: use <strong>GE</strong> &mdash; <em>page, cage, huge, age</em>. The silent E already marks the long vowel, so no D is needed.</li>
+            <li><strong>Consonant before /j/</strong>: use <strong>GE</strong> &mdash; <em>bulge, hinge, plunge, merge</em>. A consonant before the GE ending is enough; no D is added.</li>
+          </ul>
         </div>
-        <p class="rule-desc">When R follows a vowel, R bosses the vowel and changes its sound. A says "ah" normally, but A+R says "ar" (as in <em>car</em>). O says "oh" normally, but O+R says "or" (as in <em>fork</em>). ER, IR, and UR all make the <strong>same /er/ sound</strong> &mdash; that is the tricky part! You must learn which spelling each word uses.</p>
       </div>
     </section>
     <section class="content-section" id="exceptions">
       <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Tricky Bossy R Words</h2>
+      <h2 class="section-heading">Exceptions and Traps</h2>
       <div class="exceptions-box">
-        <div class="exceptions-box-header">Things that can confuse you</div>
+        <div class="exceptions-box-header">Words with a final J sound that don't follow the rule</div>
         <div class="exceptions-inner">
           <div class="exception-item">
-            <span class="exception-word">ER / IR / UR</span>
-            <p class="exception-note">All three make exactly the <strong>same sound</strong>: /er/. Compare: <em>fern</em>, <em>girl</em>, <em>turn</em> &mdash; they all sound the same in the stressed syllable but are spelled differently. You must memorise which spelling each word uses; the sound alone won't tell you.</p>
+            <span class="exception-word">loanwords</span>
+            <p class="exception-note">Words borrowed from other languages CAN end in J: <em>raj, hadj, taj</em>. These are not native English words, so the no-J rule doesn't apply. In everyday English spelling, avoid ending a word with just J.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">four / for</span>
-            <p class="exception-note"><em>Four</em> (the number) uses OUR but still makes the /or/ sound. Not all /or/ sounds are spelled O+R &mdash; OUR (four, your), OAR (board, roar), and even ORE (more, store) can make the same sound.</p>
+            <span class="exception-word">age / cage</span>
+            <p class="exception-note">In some short words (like <em>age</em>), the vowel sounds short when you say it quickly but still takes GE, not DGE. That's because the A here is actually a long A spelled with silent E (AG+E). Always ask: is the vowel letter followed by DGE or GE? Not just how it sounds in fast speech.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">war, warm</span>
-            <p class="exception-note">When W comes before AR, the sound changes from /ar/ to /or/: <em>war</em>, <em>warm</em>, <em>wart</em>, <em>ward</em>. The W softens the vowel. This is a known exception cluster to memorise.</p>
+            <span class="exception-word">fudge vs. huge</span>
+            <p class="exception-note">A good pair to compare: <em>fudge</em> (short U &rarr; DGE) vs. <em>huge</em> (long U &rarr; GE). Same vowel letter, different length &mdash; the vowel length changes the spelling from DGE to GE.</p>
           </div>
         </div>
       </div>
@@ -176,46 +202,38 @@
       <p class="section-eyebrow">SONG LYRICS</p>
       <h2 class="section-heading">Lyrics</h2>
       <div class="lyrics-box">
-        <div class="lyrics-box-header">Bossy R &mdash; R-Controlled Vowels Rap</div>
+        <div class="lyrics-box-header">Final J: DGE and GE &mdash; No J at the End!</div>
         <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready? Whoa! To learn about what? R-controlled vowels are also known as Bossy R.</p>
+          <p class="lyric-intro">Are you ready to learn about the J sound at the end of words? Here we go.</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 1 &mdash; AR WORDS</p>
-          <p class="lyric-verse">A can say a, but add the letter R, it makes a new sound: ar as in car.<br>
-          barn &mdash; AR N<br>
-          stars &mdash; ST AR S<br>
-          cards &mdash; C AR DS<br>
-          march &mdash; M AR CH<br>
-          far &mdash; F AR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 2 &mdash; OR WORDS</p>
-          <p class="lyric-verse">O can say o, we know that from before, but add the letter R, and now it can say or.<br>
-          corn &mdash; C OR N<br>
-          north &mdash; N OR TH<br>
-          horns &mdash; H OR NS<br>
-          sports &mdash; SP OR TS<br>
-          four &mdash; F OR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 3 &mdash; ER/IR/UR WORDS</p>
-          <p class="lyric-verse">These vowels are short, but I hope you can infer:<br>
-          if you add the letter R, they now can say er.<br>
-          fern &mdash; F ER N<br>
-          germ &mdash; G ER M<br>
-          girl &mdash; G IR L<br>
-          third &mdash; TH IR D<br>
-          And now you know about Bossy R.</p>
+          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
+          Use DGE or GE to make the J sound today.<br>
+          Short vowel before it? D-G-E.<br>
+          Long vowel or consonant? Just G-E.</p>
+          <p class="lyric-label">VERSE 1 &mdash; DGE WORDS</p>
+          <p class="lyric-verse">Short vowel before J: use DGE.<br>
+          judge &mdash; J U DGE, short U.<br>
+          badge &mdash; B A DGE, short A.<br>
+          fridge &mdash; F R I DGE, short I.<br>
+          bridge &mdash; B R I DGE, short I.<br>
+          hedge &mdash; H E DGE, short E.<br>
+          lodge &mdash; L O DGE, short O.<br>
+          nudge &mdash; N U DGE, short U.</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-outro">Mr. Spelling. That is it. Bye-bye.</p>
+          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
+          Use DGE or GE to make the J sound today.</p>
+          <p class="lyric-label">VERSE 2 &mdash; GE WORDS</p>
+          <p class="lyric-verse">Long vowel or consonant before J: use GE.<br>
+          page &mdash; P A GE, long A.<br>
+          cage &mdash; C A GE, long A.<br>
+          rage &mdash; R A GE, long A.<br>
+          huge &mdash; H U GE, long U.<br>
+          stage &mdash; ST A GE, long A.<br>
+          bulge &mdash; B UL GE, consonant L before GE.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
+          Use DGE or GE to make the J sound today.</p>
+          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
         </div>
       </div>
     </section>

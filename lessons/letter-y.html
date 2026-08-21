@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letter Y Has 4 Sounds | Mr Spelling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1e1b2e; font-family: 'Poppins', sans-serif; color: #f3f2ea; min-height: 100vh; }
+    .page-header { background: repeating-linear-gradient(135deg, #21202f 0 2px, #1e1b2e 2px 40px); border-bottom: 4px solid #FFE600; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Bungee', cursive; font-size: 0.78rem; letter-spacing: 1px; background: #FFE600; color: #1e1b2e; text-decoration: none; padding: 7px 16px; border-radius: 6px; border: 2px solid #000; box-shadow: 3px 3px 0 #FF2BD6; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #FF2BD6; }
+    .page-header h1 { font-family: 'Bungee', cursive; font-size: clamp(2.2rem, 7vw, 4rem); letter-spacing: 2px; color: #FFE600; text-shadow: 3px 3px 0 #FF2BD6; line-height: 1.1; }
+    .page-header .subtitle { font-family: 'Permanent Marker', cursive; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #00C2FF; margin-top: 8px; }
+    .cat-nav { background: #12101a; border-bottom: 3px solid #FFE600; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Bungee', cursive; font-size: 0.82rem; letter-spacing: 1px; text-decoration: none; color: #f3f2ea; background: #2a2740; padding: 7px 18px; border-radius: 6px; border: 2px solid #FFE600; box-shadow: 3px 3px 0 rgba(255,230,0,0.2); transition: all 0.1s; }
+    .cat-nav a:hover { background: #FFE600; color: #1e1b2e; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #FF2BD6; }
+    main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
+    .content-section { margin-bottom: 64px; }
+    .section-heading { font-family: 'Bungee', cursive; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #FFE600; text-shadow: 2px 2px 0 #FF2BD6; border-bottom: 3px solid #FFE600; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Permanent Marker', cursive; font-size: 0.9rem; color: #00C2FF; letter-spacing: 1px; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 4px solid #FFE600; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FF2BD6; margin-bottom: 20px; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-description { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,230,0,0.3); border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: rgba(243,242,234,0.85); font-weight: 600; }
+    .y-sounds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+    @media(max-width:540px){ .y-sounds-grid { grid-template-columns: 1fr; } }
+    .y-card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px 18px; }
+    .y-card.yeh   { border: 2px solid #FFE600; }
+    .y-card.eye-m { border: 2px solid #00C2FF; }
+    .y-card.eye-e { border: 2px solid #FF2BD6; }
+    .y-card.ee    { border: 2px solid #9b51e0; }
+    .y-card-sound { font-family: 'Bungee', cursive; font-size: 1.4rem; margin-bottom: 4px; }
+    .y-card.yeh   .y-card-sound { color: #FFE600; }
+    .y-card.eye-m .y-card-sound { color: #00C2FF; }
+    .y-card.eye-e .y-card-sound { color: #FF2BD6; }
+    .y-card.ee    .y-card-sound { color: #9b51e0; }
+    .y-card-rule { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.6); margin-bottom: 8px; }
+    .y-word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .y-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.88rem; padding: 4px 12px; border-radius: 5px; border: 2px solid #000; text-transform: lowercase; }
+    .y-card.yeh   .y-chip { background: #FFE600; color: #1e1b2e; }
+    .y-card.eye-m .y-chip { background: #00C2FF; color: #1e1b2e; }
+    .y-card.eye-e .y-chip { background: #FF2BD6; color: #fff; }
+    .y-card.ee    .y-chip { background: #9b51e0; color: #fff; }
+    .word-group { margin-bottom: 28px; }
+    .word-group-label { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .word-group-label.yellow  { color: #FFE600; }
+    .word-group-label.cyan    { color: #00C2FF; }
+    .word-group-label.pink    { color: #FF2BD6; }
+    .word-group-label.purple  { color: #9b51e0; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .word-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 6px; border: 2px solid #000; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip.yellow { background: #FFE600; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.cyan   { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.pink   { background: #FF2BD6; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.purple { background: #9b51e0; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .download-card { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #FF2BD6; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bungee', cursive; font-size: 1rem; color: #FFE600; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: rgba(243,242,234,0.7); margin-bottom: 16px; line-height: 1.5; font-weight: 600; }
+    .download-btn { display: inline-block; font-family: 'Bungee', cursive; font-size: 0.85rem; letter-spacing: 1px; background: #FFE600; color: #1e1b2e; text-decoration: none; padding: 10px 20px; border-radius: 6px; border: 2px solid #000; box-shadow: 3px 3px 0 #FF2BD6; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #FF2BD6; }
+    .rule-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FF2BD6; }
+    .rule-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
+    .rule-desc { padding: 20px 24px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
+    .rule-desc strong { color: #FFE600; }
+    .rule-desc ul { margin: 10px 0 0 20px; }
+    .rule-desc li { margin-bottom: 6px; }
+    .exceptions-box { background: #12101a; border: 3px solid #ef4444; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(239,68,68,0.35); }
+    .exceptions-box-header { background: #ef4444; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #fff; letter-spacing: 1px; }
+    .exceptions-inner { padding: 20px 24px; }
+    .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(239,68,68,0.2); }
+    .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
+    .exception-word { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem; background: #ef4444; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #000; box-shadow: 2px 2px 0 rgba(0,0,0,0.4); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: rgba(243,242,234,0.8); font-weight: 600; padding-top: 2px; }
+    .exception-note strong { color: #ef4444; }
+    .lyrics-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(255,230,0,0.25); }
+    .lyrics-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
+    .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
+    .lyric-intro  { color: #6b7280; font-style: italic; }
+    .lyric-label  { font-family: 'Bungee', cursive; font-size: 0.8rem; letter-spacing: 2px; color: #00C2FF; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #FFE600; font-weight: 800; }
+    .lyric-verse  { color: #f1f5f9; padding-left: 16px; border-left: 3px solid #FF2BD6; }
+    .lyric-outro  { color: #6b7280; font-style: italic; margin-top: 8px; }
+    footer { background: #12101a; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFE600; border-top: 4px solid #FFE600; }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <a href="../index.html" class="back-link">&#8592; Home</a>
+    <h1>Letter Y Has 4 Sounds</h1>
+    <p class="subtitle">Y as a Consonant AND as a Vowel</p>
+  </header>
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#words">Words</a>
+    <a href="#rule">The Rule</a>
+    <a href="#exceptions">Watch Out</a>
+    <a href="#lyrics">Lyrics</a>
+  </nav>
+  <main>
+    <section class="content-section" id="video">
+      <p class="section-eyebrow">THE LETTER Y</p>
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/4ot3NH4Wpos" title="Letter Y Has 4 Sounds by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-description">
+        <p>The letter <strong>Y</strong> is unusual &mdash; it works as both a <em>consonant</em> and a <em>vowel</em>. At the <strong>start of a word</strong>, Y is a consonant that says <em>/yeh/</em>. In the <strong>middle of a word</strong>, Y acts as a vowel that says <em>/i/</em>. At the <strong>end of a one-syllable word</strong>, Y says <em>/eye/</em> (like the letter I). At the <strong>end of a multi-syllable word</strong>, Y says <em>/ee/</em> (like the letter E).</p>
+      </div>
+    </section>
+    <section class="content-section" id="words">
+      <p class="section-eyebrow">SPELLING WORDS</p>
+      <h2 class="section-heading">The 4 Sounds of Y</h2>
+      <div class="y-sounds-grid">
+        <div class="y-card yeh">
+          <div class="y-card-sound">/yeh/ sound</div>
+          <div class="y-card-rule">Y as a consonant at the start</div>
+          <div class="y-word-chips">
+            <span class="y-chip">yellow</span>
+            <span class="y-chip">yarn</span>
+            <span class="y-chip">yell</span>
+            <span class="y-chip">yawn</span>
+          </div>
+        </div>
+        <div class="y-card eye-m">
+          <div class="y-card-sound">/i/ sound</div>
+          <div class="y-card-rule">Y as a vowel in the middle</div>
+          <div class="y-word-chips">
+            <span class="y-chip">gym</span>
+            <span class="y-chip">hymn</span>
+            <span class="y-chip">myth</span>
+          </div>
+        </div>
+        <div class="y-card eye-e">
+          <div class="y-card-sound">/eye/ sound</div>
+          <div class="y-card-rule">Y at the end of 1-syllable word</div>
+          <div class="y-word-chips">
+            <span class="y-chip">shy</span>
+            <span class="y-chip">fly</span>
+            <span class="y-chip">spy</span>
+            <span class="y-chip">sky</span>
+          </div>
+        </div>
+        <div class="y-card ee">
+          <div class="y-card-sound">/ee/ sound</div>
+          <div class="y-card-rule">Y at the end of multi-syllable word</div>
+          <div class="y-word-chips">
+            <span class="y-chip">happy</span>
+            <span class="y-chip">lazy</span>
+            <span class="y-chip">rainy</span>
+          </div>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label yellow">Y = /yeh/ (start of word)</p>
+        <div class="chip-row">
+          <span class="word-chip yellow">yellow</span>
+          <span class="word-chip yellow">yarn</span>
+          <span class="word-chip yellow">yell</span>
+          <span class="word-chip yellow">yawn</span>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label cyan">Y = /i/ (middle of word)</p>
+        <div class="chip-row">
+          <span class="word-chip cyan">gym</span>
+          <span class="word-chip cyan">hymn</span>
+          <span class="word-chip cyan">myth</span>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label pink">Y = /eye/ (end of 1-syllable word)</p>
+        <div class="chip-row">
+          <span class="word-chip pink">shy</span>
+          <span class="word-chip pink">fly</span>
+          <span class="word-chip pink">spy</span>
+          <span class="word-chip pink">sky</span>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label purple">Y = /ee/ (end of multi-syllable word)</p>
+        <div class="chip-row">
+          <span class="word-chip purple">happy</span>
+          <span class="word-chip purple">lazy</span>
+          <span class="word-chip purple">rainy</span>
+          <span class="word-chip purple">funny</span>
+        </div>
+      </div>
+      <div class="download-card">
+        <h3>Spelling Word List</h3>
+        <p>15 words covering all 4 sounds of the letter Y.</p>
+        <a href="../downloads/letter-y-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+      </div>
+    </section>
+    <section class="content-section" id="rule">
+      <p class="section-eyebrow">HOW IT WORKS</p>
+      <h2 class="section-heading">The 4 Sounds of Y</h2>
+      <div class="rule-box">
+        <div class="rule-box-header">Y = Consonant at Start / Vowel Everywhere Else</div>
+        <div class="rule-desc">
+          <strong>Y is unique</strong> because it does double duty:
+          <ul>
+            <li><strong>Start of a word</strong>: Y is a consonant, making the /yeh/ sound &mdash; <em>yellow, yell, yarn, yawn</em>.</li>
+            <li><strong>Middle of a word</strong>: Y acts as a vowel, making the short /i/ sound &mdash; <em>gym, myth, hymn, crystal</em>.</li>
+            <li><strong>End of a one-syllable word</strong>: Y is a vowel, making the long /eye/ sound (same as the letter name I) &mdash; <em>shy, fly, spy, sky, try, dry</em>.</li>
+            <li><strong>End of a multi-syllable word</strong>: Y is a vowel, making the long /ee/ sound (same as the letter name E) &mdash; <em>happy, lazy, funny, rainy, silly</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="content-section" id="exceptions">
+      <p class="section-eyebrow">WATCH OUT</p>
+      <h2 class="section-heading">Tricky Y Words</h2>
+      <div class="exceptions-box">
+        <div class="exceptions-box-header">Y sounds that can be confusing</div>
+        <div class="exceptions-inner">
+          <div class="exception-item">
+            <span class="exception-word">kayak</span>
+            <p class="exception-note">In <em>kayak</em>, the first Y says /eye/ but the word has two syllables (KAY-ak). The Y is in the middle of the first syllable, acting like a long vowel. Words of Greek or Hebrew origin (like <em>hymn</em>) often have Y-as-vowel patterns that don't follow the standard rule position.</p>
+          </div>
+          <div class="exception-item">
+            <span class="exception-word">beyond, style</span>
+            <p class="exception-note">In <em>beyond</em> and <em>style</em>, Y appears in an unexpected position but still acts as a vowel. <em>Beyond</em> = Y between consonants (sounds like /ee/). <em>Style</em> = Y at the end after a consonant cluster (sounds like /eye/). Position rules are a guide, not always exact.</p>
+          </div>
+          <div class="exception-item">
+            <span class="exception-word">syllable count</span>
+            <p class="exception-note">The rule for end-Y depends on counting syllables correctly. <strong>1 syllable + final Y = /eye/</strong> (try, dry, fly). <strong>2+ syllables + final Y = /ee/</strong> (happy, funny, silly). Count the beats: FLY has 1 beat; HAP-PY has 2 beats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content-section" id="lyrics">
+      <p class="section-eyebrow">SONG LYRICS</p>
+      <h2 class="section-heading">Lyrics</h2>
+      <div class="lyrics-box">
+        <div class="lyrics-box-header">Letter Y Has 4 Sounds &mdash; Song</div>
+        <div class="lyrics-inner">
+          <p class="lyric-intro">Are you ready to learn the four sounds of the letter Y? Here we go.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Y has four sounds: Ye, I, Eye, and E.<br>
+          The letter Y has four sounds, you see.<br>
+          Ye when it's first, like yellow and yell.<br>
+          I in the middle, like gym and spell.<br>
+          Eye at the end of one syllable words.<br>
+          E at the end when more syllables are heard.</p>
+          <p class="lyric-label">VERSE 1 &mdash; YEH SOUND</p>
+          <p class="lyric-verse">At the start of a word it makes the sound Ye.<br>
+          yellow &mdash; Y E L L O W<br>
+          yarn &mdash; Y A R N<br>
+          yell &mdash; Y E L L<br>
+          yawn &mdash; Y A W N</p>
+          <p class="lyric-label">VERSE 2 &mdash; SHORT I SOUND</p>
+          <p class="lyric-verse">In the middle of a word it can make a short I.<br>
+          gym &mdash; G Y M<br>
+          hymn &mdash; H Y M N<br>
+          myth &mdash; M Y T H</p>
+          <p class="lyric-label">VERSE 3 &mdash; LONG I SOUND</p>
+          <p class="lyric-verse">At the end of one syllable words it makes a long I.<br>
+          shy &mdash; S H Y<br>
+          fly &mdash; F L Y<br>
+          spy &mdash; S P Y<br>
+          sky &mdash; S K Y</p>
+          <p class="lyric-label">VERSE 4 &mdash; LONG E SOUND</p>
+          <p class="lyric-verse">At the end of more-syllable words it makes a long E.<br>
+          happy &mdash; H A P P Y<br>
+          lazy &mdash; L A Z Y<br>
+          rainy &mdash; R A I N Y</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Y has four sounds: Ye, I, Eye, and E.<br>
+          The letter Y has four sounds, you see.</p>
+          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
+</body>
+</html>

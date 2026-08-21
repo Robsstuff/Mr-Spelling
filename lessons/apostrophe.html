@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apostrophe of Possession | Mr Spelling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1e1b2e; font-family: 'Poppins', sans-serif; color: #f3f2ea; min-height: 100vh; }
+    .page-header { background: repeating-linear-gradient(135deg, #21202f 0 2px, #1e1b2e 2px 40px); border-bottom: 4px solid #FFE600; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Bungee', cursive; font-size: 0.78rem; letter-spacing: 1px; background: #FFE600; color: #1e1b2e; text-decoration: none; padding: 7px 16px; border-radius: 6px; border: 2px solid #000; box-shadow: 3px 3px 0 #FF2BD6; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #FF2BD6; }
+    .page-header h1 { font-family: 'Bungee', cursive; font-size: clamp(2.2rem, 7vw, 4rem); letter-spacing: 2px; color: #FFE600; text-shadow: 3px 3px 0 #FF2BD6; line-height: 1.1; }
+    .page-header .subtitle { font-family: 'Permanent Marker', cursive; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #00C2FF; margin-top: 8px; }
+    .cat-nav { background: #12101a; border-bottom: 3px solid #FFE600; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Bungee', cursive; font-size: 0.82rem; letter-spacing: 1px; text-decoration: none; color: #f3f2ea; background: #2a2740; padding: 7px 18px; border-radius: 6px; border: 2px solid #FFE600; box-shadow: 3px 3px 0 rgba(255,230,0,0.2); transition: all 0.1s; }
+    .cat-nav a:hover { background: #FFE600; color: #1e1b2e; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #FF2BD6; }
+    main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
+    .content-section { margin-bottom: 64px; }
+    .section-heading { font-family: 'Bungee', cursive; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #FFE600; text-shadow: 2px 2px 0 #FF2BD6; border-bottom: 3px solid #FFE600; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Permanent Marker', cursive; font-size: 0.9rem; color: #00C2FF; letter-spacing: 1px; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 4px solid #FFE600; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FF2BD6; margin-bottom: 20px; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-description { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,230,0,0.3); border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: rgba(243,242,234,0.85); font-weight: 600; }
+    .poss-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+    @media(max-width:600px){ .poss-grid { grid-template-columns: 1fr; } }
+    .poss-card { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 14px 16px; }
+    .poss-card.singular  { border: 2px solid #FFE600; }
+    .poss-card.plural-s  { border: 2px solid #00C2FF; }
+    .poss-card.irregular { border: 2px solid #FF2BD6; }
+    .poss-card-title { font-family: 'Bungee', cursive; font-size: 0.95rem; margin-bottom: 6px; }
+    .poss-card.singular  .poss-card-title { color: #FFE600; }
+    .poss-card.plural-s  .poss-card-title { color: #00C2FF; }
+    .poss-card.irregular .poss-card-title { color: #FF2BD6; }
+    .poss-rule { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.6); margin-bottom: 8px; }
+    .poss-examples { font-size: 0.85rem; font-weight: 700; color: rgba(243,242,234,0.5); }
+    .word-group { margin-bottom: 28px; }
+    .word-group-label { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .word-group-label.yellow { color: #FFE600; }
+    .word-group-label.cyan   { color: #00C2FF; }
+    .word-group-label.pink   { color: #FF2BD6; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .word-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(0.9rem, 2.5vw, 1.1rem); padding: 8px 18px; border-radius: 6px; border: 2px solid #000; letter-spacing: 0.5px; }
+    .word-chip.yellow { background: #FFE600; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.cyan   { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.pink   { background: #FF2BD6; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .download-card { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #FF2BD6; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bungee', cursive; font-size: 1rem; color: #FFE600; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: rgba(243,242,234,0.7); margin-bottom: 16px; line-height: 1.5; font-weight: 600; }
+    .download-btn { display: inline-block; font-family: 'Bungee', cursive; font-size: 0.85rem; letter-spacing: 1px; background: #FFE600; color: #1e1b2e; text-decoration: none; padding: 10px 20px; border-radius: 6px; border: 2px solid #000; box-shadow: 3px 3px 0 #FF2BD6; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #FF2BD6; }
+    .rule-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FF2BD6; }
+    .rule-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
+    .rule-desc { padding: 20px 24px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
+    .rule-desc strong { color: #FFE600; }
+    .rule-desc ul { margin: 10px 0 0 20px; }
+    .rule-desc li { margin-bottom: 8px; }
+    .exceptions-box { background: #12101a; border: 3px solid #ef4444; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(239,68,68,0.35); }
+    .exceptions-box-header { background: #ef4444; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #fff; letter-spacing: 1px; }
+    .exceptions-inner { padding: 20px 24px; }
+    .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(239,68,68,0.2); }
+    .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
+    .exception-word { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.05rem; background: #ef4444; color: #fff; padding: 4px 12px; border-radius: 6px; border: 2px solid #000; box-shadow: 2px 2px 0 rgba(0,0,0,0.4); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: rgba(243,242,234,0.8); font-weight: 600; padding-top: 2px; }
+    .exception-note strong { color: #ef4444; }
+    .lyrics-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(255,230,0,0.25); }
+    .lyrics-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
+    .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
+    .lyric-intro  { color: #6b7280; font-style: italic; }
+    .lyric-label  { font-family: 'Bungee', cursive; font-size: 0.8rem; letter-spacing: 2px; color: #00C2FF; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #FFE600; font-weight: 800; }
+    .lyric-verse  { color: #f1f5f9; padding-left: 16px; border-left: 3px solid #FF2BD6; }
+    .lyric-outro  { color: #6b7280; font-style: italic; margin-top: 8px; }
+    footer { background: #12101a; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFE600; border-top: 4px solid #FFE600; }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <a href="../index.html" class="back-link">&#8592; Home</a>
+    <h1>Apostrophe</h1>
+    <p class="subtitle">Showing Possession &mdash; Who Owns What?</p>
+  </header>
+  <nav class="cat-nav">
+    <a href="#video">Video</a>
+    <a href="#words">Words</a>
+    <a href="#rule">The Rule</a>
+    <a href="#exceptions">Watch Out</a>
+    <a href="#lyrics">Lyrics</a>
+  </nav>
+  <main>
+    <section class="content-section" id="video">
+      <p class="section-eyebrow">PUNCTUATION &amp; SPELLING</p>
+      <h2 class="section-heading">Watch the Video</h2>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/x9ec3Mzh9KE" title="Apostrophe of Possession by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-description">
+        <p>The <strong>apostrophe of possession</strong> shows that something belongs to someone. Ask: <em>"Who owns what? Don't leave the reader guessing!"</em> For a <strong>singular owner</strong>, add <strong>'s</strong>. For a <strong>plural owner ending in S</strong>, add just <strong>'</strong>. For <strong>irregular plurals</strong> (plurals that don't end in S), add <strong>'s</strong> again.</p>
+      </div>
+    </section>
+    <section class="content-section" id="words">
+      <p class="section-eyebrow">SPELLING WORDS</p>
+      <h2 class="section-heading">Possessive Apostrophe Words</h2>
+      <div class="poss-grid">
+        <div class="poss-card singular">
+          <div class="poss-card-title">Singular Owner</div>
+          <div class="poss-rule">one owner + 's</div>
+          <div class="poss-examples">Hazel's, Clay's, Jordan's, the cat's</div>
+        </div>
+        <div class="poss-card plural-s">
+          <div class="poss-card-title">Plural (ends in S)</div>
+          <div class="poss-rule">plural ending in S + '</div>
+          <div class="poss-examples">teachers', dogs', cats', babies'</div>
+        </div>
+        <div class="poss-card irregular">
+          <div class="poss-card-title">Irregular Plural</div>
+          <div class="poss-rule">plural NOT ending in S + 's</div>
+          <div class="poss-examples">children's, men's, sheep's, deer's</div>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label yellow">Singular possessives (owner + 's)</p>
+        <div class="chip-row">
+          <span class="word-chip yellow">cat's</span>
+          <span class="word-chip yellow">dog's</span>
+          <span class="word-chip yellow">bird's</span>
+          <span class="word-chip yellow">king's</span>
+          <span class="word-chip yellow">mom's</span>
+          <span class="word-chip yellow">friend's</span>
+          <span class="word-chip yellow">teacher's</span>
+          <span class="word-chip yellow">player's</span>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label cyan">Plural possessives (owners + ')</p>
+        <div class="chip-row">
+          <span class="word-chip cyan">dogs'</span>
+          <span class="word-chip cyan">teachers'</span>
+          <span class="word-chip cyan">cats'</span>
+          <span class="word-chip cyan">flowers'</span>
+        </div>
+      </div>
+      <div class="word-group">
+        <p class="word-group-label pink">Irregular plural possessives (+ 's)</p>
+        <div class="chip-row">
+          <span class="word-chip pink">children's</span>
+          <span class="word-chip pink">men's</span>
+          <span class="word-chip pink">sheep's</span>
+        </div>
+      </div>
+      <div class="download-card">
+        <h3>Spelling Word List</h3>
+        <p>15 possessive apostrophe words &mdash; singular, plural, and irregular.</p>
+        <a href="../downloads/apostrophe-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+      </div>
+    </section>
+    <section class="content-section" id="rule">
+      <p class="section-eyebrow">HOW IT WORKS</p>
+      <h2 class="section-heading">The Possessive Apostrophe Rule</h2>
+      <div class="rule-box">
+        <div class="rule-box-header">Who Owns What? Ask Before You Apostrophise!</div>
+        <div class="rule-desc">
+          <strong>Step 1:</strong> Find the owner (the person or thing that possesses something).<br>
+          <strong>Step 2:</strong> Is the owner singular or plural?
+          <ul>
+            <li><strong>Singular owner</strong> (one person/thing): add <strong>'s</strong> &mdash; <em>the cat's tail, Jordan's bag, the dog's bowl</em>.</li>
+            <li><strong>Plural owner ending in S</strong> (more than one): add <strong>'</strong> after the S &mdash; <em>the teachers' staffroom, the dogs' toys, the babies' bottles</em>.</li>
+            <li><strong>Irregular plural owner</strong> (plurals that don't end in S): add <strong>'s</strong> &mdash; <em>the children's books, the men's shoes, the sheep's wool</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="content-section" id="exceptions">
+      <p class="section-eyebrow">WATCH OUT</p>
+      <h2 class="section-heading">Common Mistakes</h2>
+      <div class="exceptions-box">
+        <div class="exceptions-box-header">Apostrophe traps to avoid</div>
+        <div class="exceptions-inner">
+          <div class="exception-item">
+            <span class="exception-word">its vs it's</span>
+            <p class="exception-note"><em>It's</em> (apostrophe) = <strong>it is</strong> or <strong>it has</strong>. <em>Its</em> (no apostrophe) = belonging to it (possessive). <em>The dog wagged its tail</em> (possession, no apostrophe). <em>It's raining</em> (it is raining, apostrophe). This is one of the most common spelling errors in English.</p>
+          </div>
+          <div class="exception-item">
+            <span class="exception-word">plural vs possessive</span>
+            <p class="exception-note"><strong>Never</strong> use an apostrophe to make a word plural. <em>apples</em> (plural) &mdash; no apostrophe. <em>apple's skin</em> (possessive) &mdash; apostrophe. <em>apple's</em> never means "more than one apple." The apostrophe shows ownership, not quantity.</p>
+          </div>
+          <div class="exception-item">
+            <span class="exception-word">names ending in S</span>
+            <p class="exception-note">For names ending in S (like <em>James</em>, <em>Chris</em>), both <em>James's</em> and <em>James'</em> are accepted. Most style guides prefer adding 's for one-syllable names: <em>James's book</em>. For multi-syllable names ending in S (e.g. <em>Jesus'</em>), the apostrophe-only form is more common.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content-section" id="lyrics">
+      <p class="section-eyebrow">SONG LYRICS</p>
+      <h2 class="section-heading">Lyrics</h2>
+      <div class="lyrics-box">
+        <div class="lyrics-box-header">Apostrophe of Possession &mdash; Who Owns What?</div>
+        <div class="lyrics-inner">
+          <p class="lyric-intro">Are you ready to learn about the apostrophe of possession? Here we go.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Who owns what? Don't leave the reader guessing.<br>
+          Use an apostrophe to show possession.<br>
+          Who owns what? Don't leave the reader guessing.<br>
+          Apostrophe S shows the thing is theirs.</p>
+          <p class="lyric-label">VERSE 1 &mdash; SINGULAR</p>
+          <p class="lyric-verse">One owner: add apostrophe S.<br>
+          Hazel's bag. Hazel owns the bag.<br>
+          Clay's pen. Clay owns the pen.<br>
+          Jordan's book. Jordan owns the book.<br>
+          Lincoln's hat. Lincoln owns the hat.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Who owns what? Don't leave the reader guessing.<br>
+          Use an apostrophe to show possession.</p>
+          <p class="lyric-label">VERSE 2 &mdash; PLURAL ENDING IN S</p>
+          <p class="lyric-verse">More than one owner ending in S: apostrophe only.<br>
+          The teachers' staffroom. The teachers own it.<br>
+          The dogs' toys. The dogs own them.<br>
+          The cats' food. The cats own it.<br>
+          The babies' bottles. The babies own them.</p>
+          <p class="lyric-label">VERSE 3 &mdash; IRREGULAR PLURALS</p>
+          <p class="lyric-verse">Irregular plurals don't end in S: add apostrophe S again.<br>
+          The children's playground. The children own it.<br>
+          The sheep's wool. The sheep own it.<br>
+          The deer's antlers. The deer own them.</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">Who owns what? Don't leave the reader guessing.<br>
+          Use an apostrophe to show possession.</p>
+          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
+</body>
+</html>

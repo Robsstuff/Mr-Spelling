@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bossy R | Mr Spelling</title>
+  <title>Syllables | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -28,12 +28,10 @@
     .word-group-label { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .word-group-label.yellow { color: #FFE600; }
     .word-group-label.cyan { color: #00C2FF; }
-    .word-group-label.pink { color: #FF2BD6; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .word-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 6px; border: 2px solid #000; letter-spacing: 0.5px; text-transform: lowercase; }
     .word-chip.yellow { background: #FFE600; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
     .word-chip.cyan   { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
-    .word-chip.pink   { background: #FF2BD6; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
     .download-card { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #FF2BD6; margin-top: 28px; }
     .download-card h3 { font-family: 'Bungee', cursive; font-size: 1rem; color: #FFE600; margin-bottom: 8px; }
     .download-card p { font-size: 0.88rem; color: rgba(243,242,234,0.7); margin-bottom: 16px; line-height: 1.5; font-weight: 600; }
@@ -41,17 +39,10 @@
     .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #FF2BD6; }
     .rule-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FF2BD6; }
     .rule-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
-    .r-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 20px 24px; }
-    .r-pair { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 14px; text-align: center; }
-    .r-pair.ar { border: 2px solid #FFE600; }
-    .r-pair.or { border: 2px solid #00C2FF; }
-    .r-pair.er { border: 2px solid #FF2BD6; }
-    .r-pair-letters { font-family: 'Bungee', cursive; font-size: 1.8rem; }
-    .r-pair.ar .r-pair-letters { color: #FFE600; }
-    .r-pair.or .r-pair-letters { color: #00C2FF; }
-    .r-pair.er .r-pair-letters { color: #FF2BD6; }
-    .r-pair-sound { font-size: 0.8rem; font-weight: 800; color: rgba(243,242,234,0.6); margin: 2px 0; }
-    .r-pair-ex { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.5); }
+    .beat-demo { display: flex; flex-wrap: wrap; gap: 12px; padding: 20px 24px; }
+    .beat-word { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 10px; padding: 12px 16px; text-align: center; }
+    .beat-word-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1rem; color: #FFE600; letter-spacing: 2px; }
+    .beat-word-syl { font-size: 0.78rem; color: #00C2FF; font-weight: 700; margin-top: 4px; }
     .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
     .rule-desc strong { color: #FFE600; }
     .exceptions-box { background: #12101a; border: 3px solid #ef4444; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(239,68,68,0.35); }
@@ -61,7 +52,6 @@
     .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
     .exception-word { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem; background: #ef4444; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #000; box-shadow: 2px 2px 0 rgba(0,0,0,0.4); white-space: nowrap; flex-shrink: 0; }
     .exception-note { font-size: 0.95rem; line-height: 1.6; color: rgba(243,242,234,0.8); font-weight: 600; padding-top: 2px; }
-    .exception-note strong { color: #ef4444; }
     .lyrics-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(255,230,0,0.25); }
     .lyrics-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
     .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
@@ -76,98 +66,92 @@
 <body>
   <header class="page-header">
     <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Bossy R</h1>
-    <p class="subtitle">R-Controlled Vowels: AR, OR, ER, IR, UR</p>
+    <h1>Syllables</h1>
+    <p class="subtitle">Every Syllable is a Beat &mdash; Chop the Word!</p>
   </header>
   <nav class="cat-nav">
     <a href="#video">Video</a>
     <a href="#words">Words</a>
     <a href="#rule">The Rule</a>
-    <a href="#exceptions">Watch Out</a>
+    <a href="#exceptions">Tips</a>
     <a href="#lyrics">Lyrics</a>
   </nav>
   <main>
     <section class="content-section" id="video">
-      <p class="section-eyebrow">R-CONTROLLED VOWELS</p>
+      <p class="section-eyebrow">WORD STRUCTURE</p>
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R Phonics Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/xaUo5GmFqRE" title="Syllables Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video-description">
-        <p>When the letter <strong>R</strong> comes after a vowel, it changes the vowel's sound completely. That's why R is called <strong>Bossy R</strong> &mdash; it bosses the vowel and makes it say something new. <strong>A+R = /ar/</strong> (car), <strong>O+R = /or/</strong> (fork), and <strong>E/I/U + R = /er/</strong> (fern, girl, turn).</p>
+        <p>A <strong>syllable</strong> is a beat in a word. Clap or chop your hand for each beat to count them. Every syllable has at least one <strong>vowel sound</strong> in it. That rule never breaks: no vowel sound = no syllable. Words from the video: <em>elephant, chicken, cookie, poodle, watermelon, calculator, turtle, kangaroo, electricity, hippopotamus, monkey, television</em>.</p>
       </div>
     </section>
     <section class="content-section" id="words">
       <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">R-Controlled Words</h2>
+      <h2 class="section-heading">Multi-Syllable Words</h2>
       <div class="word-group">
-        <p class="word-group-label yellow">-AR words</p>
+        <p class="word-group-label yellow">From the video</p>
         <div class="chip-row">
-          <span class="word-chip yellow">barn</span>
-          <span class="word-chip yellow">stars</span>
-          <span class="word-chip yellow">cards</span>
-          <span class="word-chip yellow">march</span>
-          <span class="word-chip yellow">far</span>
+          <span class="word-chip yellow">elephant</span>
+          <span class="word-chip yellow">chicken</span>
+          <span class="word-chip yellow">cookie</span>
+          <span class="word-chip yellow">poodle</span>
+          <span class="word-chip yellow">watermelon</span>
+          <span class="word-chip yellow">calculator</span>
+          <span class="word-chip yellow">turtle</span>
+          <span class="word-chip yellow">kangaroo</span>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label cyan">-OR words</p>
+        <p class="word-group-label cyan">More multi-syllable words</p>
         <div class="chip-row">
-          <span class="word-chip cyan">corn</span>
-          <span class="word-chip cyan">north</span>
-          <span class="word-chip cyan">horns</span>
-          <span class="word-chip cyan">sports</span>
-          <span class="word-chip cyan">four</span>
-        </div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label pink">ER / IR / UR words</p>
-        <div class="chip-row">
-          <span class="word-chip pink">fern</span>
-          <span class="word-chip pink">germ</span>
-          <span class="word-chip pink">girl</span>
-          <span class="word-chip pink">third</span>
-          <span class="word-chip pink">turn</span>
+          <span class="word-chip cyan">monkey</span>
+          <span class="word-chip cyan">butterfly</span>
+          <span class="word-chip cyan">umbrella</span>
+          <span class="word-chip cyan">dragon</span>
+          <span class="word-chip cyan">planet</span>
+          <span class="word-chip cyan">blanket</span>
+          <span class="word-chip cyan">basket</span>
         </div>
       </div>
       <div class="download-card">
         <h3>Spelling Word List</h3>
-        <p>15 R-controlled vowel words &mdash; AR, OR, and ER/IR/UR.</p>
-        <a href="../downloads/bossy-r-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+        <p>15 multi-syllable words &mdash; practise chopping each one into beats!</p>
+        <a href="../downloads/syllables-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
       </div>
     </section>
     <section class="content-section" id="rule">
       <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">Bossy R</h2>
+      <h2 class="section-heading">The Syllable Rule</h2>
       <div class="rule-box">
-        <div class="rule-box-header">Vowel + R = a Completely New Sound</div>
-        <div class="r-pairs">
-          <div class="r-pair ar"><div class="r-pair-letters">AR</div><div class="r-pair-sound">/ar/ sound</div><div class="r-pair-ex">car, barn, star</div></div>
-          <div class="r-pair or"><div class="r-pair-letters">OR</div><div class="r-pair-sound">/or/ sound</div><div class="r-pair-ex">fork, corn, sport</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">ER</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">fern, her, term</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">IR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">girl, bird, third</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">UR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">turn, fur, burn</div></div>
+        <div class="rule-box-header">A Syllable is a Beat &mdash; Every Syllable Has a Vowel Sound</div>
+        <div class="beat-demo">
+          <div class="beat-word"><div class="beat-word-text">EL &bull; E &bull; PHANT</div><div class="beat-word-syl">3 syllables</div></div>
+          <div class="beat-word"><div class="beat-word-text">CHICK &bull; EN</div><div class="beat-word-syl">2 syllables</div></div>
+          <div class="beat-word"><div class="beat-word-text">KAN &bull; GA &bull; ROO</div><div class="beat-word-syl">3 syllables</div></div>
+          <div class="beat-word"><div class="beat-word-text">WA &bull; TER &bull; MEL &bull; ON</div><div class="beat-word-syl">4 syllables</div></div>
         </div>
-        <p class="rule-desc">When R follows a vowel, R bosses the vowel and changes its sound. A says "ah" normally, but A+R says "ar" (as in <em>car</em>). O says "oh" normally, but O+R says "or" (as in <em>fork</em>). ER, IR, and UR all make the <strong>same /er/ sound</strong> &mdash; that is the tricky part! You must learn which spelling each word uses.</p>
+        <p class="rule-desc">To count syllables: <strong>1)</strong> Say the word out loud. <strong>2)</strong> Clap or chop your hand for each beat you can feel. <strong>3)</strong> Count the claps = the number of syllables. Each syllable <strong>must contain a vowel sound</strong> (A, E, I, O, U, or sometimes Y). If you can't hear a vowel sound, it's not a syllable.</p>
       </div>
     </section>
     <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Tricky Bossy R Words</h2>
+      <p class="section-eyebrow">TIPS</p>
+      <h2 class="section-heading">Tips for Syllables</h2>
       <div class="exceptions-box">
-        <div class="exceptions-box-header">Things that can confuse you</div>
+        <div class="exceptions-box-header">Things to remember</div>
         <div class="exceptions-inner">
           <div class="exception-item">
-            <span class="exception-word">ER / IR / UR</span>
-            <p class="exception-note">All three make exactly the <strong>same sound</strong>: /er/. Compare: <em>fern</em>, <em>girl</em>, <em>turn</em> &mdash; they all sound the same in the stressed syllable but are spelled differently. You must memorise which spelling each word uses; the sound alone won't tell you.</p>
+            <span class="exception-word">silent E</span>
+            <p class="exception-note">A silent E at the end of a word is <strong>still a syllable helper</strong>, but because it is silent (no sound), the final E does NOT count as its own syllable. <em>cake</em> has 1 syllable (not 2), even though it ends in E.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">four / for</span>
-            <p class="exception-note"><em>Four</em> (the number) uses OUR but still makes the /or/ sound. Not all /or/ sounds are spelled O+R &mdash; OUR (four, your), OAR (board, roar), and even ORE (more, store) can make the same sound.</p>
+            <span class="exception-word">vowel teams</span>
+            <p class="exception-note">Two vowel letters together (like OO in <em>poodle</em>, or AI in <em>rain</em>) usually make <strong>one vowel sound</strong> &mdash; so they count as <strong>one syllable</strong> between them, not two. <em>Poodle</em> = 2 syllables: POO-dle.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">war, warm</span>
-            <p class="exception-note">When W comes before AR, the sound changes from /ar/ to /or/: <em>war</em>, <em>warm</em>, <em>wart</em>, <em>ward</em>. The W softens the vowel. This is a known exception cluster to memorise.</p>
+            <span class="exception-word">Y as a vowel</span>
+            <p class="exception-note">Y can act as a vowel and carry a syllable on its own. In <em>butterfly</em>, the final Y makes the /eye/ sound and counts as a syllable: BUT-ter-FLY (3 syllables). In <em>happy</em>, the final Y makes the /ee/ sound: HAP-py (2 syllables).</p>
           </div>
         </div>
       </div>
@@ -176,46 +160,33 @@
       <p class="section-eyebrow">SONG LYRICS</p>
       <h2 class="section-heading">Lyrics</h2>
       <div class="lyrics-box">
-        <div class="lyrics-box-header">Bossy R &mdash; R-Controlled Vowels Rap</div>
+        <div class="lyrics-box-header">Syllables Song &mdash; A Beat in a Word</div>
         <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready? Whoa! To learn about what? R-controlled vowels are also known as Bossy R.</p>
+          <p class="lyric-intro">Are you ready to learn about syllables? Get your chopping hands out.</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 1 &mdash; AR WORDS</p>
-          <p class="lyric-verse">A can say a, but add the letter R, it makes a new sound: ar as in car.<br>
-          barn &mdash; AR N<br>
-          stars &mdash; ST AR S<br>
-          cards &mdash; C AR DS<br>
-          march &mdash; M AR CH<br>
-          far &mdash; F AR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 2 &mdash; OR WORDS</p>
-          <p class="lyric-verse">O can say o, we know that from before, but add the letter R, and now it can say or.<br>
-          corn &mdash; C OR N<br>
-          north &mdash; N OR TH<br>
-          horns &mdash; H OR NS<br>
-          sports &mdash; SP OR TS<br>
-          four &mdash; F OR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 3 &mdash; ER/IR/UR WORDS</p>
-          <p class="lyric-verse">These vowels are short, but I hope you can infer:<br>
-          if you add the letter R, they now can say er.<br>
-          fern &mdash; F ER N<br>
-          germ &mdash; G ER M<br>
-          girl &mdash; G IR L<br>
-          third &mdash; TH IR D<br>
-          And now you know about Bossy R.</p>
+          <p class="lyric-chorus">A syllable is a beat in a word. In a word.<br>
+          In every syllable, a vowel sound is heard.</p>
+          <p class="lyric-label">VERSE 1</p>
+          <p class="lyric-verse">Elephant &mdash; El-e-phant<br>
+          Chicken &mdash; Chick-en<br>
+          Cookie &mdash; Cook-ie<br>
+          Poodle &mdash; Poo-dle<br>
+          Watermelon &mdash; Wa-ter-mel-on<br>
+          Calculator &mdash; Cal-cu-la-tor</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-outro">Mr. Spelling. That is it. Bye-bye.</p>
+          <p class="lyric-chorus">A syllable is a beat in a word. In a word.<br>
+          In every syllable, a vowel sound is heard.</p>
+          <p class="lyric-label">VERSE 2</p>
+          <p class="lyric-verse">Turtle &mdash; Tur-tle<br>
+          Kangaroo &mdash; Kan-ga-roo<br>
+          Electricity &mdash; E-lec-tri-ci-ty<br>
+          Hippopotamus &mdash; Hip-po-pot-a-mus<br>
+          Monkey &mdash; Mon-key<br>
+          Television &mdash; Tel-e-vi-sion</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">A syllable is a beat in a word. In a word.<br>
+          In every syllable, a vowel sound is heard.</p>
+          <p class="lyric-outro">Mr. Spelling. To sit. Bye-bye.</p>
         </div>
       </div>
     </section>

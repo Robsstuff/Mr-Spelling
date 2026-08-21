@@ -4,389 +4,412 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr Spelling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
-
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── BASE ── */
     body {
-      background: #fef08a;
-      font-family: 'Nunito', sans-serif;
-      color: #1a1a1a;
+      background: #1e1b2e;
+      font-family: 'Poppins', sans-serif;
+      color: #f3f2ea;
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50%       { opacity: 1;    transform: scale(1.05); }
     }
 
     /* ── SUPPORT BANNER ── */
     .support-banner {
-      background: #1a1a1a;
+      background: #12101a;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
       padding: 10px 20px;
-      border-bottom: 3px solid #facc15;
+      border-bottom: 3px solid #FFE600;
     }
 
     .support-text {
-      font-family: 'Bangers', cursive;
-      font-size: 1rem;
+      font-family: 'Bungee', cursive;
+      font-size: 0.9rem;
       letter-spacing: 1.5px;
-      color: #facc15;
+      color: #FFE600;
     }
 
     .support-btn {
-      font-family: 'Bangers', cursive;
-      font-size: 0.9rem;
+      font-family: 'Bungee', cursive;
+      font-size: 0.8rem;
       letter-spacing: 1px;
       text-decoration: none;
-      padding: 4px 16px;
-      border-radius: 999px;
+      padding: 5px 18px;
+      border-radius: 6px;
       border: 2px solid;
       transition: transform 0.1s, box-shadow 0.1s;
     }
 
-    .support-btn:hover {
-      transform: translate(-1px, -1px);
-    }
+    .support-btn:hover { transform: translate(-2px, -2px); }
 
     .support-btn--kofi {
-      background: #ff5e5b;
-      color: #fff;
-      border-color: #ff5e5b;
-      box-shadow: 2px 2px 0 #facc15;
+      background: #FF2BD6;
+      color: #12101a;
+      border-color: #FF2BD6;
+      box-shadow: 3px 3px 0 #000;
     }
 
     .support-btn--yt {
-      background: #fff;
-      color: #1a1a1a;
-      border-color: #fff;
-      box-shadow: 2px 2px 0 #facc15;
+      background: #FFE600;
+      color: #12101a;
+      border-color: #FFE600;
+      box-shadow: 3px 3px 0 #000;
     }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, #facc15 0%, #fbbf24 50%, #f97316 100%);
-      padding: 60px 20px 40px;
-      text-align: center;
       position: relative;
+      padding: 80px 6vw 70px;
       overflow: hidden;
+      background: repeating-linear-gradient(135deg, #21202f 0 2px, #1e1b2e 2px 40px);
     }
 
-    .hero::before {
-      content: '';
+    /* Glow orbs */
+    .hero-glow-a {
       position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(0,0,0,0.03) 20px,
-        rgba(0,0,0,0.03) 40px
-      );
+      top: -60px; left: -80px;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, #00C2FF 0%, transparent 70%);
+      opacity: 0.35;
+      filter: blur(6px);
+      animation: pulse 6s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    .hero-logo {
-      width: min(280px, 80vw);
-      border-radius: 50%;
-      border: 6px solid #1a1a1a;
-      box-shadow: 8px 8px 0 #1a1a1a;
+    .hero-glow-b {
+      position: absolute;
+      bottom: -100px; right: -60px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #FF2BD6 0%, transparent 70%);
+      opacity: 0.3;
+      filter: blur(6px);
+      animation: pulse 7s ease-in-out infinite 1s;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    /* ── HERO TEXT ── */
+    .hero-text {
+      flex: 1 1 400px;
+      min-width: 280px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 18px;
+      color: #FF2BD6;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 6px 14px;
+      border-radius: 4px;
+      transform: rotate(-3deg);
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(3rem, 12vw, 7rem);
-      letter-spacing: 4px;
-      color: #1a1a1a;
-      text-shadow: 4px 4px 0 #ef4444;
-      margin-top: 24px;
-      position: relative;
-      z-index: 1;
+      font-family: 'Bungee', cursive;
+      font-size: clamp(52px, 8vw, 96px);
+      line-height: 1.0;
+      margin: 0 0 18px;
+      color: #f8f7f0;
+      text-shadow: 4px 4px 0 #00C2FF, 8px 8px 0 #FF2BD6;
     }
 
-    .hero .tagline {
-      font-size: clamp(1rem, 3vw, 1.4rem);
-      font-weight: 900;
-      background: #1a1a1a;
-      color: #facc15;
+    .hero-tagline {
       display: inline-block;
-      padding: 6px 20px;
-      border-radius: 999px;
-      margin-top: 12px;
-      position: relative;
-      z-index: 1;
+      font-family: 'Bungee', cursive;
+      font-size: clamp(0.95rem, 2.2vw, 1.2rem);
       letter-spacing: 1px;
+      background: #FFE600;
+      color: #1e1b2e;
+      padding: 6px 22px;
+      border-radius: 6px;
+      box-shadow: 3px 3px 0 #000;
+      margin-bottom: 12px;
     }
 
-    .hero .subtagline {
+    .hero-subtagline {
       display: block;
-      font-family: 'Nunito', sans-serif;
-      font-size: clamp(0.85rem, 2.2vw, 1.1rem);
-      font-weight: 900;
-      color: #1a1a1a;
-      margin-top: 14px;
-      position: relative;
-      z-index: 1;
-      letter-spacing: 0.5px;
+      font-size: clamp(0.82rem, 1.8vw, 0.98rem);
+      color: rgba(243, 242, 234, 0.65);
+      margin-bottom: 34px;
       font-style: italic;
+      font-weight: 600;
     }
 
-    /* ── HERO BUTTONS ── */
+    /* ── HERO BUTTON GROUPS ── */
     .hero-btn-groups {
-      margin-top: 28px;
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      align-items: center;
+      gap: 14px;
     }
 
     .btn-group-label {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 900;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 0.82rem;
       letter-spacing: 2px;
+      color: #00C2FF;
       text-transform: uppercase;
-      color: #1a1a1a;
-      opacity: 0.6;
-      margin-bottom: -6px;
+      margin-bottom: -4px;
     }
 
     .hero-btns {
       display: flex;
-      gap: 16px;
-      justify-content: center;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .hero-btns a {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
-      letter-spacing: 2px;
-      background: #ef4444;
-      color: #fff;
+      font-family: 'Bungee', cursive;
+      font-size: clamp(0.82rem, 2.2vw, 0.98rem);
+      letter-spacing: 1px;
+      background: #FFE600;
+      color: #1e1b2e;
       text-decoration: none;
-      padding: 10px 32px;
-      border-radius: 999px;
-      border: 3px solid #1a1a1a;
-      box-shadow: 4px 4px 0 #1a1a1a;
+      padding: 9px 20px;
+      border-radius: 6px;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0 #FF2BD6;
       transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .hero-btns a:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #1a1a1a;
+      box-shadow: 6px 6px 0 #FF2BD6;
     }
 
     .hero-btns a.btn-alt {
-      background: #1a1a1a;
-      color: #facc15;
+      background: transparent;
+      color: #f3f2ea;
+      border-color: #00C2FF;
+      box-shadow: 4px 4px 0 rgba(0, 194, 255, 0.2);
     }
 
-    /* ── ABOUT ── */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      max-width: 960px;
-      margin: 60px auto;
-      padding: 0 24px;
+    .hero-btns a.btn-alt:hover {
+      background: rgba(0, 194, 255, 0.12);
+      box-shadow: 6px 6px 0 rgba(0, 194, 255, 0.4);
     }
 
-    .about-img {
+    /* ── HERO CHARACTER CARD ── */
+    .hero-card {
       flex: 1 1 320px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 4px solid #1a1a1a;
-      box-shadow: 8px 8px 0 #1a1a1a;
+      min-width: 260px;
+      display: flex;
+      justify-content: center;
     }
 
-    .about-img img {
+    .hero-card-inner {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      background: #f8f7f0;
+      border-radius: 8px;
+      padding: 20px 18px 14px;
+      transform: rotate(2deg);
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.55);
+    }
+
+    /* Hole-punch dot strip (lined paper effect) */
+    .hero-card-inner::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: 22px; right: 22px;
+      height: 24px;
+      background: repeating-radial-gradient(circle, #bbb 0 3px, transparent 4px 26px);
+      background-size: 26px 26px;
+    }
+
+    .hero-card-inner img {
       width: 100%;
       display: block;
+      border-radius: 4px;
     }
 
-    .about-text {
-      flex: 1 1 280px;
-    }
-
-    .about-text h2 {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      letter-spacing: 2px;
-      color: #ef4444;
-      text-shadow: 3px 3px 0 #1a1a1a;
-      margin-bottom: 16px;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      font-weight: 700;
-    }
-
-    /* ── COMING SOON BANNER ── */
-    .coming-soon {
-      background: #1a1a1a;
-      color: #facc15;
+    .hero-card-caption {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 17px;
+      color: #9b51e0;
       text-align: center;
-      padding: 60px 24px;
-      margin-top: 20px;
-    }
-
-    .coming-soon h2 {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      letter-spacing: 4px;
-      text-shadow: 4px 4px 0 #ef4444;
-      margin-bottom: 16px;
-    }
-
-    .coming-soon p {
-      font-size: 1.15rem;
-      font-weight: 700;
-      max-width: 520px;
-      margin: 0 auto 32px;
-      color: #f1f5f9;
-      line-height: 1.6;
-    }
-
-    /* ── PROGRESS BAR ── */
-    .progress-wrap {
-      max-width: 420px;
-      margin: 0 auto 32px;
-      background: #333;
-      border-radius: 999px;
-      height: 20px;
-      overflow: hidden;
-      border: 2px solid #facc15;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #facc15, #f97316);
-      border-radius: 999px;
-      animation: fill 2s ease-out 0.5s forwards;
-    }
-
-    @keyframes fill {
-      to { width: 35%; }
-    }
-
-    .progress-label {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      margin-bottom: 32px;
-    }
-
-    /* ── TEXT LOGO ── */
-    .text-logo-section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .text-logo-section img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 6px 6px 0 #facc15;
+      margin-top: 10px;
+      transform: rotate(-1deg);
     }
 
     /* ── LATEST VIDEO ── */
     .latest-video {
-      max-width: 760px;
-      margin: 52px auto 0;
+      max-width: 820px;
+      margin: 70px auto 0;
       padding: 0 24px;
     }
 
     .latest-video h2 {
-      font-family: 'Bangers', cursive;
-      font-size: clamp(2rem, 6vw, 3rem);
-      letter-spacing: 3px;
-      color: #ef4444;
-      text-shadow: 3px 3px 0 #1a1a1a;
+      font-family: 'Bungee', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: 2px;
+      color: #FFE600;
+      text-shadow: 3px 3px 0 #FF2BD6;
       margin-bottom: 6px;
     }
 
-    .latest-video .new-badge {
+    .new-badge {
       display: inline-block;
-      font-family: 'Bangers', cursive;
-      font-size: 0.9rem;
+      font-family: 'Bungee', cursive;
+      font-size: 0.78rem;
       letter-spacing: 1px;
-      background: #ef4444;
+      background: #FF2BD6;
       color: #fff;
       padding: 2px 12px;
-      border-radius: 999px;
-      border: 2px solid #1a1a1a;
-      margin-bottom: 14px;
+      border-radius: 6px;
+      border: 2px solid #000;
+      margin-left: 8px;
       vertical-align: middle;
+      margin-bottom: 3px;
     }
 
-    .latest-video .video-wrap {
+    .video-wrap {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      border: 4px solid #1a1a1a;
+      border: 4px solid #FFE600;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 6px 6px 0 #1a1a1a;
+      box-shadow: 8px 8px 0 #FF2BD6;
+      margin-bottom: 16px;
     }
 
-    .latest-video .video-wrap iframe {
+    .video-wrap iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
     }
 
-    .latest-video .video-footer {
+    .video-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 14px;
     }
 
-    .latest-video .video-footer p {
+    .video-footer p {
       font-weight: 700;
       font-size: 0.95rem;
-      color: #374151;
+      color: rgba(243, 242, 234, 0.75);
     }
 
-    .latest-video .video-footer a {
-      font-family: 'Bangers', cursive;
-      font-size: 1rem;
+    .video-footer a {
+      font-family: 'Bungee', cursive;
+      font-size: 0.88rem;
       letter-spacing: 1px;
-      background: #1a1a1a;
-      color: #facc15;
+      background: #FFE600;
+      color: #1e1b2e;
       text-decoration: none;
-      padding: 6px 18px;
-      border-radius: 999px;
-      border: 2px solid #1a1a1a;
-      box-shadow: 3px 3px 0 #ef4444;
+      padding: 8px 20px;
+      border-radius: 6px;
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0 #FF2BD6;
       transition: transform 0.1s, box-shadow 0.1s;
       white-space: nowrap;
     }
 
-    .latest-video .video-footer a:hover {
+    .video-footer a:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 5px 5px 0 #ef4444;
+      box-shadow: 5px 5px 0 #FF2BD6;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      align-items: center;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 80px auto 0;
+      padding: 0 6vw;
+    }
+
+    .about-img {
+      flex: 1 1 260px;
+      min-width: 220px;
+    }
+
+    .about-img-inner {
+      background: #f8f7f0;
+      border-radius: 8px;
+      padding: 14px;
+      transform: rotate(-2deg);
+      box-shadow: 8px 8px 0 rgba(0, 194, 255, 0.35);
+    }
+
+    .about-img-inner img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .about-text {
+      flex: 2 1 340px;
+      min-width: 260px;
+    }
+
+    .about-eyebrow {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 15px;
+      color: #00C2FF;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .about-text h2 {
+      font-family: 'Bungee', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #f8f7f0;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(243, 242, 234, 0.78);
+      max-width: 480px;
+      font-weight: 600;
     }
 
     /* ── FOOTER ── */
     footer {
-      background: #facc15;
+      background: #12101a;
       text-align: center;
-      padding: 20px;
-      font-weight: 900;
-      font-size: 0.95rem;
-      color: #1a1a1a;
-      border-top: 4px solid #1a1a1a;
+      padding: 24px 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #FFE600;
+      border-top: 4px solid #FFE600;
+      margin-top: 80px;
     }
   </style>
 </head>
@@ -401,32 +424,68 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-logo" src="logo.jpg" alt="Mr Spelling logo" />
-    <h1>MR SPELLING</h1>
-    <span class="tagline">Not Misspelling</span>
-    <span class="subtagline">This website teaches spelling rules because spelling rules.</span>
-    <div class="hero-btn-groups">
-      <span class="btn-group-label">Spelling Rules</span>
-      <div class="hero-btns">
-        <a href="bossy-r.html">Bossy R</a>
-        <a href="schwa.html">The Schwa</a>
-        <a href="contractions.html">Contractions</a>
-        <a href="plural-rule-1.html">Plural Rule 1</a>
-        <a href="plural-rule-2.html">Plural Rule 2</a>
-        <a href="plural-rule-3.html">Plural Rule 3</a>
-        <a href="plural-rule-4.html">Plural Rule 4</a>
-        <a href="floss-rule.html">The FLOSS Rule</a>
-        <a href="consonant-le.html">Consonant-LE</a>
-        <a href="sound-of-vowels.html">Sound of the Vowels</a>
+    <div class="hero-glow-a"></div>
+    <div class="hero-glow-b"></div>
+    <div class="hero-inner">
+
+      <!-- Left: text + buttons -->
+      <div class="hero-text">
+        <div class="hero-tag">#SpellingBattle</div>
+        <h1>MR<br>SPELLING</h1>
+        <span class="hero-tagline">Not Misspelling</span>
+        <span class="hero-subtagline">This website teaches spelling rules because spelling rules.</span>
+
+        <div class="hero-btn-groups">
+          <span class="btn-group-label">Spelling Rules</span>
+          <div class="hero-btns">
+            <a href="bossy-r.html">Bossy R</a>
+            <a href="schwa.html">The Schwa</a>
+            <a href="contractions.html">Contractions</a>
+            <a href="plural-rule-1.html">Plural Rule 1</a>
+            <a href="plural-rule-2.html">Plural Rule 2</a>
+            <a href="plural-rule-3.html">Plural Rule 3</a>
+            <a href="plural-rule-4.html">Plural Rule 4</a>
+            <a href="floss-rule.html">The FLOSS Rule</a>
+            <a href="consonant-le.html">Consonant-LE</a>
+            <a href="sound-of-vowels.html">Sound of the Vowels</a>
+            <a href="lessons/ck-says-k.html">CK Says /k/</a>
+            <a href="lessons/v-needs-e.html">V Needs E</a>
+            <a href="lessons/consonant-le.html">Consonant-LE (new)</a>
+            <a href="lessons/schwa.html">The Schwa (new)</a>
+            <a href="lessons/vowel-sounds.html">Vowel Sounds Review</a>
+            <a href="lessons/contractions.html">Contractions (new)</a>
+            <a href="lessons/ai-ay.html">AI and AY</a>
+            <a href="lessons/syllables.html">Syllables</a>
+            <a href="lessons/bossy-r.html">Bossy R (new)</a>
+            <a href="lessons/plural-rule-4.html">Plural Rule 4</a>
+            <a href="lessons/soft-c-soft-g.html">Soft C and G</a>
+            <a href="lessons/plural-rule-3.html">Plural Rule 3</a>
+            <a href="lessons/letter-y.html">Letter Y</a>
+            <a href="lessons/plural-rule-2.html">Plural Rule 2</a>
+            <a href="lessons/apostrophe.html">Apostrophe</a>
+            <a href="lessons/every-syllable.html">Every Syllable</a>
+            <a href="lessons/dge-ge.html">DGE and GE</a>
+          </div>
+
+          <span class="btn-group-label">Explore</span>
+          <div class="hero-btns">
+            <a href="lessons/index.html" class="btn-alt">All Topics</a>
+            <a href="videos.html" class="btn-alt">Videos</a>
+            <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
+            <a href="request.html" class="btn-alt">Request a Song</a>
+            <a href="support.html" class="btn-alt">Support Mr Spelling</a>
+          </div>
+        </div>
       </div>
-      <span class="btn-group-label">Explore</span>
-      <div class="hero-btns">
-        <a href="lessons/index.html" class="btn-alt">All Topics</a>
-        <a href="videos.html" class="btn-alt">Videos</a>
-        <a href="powerpoints.html" class="btn-alt">PowerPoints</a>
-        <a href="request.html" class="btn-alt">Request a Song</a>
-        <a href="support.html" class="btn-alt">Support Mr Spelling</a>
+
+      <!-- Right: character card -->
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <img src="assets/mrspelling-point.jpg" alt="Mr Spelling pointing" />
+          <div class="hero-card-caption">"you got this &#8212; spell it!"</div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -434,10 +493,14 @@
   <section class="latest-video">
     <h2>Latest Video <span class="new-badge">NEW</span></h2>
     <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/korz2wR6AOw"
+              title="Bossy R by Mr Spelling"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
     <div class="video-footer">
-      <p>Bossy R — AR, OR, ER, IR &amp; UR explained</p>
+      <p>Bossy R &#8212; AR, OR, ER, IR &amp; UR explained</p>
       <a href="bossy-r.html">Full Bossy R Page &#8594;</a>
     </div>
   </section>
@@ -445,9 +508,12 @@
   <!-- ABOUT -->
   <section class="about">
     <div class="about-img">
-      <img src="classroom.jpg" alt="Mr Spelling in the classroom" />
+      <div class="about-img-inner">
+        <img src="assets/mrspelling-shaka.jpg" alt="Mr Spelling" />
+      </div>
     </div>
     <div class="about-text">
+      <div class="about-eyebrow">WHO'S BEHIND THE MIC?</div>
       <h2>Who Is Mr Spelling?</h2>
       <p>
         Mr Spelling is the coolest teacher in the room &mdash; dropping spelling knowledge

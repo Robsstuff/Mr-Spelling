@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bossy R | Mr Spelling</title>
+  <title>AI and AY | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -28,12 +28,10 @@
     .word-group-label { font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .word-group-label.yellow { color: #FFE600; }
     .word-group-label.cyan { color: #00C2FF; }
-    .word-group-label.pink { color: #FF2BD6; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .word-chip { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 6px; border: 2px solid #000; letter-spacing: 0.5px; text-transform: lowercase; }
     .word-chip.yellow { background: #FFE600; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
-    .word-chip.cyan   { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
-    .word-chip.pink   { background: #FF2BD6; color: #fff;    box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
+    .word-chip.cyan { background: #00C2FF; color: #1e1b2e; box-shadow: 3px 3px 0 rgba(0,0,0,0.4); }
     .download-card { background: rgba(255,255,255,0.05); border: 2px solid #FFE600; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #FF2BD6; margin-top: 28px; }
     .download-card h3 { font-family: 'Bungee', cursive; font-size: 1rem; color: #FFE600; margin-bottom: 8px; }
     .download-card p { font-size: 0.88rem; color: rgba(243,242,234,0.7); margin-bottom: 16px; line-height: 1.5; font-weight: 600; }
@@ -41,19 +39,23 @@
     .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #FF2BD6; }
     .rule-box { background: #12101a; border: 3px solid #FFE600; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FF2BD6; }
     .rule-box-header { background: #FFE600; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #1e1b2e; letter-spacing: 1px; }
-    .r-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 20px 24px; }
-    .r-pair { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 14px; text-align: center; }
-    .r-pair.ar { border: 2px solid #FFE600; }
-    .r-pair.or { border: 2px solid #00C2FF; }
-    .r-pair.er { border: 2px solid #FF2BD6; }
-    .r-pair-letters { font-family: 'Bungee', cursive; font-size: 1.8rem; }
-    .r-pair.ar .r-pair-letters { color: #FFE600; }
-    .r-pair.or .r-pair-letters { color: #00C2FF; }
-    .r-pair.er .r-pair-letters { color: #FF2BD6; }
-    .r-pair-sound { font-size: 0.8rem; font-weight: 800; color: rgba(243,242,234,0.6); margin: 2px 0; }
-    .r-pair-ex { font-size: 0.82rem; font-weight: 700; color: rgba(243,242,234,0.5); }
+    .rule-formula-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 20px 24px; }
+    .pattern-block { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .formula-chip { font-family: 'Bungee', cursive; font-size: clamp(1.1rem, 3vw, 1.5rem); padding: 8px 16px; border-radius: 8px; border: 2px solid #000; }
+    .formula-chip.yellow { background: #FFE600; color: #1e1b2e; }
+    .formula-chip.cyan   { background: #00C2FF; color: #1e1b2e; }
+    .formula-chip.dark   { background: #2a2740; color: #FFE600; border-color: #FFE600; }
+    .formula-arrow { font-family: 'Bungee', cursive; font-size: 1.4rem; color: rgba(243,242,234,0.5); }
     .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: rgba(243,242,234,0.8); font-weight: 600; }
     .rule-desc strong { color: #FFE600; }
+    .position-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 16px 24px 20px; }
+    .pos-card { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 14px 16px; }
+    .pos-card.yellow { border: 2px solid #FFE600; }
+    .pos-card.cyan   { border: 2px solid #00C2FF; }
+    .pos-label { font-family: 'Bungee', cursive; font-size: 1.1rem; margin-bottom: 4px; }
+    .pos-card.yellow .pos-label { color: #FFE600; }
+    .pos-card.cyan   .pos-label { color: #00C2FF; }
+    .pos-example { font-size: 0.85rem; color: rgba(243,242,234,0.7); font-weight: 600; }
     .exceptions-box { background: #12101a; border: 3px solid #ef4444; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(239,68,68,0.35); }
     .exceptions-box-header { background: #ef4444; padding: 12px 20px; font-family: 'Bungee', cursive; font-size: 1rem; color: #fff; letter-spacing: 1px; }
     .exceptions-inner { padding: 20px 24px; }
@@ -76,8 +78,8 @@
 <body>
   <header class="page-header">
     <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Bossy R</h1>
-    <p class="subtitle">R-Controlled Vowels: AR, OR, ER, IR, UR</p>
+    <h1>AI and AY</h1>
+    <p class="subtitle">Two Ways to Spell the Long A Sound</p>
   </header>
   <nav class="cat-nav">
     <a href="#video">Video</a>
@@ -88,86 +90,84 @@
   </nav>
   <main>
     <section class="content-section" id="video">
-      <p class="section-eyebrow">R-CONTROLLED VOWELS</p>
+      <p class="section-eyebrow">VOWEL DIGRAPHS</p>
       <h2 class="section-heading">Watch the Video</h2>
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R Phonics Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/4MCuzcOz14c" title="AI and AY Spelling Rule by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video-description">
-        <p>When the letter <strong>R</strong> comes after a vowel, it changes the vowel's sound completely. That's why R is called <strong>Bossy R</strong> &mdash; it bosses the vowel and makes it say something new. <strong>A+R = /ar/</strong> (car), <strong>O+R = /or/</strong> (fork), and <strong>E/I/U + R = /er/</strong> (fern, girl, turn).</p>
+        <p>Both <strong>AI</strong> and <strong>AY</strong> make the long A sound (like the letter name "A"). The trick is knowing which spelling to use. <strong>AI</strong> comes at the <em>start or middle</em> of a word. <strong>AY</strong> comes at the <em>end</em> of a word &mdash; because English words rarely end in the letter I.</p>
       </div>
     </section>
     <section class="content-section" id="words">
       <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">R-Controlled Words</h2>
+      <h2 class="section-heading">AI and AY Words</h2>
       <div class="word-group">
-        <p class="word-group-label yellow">-AR words</p>
+        <p class="word-group-label yellow">-AI- (start or middle)</p>
         <div class="chip-row">
-          <span class="word-chip yellow">barn</span>
-          <span class="word-chip yellow">stars</span>
-          <span class="word-chip yellow">cards</span>
-          <span class="word-chip yellow">march</span>
-          <span class="word-chip yellow">far</span>
+          <span class="word-chip yellow">aim</span>
+          <span class="word-chip yellow">rain</span>
+          <span class="word-chip yellow">sail</span>
+          <span class="word-chip yellow">paid</span>
+          <span class="word-chip yellow">snail</span>
+          <span class="word-chip yellow">paint</span>
+          <span class="word-chip yellow">wait</span>
+          <span class="word-chip yellow">braid</span>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label cyan">-OR words</p>
+        <p class="word-group-label cyan">-AY (end of word)</p>
         <div class="chip-row">
-          <span class="word-chip cyan">corn</span>
-          <span class="word-chip cyan">north</span>
-          <span class="word-chip cyan">horns</span>
-          <span class="word-chip cyan">sports</span>
-          <span class="word-chip cyan">four</span>
-        </div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label pink">ER / IR / UR words</p>
-        <div class="chip-row">
-          <span class="word-chip pink">fern</span>
-          <span class="word-chip pink">germ</span>
-          <span class="word-chip pink">girl</span>
-          <span class="word-chip pink">third</span>
-          <span class="word-chip pink">turn</span>
+          <span class="word-chip cyan">pay</span>
+          <span class="word-chip cyan">ray</span>
+          <span class="word-chip cyan">play</span>
+          <span class="word-chip cyan">tray</span>
+          <span class="word-chip cyan">spray</span>
+          <span class="word-chip cyan">stay</span>
+          <span class="word-chip cyan">clay</span>
         </div>
       </div>
       <div class="download-card">
         <h3>Spelling Word List</h3>
-        <p>15 R-controlled vowel words &mdash; AR, OR, and ER/IR/UR.</p>
-        <a href="../downloads/bossy-r-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+        <p>15 words using the AI and AY long A vowel digraphs.</p>
+        <a href="../downloads/ai-ay-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
       </div>
     </section>
     <section class="content-section" id="rule">
       <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">Bossy R</h2>
+      <h2 class="section-heading">The AI / AY Rule</h2>
       <div class="rule-box">
-        <div class="rule-box-header">Vowel + R = a Completely New Sound</div>
-        <div class="r-pairs">
-          <div class="r-pair ar"><div class="r-pair-letters">AR</div><div class="r-pair-sound">/ar/ sound</div><div class="r-pair-ex">car, barn, star</div></div>
-          <div class="r-pair or"><div class="r-pair-letters">OR</div><div class="r-pair-sound">/or/ sound</div><div class="r-pair-ex">fork, corn, sport</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">ER</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">fern, her, term</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">IR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">girl, bird, third</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">UR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">turn, fur, burn</div></div>
+        <div class="rule-box-header">AI at the Start or Middle &mdash; AY at the End</div>
+        <div class="position-grid">
+          <div class="pos-card yellow">
+            <div class="pos-label">AI</div>
+            <div class="pos-example">start or middle of a word<br><em>aim, rain, sail, wait</em></div>
+          </div>
+          <div class="pos-card cyan">
+            <div class="pos-label">AY</div>
+            <div class="pos-example">at the end of a word<br><em>pay, play, spray, stay</em></div>
+          </div>
         </div>
-        <p class="rule-desc">When R follows a vowel, R bosses the vowel and changes its sound. A says "ah" normally, but A+R says "ar" (as in <em>car</em>). O says "oh" normally, but O+R says "or" (as in <em>fork</em>). ER, IR, and UR all make the <strong>same /er/ sound</strong> &mdash; that is the tricky part! You must learn which spelling each word uses.</p>
+        <p class="rule-desc">Both AI and AY make exactly the same long A sound. The position in the word tells you which one to use. <strong>AI</strong> works at the start or in the middle of a word. <strong>AY</strong> works at the end &mdash; because English words very rarely end in the letter I (the letter Y does the job of final I instead).</p>
       </div>
     </section>
     <section class="content-section" id="exceptions">
       <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Tricky Bossy R Words</h2>
+      <h2 class="section-heading">Exceptions</h2>
       <div class="exceptions-box">
-        <div class="exceptions-box-header">Things that can confuse you</div>
+        <div class="exceptions-box-header">Words that don't follow the rule</div>
         <div class="exceptions-inner">
           <div class="exception-item">
-            <span class="exception-word">ER / IR / UR</span>
-            <p class="exception-note">All three make exactly the <strong>same sound</strong>: /er/. Compare: <em>fern</em>, <em>girl</em>, <em>turn</em> &mdash; they all sound the same in the stressed syllable but are spelled differently. You must memorise which spelling each word uses; the sound alone won't tell you.</p>
+            <span class="exception-word">they, grey</span>
+            <p class="exception-note">These use <strong>EY</strong> to make the long A sound at the end. Not all words use AY at the end &mdash; some use the EY digraph instead. Both are correct for those words; you must learn them.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">four / for</span>
-            <p class="exception-note"><em>Four</em> (the number) uses OUR but still makes the /or/ sound. Not all /or/ sounds are spelled O+R &mdash; OUR (four, your), OAR (board, roar), and even ORE (more, store) can make the same sound.</p>
+            <span class="exception-word">eight, weight</span>
+            <p class="exception-note">Some words use <strong>EIGH</strong> to make the long A sound. This is a less common pattern but appears in several common words: eight, weight, freight, neighbour.</p>
           </div>
           <div class="exception-item">
-            <span class="exception-word">war, warm</span>
-            <p class="exception-note">When W comes before AR, the sound changes from /ar/ to /or/: <em>war</em>, <em>warm</em>, <em>wart</em>, <em>ward</em>. The W softens the vowel. This is a known exception cluster to memorise.</p>
+            <span class="exception-word">birthday</span>
+            <p class="exception-note">A compound word: <em>birth</em> + <em>day</em>. The AY is at the end of the word <em>day</em>, which confirms the rule: AY comes at the end. Many compound words ending in &ndash;day, &ndash;way, &ndash;play follow this pattern.</p>
           </div>
         </div>
       </div>
@@ -176,46 +176,43 @@
       <p class="section-eyebrow">SONG LYRICS</p>
       <h2 class="section-heading">Lyrics</h2>
       <div class="lyrics-box">
-        <div class="lyrics-box-header">Bossy R &mdash; R-Controlled Vowels Rap</div>
+        <div class="lyrics-box-header">AI and AY &mdash; Long A Spelling Rule Song</div>
         <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready? Whoa! To learn about what? R-controlled vowels are also known as Bossy R.</p>
+          <p class="lyric-intro">Are you ready to learn about the A sound? Here we go.</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 1 &mdash; AR WORDS</p>
-          <p class="lyric-verse">A can say a, but add the letter R, it makes a new sound: ar as in car.<br>
-          barn &mdash; AR N<br>
-          stars &mdash; ST AR S<br>
-          cards &mdash; C AR DS<br>
-          march &mdash; M AR CH<br>
-          far &mdash; F AR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 2 &mdash; OR WORDS</p>
-          <p class="lyric-verse">O can say o, we know that from before, but add the letter R, and now it can say or.<br>
-          corn &mdash; C OR N<br>
-          north &mdash; N OR TH<br>
-          horns &mdash; H OR NS<br>
-          sports &mdash; SP OR TS<br>
-          four &mdash; F OR<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 3 &mdash; ER/IR/UR WORDS</p>
-          <p class="lyric-verse">These vowels are short, but I hope you can infer:<br>
-          if you add the letter R, they now can say er.<br>
-          fern &mdash; F ER N<br>
-          germ &mdash; G ER M<br>
-          girl &mdash; G IR L<br>
-          third &mdash; TH IR D<br>
-          And now you know about Bossy R.</p>
+          <p class="lyric-chorus">AI at the start and the middle, use AY at the end.<br>
+          They both make the sound of A, my friend.<br>
+          AI at the start and the middle, but have you wondered why?<br>
+          In the English language, words rarely end in I.</p>
+          <p class="lyric-label">VERSE 1 &mdash; AI WORDS</p>
+          <p class="lyric-verse">Here are some words that we'll learn today.<br>
+          They all contain an AI that makes the sound A.<br>
+          aim &mdash; A I M<br>
+          rain &mdash; R AI N<br>
+          sail &mdash; S AI L<br>
+          paid &mdash; P AI D<br>
+          snail &mdash; S N AI L<br>
+          paint &mdash; P AI N T</p>
           <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
-          A and R can say ar, ar as in car.<br>
-          O and R can say or, or as in fork.<br>
-          These letters can say er, er as in fern.<br>
-          And now you know about Bossy R.</p>
-          <p class="lyric-outro">Mr. Spelling. That is it. Bye-bye.</p>
+          <p class="lyric-chorus">AI at the start and the middle, use AY at the end.<br>
+          They both make the sound of A, my friend.<br>
+          AI at the start and the middle, but have you wondered why?<br>
+          In the English language, words rarely end in I.</p>
+          <p class="lyric-label">VERSE 2 &mdash; AY WORDS</p>
+          <p class="lyric-verse">Here are some words that we'll learn today.<br>
+          They all contain an AY that makes the sound A.<br>
+          pay &mdash; P AY<br>
+          ray &mdash; R AY<br>
+          play &mdash; P L AY<br>
+          tray &mdash; T R AY<br>
+          spray &mdash; S P R AY<br>
+          birthday &mdash; B I R T H D AY</p>
+          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-chorus">AI at the start and the middle, use AY at the end.<br>
+          They both make the sound of A, my friend.<br>
+          AI at the start and the middle, but have you wondered why?<br>
+          In the English language, words rarely end in I.</p>
+          <p class="lyric-outro">Mr. Spelling.com</p>
         </div>
       </div>
     </section>
