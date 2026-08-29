@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr Spelling &mdash; AIR</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
 
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AIR | Mr Spelling</title>
+<link href="../assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #fef08a;
-      font-family: 'Nunito', sans-serif;
-      color: #1a1a1a;
+      background: #FDF8EE;
+      font-family: 'Figtree', sans-serif;
+      color: #1C1626;
       min-height: 100vh;
     }
 
     .page-header {
-      background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      background: linear-gradient(135deg, #F2B705 0%, #A32916 100%);
       padding: 32px 24px 28px;
       text-align: center;
-      border-bottom: 4px solid #1a1a1a;
+      border-bottom: 4px solid #1C1626;
       position: relative;
     }
 
@@ -29,26 +28,26 @@
       left: 20px;
       top: 50%;
       transform: translateY(-50%);
-      font-family: 'Bangers', cursive;
+      font-family: 'Bricolage Grotesque', cursive;
       font-size: 1.1rem;
       letter-spacing: 1px;
-      background: #1a1a1a;
-      color: #facc15;
+      background: #1C1626;
+      color: #F2B705;
       text-decoration: none;
       padding: 6px 16px;
       border-radius: 999px;
     }
 
     .page-header h1 {
-      font-family: 'Bangers', cursive;
+      font-family: 'Bricolage Grotesque', cursive;
       font-size: clamp(2.4rem, 8vw, 4.5rem);
       letter-spacing: 4px;
-      color: #1a1a1a;
-      text-shadow: 4px 4px 0 #ef4444;
+      color: #1C1626;
+      text-shadow: 4px 4px 0 #A32916;
     }
 
     .cat-nav {
-      background: #1a1a1a;
+      background: #1C1626;
       padding: 14px 20px;
       display: flex;
       flex-wrap: wrap;
@@ -57,19 +56,19 @@
     }
 
     .cat-nav a {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-weight: 900;
       font-size: 0.8rem;
-      background: #333;
-      color: #facc15;
+      background: #1C1626;
+      color: #F2B705;
       text-decoration: none;
       padding: 4px 12px;
       border-radius: 999px;
-      border: 2px solid #facc15;
+      border: 2px solid #F2B705;
       transition: background 0.15s;
     }
 
-    .cat-nav a:hover { background: #facc15; color: #1a1a1a; }
+    .cat-nav a:hover { background: #F2B705; color: #1C1626; }
 
     main {
       max-width: 900px;
@@ -80,21 +79,21 @@
     .content-section { margin-bottom: 52px; }
 
     .section-heading {
-      font-family: 'Bangers', cursive;
+      font-family: 'Bricolage Grotesque', cursive;
       font-size: clamp(1.8rem, 5vw, 2.6rem);
       letter-spacing: 2px;
-      color: #ef4444;
-      text-shadow: 2px 2px 0 #1a1a1a;
+      color: #A32916;
+      text-shadow: 2px 2px 0 #1C1626;
       margin-bottom: 16px;
       padding-bottom: 10px;
-      border-bottom: 3px solid #1a1a1a;
+      border-bottom: 3px solid #1C1626;
     }
 
     .video-label {
-      font-family: 'Bangers', cursive;
+      font-family: 'Bricolage Grotesque', cursive;
       font-size: 1.3rem;
       letter-spacing: 1px;
-      color: #1a1a1a;
+      color: #1C1626;
       margin: 22px 0 10px;
     }
 
@@ -102,10 +101,10 @@
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      border: 4px solid #1a1a1a;
+      border: 4px solid #1C1626;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 6px 6px 0 #1a1a1a;
+      box-shadow: 6px 6px 0 #1C1626;
     }
 
     .video-wrap iframe {
@@ -115,11 +114,11 @@
     }
 
     .description-box {
-      background: #fff;
-      border: 3px solid #1a1a1a;
+      background: #FFFFFF;
+      border: 3px solid #1C1626;
       border-radius: 12px;
       padding: 24px 28px;
-      box-shadow: 5px 5px 0 #1a1a1a;
+      box-shadow: 5px 5px 0 #1C1626;
       font-size: 1.05rem;
       line-height: 1.8;
     }
@@ -128,36 +127,36 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: 'Bangers', cursive;
+      font-family: 'Bricolage Grotesque', cursive;
       font-size: 1.2rem;
       letter-spacing: 1px;
-      background: #1a1a1a;
-      color: #facc15;
+      background: #1C1626;
+      color: #F2B705;
       text-decoration: none;
       padding: 12px 28px;
       border-radius: 999px;
-      border: 3px solid #1a1a1a;
-      box-shadow: 4px 4px 0 #ef4444;
+      border: 3px solid #1C1626;
+      box-shadow: 4px 4px 0 #A32916;
       transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .download-btn:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #ef4444;
+      box-shadow: 6px 6px 0 #A32916;
     }
 
     .no-ppt {
       font-weight: 700;
-      color: #6b7280;
+      color: #564C63;
       font-size: 1rem;
     }
 
     .lyrics-box {
-      background: #fff;
-      border: 3px solid #1a1a1a;
+      background: #FFFFFF;
+      border: 3px solid #1C1626;
       border-radius: 12px;
       padding: 24px 28px;
-      box-shadow: 5px 5px 0 #1a1a1a;
+      box-shadow: 5px 5px 0 #1C1626;
       font-size: 1rem;
       line-height: 2;
     }
@@ -166,70 +165,71 @@
 
     .lyrics-box .lyric-break {
       margin: 14px 0 10px;
-      border-top: 2px dashed #e5e7eb;
+      border-top: 2px dashed #EAE1FB;
     }
 
-    .lyrics-placeholder { color: #9ca3af; font-style: italic; }
+    .lyrics-placeholder { color: #8A8096; font-style: italic; }
 
     footer {
-      background: #facc15;
+      background: #F2B705;
       text-align: center;
       padding: 20px;
       font-weight: 900;
       font-size: 0.95rem;
-      color: #1a1a1a;
-      border-top: 4px solid #1a1a1a;
+      color: #1C1626;
+      border-top: 4px solid #1C1626;
     }
 
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
-
-  <header class="page-header">
-    <a class="back-link" href="index.html">&#8592; All Topics</a>
-    <h1>AIR</h1>
-  </header>
-
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#description">Spelling Rule</a>
-    <a href="#powerpoint">PowerPoint</a>
-    <a href="#lyrics">Lyrics</a>
-  </nav>
-
-  <main>
-
-    <section class="content-section" id="video">
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/R3lG61bgAs8" title="Phonics: AIR. Trigraphs AIR, ARE & EAR. A Spelling and Phonics Rap Song. Australian Pronunciation." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section class="content-section" id="description">
-      <h2 class="section-heading">The Spelling Rule</h2>
-      <div class="description-box">
-        <p>There are many ways in spelling to make the sound ‘air’. This video will focus on the three most common: AIR, ARE & EAR with Australian Pronunciation.</p>
-      </div>
-    </section>
-
-    <section class="content-section" id="powerpoint">
-      <h2 class="section-heading">PowerPoint</h2>
-      <a class="download-btn" href="https://docs.google.com/presentation/d/1Bk2j-cheS7V9npva8LSXvcSpDAjKYvue/edit?usp=sharing&ouid=109193247342571554306&rtpof=true&sd=true" target="_blank" rel="noopener">&#128196; Open AIR PowerPoint</a>
-    </section>
-
-    <section class="content-section" id="lyrics">
-      <h2 class="section-heading">Song Lyrics</h2>
-      <div class="lyrics-box">
-        <p class="lyrics-placeholder">Lyrics coming soon.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Mr Spelling &mdash; Not Misspelling
+<header class="page-header">
+<a class="back-link" href="index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> All Topics</a>
+<h1>AIR</h1>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#description">Spelling Rule</a>
+<a href="#powerpoint">PowerPoint</a>
+<a href="#lyrics">Lyrics</a>
+</nav>
+<main>
+<section class="content-section" id="video">
+<h2 class="section-heading">Watch the Video</h2>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/R3lG61bgAs8" title="Phonics: AIR. Trigraphs AIR, ARE &amp; EAR. A Spelling and Phonics Rap Song. Australian Pronunciation."></iframe>
+</div>
+</section>
+<section class="content-section" id="description">
+<h2 class="section-heading">The Spelling Rule</h2>
+<div class="description-box beat">
+<p>There are many ways in spelling to make the sound ‘air’. This video will focus on the three most common: AIR, ARE &amp; EAR with Australian Pronunciation.</p>
+</div>
+</section>
+<section class="content-section" id="powerpoint">
+<h2 class="section-heading">PowerPoint</h2>
+<a class="download-btn" href="https://docs.google.com/presentation/d/1Bk2j-cheS7V9npva8LSXvcSpDAjKYvue/edit?usp=sharing&amp;ouid=109193247342571554306&amp;rtpof=true&amp;sd=true" rel="noopener" target="_blank"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg> Open AIR PowerPoint</a>
+</section>
+<section class="content-section" id="lyrics">
+<h2 class="section-heading">Song Lyrics</h2>
+<div class="lyrics-box beat">
+<p class="lyrics-placeholder">Lyrics coming soon.</p>
+</div>
+</section>
+</main>
+<footer>
+    © 2025 Mr Spelling: Not Misspelling
   </footer>
-
-</body>
+<script src="../assets/site.js"></script></body>
 </html>

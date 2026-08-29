@@ -1,85 +1,42 @@
+<!--
+  DIRECTION CONTRACT
+  THESIS: The rule page is a teaching artifact a child reads along with, not a landing
+    page: refuses the kicker-label-over-every-heading habit the incumbent code used six
+    times on this page alone with no unique information in most of them.
+  OWN-WORLD: Same system as index.html: cream ground, ink hard-offset cards, terracotta /
+    teal / violet as the three word-group colors (consistent across every lesson page,
+    marigold held back as the rarer whole-site highlight).
+  STORY: Teacher/child confirms the rule in one glance at the pattern-card row, checks a
+    word, downloads the list, reads what to watch out for, follows the lyrics.
+  FIRST VIEWPORT: Sticky page header (back link, title, subtitle) + sticky section nav.
+    First content viewport is the video, full-width within the reading column.
+  FORM: Established world, elevated: lesson-page template, reused verbatim in structure
+    and content from the incumbent page; presentation only changes in this pass.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
+    review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bossy R | Mr Spelling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
-    .page-header { background: #FFE9A8; border-bottom: 3px solid #191320; padding: 36px 24px 30px; text-align: center; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; white-space: nowrap; }
-    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #191320; line-height: 1.05; }
-    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #7A5AF8; margin-top: 8px; }
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #191320; background: #FFF7EC; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
-    main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
-    .content-section { margin-bottom: 64px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #191320; border-bottom: 3px solid #191320; padding-bottom: 10px; margin-bottom: 24px; }
-    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #7A5AF8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; margin-bottom: 20px; }
-    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-description { background: #F2E7FF; border: 2px solid #191320; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #191320; font-weight: 500; }
-    .word-group { margin-bottom: 28px; }
-    .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .word-group-label.yellow { color: #C0392B; }
-    .word-group-label.cyan { color: #12A594; }
-    .word-group-label.pink { color: #7A5AF8; }
-    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
-    .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.pink   { background: #F2E7FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
-    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
-    .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
-    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #191320; color: #FFF7EC; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
-    .r-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 20px 24px; }
-    .r-pair { background: #FFF7EC; border: 1px solid rgba(25,19,32,0.12); border-radius: 10px; padding: 12px 14px; text-align: center; }
-    .r-pair.ar { border: 2px solid #FFC93C; }
-    .r-pair.or { border: 2px solid #12A594; }
-    .r-pair.er { border: 2px solid #C0392B; }
-    .r-pair-letters { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.8rem; }
-    .r-pair.ar .r-pair-letters { color: #191320; }
-    .r-pair.or .r-pair-letters { color: #12A594; }
-    .r-pair.er .r-pair-letters { color: #C0392B; }
-    .r-pair-sound { font-size: 0.8rem; font-weight: 800; color: #4A4155; margin: 2px 0; }
-    .r-pair-ex { font-size: 0.82rem; font-weight: 700; color: #4A4155; }
-    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
-    .rule-desc strong { color: #FFC93C; }
-    .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
-    .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
-    .exceptions-inner { padding: 20px 24px; }
-    .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(192,57,43,0.2); }
-    .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
-    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #C0392B; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #191320; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
-    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #191320; padding-top: 2px; }
-    .exception-note strong { color: #C0392B; }
-    .lyrics-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .lyrics-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
-    .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
-    .lyric-intro  { color: #4A4155; font-style: italic; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #7A5AF8; margin-top: 12px; margin-bottom: 2px; }
-    .lyric-chorus { color: #C0392B; font-weight: 800; }
-    .lyric-verse  { color: #191320; padding-left: 16px; border-left: 3px solid #FFC93C; }
-    .lyric-outro  { color: #4A4155; font-style: italic; margin-top: 8px; }
-    footer { background: #191320; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFF7EC; border-top: 3px solid #191320; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
   <header class="page-header">
-    <a href="../index.html" class="back-link">&#8592; Home</a>
+    <a href="../index.html" class="back-link">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Home
+    </a>
     <h1>Bossy R</h1>
     <p class="subtitle">R-Controlled Vowels: AR, OR, ER, IR, UR</p>
   </header>
+
   <nav class="cat-nav">
     <a href="#video">Video</a>
     <a href="#words">Words</a>
@@ -87,84 +44,91 @@
     <a href="#exceptions">Watch Out</a>
     <a href="#lyrics">Lyrics</a>
   </nav>
+
   <main>
     <section class="content-section" id="video">
-      <p class="section-eyebrow">R-CONTROLLED VOWELS</p>
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R Phonics Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="section-heading-row"><h2 class="section-heading">Watch the Video</h2></div>
+      <div class="video-wrap beat">
+        <iframe src="https://www.youtube.com/embed/korz2wR6AOw" title="Bossy R Phonics Song by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
-      <div class="video-description">
-        <p>When the letter <strong>R</strong> comes after a vowel, it changes the vowel's sound completely. That's why R is called <strong>Bossy R</strong> &mdash; it bosses the vowel and makes it say something new. <strong>A+R = /ar/</strong> (car), <strong>O+R = /or/</strong> (fork), and <strong>E/I/U + R = /er/</strong> (fern, girl, turn).</p>
+      <div class="video-description beat">
+        <p>When the letter <strong>R</strong> comes after a vowel, it changes the vowel's sound completely. That's why R is called <strong>Bossy R</strong>: it bosses the vowel and makes it say something new. <strong>A+R = /ar/</strong> (car), <strong>O+R = /or/</strong> (fork), and <strong>E/I/U + R = /er/</strong> (fern, girl, turn).</p>
       </div>
     </section>
+
     <section class="content-section" id="words">
-      <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">R-Controlled Words</h2>
+      <div class="section-heading-row"><h2 class="section-heading">R-Controlled Words</h2></div>
+
       <div class="word-group">
-        <p class="word-group-label yellow">-AR words</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">barn</span>
-          <span class="word-chip yellow">stars</span>
-          <span class="word-chip yellow">cards</span>
-          <span class="word-chip yellow">march</span>
-          <span class="word-chip yellow">far</span>
+        <p class="word-group-label c1">-AR words</p>
+        <div class="chip-row beat-group">
+          <span class="word-chip c1 beat-child">barn</span>
+          <span class="word-chip c1 beat-child">stars</span>
+          <span class="word-chip c1 beat-child">cards</span>
+          <span class="word-chip c1 beat-child">march</span>
+          <span class="word-chip c1 beat-child">far</span>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label cyan">-OR words</p>
-        <div class="chip-row">
-          <span class="word-chip cyan">corn</span>
-          <span class="word-chip cyan">north</span>
-          <span class="word-chip cyan">horns</span>
-          <span class="word-chip cyan">sports</span>
-          <span class="word-chip cyan">four</span>
+        <p class="word-group-label c2">-OR words</p>
+        <div class="chip-row beat-group">
+          <span class="word-chip c2 beat-child">corn</span>
+          <span class="word-chip c2 beat-child">north</span>
+          <span class="word-chip c2 beat-child">horns</span>
+          <span class="word-chip c2 beat-child">sports</span>
+          <span class="word-chip c2 beat-child">four</span>
         </div>
       </div>
       <div class="word-group">
-        <p class="word-group-label pink">ER / IR / UR words</p>
-        <div class="chip-row">
-          <span class="word-chip pink">fern</span>
-          <span class="word-chip pink">germ</span>
-          <span class="word-chip pink">girl</span>
-          <span class="word-chip pink">third</span>
-          <span class="word-chip pink">turn</span>
+        <p class="word-group-label c3">ER / IR / UR words</p>
+        <div class="chip-row beat-group">
+          <span class="word-chip c3 beat-child">fern</span>
+          <span class="word-chip c3 beat-child">germ</span>
+          <span class="word-chip c3 beat-child">girl</span>
+          <span class="word-chip c3 beat-child">third</span>
+          <span class="word-chip c3 beat-child">turn</span>
         </div>
       </div>
-      <div class="download-card">
-        <h3>Spelling Word List</h3>
-        <p>15 R-controlled vowel words &mdash; AR, OR, and ER/IR/UR.</p>
-        <a href="../downloads/bossy-r-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
+
+      <div class="download-card beat">
+        <div>
+          <h3>Spelling Word List</h3>
+          <p>15 R-controlled vowel words: AR, OR, and ER/IR/UR.</p>
+        </div>
+        <a href="../downloads/bossy-r-words.pdf" class="btn btn-dark btn-sm" download>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+          Download PDF
+        </a>
       </div>
     </section>
+
     <section class="content-section" id="rule">
-      <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">Bossy R</h2>
-      <div class="rule-box">
+      <div class="section-heading-row"><h2 class="section-heading">Bossy R</h2></div>
+      <div class="rule-box beat">
         <div class="rule-box-header">Vowel + R = a Completely New Sound</div>
-        <div class="r-pairs">
-          <div class="r-pair ar"><div class="r-pair-letters">AR</div><div class="r-pair-sound">/ar/ sound</div><div class="r-pair-ex">car, barn, star</div></div>
-          <div class="r-pair or"><div class="r-pair-letters">OR</div><div class="r-pair-sound">/or/ sound</div><div class="r-pair-ex">fork, corn, sport</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">ER</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">fern, her, term</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">IR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">girl, bird, third</div></div>
-          <div class="r-pair er"><div class="r-pair-letters">UR</div><div class="r-pair-sound">/er/ sound</div><div class="r-pair-ex">turn, fur, burn</div></div>
+        <div class="pattern-grid">
+          <div class="pattern-card c1"><div class="pattern-letters">AR</div><div class="pattern-sound">/ar/ sound</div><div class="pattern-ex">car, barn, star</div></div>
+          <div class="pattern-card c2"><div class="pattern-letters">OR</div><div class="pattern-sound">/or/ sound</div><div class="pattern-ex">fork, corn, sport</div></div>
+          <div class="pattern-card c3"><div class="pattern-letters">ER</div><div class="pattern-sound">/er/ sound</div><div class="pattern-ex">fern, her, term</div></div>
+          <div class="pattern-card c3"><div class="pattern-letters">IR</div><div class="pattern-sound">/er/ sound</div><div class="pattern-ex">girl, bird, third</div></div>
+          <div class="pattern-card c3"><div class="pattern-letters">UR</div><div class="pattern-sound">/er/ sound</div><div class="pattern-ex">turn, fur, burn</div></div>
         </div>
-        <p class="rule-desc">When R follows a vowel, R bosses the vowel and changes its sound. A says "ah" normally, but A+R says "ar" (as in <em>car</em>). O says "oh" normally, but O+R says "or" (as in <em>fork</em>). ER, IR, and UR all make the <strong>same /er/ sound</strong> &mdash; that is the tricky part! You must learn which spelling each word uses.</p>
+        <p class="rule-desc">When R follows a vowel, R bosses the vowel and changes its sound. A says "ah" normally, but A+R says "ar" (as in <em>car</em>). O says "oh" normally, but O+R says "or" (as in <em>fork</em>). ER, IR, and UR all make the <strong>same /er/ sound</strong>: that is the tricky part! You must learn which spelling each word uses.</p>
       </div>
     </section>
+
     <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Tricky Bossy R Words</h2>
-      <div class="exceptions-box">
+      <div class="section-heading-row"><h2 class="section-heading">Tricky Bossy R Words</h2></div>
+      <div class="exceptions-box beat">
         <div class="exceptions-box-header">Things that can confuse you</div>
         <div class="exceptions-inner">
           <div class="exception-item">
             <span class="exception-word">ER / IR / UR</span>
-            <p class="exception-note">All three make exactly the <strong>same sound</strong>: /er/. Compare: <em>fern</em>, <em>girl</em>, <em>turn</em> &mdash; they all sound the same in the stressed syllable but are spelled differently. You must memorise which spelling each word uses; the sound alone won't tell you.</p>
+            <p class="exception-note">All three make exactly the <strong>same sound</strong>: /er/. Compare: <em>fern</em>, <em>girl</em>, <em>turn</em>: they all sound the same in the stressed syllable but are spelled differently. You must memorise which spelling each word uses; the sound alone won't tell you.</p>
           </div>
           <div class="exception-item">
             <span class="exception-word">four / for</span>
-            <p class="exception-note"><em>Four</em> (the number) uses OUR but still makes the /or/ sound. Not all /or/ sounds are spelled O+R &mdash; OUR (four, your), OAR (board, roar), and even ORE (more, store) can make the same sound.</p>
+            <p class="exception-note"><em>Four</em> (the number) uses OUR but still makes the /or/ sound. Not all /or/ sounds are spelled O+R: OUR (four, your), OAR (board, roar), and even ORE (more, store) can make the same sound.</p>
           </div>
           <div class="exception-item">
             <span class="exception-word">war, warm</span>
@@ -173,44 +137,44 @@
         </div>
       </div>
     </section>
+
     <section class="content-section" id="lyrics">
-      <p class="section-eyebrow">SONG LYRICS</p>
-      <h2 class="section-heading">Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyrics-box-header">Bossy R &mdash; R-Controlled Vowels Rap</div>
+      <div class="section-heading-row"><h2 class="section-heading">Lyrics</h2></div>
+      <div class="lyrics-box beat">
+        <div class="lyrics-box-header">Bossy R: R-Controlled Vowels Rap</div>
         <div class="lyrics-inner">
           <p class="lyric-intro">Are you ready? Whoa! To learn about what? R-controlled vowels are also known as Bossy R.</p>
-          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-label">Chorus</p>
           <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
           A and R can say ar, ar as in car.<br>
           O and R can say or, or as in fork.<br>
           These letters can say er, er as in fern.<br>
           And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 1 &mdash; AR WORDS</p>
+          <p class="lyric-label">Verse 1: AR words</p>
           <p class="lyric-verse">A can say a, but add the letter R, it makes a new sound: ar as in car.<br>
-          barn &mdash; AR N<br>
-          stars &mdash; ST AR S<br>
-          cards &mdash; C AR DS<br>
-          march &mdash; M AR CH<br>
-          far &mdash; F AR<br>
+          barn: AR N<br>
+          stars: ST AR S<br>
+          cards: C AR DS<br>
+          march: M AR CH<br>
+          far: F AR<br>
           And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 2 &mdash; OR WORDS</p>
+          <p class="lyric-label">Verse 2: OR words</p>
           <p class="lyric-verse">O can say o, we know that from before, but add the letter R, and now it can say or.<br>
-          corn &mdash; C OR N<br>
-          north &mdash; N OR TH<br>
-          horns &mdash; H OR NS<br>
-          sports &mdash; SP OR TS<br>
-          four &mdash; F OR<br>
+          corn: C OR N<br>
+          north: N OR TH<br>
+          horns: H OR NS<br>
+          sports: SP OR TS<br>
+          four: F OR<br>
           And now you know about Bossy R.</p>
-          <p class="lyric-label">VERSE 3 &mdash; ER/IR/UR WORDS</p>
+          <p class="lyric-label">Verse 3: ER/IR/UR words</p>
           <p class="lyric-verse">These vowels are short, but I hope you can infer:<br>
           if you add the letter R, they now can say er.<br>
-          fern &mdash; F ER N<br>
-          germ &mdash; G ER M<br>
-          girl &mdash; G IR L<br>
-          third &mdash; TH IR D<br>
+          fern: F ER N<br>
+          germ: G ER M<br>
+          girl: G IR L<br>
+          third: TH IR D<br>
           And now you know about Bossy R.</p>
-          <p class="lyric-label">CHORUS</p>
+          <p class="lyric-label">Chorus</p>
           <p class="lyric-chorus">When it's after a vowel, the letter R can change the sound of the vowel by far.<br>
           A and R can say ar, ar as in car.<br>
           O and R can say or, or as in fork.<br>
@@ -221,6 +185,8 @@
       </div>
     </section>
   </main>
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
+
+  <footer class="site-footer">&copy; 2026 Mr Spelling: Not Misspelling</footer>
+  <script src="../assets/site.js"></script>
 </body>
 </html>

@@ -1,216 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soft C and Soft G | Mr Spelling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soft C and Soft G | Mr Spelling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
-    .page-header { background: #FFE9A8; border-bottom: 3px solid #191320; padding: 36px 24px 30px; text-align: center; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; white-space: nowrap; }
-    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #191320; line-height: 1.05; }
-    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #7A5AF8; margin-top: 8px; }
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #191320; background: #FFF7EC; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
+    body { background: #FDF8EE; font-family: 'Figtree', system-ui, sans-serif; color: #1C1626; min-height: 100vh; }
+    .page-header { background: #FBE2D6; border-bottom: 3px solid #1C1626; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #1C1626; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #1C1626; line-height: 1.05; }
+    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #6B46E5; margin-top: 8px; }
+    .cat-nav { background: #FDF8EE; border-bottom: 3px solid #1C1626; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #1C1626; background: #FDF8EE; padding: 7px 18px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FBE2D6; color: #1C1626; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #1C1626; }
     main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
     .content-section { margin-bottom: 64px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #191320; border-bottom: 3px solid #191320; padding-bottom: 10px; margin-bottom: 24px; }
-    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #7A5AF8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; margin-bottom: 20px; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #1C1626; border-bottom: 3px solid #1C1626; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #6B46E5; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #F2B705; margin-bottom: 20px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-description { background: #F2E7FF; border: 2px solid #191320; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #191320; font-weight: 500; }
+    .video-description { background: #EAE1FB; border: 2px solid #1C1626; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #1C1626; font-weight: 500; }
     .word-group { margin-bottom: 28px; }
     .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .word-group-label.yellow { color: #C0392B; }
-    .word-group-label.cyan   { color: #12A594; }
+    .word-group-label.yellow { color: #A32916; }
+    .word-group-label.cyan   { color: #0E9C88; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
-    .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
-    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
-    .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
-    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #191320; color: #FFF7EC; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #1C1626; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip.yellow { background: #F2B705; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.cyan   { background: #DCEBFF; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .download-card { background: #EAE1FB; border: 3px solid #1C1626; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #6B46E5; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #1C1626; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: #564C63; margin-bottom: 16px; line-height: 1.5; }
+    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #1C1626; color: #FDF8EE; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #A32916; color: #FDF8EE; }
+    .rule-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .rule-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .soft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 20px 24px; }
     @media(max-width:540px){ .soft-grid { grid-template-columns: 1fr; } }
     .soft-card { background: rgba(25,19,32,0.04); border-radius: 10px; padding: 16px; }
-    .soft-card.soft-c { border: 2px solid #FFC93C; }
-    .soft-card.soft-g { border: 2px solid #12A594; }
+    .soft-card.soft-c { border: 2px solid #F2B705; }
+    .soft-card.soft-g { border: 2px solid #0E9C88; }
     .soft-card-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; margin-bottom: 6px; }
-    .soft-card.soft-c .soft-card-title { color: #FFC93C; }
-    .soft-card.soft-g .soft-card-title { color: #12A594; }
-    .soft-card-rule { font-size: 0.85rem; font-weight: 700; color: #4A4155; margin-bottom: 8px; }
+    .soft-card.soft-c .soft-card-title { color: #F2B705; }
+    .soft-card.soft-g .soft-card-title { color: #0E9C88; }
+    .soft-card-rule { font-size: 0.85rem; font-weight: 700; color: #564C63; margin-bottom: 8px; }
     .trigger-chips { display: flex; gap: 6px; flex-wrap: wrap; }
-    .trig { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; padding: 4px 12px; border-radius: 6px; border: 2px solid #191320; }
-    .soft-card.soft-c .trig { background: #FFC93C; color: #191320; }
-    .soft-card.soft-g .trig { background: #C9E4FF; color: #191320; }
-    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
-    .rule-desc strong { color: #FFC93C; }
-    .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
-    .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
+    .trig { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; padding: 4px 12px; border-radius: 6px; border: 2px solid #1C1626; }
+    .soft-card.soft-c .trig { background: #F2B705; color: #1C1626; }
+    .soft-card.soft-g .trig { background: #DCEBFF; color: #1C1626; }
+    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #1C1626; font-weight: 600; }
+    .rule-desc strong { color: #F2B705; }
+    .exceptions-box { background: #FDF8EE; border: 3px solid #A32916; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
+    .exceptions-box-header { background: #A32916; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFFFFF; letter-spacing: 0.5px; }
     .exceptions-inner { padding: 20px 24px; }
     .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(192,57,43,0.2); }
     .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
-    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #C0392B; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #191320; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
-    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #191320; padding-top: 2px; }
-    .exception-note strong { color: #C0392B; }
-    .lyrics-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .lyrics-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #A32916; color: #FFFFFF; padding: 4px 14px; border-radius: 6px; border: 2px solid #1C1626; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #1C1626; padding-top: 2px; }
+    .exception-note strong { color: #A32916; }
+    .lyrics-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .lyrics-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
-    .lyric-intro  { color: #4A4155; font-style: italic; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #7A5AF8; margin-top: 12px; margin-bottom: 2px; }
-    .lyric-chorus { color: #C0392B; font-weight: 800; }
-    .lyric-verse  { color: #191320; padding-left: 16px; border-left: 3px solid #FFC93C; }
-    .lyric-outro  { color: #4A4155; font-style: italic; margin-top: 8px; }
-    footer { background: #191320; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFF7EC; border-top: 3px solid #191320; }
+    .lyric-intro  { color: #564C63; font-style: italic; }
+    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #6B46E5; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #A32916; font-weight: 800; }
+    .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
+    .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
-  <header class="page-header">
-    <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Soft C and Soft G</h1>
-    <p class="subtitle">C and G Can Soften Before E, I, or Y</p>
-  </header>
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#words">Words</a>
-    <a href="#rule">The Rule</a>
-    <a href="#exceptions">Watch Out</a>
-    <a href="#lyrics">Lyrics</a>
-  </nav>
-  <main>
-    <section class="content-section" id="video">
-      <p class="section-eyebrow">SOFT CONSONANTS</p>
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/dio4XkyqVcQ" title="Soft C and Soft G by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-description">
-        <p>The letters <strong>C</strong> and <strong>G</strong> have two sounds each. The <strong>hard</strong> sound (as in <em>cat</em> or <em>gap</em>) is the default. But when C or G is followed by <strong>E</strong>, <strong>I</strong>, or <strong>Y</strong>, it often becomes <strong>soft</strong>: C sounds like <em>/s/</em> and G sounds like <em>/j/</em>.</p>
-      </div>
-    </section>
-    <section class="content-section" id="words">
-      <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">Soft C and Soft G Words</h2>
-      <div class="word-group">
-        <p class="word-group-label yellow">Soft C words (say /s/)</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">circle</span>
-          <span class="word-chip yellow">cycle</span>
-          <span class="word-chip yellow">mice</span>
-          <span class="word-chip yellow">city</span>
-          <span class="word-chip yellow">cell</span>
-          <span class="word-chip yellow">race</span>
-          <span class="word-chip yellow">place</span>
-          <span class="word-chip yellow">pencil</span>
-        </div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label cyan">Soft G words (say /j/)</p>
-        <div class="chip-row">
-          <span class="word-chip cyan">gem</span>
-          <span class="word-chip cyan">giant</span>
-          <span class="word-chip cyan">cage</span>
-          <span class="word-chip cyan">gentle</span>
-          <span class="word-chip cyan">giraffe</span>
-          <span class="word-chip cyan">large</span>
-          <span class="word-chip cyan">magic</span>
-        </div>
-      </div>
-      <div class="download-card">
-        <h3>Spelling Word List</h3>
-        <p>15 words with soft C (/s/) and soft G (/j/) sounds.</p>
-        <a href="../downloads/soft-c-soft-g-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
-      </div>
-    </section>
-    <section class="content-section" id="rule">
-      <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">The Soft C and G Rule</h2>
-      <div class="rule-box">
-        <div class="rule-box-header">C + G soften before E, I, or Y</div>
-        <div class="soft-grid">
-          <div class="soft-card soft-c">
-            <div class="soft-card-title">Soft C = /s/</div>
-            <div class="soft-card-rule">C before E, I, or Y</div>
-            <div class="trigger-chips">
-              <span class="trig">CE</span>
-              <span class="trig">CI</span>
-              <span class="trig">CY</span>
-            </div>
-          </div>
-          <div class="soft-card soft-g">
-            <div class="soft-card-title">Soft G = /j/</div>
-            <div class="soft-card-rule">G before E, I, or Y</div>
-            <div class="trigger-chips">
-              <span class="trig">GE</span>
-              <span class="trig">GI</span>
-              <span class="trig">GY</span>
-            </div>
-          </div>
-        </div>
-        <p class="rule-desc"><strong>Hard C</strong> says /k/ (as in <em>cat, cup, clip</em>). Before E, I, or Y, C softens to /s/ (as in <em>city, rice, cycle</em>). <strong>Hard G</strong> says /g/ (as in <em>gap, got, gum</em>). Before E, I, or Y, G often softens to /j/ (as in <em>gem, giraffe, cage</em>). Watch out &mdash; soft G is not as reliable as soft C. Some G+E/I/Y combinations stay hard (e.g. <em>get, give, gear</em>).</p>
-      </div>
-    </section>
-    <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Exceptions</h2>
-      <div class="exceptions-box">
-        <div class="exceptions-box-header">Words that don't soften as expected</div>
-        <div class="exceptions-inner">
-          <div class="exception-item">
-            <span class="exception-word">get, give</span>
-            <p class="exception-note">Even though G is followed by E or I, these words keep the <strong>hard G</strong> sound (/g/). Soft G before E, I, or Y is very common but not 100% guaranteed &mdash; especially for short common words like <em>get, give, gear, girl, gift</em>.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">magic, logic</span>
-            <p class="exception-note">These end in <strong>-IC</strong> (not -ICE or -ICE). The C makes the /k/ sound here, not /s/. When C comes before a consonant or at the very end of a word (with no following vowel), it says /k/ even if the preceding vowel was I.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">cat vs. cent</span>
-            <p class="exception-note">This pair shows the rule in action: <em>cat</em> has C before A, so it's hard (/k/). <em>Cent</em> has C before E, so it's soft (/s/). Both are correct &mdash; the following vowel decides which sound you use.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="content-section" id="lyrics">
-      <p class="section-eyebrow">SONG LYRICS</p>
-      <h2 class="section-heading">Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyrics-box-header">Soft C and Soft G &mdash; The Softening Rule Song</div>
-        <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready to learn when C and G go soft? Here we go.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">If you see the letter C followed by Y, I or E,<br>
-          the sound of C, it may soften. It sounds like S, you see.<br>
-          If you see the letter G followed by Y, I or E,<br>
+<header class="page-header">
+<a class="back-link" href="../index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Home</a>
+<h1>Soft C and Soft G</h1>
+<p class="subtitle">C and G Can Soften Before E, I, or Y</p>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#words">Words</a>
+<a href="#rule">The Rule</a>
+<a href="#exceptions">Watch Out</a>
+<a href="#lyrics">Lyrics</a>
+</nav>
+<main>
+<section class="content-section" id="video">
+
+<div class="section-heading-row"><h2 class="section-heading">Watch the Video</h2><span class="heading-tag">SOFT CONSONANTS</span></div>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/dio4XkyqVcQ" title="Soft C and Soft G by Mr Spelling"></iframe>
+</div>
+<div class="video-description">
+<p>The letters <strong>C</strong> and <strong>G</strong> have two sounds each. The <strong>hard</strong> sound (as in <em>cat</em> or <em>gap</em>) is the default. But when C or G is followed by <strong>E</strong>, <strong>I</strong>, or <strong>Y</strong>, it often becomes <strong>soft</strong>: C sounds like <em>/s/</em> and G sounds like <em>/j/</em>.</p>
+</div>
+</section>
+<section class="content-section" id="words">
+
+<div class="section-heading-row"><h2 class="section-heading">Soft C and Soft G Words</h2><span class="heading-tag">SPELLING WORDS</span></div>
+<div class="word-group">
+<p class="word-group-label yellow">Soft C words (say /s/)</p>
+<div class="chip-row beat-group">
+<span class="word-chip yellow beat-child">circle</span>
+<span class="word-chip yellow beat-child">cycle</span>
+<span class="word-chip yellow beat-child">mice</span>
+<span class="word-chip yellow beat-child">city</span>
+<span class="word-chip yellow beat-child">cell</span>
+<span class="word-chip yellow beat-child">race</span>
+<span class="word-chip yellow beat-child">place</span>
+<span class="word-chip yellow beat-child">pencil</span>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label cyan">Soft G words (say /j/)</p>
+<div class="chip-row beat-group">
+<span class="word-chip cyan beat-child">gem</span>
+<span class="word-chip cyan beat-child">giant</span>
+<span class="word-chip cyan beat-child">cage</span>
+<span class="word-chip cyan beat-child">gentle</span>
+<span class="word-chip cyan beat-child">giraffe</span>
+<span class="word-chip cyan beat-child">large</span>
+<span class="word-chip cyan beat-child">magic</span>
+</div>
+</div>
+<div class="download-card">
+<h3>Spelling Word List</h3>
+<p>15 words with soft C (/s/) and soft G (/j/) sounds.</p>
+<a class="download-btn" download="" href="../downloads/soft-c-soft-g-words.pdf"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"></path></svg> Download PDF</a>
+</div>
+</section>
+<section class="content-section" id="rule">
+
+<div class="section-heading-row"><h2 class="section-heading">The Soft C and G Rule</h2><span class="heading-tag">HOW IT WORKS</span></div>
+<div class="rule-box beat">
+<div class="rule-box-header">C + G soften before E, I, or Y</div>
+<div class="soft-grid">
+<div class="soft-card soft-c">
+<div class="soft-card-title">Soft C = /s/</div>
+<div class="soft-card-rule">C before E, I, or Y</div>
+<div class="trigger-chips">
+<span class="trig">CE</span>
+<span class="trig">CI</span>
+<span class="trig">CY</span>
+</div>
+</div>
+<div class="soft-card soft-g">
+<div class="soft-card-title">Soft G = /j/</div>
+<div class="soft-card-rule">G before E, I, or Y</div>
+<div class="trigger-chips">
+<span class="trig">GE</span>
+<span class="trig">GI</span>
+<span class="trig">GY</span>
+</div>
+</div>
+</div>
+<p class="rule-desc"><strong>Hard C</strong> says /k/ (as in <em>cat, cup, clip</em>). Before E, I, or Y, C softens to /s/ (as in <em>city, rice, cycle</em>). <strong>Hard G</strong> says /g/ (as in <em>gap, got, gum</em>). Before E, I, or Y, G often softens to /j/ (as in <em>gem, giraffe, cage</em>). Watch out: soft G is not as reliable as soft C. Some G+E/I/Y combinations stay hard (e.g. <em>get, give, gear</em>).</p>
+</div>
+</section>
+<section class="content-section" id="exceptions">
+
+<div class="section-heading-row"><h2 class="section-heading">Exceptions</h2><span class="heading-tag">WATCH OUT</span></div>
+<div class="exceptions-box beat">
+<div class="exceptions-box-header">Words that don't soften as expected</div>
+<div class="exceptions-inner">
+<div class="exception-item">
+<span class="exception-word">get, give</span>
+<p class="exception-note">Even though G is followed by E or I, these words keep the <strong>hard G</strong> sound (/g/). Soft G before E, I, or Y is very common but not 100% guaranteed: especially for short common words like <em>get, give, gear, girl, gift</em>.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">magic, logic</span>
+<p class="exception-note">These end in <strong>-IC</strong> (not -ICE or -ICE). The C makes the /k/ sound here, not /s/. When C comes before a consonant or at the very end of a word (with no following vowel), it says /k/ even if the preceding vowel was I.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">cat vs. cent</span>
+<p class="exception-note">This pair shows the rule in action: <em>cat</em> has C before A, so it's hard (/k/). <em>Cent</em> has C before E, so it's soft (/s/). Both are correct: the following vowel decides which sound you use.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="content-section" id="lyrics">
+
+<div class="section-heading-row"><h2 class="section-heading">Lyrics</h2></div>
+<div class="lyrics-box beat">
+<div class="lyrics-box-header">Soft C and Soft G: The Softening Rule Song</div>
+<div class="lyrics-inner">
+<p class="lyric-intro">Are you ready to learn when C and G go soft? Here we go.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">If you see the letter C followed by Y, I or E,<br/>
+          the sound of C, it may soften. It sounds like S, you see.<br/>
+          If you see the letter G followed by Y, I or E,<br/>
           the sound of G, it may soften. It sounds like J, you see.</p>
-          <p class="lyric-label">VERSE 1 &mdash; SOFT C WORDS</p>
-          <p class="lyric-verse">circle &mdash; C I R C L E, soft C before the E.<br>
-          cycle &mdash; C Y C L E, soft C before the Y.<br>
-          mice &mdash; M I C E, soft C before the E.<br>
-          city &mdash; C I T Y, soft C before the I.<br>
-          gem &mdash; G E M, soft G before the E.<br>
-          giant &mdash; G I A N T, soft G before the I.<br>
-          cage &mdash; C A G E, soft G before the E.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">If you see the letter C followed by Y, I or E,<br>
-          the sound of C, it may soften. It sounds like S, you see.<br>
-          If you see the letter G followed by Y, I or E,<br>
+<p class="lyric-label">VERSE 1: SOFT C WORDS</p>
+<p class="lyric-verse">circle: C I R C L E, soft C before the E.<br/>
+          cycle: C Y C L E, soft C before the Y.<br/>
+          mice: M I C E, soft C before the E.<br/>
+          city: C I T Y, soft C before the I.<br/>
+          gem: G E M, soft G before the E.<br/>
+          giant: G I A N T, soft G before the I.<br/>
+          cage: C A G E, soft G before the E.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">If you see the letter C followed by Y, I or E,<br/>
+          the sound of C, it may soften. It sounds like S, you see.<br/>
+          If you see the letter G followed by Y, I or E,<br/>
           the sound of G, it may soften. It sounds like J, you see.</p>
-          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
-</body>
+<p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Mr Spelling: Not Misspelling</footer>
+<script src="../assets/site.js"></script></body>
 </html>

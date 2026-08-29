@@ -1,278 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vowel Sounds | Mr Spelling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vowel Sounds | Mr Spelling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
-    .page-header { background: #FFE9A8; border-bottom: 3px solid #191320; padding: 36px 24px 30px; text-align: center; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; white-space: nowrap; }
-    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #191320; line-height: 1.05; }
-    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #7A5AF8; margin-top: 8px; }
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #191320; background: #FFF7EC; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
+    body { background: #FDF8EE; font-family: 'Figtree', system-ui, sans-serif; color: #1C1626; min-height: 100vh; }
+    .page-header { background: #FBE2D6; border-bottom: 3px solid #1C1626; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #1C1626; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #1C1626; line-height: 1.05; }
+    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #6B46E5; margin-top: 8px; }
+    .cat-nav { background: #FDF8EE; border-bottom: 3px solid #1C1626; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #1C1626; background: #FDF8EE; padding: 7px 18px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FBE2D6; color: #1C1626; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #1C1626; }
     main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
     .content-section { margin-bottom: 64px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #191320; border-bottom: 3px solid #191320; padding-bottom: 10px; margin-bottom: 24px; }
-    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #7A5AF8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; margin-bottom: 20px; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #1C1626; border-bottom: 3px solid #1C1626; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #6B46E5; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #F2B705; margin-bottom: 20px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-description { background: #F2E7FF; border: 2px solid #191320; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #191320; font-weight: 500; }
+    .video-description { background: #EAE1FB; border: 2px solid #1C1626; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #1C1626; font-weight: 500; }
     .word-group { margin-bottom: 28px; }
     .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .word-group-label.yellow { color: #C0392B; }
-    .word-group-label.cyan   { color: #12A594; }
-    .word-group-label.pink   { color: #7A5AF8; }
-    .word-group-label.purple { color: #7A5AF8; }
+    .word-group-label.yellow { color: #A32916; }
+    .word-group-label.cyan   { color: #0E9C88; }
+    .word-group-label.pink   { color: #6B46E5; }
+    .word-group-label.purple { color: #6B46E5; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
-    .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.pink   { background: #F2E7FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.purple { background: #7A5AF8; color: #fff;    box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
-    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
-    .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
-    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #191320; color: #FFF7EC; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #1C1626; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip.yellow { background: #F2B705; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.cyan   { background: #DCEBFF; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.pink   { background: #EAE1FB; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.purple { background: #6B46E5; color: #FFFFFF;    box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .download-card { background: #EAE1FB; border: 3px solid #1C1626; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #6B46E5; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #1C1626; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: #564C63; margin-bottom: 16px; line-height: 1.5; }
+    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #1C1626; color: #FDF8EE; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #A32916; color: #FDF8EE; }
+    .rule-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .rule-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .vowel-type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; padding: 20px 24px; }
-    .vowel-type-card { border-radius: 10px; padding: 14px 16px; border: 2px solid #191320; }
-    .vowel-type-card.short  { background: rgba(255,230,0,0.12); border-color: #FFC93C; }
-    .vowel-type-card.long   { background: rgba(0,194,255,0.12); border-color: #12A594; }
-    .vowel-type-card.schwa  { background: rgba(255,43,214,0.12); border-color: #C0392B; }
-    .vowel-type-card.bossy  { background: rgba(155,81,224,0.12); border-color: #7A5AF8; }
+    .vowel-type-card { border-radius: 10px; padding: 14px 16px; border: 2px solid #1C1626; }
+    .vowel-type-card.short  { background: rgba(255,230,0,0.12); border-color: #F2B705; }
+    .vowel-type-card.long   { background: rgba(0,194,255,0.12); border-color: #0E9C88; }
+    .vowel-type-card.schwa  { background: rgba(255,43,214,0.12); border-color: #A32916; }
+    .vowel-type-card.bossy  { background: rgba(155,81,224,0.12); border-color: #6B46E5; }
     .vowel-type-label { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 1px; margin-bottom: 6px; }
-    .vowel-type-card.short  .vowel-type-label { color: #FFC93C; }
-    .vowel-type-card.long   .vowel-type-label { color: #12A594; }
-    .vowel-type-card.schwa  .vowel-type-label { color: #C0392B; }
-    .vowel-type-card.bossy  .vowel-type-label { color: #7A5AF8; }
+    .vowel-type-card.short  .vowel-type-label { color: #F2B705; }
+    .vowel-type-card.long   .vowel-type-label { color: #0E9C88; }
+    .vowel-type-card.schwa  .vowel-type-label { color: #A32916; }
+    .vowel-type-card.bossy  .vowel-type-label { color: #6B46E5; }
     .vowel-type-desc { font-size: 0.82rem; color: rgba(243,242,234,0.75); font-weight: 600; line-height: 1.5; }
-    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
-    .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
-    .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
+    .rule-desc { padding: 0 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #1C1626; font-weight: 600; }
+    .exceptions-box { background: #FDF8EE; border: 3px solid #A32916; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
+    .exceptions-box-header { background: #A32916; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFFFFF; letter-spacing: 0.5px; }
     .exceptions-inner { padding: 20px 24px; }
     .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(192,57,43,0.2); }
     .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
-    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #C0392B; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #191320; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
-    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #191320; padding-top: 2px; }
-    .exception-note strong { color: #C0392B; }
-    .lyrics-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .lyrics-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #A32916; color: #FFFFFF; padding: 4px 14px; border-radius: 6px; border: 2px solid #1C1626; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #1C1626; padding-top: 2px; }
+    .exception-note strong { color: #A32916; }
+    .lyrics-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .lyrics-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
-    .lyric-intro  { color: #4A4155; font-style: italic; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #7A5AF8; margin-top: 12px; margin-bottom: 2px; }
-    .lyric-chorus { color: #C0392B; font-weight: 800; }
-    .lyric-verse  { color: #191320; padding-left: 16px; border-left: 3px solid #FFC93C; }
-    .lyric-outro  { color: #4A4155; font-style: italic; margin-top: 8px; }
-    footer { background: #191320; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFF7EC; border-top: 3px solid #191320; }
+    .lyric-intro  { color: #564C63; font-style: italic; }
+    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #6B46E5; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #A32916; font-weight: 800; }
+    .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
+    .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
+<header class="page-header">
+<a class="back-link" href="../index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Home</a>
+<h1>Vowel Sounds</h1>
+<p class="subtitle">Short, Long, Schwa and R-Controlled Vowels</p>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#words">Words</a>
+<a href="#rule">The Four Types</a>
+<a href="#exceptions">Tips</a>
+<a href="#lyrics">Lyrics</a>
+</nav>
+<main>
+<section class="content-section" id="video">
 
-  <header class="page-header">
-    <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Vowel Sounds</h1>
-    <p class="subtitle">Short, Long, Schwa and R-Controlled Vowels</p>
-  </header>
+<div class="section-heading-row"><h2 class="section-heading">Watch the Video</h2><span class="heading-tag">VOWEL REVIEW</span></div>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/KumMG3zKbYM" title="Vowel Sounds Rap Song by Mr Spelling"></iframe>
+</div>
+<div class="video-description">
+<p>This review rap covers all four main types of vowel sound: <strong>SHORT</strong> vowels (quick sounds), <strong>LONG</strong> vowels (saying their alphabet name), the <strong>SCHWA</strong> (the lazy "uh" in unstressed syllables), and <strong>R-CONTROLLED</strong> vowels (where Bossy R changes the sound). A great song for reviewing all vowel types together.</p>
+</div>
+</section>
+<section class="content-section" id="words">
 
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#words">Words</a>
-    <a href="#rule">The Four Types</a>
-    <a href="#exceptions">Tips</a>
-    <a href="#lyrics">Lyrics</a>
-  </nav>
+<div class="section-heading-row"><h2 class="section-heading">One Word for Each Vowel Type</h2><span class="heading-tag">SPELLING WORDS</span></div>
+<div class="word-group">
+<p class="word-group-label yellow">Short vowels (quick sound)</p>
+<div class="chip-row beat-group">
+<span class="word-chip yellow beat-child">cat</span>
+<span class="word-chip yellow beat-child">bed</span>
+<span class="word-chip yellow beat-child">sit</span>
+<span class="word-chip yellow beat-child">hop</span>
+<span class="word-chip yellow beat-child">bug</span>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label cyan">Long vowels (say the letter name)</p>
+<div class="chip-row beat-group">
+<span class="word-chip cyan beat-child">cake</span>
+<span class="word-chip cyan beat-child">feet</span>
+<span class="word-chip cyan beat-child">kite</span>
+<span class="word-chip cyan beat-child">rope</span>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label pink">Schwa (lazy "uh" sound)</p>
+<div class="chip-row beat-group">
+<span class="word-chip pink beat-child">sofa</span>
+<span class="word-chip pink beat-child">panda</span>
+<span class="word-chip pink beat-child">lemon</span>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label purple">R-controlled / Bossy R</p>
+<div class="chip-row beat-group">
+<span class="word-chip purple beat-child">barn</span>
+<span class="word-chip purple beat-child">bird</span>
+<span class="word-chip purple beat-child">corn</span>
+</div>
+</div>
+<div class="download-card">
+<h3>Spelling Word List</h3>
+<p>15 words covering all four vowel sound types: short, long, schwa, and R-controlled.</p>
+<a class="download-btn" download="" href="../downloads/vowel-sounds-words.pdf"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"></path></svg> Download PDF</a>
+</div>
+</section>
+<section class="content-section" id="rule">
 
-  <main>
+<div class="section-heading-row"><h2 class="section-heading">The Four Vowel Types</h2><span class="heading-tag">HOW IT WORKS</span></div>
+<div class="rule-box beat">
+<div class="rule-box-header">A E I O U: Four Ways Vowels Can Sound</div>
+<div class="vowel-type-grid">
+<div class="vowel-type-card short">
+<div class="vowel-type-label">Short</div>
+<div class="vowel-type-desc">Vowels say their quick sound: /a/ /e/ /i/ /o/ /u/.<br/>Examples: <em>cat, bed, sit, hop, bug</em></div>
+</div>
+<div class="vowel-type-card long">
+<div class="vowel-type-label">Long</div>
+<div class="vowel-type-desc">Vowels say their alphabet name: /ay/ /ee/ /eye/ /oh/ /you/.<br/>Examples: <em>cake, feet, kite, rope</em></div>
+</div>
+<div class="vowel-type-card schwa">
+<div class="vowel-type-label">Schwa /ə/</div>
+<div class="vowel-type-desc">Vowels get lazy and say "uh" in unstressed syllables.<br/>Examples: <em>sofa, panda, lemon</em></div>
+</div>
+<div class="vowel-type-card bossy">
+<div class="vowel-type-label">Bossy R</div>
+<div class="vowel-type-desc">R changes the vowel sound: ar, er, ir, or, ur.<br/>Examples: <em>barn, bird, corn</em></div>
+</div>
+</div>
+<p class="rule-desc">Every vowel in every English word fits into one of these four categories. When you can identify which type you are dealing with, you can work out how to say: or spell: the word.</p>
+</div>
+</section>
+<section class="content-section" id="exceptions">
 
-    <section class="content-section" id="video">
-      <p class="section-eyebrow">VOWEL REVIEW</p>
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/KumMG3zKbYM"
-                title="Vowel Sounds Rap Song by Mr Spelling"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-      <div class="video-description">
-        <p>This review rap covers all four main types of vowel sound: <strong>SHORT</strong> vowels (quick sounds), <strong>LONG</strong> vowels (saying their alphabet name), the <strong>SCHWA</strong> (the lazy "uh" in unstressed syllables), and <strong>R-CONTROLLED</strong> vowels (where Bossy R changes the sound). A great song for reviewing all vowel types together.</p>
-      </div>
-    </section>
+<div class="section-heading-row"><h2 class="section-heading">Tips for Vowel Sounds</h2><span class="heading-tag">IMPORTANT TO KNOW</span></div>
+<div class="exceptions-box beat">
+<div class="exceptions-box-header">Things that can trick you</div>
+<div class="exceptions-inner">
+<div class="exception-item">
+<span class="exception-word">vowel teams</span>
+<p class="exception-note">Two vowels together can make a <strong>long vowel sound</strong> (like AI in <em>rain</em>, EE in <em>feet</em>, OA in <em>boat</em>). These are called vowel teams or digraphs. They are still "long" vowels: just spelled with two letters.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">same letter, different sounds</span>
+<p class="exception-note">The same vowel can make different sounds in different words. The letter A can be short (<em>cat</em>), long (<em>cake</em>), schwa (<em>sofa</em>), or R-controlled (<em>car</em>). Context and spelling patterns tell you which one to use.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">silent E rule</span>
+<p class="exception-note">A magic E at the end of a word often makes the vowel before it <strong>long</strong>: <em>cap → cape, bit → bite, hop → hope</em>. This is one of the most common ways long vowels are spelled in English.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="content-section" id="lyrics">
 
-    <section class="content-section" id="words">
-      <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">One Word for Each Vowel Type</h2>
-
-      <div class="word-group">
-        <p class="word-group-label yellow">Short vowels (quick sound)</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">cat</span>
-          <span class="word-chip yellow">bed</span>
-          <span class="word-chip yellow">sit</span>
-          <span class="word-chip yellow">hop</span>
-          <span class="word-chip yellow">bug</span>
-        </div>
-      </div>
-
-      <div class="word-group">
-        <p class="word-group-label cyan">Long vowels (say the letter name)</p>
-        <div class="chip-row">
-          <span class="word-chip cyan">cake</span>
-          <span class="word-chip cyan">feet</span>
-          <span class="word-chip cyan">kite</span>
-          <span class="word-chip cyan">rope</span>
-        </div>
-      </div>
-
-      <div class="word-group">
-        <p class="word-group-label pink">Schwa (lazy "uh" sound)</p>
-        <div class="chip-row">
-          <span class="word-chip pink">sofa</span>
-          <span class="word-chip pink">panda</span>
-          <span class="word-chip pink">lemon</span>
-        </div>
-      </div>
-
-      <div class="word-group">
-        <p class="word-group-label purple">R-controlled / Bossy R</p>
-        <div class="chip-row">
-          <span class="word-chip purple">barn</span>
-          <span class="word-chip purple">bird</span>
-          <span class="word-chip purple">corn</span>
-        </div>
-      </div>
-
-      <div class="download-card">
-        <h3>Spelling Word List</h3>
-        <p>15 words covering all four vowel sound types &mdash; short, long, schwa, and R-controlled.</p>
-        <a href="../downloads/vowel-sounds-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
-      </div>
-    </section>
-
-    <section class="content-section" id="rule">
-      <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">The Four Vowel Types</h2>
-      <div class="rule-box">
-        <div class="rule-box-header">A E I O U &mdash; Four Ways Vowels Can Sound</div>
-        <div class="vowel-type-grid">
-          <div class="vowel-type-card short">
-            <div class="vowel-type-label">Short</div>
-            <div class="vowel-type-desc">Vowels say their quick sound: /a/ /e/ /i/ /o/ /u/.<br>Examples: <em>cat, bed, sit, hop, bug</em></div>
-          </div>
-          <div class="vowel-type-card long">
-            <div class="vowel-type-label">Long</div>
-            <div class="vowel-type-desc">Vowels say their alphabet name: /ay/ /ee/ /eye/ /oh/ /you/.<br>Examples: <em>cake, feet, kite, rope</em></div>
-          </div>
-          <div class="vowel-type-card schwa">
-            <div class="vowel-type-label">Schwa /&#601;/</div>
-            <div class="vowel-type-desc">Vowels get lazy and say "uh" in unstressed syllables.<br>Examples: <em>sofa, panda, lemon</em></div>
-          </div>
-          <div class="vowel-type-card bossy">
-            <div class="vowel-type-label">Bossy R</div>
-            <div class="vowel-type-desc">R changes the vowel sound: ar, er, ir, or, ur.<br>Examples: <em>barn, bird, corn</em></div>
-          </div>
-        </div>
-        <p class="rule-desc">Every vowel in every English word fits into one of these four categories. When you can identify which type you are dealing with, you can work out how to say &mdash; or spell &mdash; the word.</p>
-      </div>
-    </section>
-
-    <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">IMPORTANT TO KNOW</p>
-      <h2 class="section-heading">Tips for Vowel Sounds</h2>
-      <div class="exceptions-box">
-        <div class="exceptions-box-header">Things that can trick you</div>
-        <div class="exceptions-inner">
-
-          <div class="exception-item">
-            <span class="exception-word">vowel teams</span>
-            <p class="exception-note">Two vowels together can make a <strong>long vowel sound</strong> (like AI in <em>rain</em>, EE in <em>feet</em>, OA in <em>boat</em>). These are called vowel teams or digraphs. They are still "long" vowels &mdash; just spelled with two letters.</p>
-          </div>
-
-          <div class="exception-item">
-            <span class="exception-word">same letter, different sounds</span>
-            <p class="exception-note">The same vowel can make different sounds in different words. The letter A can be short (<em>cat</em>), long (<em>cake</em>), schwa (<em>sofa</em>), or R-controlled (<em>car</em>). Context and spelling patterns tell you which one to use.</p>
-          </div>
-
-          <div class="exception-item">
-            <span class="exception-word">silent E rule</span>
-            <p class="exception-note">A magic E at the end of a word often makes the vowel before it <strong>long</strong>: <em>cap &rarr; cape, bit &rarr; bite, hop &rarr; hope</em>. This is one of the most common ways long vowels are spelled in English.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="lyrics">
-      <p class="section-eyebrow">SONG LYRICS</p>
-      <h2 class="section-heading">Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyrics-box-header">Vowel Sounds Rap &mdash; Short, Long, Schwa and Bossy R</div>
-        <div class="lyrics-inner">
-
-          <p class="lyric-intro">Are you ready? To review the sounds of the vowels! Here we go.</p>
-
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy &mdash; that's called the schwa.<br>
+<div class="section-heading-row"><h2 class="section-heading">Lyrics</h2></div>
+<div class="lyrics-box beat">
+<div class="lyrics-box-header">Vowel Sounds Rap: Short, Long, Schwa and Bossy R</div>
+<div class="lyrics-inner">
+<p class="lyric-intro">Are you ready? To review the sounds of the vowels! Here we go.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy: that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-
-          <p class="lyric-label">VERSE 1 &mdash; SHORT VOWELS</p>
-          <p class="lyric-verse">A E I O U &mdash; short vowels!<br>
-          A E I O U &mdash; short vowels!<br>
-          A E I O U &mdash; short vowels!</p>
-
-          <p class="lyric-label">VERSE 2 &mdash; LONG VOWELS</p>
-          <p class="lyric-verse">A E I O U &mdash; long vowels!<br>
-          A E I O U &mdash; long vowels!<br>
-          A E I O U &mdash; long vowels!</p>
-
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy &mdash; that's called the schwa.<br>
+<p class="lyric-label">VERSE 1: SHORT VOWELS</p>
+<p class="lyric-verse">A E I O U: short vowels!<br/>
+          A E I O U: short vowels!<br/>
+          A E I O U: short vowels!</p>
+<p class="lyric-label">VERSE 2: LONG VOWELS</p>
+<p class="lyric-verse">A E I O U: long vowels!<br/>
+          A E I O U: long vowels!<br/>
+          A E I O U: long vowels!</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy: that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-
-          <p class="lyric-label">VERSE 3 &mdash; THE SCHWA</p>
-          <p class="lyric-verse">Uh... uh... uh... uh... lazy vowels!<br>
+<p class="lyric-label">VERSE 3: THE SCHWA</p>
+<p class="lyric-verse">Uh... uh... uh... uh... lazy vowels!<br/>
           Uh... uh... uh... uh... lazy vowels!</p>
-
-          <p class="lyric-label">VERSE 4 &mdash; BOSSY R</p>
-          <p class="lyric-verse">Uh... uh... uh... or... er... er... Bossy R!<br>
-          R &mdash; or... er... er... Bossy R!<br>
-          R &mdash; or... er... er... Bossy R!</p>
-
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
+<p class="lyric-label">VERSE 4: BOSSY R</p>
+<p class="lyric-verse">Uh... uh... uh... or... er... er... Bossy R!<br/>
+          R: or... er... er... Bossy R!<br/>
+          R: or... er... er... Bossy R!</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-
-          <p class="lyric-label">OUTRO</p>
-          <p class="lyric-verse">A... E... I... O... U...<br>
-          A... E... I... O... U...<br>
-          U... U... U... U...<br>
+<p class="lyric-label">OUTRO</p>
+<p class="lyric-verse">A... E... I... O... U...<br/>
+          A... E... I... O... U...<br/>
+          U... U... U... U...<br/>
           U... or... er... er...</p>
-
-          <p class="lyric-outro">Mr. Spelling! Mr. Spelling, bye-bye.</p>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
-
-</body>
+<p class="lyric-outro">Mr. Spelling! Mr. Spelling, bye-bye.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Mr Spelling: Not Misspelling</footer>
+<script src="../assets/site.js"></script></body>
 </html>

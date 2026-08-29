@@ -1,244 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Final J Sound: DGE and GE | Mr Spelling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final J: DGE and GE | Mr Spelling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
-    .page-header { background: #FFE9A8; border-bottom: 3px solid #191320; padding: 36px 24px 30px; text-align: center; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; white-space: nowrap; }
-    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #191320; line-height: 1.05; }
-    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #7A5AF8; margin-top: 8px; }
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #191320; background: #FFF7EC; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
+    body { background: #FDF8EE; font-family: 'Figtree', system-ui, sans-serif; color: #1C1626; min-height: 100vh; }
+    .page-header { background: #FBE2D6; border-bottom: 3px solid #1C1626; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #1C1626; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #1C1626; line-height: 1.05; }
+    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #6B46E5; margin-top: 8px; }
+    .cat-nav { background: #FDF8EE; border-bottom: 3px solid #1C1626; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #1C1626; background: #FDF8EE; padding: 7px 18px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FBE2D6; color: #1C1626; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #1C1626; }
     main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
     .content-section { margin-bottom: 64px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #191320; border-bottom: 3px solid #191320; padding-bottom: 10px; margin-bottom: 24px; }
-    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #7A5AF8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; margin-bottom: 20px; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #1C1626; border-bottom: 3px solid #1C1626; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #6B46E5; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #F2B705; margin-bottom: 20px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-description { background: #F2E7FF; border: 2px solid #191320; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #191320; font-weight: 500; }
+    .video-description { background: #EAE1FB; border: 2px solid #1C1626; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #1C1626; font-weight: 500; }
     .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
     @media(max-width:540px){ .split-grid { grid-template-columns: 1fr; } }
-    .split-card { background: #FFF7EC; border: 1px solid rgba(25,19,32,0.1); border-radius: 12px; padding: 16px 18px; }
-    .split-card.dge { border: 2px solid #FFC93C; }
-    .split-card.ge  { border: 2px solid #12A594; }
+    .split-card { background: #FDF8EE; border: 1px solid rgba(25,19,32,0.1); border-radius: 12px; padding: 16px 18px; }
+    .split-card.dge { border: 2px solid #F2B705; }
+    .split-card.ge  { border: 2px solid #0E9C88; }
     .split-card-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.8rem; margin-bottom: 4px; }
-    .split-card.dge .split-card-title { color: #FFC93C; }
-    .split-card.ge  .split-card-title { color: #12A594; }
-    .split-card-rule { font-size: 0.82rem; font-weight: 700; color: #4A4155; margin-bottom: 8px; }
+    .split-card.dge .split-card-title { color: #F2B705; }
+    .split-card.ge  .split-card-title { color: #0E9C88; }
+    .split-card-rule { font-size: 0.82rem; font-weight: 700; color: #564C63; margin-bottom: 8px; }
     .split-word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .split-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 5px; border: 2px solid #191320; text-transform: lowercase; }
-    .split-card.dge .split-chip { background: #FFC93C; color: #191320; }
-    .split-card.ge  .split-chip { background: #C9E4FF; color: #191320; }
+    .split-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 5px; border: 2px solid #1C1626; text-transform: lowercase; }
+    .split-card.dge .split-chip { background: #F2B705; color: #1C1626; }
+    .split-card.ge  .split-chip { background: #DCEBFF; color: #1C1626; }
     .word-group { margin-bottom: 28px; }
     .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .word-group-label.yellow { color: #C0392B; }
-    .word-group-label.cyan   { color: #12A594; }
+    .word-group-label.yellow { color: #A32916; }
+    .word-group-label.cyan   { color: #0E9C88; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
-    .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
-    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
-    .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
-    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #191320; color: #FFF7EC; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
-    .rule-desc { padding: 20px 24px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
-    .rule-desc strong { color: #FFC93C; }
+    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #1C1626; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip.yellow { background: #F2B705; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.cyan   { background: #DCEBFF; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .download-card { background: #EAE1FB; border: 3px solid #1C1626; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #6B46E5; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #1C1626; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: #564C63; margin-bottom: 16px; line-height: 1.5; }
+    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #1C1626; color: #FDF8EE; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #A32916; color: #FDF8EE; }
+    .rule-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .rule-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
+    .rule-desc { padding: 20px 24px; font-size: 0.96rem; line-height: 1.7; color: #1C1626; font-weight: 600; }
+    .rule-desc strong { color: #F2B705; }
     .rule-desc ul { margin: 10px 0 0 20px; }
     .rule-desc li { margin-bottom: 6px; }
-    .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
-    .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
+    .exceptions-box { background: #FDF8EE; border: 3px solid #A32916; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
+    .exceptions-box-header { background: #A32916; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFFFFF; letter-spacing: 0.5px; }
     .exceptions-inner { padding: 20px 24px; }
     .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(192,57,43,0.2); }
     .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
-    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #C0392B; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #191320; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
-    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #191320; padding-top: 2px; }
-    .exception-note strong { color: #C0392B; }
-    .lyrics-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .lyrics-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #A32916; color: #FFFFFF; padding: 4px 14px; border-radius: 6px; border: 2px solid #1C1626; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #1C1626; padding-top: 2px; }
+    .exception-note strong { color: #A32916; }
+    .lyrics-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .lyrics-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
-    .lyric-intro  { color: #4A4155; font-style: italic; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #7A5AF8; margin-top: 12px; margin-bottom: 2px; }
-    .lyric-chorus { color: #C0392B; font-weight: 800; }
-    .lyric-verse  { color: #191320; padding-left: 16px; border-left: 3px solid #FFC93C; }
-    .lyric-outro  { color: #4A4155; font-style: italic; margin-top: 8px; }
-    footer { background: #191320; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFF7EC; border-top: 3px solid #191320; }
+    .lyric-intro  { color: #564C63; font-style: italic; }
+    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #6B46E5; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #A32916; font-weight: 800; }
+    .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
+    .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
-  <header class="page-header">
-    <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Final J: DGE and GE</h1>
-    <p class="subtitle">Native English Words Never End in the Letter J</p>
-  </header>
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#words">Words</a>
-    <a href="#rule">The Rule</a>
-    <a href="#exceptions">Watch Out</a>
-    <a href="#lyrics">Lyrics</a>
-  </nav>
-  <main>
-    <section class="content-section" id="video">
-      <p class="section-eyebrow">THE /J/ SOUND AT THE END</p>
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/qZmaK_xjS9w" title="Final J Sound DGE and GE by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-description">
-        <p>Native English words <strong>never end in the letter J</strong>. When you hear the /j/ sound at the end of a word, you spell it <strong>DGE</strong> (after a short vowel) or <strong>GE</strong> (after a long vowel or consonant). <em>Judge, lodge, fridge</em> use DGE. <em>Page, cage, huge</em> use GE.</p>
-      </div>
-    </section>
-    <section class="content-section" id="words">
-      <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">DGE and GE Words</h2>
-      <div class="split-grid">
-        <div class="split-card dge">
-          <div class="split-card-title">DGE</div>
-          <div class="split-card-rule">after a short vowel</div>
-          <div class="split-word-chips">
-            <span class="split-chip">judge</span>
-            <span class="split-chip">badge</span>
-            <span class="split-chip">fridge</span>
-            <span class="split-chip">bridge</span>
-            <span class="split-chip">hedge</span>
-            <span class="split-chip">lodge</span>
-            <span class="split-chip">ridge</span>
-            <span class="split-chip">nudge</span>
-          </div>
-        </div>
-        <div class="split-card ge">
-          <div class="split-card-title">GE</div>
-          <div class="split-card-rule">after a long vowel or consonant</div>
-          <div class="split-word-chips">
-            <span class="split-chip">page</span>
-            <span class="split-chip">cage</span>
-            <span class="split-chip">rage</span>
-            <span class="split-chip">age</span>
-            <span class="split-chip">stage</span>
-            <span class="split-chip">huge</span>
-            <span class="split-chip">bulge</span>
-          </div>
-        </div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label yellow">DGE words (short vowel + DGE)</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">judge</span>
-          <span class="word-chip yellow">badge</span>
-          <span class="word-chip yellow">fridge</span>
-          <span class="word-chip yellow">bridge</span>
-          <span class="word-chip yellow">hedge</span>
-          <span class="word-chip yellow">lodge</span>
-          <span class="word-chip yellow">ridge</span>
-          <span class="word-chip yellow">nudge</span>
-        </div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label cyan">GE words (long vowel or consonant + GE)</p>
-        <div class="chip-row">
-          <span class="word-chip cyan">page</span>
-          <span class="word-chip cyan">cage</span>
-          <span class="word-chip cyan">rage</span>
-          <span class="word-chip cyan">age</span>
-          <span class="word-chip cyan">stage</span>
-          <span class="word-chip cyan">huge</span>
-          <span class="word-chip cyan">bulge</span>
-        </div>
-      </div>
-      <div class="download-card">
-        <h3>Spelling Word List</h3>
-        <p>15 words using DGE and GE to spell the final /j/ sound.</p>
-        <a href="../downloads/dge-ge-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
-      </div>
-    </section>
-    <section class="content-section" id="rule">
-      <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">DGE vs GE</h2>
-      <div class="rule-box">
-        <div class="rule-box-header">Native English words never end in J &mdash; use DGE or GE</div>
-        <div class="rule-desc">
+<header class="page-header">
+<a class="back-link" href="../index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Home</a>
+<h1>Final J: DGE and GE</h1>
+<p class="subtitle">Native English Words Never End in the Letter J</p>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#words">Words</a>
+<a href="#rule">The Rule</a>
+<a href="#exceptions">Watch Out</a>
+<a href="#lyrics">Lyrics</a>
+</nav>
+<main>
+<section class="content-section" id="video">
+
+<div class="section-heading-row"><h2 class="section-heading">Watch the Video</h2><span class="heading-tag">THE /J/ SOUND AT THE END</span></div>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/qZmaK_xjS9w" title="Final J Sound DGE and GE by Mr Spelling"></iframe>
+</div>
+<div class="video-description">
+<p>Native English words <strong>never end in the letter J</strong>. When you hear the /j/ sound at the end of a word, you spell it <strong>DGE</strong> (after a short vowel) or <strong>GE</strong> (after a long vowel or consonant). <em>Judge, lodge, fridge</em> use DGE. <em>Page, cage, huge</em> use GE.</p>
+</div>
+</section>
+<section class="content-section" id="words">
+
+<div class="section-heading-row"><h2 class="section-heading">DGE and GE Words</h2><span class="heading-tag">SPELLING WORDS</span></div>
+<div class="split-grid">
+<div class="split-card dge">
+<div class="split-card-title">DGE</div>
+<div class="split-card-rule">after a short vowel</div>
+<div class="split-word-chips">
+<span class="split-chip">judge</span>
+<span class="split-chip">badge</span>
+<span class="split-chip">fridge</span>
+<span class="split-chip">bridge</span>
+<span class="split-chip">hedge</span>
+<span class="split-chip">lodge</span>
+<span class="split-chip">ridge</span>
+<span class="split-chip">nudge</span>
+</div>
+</div>
+<div class="split-card ge">
+<div class="split-card-title">GE</div>
+<div class="split-card-rule">after a long vowel or consonant</div>
+<div class="split-word-chips">
+<span class="split-chip">page</span>
+<span class="split-chip">cage</span>
+<span class="split-chip">rage</span>
+<span class="split-chip">age</span>
+<span class="split-chip">stage</span>
+<span class="split-chip">huge</span>
+<span class="split-chip">bulge</span>
+</div>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label yellow">DGE words (short vowel + DGE)</p>
+<div class="chip-row beat-group">
+<span class="word-chip yellow beat-child">judge</span>
+<span class="word-chip yellow beat-child">badge</span>
+<span class="word-chip yellow beat-child">fridge</span>
+<span class="word-chip yellow beat-child">bridge</span>
+<span class="word-chip yellow beat-child">hedge</span>
+<span class="word-chip yellow beat-child">lodge</span>
+<span class="word-chip yellow beat-child">ridge</span>
+<span class="word-chip yellow beat-child">nudge</span>
+</div>
+</div>
+<div class="word-group">
+<p class="word-group-label cyan">GE words (long vowel or consonant + GE)</p>
+<div class="chip-row beat-group">
+<span class="word-chip cyan beat-child">page</span>
+<span class="word-chip cyan beat-child">cage</span>
+<span class="word-chip cyan beat-child">rage</span>
+<span class="word-chip cyan beat-child">age</span>
+<span class="word-chip cyan beat-child">stage</span>
+<span class="word-chip cyan beat-child">huge</span>
+<span class="word-chip cyan beat-child">bulge</span>
+</div>
+</div>
+<div class="download-card">
+<h3>Spelling Word List</h3>
+<p>15 words using DGE and GE to spell the final /j/ sound.</p>
+<a class="download-btn" download="" href="../downloads/dge-ge-words.pdf"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"></path></svg> Download PDF</a>
+</div>
+</section>
+<section class="content-section" id="rule">
+
+<div class="section-heading-row"><h2 class="section-heading">DGE vs GE</h2><span class="heading-tag">HOW IT WORKS</span></div>
+<div class="rule-box beat">
+<div class="rule-box-header">Native English words never end in J: use DGE or GE</div>
+<div class="rule-desc">
           Both DGE and GE spell the /j/ sound at the end of a word. The vowel before it tells you which to use:
           <ul>
-            <li><strong>Short vowel before /j/</strong>: use <strong>DGE</strong> &mdash; <em>badge, fridge, lodge, judge, hedge, nudge</em>. The D bridges the short vowel and the GE. Think of it as the FLOSS-style rule for J: short vowel = extra letter.</li>
-            <li><strong>Long vowel before /j/</strong>: use <strong>GE</strong> &mdash; <em>page, cage, huge, age</em>. The silent E already marks the long vowel, so no D is needed.</li>
-            <li><strong>Consonant before /j/</strong>: use <strong>GE</strong> &mdash; <em>bulge, hinge, plunge, merge</em>. A consonant before the GE ending is enough; no D is added.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Exceptions and Traps</h2>
-      <div class="exceptions-box">
-        <div class="exceptions-box-header">Words with a final J sound that don't follow the rule</div>
-        <div class="exceptions-inner">
-          <div class="exception-item">
-            <span class="exception-word">loanwords</span>
-            <p class="exception-note">Words borrowed from other languages CAN end in J: <em>raj, hadj, taj</em>. These are not native English words, so the no-J rule doesn't apply. In everyday English spelling, avoid ending a word with just J.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">age / cage</span>
-            <p class="exception-note">In some short words (like <em>age</em>), the vowel sounds short when you say it quickly but still takes GE, not DGE. That's because the A here is actually a long A spelled with silent E (AG+E). Always ask: is the vowel letter followed by DGE or GE? Not just how it sounds in fast speech.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">fudge vs. huge</span>
-            <p class="exception-note">A good pair to compare: <em>fudge</em> (short U &rarr; DGE) vs. <em>huge</em> (long U &rarr; GE). Same vowel letter, different length &mdash; the vowel length changes the spelling from DGE to GE.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="content-section" id="lyrics">
-      <p class="section-eyebrow">SONG LYRICS</p>
-      <h2 class="section-heading">Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyrics-box-header">Final J: DGE and GE &mdash; No J at the End!</div>
-        <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready to learn about the J sound at the end of words? Here we go.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
-          Use DGE or GE to make the J sound today.<br>
-          Short vowel before it? D-G-E.<br>
+<li><strong>Short vowel before /j/</strong>: use <strong>DGE</strong>: <em>badge, fridge, lodge, judge, hedge, nudge</em>. The D bridges the short vowel and the GE. Think of it as the FLOSS-style rule for J: short vowel = extra letter.</li>
+<li><strong>Long vowel before /j/</strong>: use <strong>GE</strong>: <em>page, cage, huge, age</em>. The silent E already marks the long vowel, so no D is needed.</li>
+<li><strong>Consonant before /j/</strong>: use <strong>GE</strong>: <em>bulge, hinge, plunge, merge</em>. A consonant before the GE ending is enough; no D is added.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="content-section" id="exceptions">
+
+<div class="section-heading-row"><h2 class="section-heading">Exceptions and Traps</h2><span class="heading-tag">WATCH OUT</span></div>
+<div class="exceptions-box beat">
+<div class="exceptions-box-header">Words with a final J sound that don't follow the rule</div>
+<div class="exceptions-inner">
+<div class="exception-item">
+<span class="exception-word">loanwords</span>
+<p class="exception-note">Words borrowed from other languages CAN end in J: <em>raj, hadj, taj</em>. These are not native English words, so the no-J rule doesn't apply. In everyday English spelling, avoid ending a word with just J.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">age / cage</span>
+<p class="exception-note">In some short words (like <em>age</em>), the vowel sounds short when you say it quickly but still takes GE, not DGE. That's because the A here is actually a long A spelled with silent E (AG+E). Always ask: is the vowel letter followed by DGE or GE? Not just how it sounds in fast speech.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">fudge vs. huge</span>
+<p class="exception-note">A good pair to compare: <em>fudge</em> (short U → DGE) vs. <em>huge</em> (long U → GE). Same vowel letter, different length: the vowel length changes the spelling from DGE to GE.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="content-section" id="lyrics">
+
+<div class="section-heading-row"><h2 class="section-heading">Lyrics</h2></div>
+<div class="lyrics-box beat">
+<div class="lyrics-box-header">Final J: DGE and GE: No J at the End!</div>
+<div class="lyrics-inner">
+<p class="lyric-intro">Are you ready to learn about the J sound at the end of words? Here we go.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Native English words don't end with the letter J.<br/>
+          Use DGE or GE to make the J sound today.<br/>
+          Short vowel before it? D-G-E.<br/>
           Long vowel or consonant? Just G-E.</p>
-          <p class="lyric-label">VERSE 1 &mdash; DGE WORDS</p>
-          <p class="lyric-verse">Short vowel before J: use DGE.<br>
-          judge &mdash; J U DGE, short U.<br>
-          badge &mdash; B A DGE, short A.<br>
-          fridge &mdash; F R I DGE, short I.<br>
-          bridge &mdash; B R I DGE, short I.<br>
-          hedge &mdash; H E DGE, short E.<br>
-          lodge &mdash; L O DGE, short O.<br>
-          nudge &mdash; N U DGE, short U.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
+<p class="lyric-label">VERSE 1: DGE WORDS</p>
+<p class="lyric-verse">Short vowel before J: use DGE.<br/>
+          judge: J U DGE, short U.<br/>
+          badge: B A DGE, short A.<br/>
+          fridge: F R I DGE, short I.<br/>
+          bridge: B R I DGE, short I.<br/>
+          hedge: H E DGE, short E.<br/>
+          lodge: L O DGE, short O.<br/>
+          nudge: N U DGE, short U.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Native English words don't end with the letter J.<br/>
           Use DGE or GE to make the J sound today.</p>
-          <p class="lyric-label">VERSE 2 &mdash; GE WORDS</p>
-          <p class="lyric-verse">Long vowel or consonant before J: use GE.<br>
-          page &mdash; P A GE, long A.<br>
-          cage &mdash; C A GE, long A.<br>
-          rage &mdash; R A GE, long A.<br>
-          huge &mdash; H U GE, long U.<br>
-          stage &mdash; ST A GE, long A.<br>
-          bulge &mdash; B UL GE, consonant L before GE.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Native English words don't end with the letter J.<br>
+<p class="lyric-label">VERSE 2: GE WORDS</p>
+<p class="lyric-verse">Long vowel or consonant before J: use GE.<br/>
+          page: P A GE, long A.<br/>
+          cage: C A GE, long A.<br/>
+          rage: R A GE, long A.<br/>
+          huge: H U GE, long U.<br/>
+          stage: ST A GE, long A.<br/>
+          bulge: B UL GE, consonant L before GE.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Native English words don't end with the letter J.<br/>
           Use DGE or GE to make the J sound today.</p>
-          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
-</body>
+<p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Mr Spelling: Not Misspelling</footer>
+<script src="../assets/site.js"></script></body>
 </html>

@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Mr Spelling — lesson-page template (shared by every lessons/*.html page).
+   Depends on site.css tokens. c1/c2/c3 = the three word-group accent roles
+   (terracotta / teal / violet), used consistently across every lesson so
+   the whole 115-page catalogue reads as one system once rolled out.
+   ========================================================================== */
+
+.page-header { background: var(--tint-rose); border-bottom: 3px solid var(--ink); padding: 40px 24px 32px; text-align: center; position: relative; }
+.back-link {
+  position: absolute; left: 20px; top: 24px; font-weight: 700; font-size: 15px;
+  background: var(--paper); color: var(--ink); text-decoration: none; padding: 8px 15px 8px 12px;
+  border-radius: 10px; border: 3px solid var(--ink); box-shadow: var(--shadow-1);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: transform 0.15s var(--ease-out-expo), box-shadow 0.15s var(--ease-out-expo);
+}
+.back-link .icon { width: 16px; height: 16px; }
+.back-link:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--teal-deep); }
+.page-header h1 { font-size: clamp(2.3rem, 6.5vw, 3.6rem); letter-spacing: -0.02em; color: var(--ink); line-height: 1.03; }
+.page-header .subtitle { font-weight: 600; font-size: clamp(0.95rem, 2.3vw, 1.1rem); color: var(--violet); margin-top: 10px; }
+
+.cat-nav { background: rgba(253,248,238,0.92); backdrop-filter: blur(10px); border-bottom: 3px solid var(--ink); display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+.cat-nav a { font-weight: 700; font-size: 0.88rem; text-decoration: none; color: var(--ink); background: var(--paper); padding: 7px 16px; border-radius: 8px; border: 2px solid var(--ink); box-shadow: var(--shadow-1); transition: all 0.15s var(--ease-out-expo); }
+.cat-nav a:hover { background: var(--cream-deep); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--teal-deep); }
+
+main { max-width: 880px; margin: 0 auto; padding: 56px 24px 90px; }
+.content-section { margin-bottom: 72px; scroll-margin-top: 68px; }
+.content-section:last-child { margin-bottom: 0; }
+.section-heading-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; border-bottom: 3px solid var(--ink); padding-bottom: 12px; margin-bottom: 26px; }
+.section-heading { font-size: clamp(1.6rem, 3.6vw, 2.15rem); color: var(--ink); }
+.heading-tag { font-weight: 800; font-size: 0.78rem; letter-spacing: 0.06em; color: var(--violet); background: var(--tint-lavender); border: 2px solid var(--violet); border-radius: 999px; padding: 3px 11px; }
+
+.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid var(--ink); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-3); margin-bottom: 22px; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.video-description { background: var(--tint-lavender); border: 2px solid var(--ink); border-radius: 12px; padding: 20px 24px; font-size: 1.02rem; line-height: 1.75; color: var(--ink); }
+.video-description strong { color: var(--terracotta); }
+
+.word-group { margin-bottom: 30px; }
+.word-group-label { font-size: 0.9rem; font-weight: 800; letter-spacing: 0.02em; margin-bottom: 12px; }
+.word-group-label.c1 { color: var(--terracotta); }
+.word-group-label.c2 { color: var(--teal-deep); }
+.word-group-label.c3 { color: var(--violet); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.word-chip { font-weight: 800; font-size: clamp(1rem, 2.3vw, 1.12rem); padding: 9px 20px; border-radius: 9px; border: 2px solid var(--ink); letter-spacing: 0.01em; }
+.word-chip.c1 { background: var(--tint-rose); color: var(--ink); box-shadow: 3px 3px 0 var(--terracotta); }
+.word-chip.c2 { background: var(--tint-mint); color: var(--ink); box-shadow: 3px 3px 0 var(--teal); }
+.word-chip.c3 { background: var(--tint-lavender); color: var(--ink); box-shadow: 3px 3px 0 var(--violet); }
+
+.download-card { background: var(--tint-sky); border: 3px solid var(--ink); border-radius: 14px; padding: 24px 26px; box-shadow: var(--shadow-2); margin-top: 30px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.download-card + .download-card { margin-top: 16px; }
+.download-card h3 { font-size: 1.08rem; color: var(--ink); margin-bottom: 6px; }
+.download-card p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
+
+.rule-box { background: var(--paper); border: 3px solid var(--ink); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-3); }
+.rule-box-header { background: var(--ink); padding: 14px 22px; font-weight: 800; font-size: 1.02rem; color: var(--cream); letter-spacing: 0.01em; }
+.pattern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; padding: 22px 24px; }
+.pattern-card { border-radius: 12px; padding: 16px 14px; text-align: center; border: 2.5px solid var(--ink); }
+.pattern-card.c1 { background: var(--tint-rose); }
+.pattern-card.c2 { background: var(--tint-mint); }
+.pattern-card.c3 { background: var(--tint-lavender); }
+.pattern-letters { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; letter-spacing: -0.01em; }
+.pattern-card.c1 .pattern-letters { color: var(--terracotta); }
+.pattern-card.c2 .pattern-letters { color: var(--teal-deep); }
+.pattern-card.c3 .pattern-letters { color: var(--violet); }
+.pattern-sound { font-size: 0.82rem; font-weight: 800; color: var(--ink); margin: 4px 0 2px; }
+.pattern-ex { font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); }
+.rule-desc { padding: 4px 24px 24px; font-size: 1rem; line-height: 1.75; color: var(--ink); }
+.rule-desc strong { color: var(--terracotta); }
+.rule-desc em { font-style: normal; font-weight: 700; }
+
+.exceptions-box { background: var(--paper); border: 3px solid var(--terracotta); border-radius: 16px; overflow: hidden; box-shadow: 8px 8px 0 var(--tint-rose); }
+.exceptions-box-header { background: var(--terracotta); padding: 14px 22px; font-weight: 800; font-size: 1.02rem; color: #fff; }
+.exceptions-inner { padding: 8px 24px 8px; }
+.exception-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 2px solid var(--tint-rose); }
+.exception-item:last-child { border-bottom: none; }
+.exception-word { font-weight: 800; font-size: 1.05rem; background: var(--terracotta); color: #fff; padding: 5px 14px; border-radius: 8px; border: 2px solid var(--ink); white-space: nowrap; flex-shrink: 0; }
+.exception-note { font-size: 0.98rem; line-height: 1.65; color: var(--ink); padding-top: 3px; }
+.exception-note strong { color: var(--terracotta); }
+.exception-note em { font-style: normal; font-weight: 700; }
+
+.lyrics-box { background: var(--paper); border: 3px solid var(--ink); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-3); }
+.lyrics-box-header { background: var(--ink); padding: 14px 22px; font-weight: 800; font-size: 1.02rem; color: var(--cream); }
+.lyrics-inner { padding: 26px 28px; font-size: 1.02rem; line-height: 2; }
+.lyric-intro  { color: var(--ink-soft); font-style: italic; }
+.lyric-label  { font-weight: 800; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet); margin-top: 16px; margin-bottom: 4px; }
+.lyric-chorus { background: linear-gradient(transparent 62%, var(--tint-mint) 62%); color: var(--ink); font-weight: 800; display: inline; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.lyric-verse  { color: var(--ink); padding-left: 2px; }
+.lyric-outro  { color: var(--ink-soft); font-style: italic; margin-top: 10px; }
+
+@media (max-width: 640px) {
+  .back-link { position: static; margin-bottom: 16px; }
+  .page-header { padding: 24px 18px 28px; }
+  main { padding: 44px 16px 70px; }
+  .download-card { flex-direction: column; align-items: flex-start; }
+}

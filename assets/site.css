@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Mr Spelling — design system
+   Inherited world: cream editorial (the live homepage's own newest
+   direction) — elevated. Ink + cream ground, a named 5-accent palette,
+   Bricolage Grotesque display / Figtree body, hard-offset ink shadows as an
+   owned signature rather than a per-element habit, drawn icons, one
+   authored motion grammar (beat-in reveal), themed browser surfaces.
+   ========================================================================== */
+
+:root {
+  /* Ground */
+  --cream:        #FDF8EE;
+  --cream-deep:   #F6EDD9;
+  --paper:        #FFFFFF;
+  --ink:          #1C1626;
+  --ink-soft:     #564C63;   /* secondary text — tinted from ink, never gray */
+  --ink-faint:    #8A8096;
+
+  /* Named accent roles */
+  --terracotta:      #A32916;  /* primary action / links / energy — deepened for AA contrast on every pale tint */
+  --terracotta-deep: #7C1F0F;
+  --teal:            #0E9C88;  /* secondary / success / hover */
+  --teal-deep:       #0B7C6C;
+  --violet:          #6B46E5;  /* category / meta / the "genre" color */
+  --marigold:        #F2B705;  /* highlight / warmth / signature accent */
+  --marigold-deep:   #C99400;
+
+  /* Pale tints (chip / card grounds — never raw white-on-white) */
+  --tint-sky:      #DCEBFF;
+  --tint-lavender: #EAE1FB;
+  --tint-rose:     #FBE2D6;
+  --tint-mint:     #D9F1E8;
+
+  /* Elevation — owned hard-offset signature, three deliberate steps */
+  --shadow-1: 3px 3px 0 var(--ink);
+  --shadow-2: 6px 6px 0 var(--ink);
+  --shadow-3: 11px 11px 0 var(--ink);
+
+  /* Type */
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+img { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* ── Browser surfaces — the parts nobody draws on purpose ── */
+::selection { background: var(--marigold); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+a:focus-visible, button:focus-visible { outline-color: var(--terracotta); }
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--ink); border: 3px solid var(--cream); border-radius: 8px; }
+* { scrollbar-color: var(--ink) var(--cream); scrollbar-width: thin; }
+
+/* ── Base ── */
+body {
+  background: var(--cream);
+  font-family: var(--font-body);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--terracotta); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--teal-deep); }
+
+p { max-width: 68ch; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.025em; }
+
+/* ── Icons — one stroke system, no unicode/emoji standins ── */
+.icon { width: 1em; height: 1em; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; fill: none; flex-shrink: 0; }
+
+/* ── Reveal — one authored motion grammar, beat-in on scroll ── */
+.beat {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+.beat.is-in { opacity: 1; transform: translateY(0); }
+.beat-group.is-in .beat-child { opacity: 1; transform: translateY(0) scale(1); }
+.beat-child {
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+@media (prefers-reduced-motion: reduce) {
+  .beat, .beat-child { opacity: 1; transform: none; transition: none; }
+}
+.no-js .beat, .no-js .beat-child { opacity: 1; transform: none; }
+
+/* ── Support banner ── */
+.support-banner {
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 9px 20px;
+}
+.support-text { font-weight: 700; font-size: 15px; color: var(--cream); }
+.support-btn {
+  font-weight: 700; font-size: 15px; text-decoration: none;
+  padding: 6px 15px; border-radius: 8px; border: 2px solid var(--ink);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: transform 0.15s var(--ease-out-expo);
+}
+.support-btn:hover { transform: translate(-2px, -2px); }
+.support-btn .icon { width: 14px; height: 14px; }
+.support-btn--kofi { background: var(--marigold); color: var(--ink); box-shadow: 3px 3px 0 var(--terracotta-deep); }
+.support-btn--kofi:hover { color: var(--ink); }
+.support-btn--yt   { background: var(--terracotta); color: var(--cream); box-shadow: 3px 3px 0 var(--ink); }
+.support-btn--yt:hover { color: var(--cream); }
+
+/* ── Site header ── */
+.site-header {
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(253, 248, 238, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--ink);
+}
+.site-header-inner {
+  max-width: 1180px; margin: 0 auto; padding: 14px 28px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.site-logo { display: flex; align-items: center; gap: 12px; margin-right: auto; text-decoration: none; color: var(--ink); }
+.site-logo-box {
+  width: 44px; height: 44px; border: 3px solid var(--ink); border-radius: 12px;
+  background: var(--marigold); display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 22px;
+  box-shadow: 3px 3px 0 var(--ink); transform: rotate(-4deg); flex-shrink: 0;
+}
+.site-logo-text { font-family: var(--font-display); font-weight: 800; font-size: 21px; letter-spacing: -0.02em; }
+.site-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-link {
+  font-weight: 700; font-size: 16px; border: 3px solid transparent; border-radius: 10px;
+  padding: 7px 13px; color: var(--ink); text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.nav-link:hover { background: var(--cream-deep); border-color: var(--ink); color: var(--ink); }
+.nav-cta {
+  font-weight: 700; font-size: 16px; text-decoration: none; color: var(--cream);
+  background: var(--terracotta); border: 3px solid var(--ink); border-radius: 10px;
+  padding: 8px 17px; box-shadow: var(--shadow-1);
+  transition: transform 0.15s var(--ease-out-expo), box-shadow 0.15s var(--ease-out-expo), background 0.15s;
+  display: inline-block;
+}
+.nav-cta:hover { background: var(--teal-deep); color: var(--cream); transform: translate(-2px, -2px); box-shadow: var(--shadow-2); }
+
+/* ── Buttons (shared) ── */
+.btn {
+  font-family: var(--font-body); font-weight: 700; font-size: 18px;
+  border: 3px solid var(--ink); border-radius: 12px; padding: 13px 24px;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 9px;
+  transition: transform 0.15s var(--ease-out-expo), box-shadow 0.15s var(--ease-out-expo), background 0.15s;
+}
+.btn:hover { transform: translate(-3px, -3px); }
+.btn .icon { width: 18px; height: 18px; }
+.btn-dark { color: var(--cream); background: var(--ink); box-shadow: var(--shadow-2); }
+.btn-dark:hover { color: var(--cream); background: var(--terracotta-deep); box-shadow: 9px 9px 0 var(--marigold); }
+.btn-outline { color: var(--ink); background: var(--cream); box-shadow: var(--shadow-2); }
+.btn-outline:hover { color: var(--ink); background: var(--paper); box-shadow: 9px 9px 0 var(--violet); }
+.btn-sm { font-size: 15px; padding: 10px 17px; border-radius: 10px; box-shadow: var(--shadow-1); }
+.btn-sm:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--teal-deep); }
+
+/* ── Footer (shared) ── */
+footer.site-footer {
+  background: var(--ink); text-align: center; padding: 30px 20px;
+  font-weight: 700; font-size: 15px; color: var(--cream);
+}
+footer.site-footer a { color: var(--marigold); }
+footer.site-footer a:hover { color: var(--tint-sky); }
+
+/* ── Responsive helpers ── */
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+}

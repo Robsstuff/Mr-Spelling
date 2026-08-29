@@ -1,221 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plural Rule 4 | Mr Spelling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plural Rule 4 | Mr Spelling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="../assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
-    .page-header { background: #FFE9A8; border-bottom: 3px solid #191320; padding: 36px 24px 30px; text-align: center; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; white-space: nowrap; }
-    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #191320; line-height: 1.05; }
-    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #7A5AF8; margin-top: 8px; }
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #191320; background: #FFF7EC; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
+    body { background: #FDF8EE; font-family: 'Figtree', system-ui, sans-serif; color: #1C1626; min-height: 100vh; }
+    .page-header { background: #FBE2D6; border-bottom: 3px solid #1C1626; padding: 36px 24px 30px; text-align: center; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.85rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 7px 16px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; white-space: nowrap; }
+    .back-link:hover { transform: translateY(calc(-50% - 2px)) translateX(-2px); box-shadow: 5px 5px 0 #1C1626; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: -0.02em; color: #1C1626; line-height: 1.05; }
+    .page-header .subtitle { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #6B46E5; margin-top: 8px; }
+    .cat-nav { background: #FDF8EE; border-bottom: 3px solid #1C1626; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #1C1626; background: #FDF8EE; padding: 7px 18px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FBE2D6; color: #1C1626; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #1C1626; }
     main { max-width: 900px; margin: 0 auto; padding: 50px 24px 80px; }
     .content-section { margin-bottom: 64px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #191320; border-bottom: 3px solid #191320; padding-bottom: 10px; margin-bottom: 24px; }
-    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #7A5AF8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; margin-bottom: 20px; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: #1C1626; border-bottom: 3px solid #1C1626; padding-bottom: 10px; margin-bottom: 24px; }
+    .section-eyebrow { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; color: #6B46E5; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #F2B705; margin-bottom: 20px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .video-description { background: #F2E7FF; border: 2px solid #191320; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #191320; font-weight: 500; }
+    .video-description { background: #EAE1FB; border: 2px solid #1C1626; border-radius: 10px; padding: 18px 22px; font-size: 1rem; line-height: 1.75; color: #1C1626; font-weight: 500; }
     .pair-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 28px; }
     .pair-card { background: rgba(25,19,32,0.04); border: 2px solid rgba(255,201,60,0.3); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
-    .pair-base { font-family: 'Figtree', sans-serif; font-size: 0.9rem; color: #4A4155; font-weight: 600; }
+    .pair-base { font-family: 'Figtree', sans-serif; font-size: 0.9rem; color: #564C63; font-weight: 600; }
     .pair-arrow { color: rgba(255,230,0,0.5); font-size: 0.9rem; }
-    .pair-plural { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1rem; color: #FFC93C; text-transform: lowercase; }
+    .pair-plural { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1rem; color: #F2B705; text-transform: lowercase; }
     .word-group { margin-bottom: 28px; }
     .word-group-label { font-family: 'Figtree', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .word-group-label.yellow { color: #C0392B; }
-    .word-group-label.cyan { color: #12A594; }
+    .word-group-label.yellow { color: #A32916; }
+    .word-group-label.cyan { color: #0E9C88; }
     .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #191320; letter-spacing: 0.5px; text-transform: lowercase; }
-    .word-chip.yellow { background: #FFC93C; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .word-chip.cyan   { background: #C9E4FF; color: #191320; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
-    .download-card { background: #F2E7FF; border: 3px solid #191320; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #7A5AF8; margin-top: 28px; }
-    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #191320; margin-bottom: 8px; }
-    .download-card p { font-size: 0.88rem; color: #4A4155; margin-bottom: 16px; line-height: 1.5; }
-    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #191320; color: #FFF7EC; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #C0392B; color: #FFF7EC; }
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .word-chip { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: clamp(1rem, 2.5vw, 1.15rem); padding: 8px 20px; border-radius: 8px; border: 2px solid #1C1626; letter-spacing: 0.5px; text-transform: lowercase; }
+    .word-chip.yellow { background: #F2B705; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .word-chip.cyan   { background: #DCEBFF; color: #1C1626; box-shadow: 3px 3px 0 rgba(25,19,32,0.2); }
+    .download-card { background: #EAE1FB; border: 3px solid #1C1626; border-radius: 12px; padding: 22px 24px; box-shadow: 6px 6px 0 #6B46E5; margin-top: 28px; }
+    .download-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #1C1626; margin-bottom: 8px; }
+    .download-card p { font-size: 0.88rem; color: #564C63; margin-bottom: 16px; line-height: 1.5; }
+    .download-btn { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #1C1626; color: #FDF8EE; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .download-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #A32916; color: #FDF8EE; }
+    .rule-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .rule-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .rule-formula-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 20px 24px 10px; }
-    .formula-chip { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1rem, 3vw, 1.4rem); padding: 8px 14px; border-radius: 8px; border: 2px solid #191320; }
-    .formula-chip.yellow  { background: #FFC93C; color: #191320; }
-    .formula-chip.red     { background: #C0392B; color: #fff; }
-    .formula-chip.cyan    { background: #C9E4FF; color: #191320; }
+    .formula-chip { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1rem, 3vw, 1.4rem); padding: 8px 14px; border-radius: 8px; border: 2px solid #1C1626; }
+    .formula-chip.yellow  { background: #F2B705; color: #1C1626; }
+    .formula-chip.red     { background: #A32916; color: #FFFFFF; }
+    .formula-chip.cyan    { background: #DCEBFF; color: #1C1626; }
     .formula-chip.strike  { background: #4b4b4b; color: #aaa; text-decoration: line-through; }
-    .formula-arrow { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; color: #4A4155; }
-    .rule-desc { padding: 8px 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #191320; font-weight: 600; }
-    .rule-desc strong { color: #FFC93C; }
-    .exceptions-box { background: #FFF7EC; border: 3px solid #C0392B; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
-    .exceptions-box-header { background: #C0392B; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; letter-spacing: 0.5px; }
+    .formula-arrow { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; color: #564C63; }
+    .rule-desc { padding: 8px 24px 20px; font-size: 0.96rem; line-height: 1.7; color: #1C1626; font-weight: 600; }
+    .rule-desc strong { color: #F2B705; }
+    .exceptions-box { background: #FDF8EE; border: 3px solid #A32916; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 rgba(192,57,43,0.3); }
+    .exceptions-box-header { background: #A32916; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFFFFF; letter-spacing: 0.5px; }
     .exceptions-inner { padding: 20px 24px; }
     .exception-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(192,57,43,0.2); }
     .exception-item:last-child { border-bottom: none; padding-bottom: 4px; }
-    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #C0392B; color: #fff; padding: 4px 14px; border-radius: 6px; border: 2px solid #191320; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
-    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #191320; padding-top: 2px; }
-    .exception-note strong { color: #C0392B; }
-    .lyrics-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .lyrics-box-header { background: #191320; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FFF7EC; letter-spacing: 0.5px; }
+    .exception-word { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 1.1rem; background: #A32916; color: #FFFFFF; padding: 4px 14px; border-radius: 6px; border: 2px solid #1C1626; box-shadow: 2px 2px 0 rgba(25,19,32,0.2); white-space: nowrap; flex-shrink: 0; }
+    .exception-note { font-size: 0.95rem; line-height: 1.6; color: #1C1626; padding-top: 2px; }
+    .exception-note strong { color: #A32916; }
+    .lyrics-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .lyrics-box-header { background: #1C1626; padding: 12px 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1rem; color: #FDF8EE; letter-spacing: 0.5px; }
     .lyrics-inner { padding: 24px; font-size: 1rem; line-height: 2; }
-    .lyric-intro  { color: #4A4155; font-style: italic; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #7A5AF8; margin-top: 12px; margin-bottom: 2px; }
-    .lyric-chorus { color: #C0392B; font-weight: 800; }
-    .lyric-verse  { color: #191320; padding-left: 16px; border-left: 3px solid #FFC93C; }
-    .lyric-outro  { color: #4A4155; font-style: italic; margin-top: 8px; }
-    footer { background: #191320; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FFF7EC; border-top: 3px solid #191320; }
+    .lyric-intro  { color: #564C63; font-style: italic; }
+    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; color: #6B46E5; margin-top: 12px; margin-bottom: 2px; }
+    .lyric-chorus { color: #A32916; font-weight: 800; }
+    .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
+    .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
-  <header class="page-header">
-    <a href="../index.html" class="back-link">&#8592; Home</a>
-    <h1>Plural Rule 4</h1>
-    <p class="subtitle">Drop the F or FE &mdash; Add VES</p>
-  </header>
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#words">Words</a>
-    <a href="#rule">The Rule</a>
-    <a href="#exceptions">Exceptions</a>
-    <a href="#lyrics">Lyrics</a>
-  </nav>
-  <main>
-    <section class="content-section" id="video">
-      <p class="section-eyebrow">PLURAL SPELLING RULE 4</p>
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/6Bq1buYm0cs" title="Plural Rule 4 Drop F Add VES by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-description">
-        <p>When a noun ends in <strong>F</strong> or <strong>FE</strong>, you usually cannot just add S to make it plural. Instead, <strong>drop the F or FE</strong> and <strong>add VES</strong>. So <em>elf</em> becomes <em>elves</em>, <em>leaf</em> becomes <em>leaves</em>, and <em>knife</em> becomes <em>knives</em>. Watch out for the exceptions &mdash; some F words just add S!</p>
-      </div>
-    </section>
-    <section class="content-section" id="words">
-      <p class="section-eyebrow">SPELLING WORDS</p>
-      <h2 class="section-heading">F/FE &rarr; VES Pairs</h2>
-      <div class="pair-grid">
-        <div class="pair-card"><span class="pair-base">elf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">elves</span></div>
-        <div class="pair-card"><span class="pair-base">wolf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">wolves</span></div>
-        <div class="pair-card"><span class="pair-base">leaf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">leaves</span></div>
-        <div class="pair-card"><span class="pair-base">calf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">calves</span></div>
-        <div class="pair-card"><span class="pair-base">knife</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">knives</span></div>
-        <div class="pair-card"><span class="pair-base">life</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">lives</span></div>
-        <div class="pair-card"><span class="pair-base">shelf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">shelves</span></div>
-        <div class="pair-card"><span class="pair-base">half</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">halves</span></div>
-        <div class="pair-card"><span class="pair-base">loaf</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">loaves</span></div>
-        <div class="pair-card"><span class="pair-base">wife</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">wives</span></div>
-        <div class="pair-card"><span class="pair-base">thief</span><span class="pair-arrow">&#8594;</span><span class="pair-plural">thieves</span></div>
-      </div>
-      <div class="word-group">
-        <p class="word-group-label yellow">Base forms to spell (then write the plural)</p>
-        <div class="chip-row">
-          <span class="word-chip yellow">elf</span>
-          <span class="word-chip yellow">wolf</span>
-          <span class="word-chip yellow">leaf</span>
-          <span class="word-chip yellow">calf</span>
-          <span class="word-chip yellow">knife</span>
-          <span class="word-chip yellow">life</span>
-          <span class="word-chip yellow">shelf</span>
-          <span class="word-chip cyan">half</span>
-          <span class="word-chip cyan">loaf</span>
-          <span class="word-chip cyan">wife</span>
-          <span class="word-chip cyan">thief</span>
-          <span class="word-chip cyan">self</span>
-          <span class="word-chip cyan">hoof</span>
-          <span class="word-chip cyan">scarf</span>
-          <span class="word-chip cyan">dwarf</span>
-        </div>
-      </div>
-      <div class="download-card">
-        <h3>Spelling Word List</h3>
-        <p>15 nouns ending in F or FE &mdash; write the base word and its VES plural.</p>
-        <a href="../downloads/plural-rule-4-words.pdf" class="download-btn" download>&#8595; Download PDF</a>
-      </div>
-    </section>
-    <section class="content-section" id="rule">
-      <p class="section-eyebrow">HOW IT WORKS</p>
-      <h2 class="section-heading">Drop F or FE, Add VES</h2>
-      <div class="rule-box">
-        <div class="rule-box-header">Plural Rule 4: Nouns Ending in F or FE</div>
-        <div class="rule-formula-row">
-          <span class="formula-chip yellow">word + F</span>
-          <span class="formula-arrow">&#8594;</span>
-          <span class="formula-chip strike">F</span>
-          <span class="formula-arrow">+</span>
-          <span class="formula-chip red">VES</span>
-        </div>
-        <div class="rule-formula-row">
-          <span class="formula-chip yellow">word + FE</span>
-          <span class="formula-arrow">&#8594;</span>
-          <span class="formula-chip strike">FE</span>
-          <span class="formula-arrow">+</span>
-          <span class="formula-chip red">VES</span>
-        </div>
-        <p class="rule-desc">To make most F/FE nouns plural: <strong>1)</strong> Drop the F or FE from the end. <strong>2)</strong> Add VES. The F sound changes to a V sound in the plural: <em>leaf</em> &rarr; <em>leaves</em>, <em>knife</em> &rarr; <em>knives</em>.</p>
-      </div>
-    </section>
-    <section class="content-section" id="exceptions">
-      <p class="section-eyebrow">WATCH OUT</p>
-      <h2 class="section-heading">Exceptions to Rule 4</h2>
-      <div class="exceptions-box">
-        <div class="exceptions-box-header">F words that just add S (don't drop the F)</div>
-        <div class="exceptions-inner">
-          <div class="exception-item">
-            <span class="exception-word">roofs, beliefs</span>
-            <p class="exception-note">Some F words just add S without dropping the F: <em>roof &rarr; roofs</em>, <em>belief &rarr; beliefs</em>, <em>chief &rarr; chiefs</em>. These are common exceptions &mdash; if unsure, check a dictionary.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">doubled F</span>
-            <p class="exception-note">Nouns ending in a <strong>double F</strong> (like <em>cliff, staff, bluff</em>) just add S &mdash; never drop the FF: <em>cliffs, staffs, bluffs</em>. The doubling rule protects the short vowel; don't break it.</p>
-          </div>
-          <div class="exception-item">
-            <span class="exception-word">scarves / scarfs</span>
-            <p class="exception-note">A few nouns have <strong>two accepted plural forms</strong>: <em>scarves</em> OR <em>scarfs</em>, <em>dwarves</em> OR <em>dwarfs</em>, <em>hooves</em> OR <em>hoofs</em>. Both spellings are correct for these words.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="content-section" id="lyrics">
-      <p class="section-eyebrow">SONG LYRICS</p>
-      <h2 class="section-heading">Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyrics-box-header">Plural Rule 4 &mdash; Drop the F, Add VES</div>
-        <div class="lyrics-inner">
-          <p class="lyric-intro">Are you ready to learn plural rule number four? I got this. Here we go.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Here we go. Here we go. Here we go.<br>
-          Drop the F and drop the FE. Add VES to make it plural, easy.<br>
-          Don't drop the F if it's doubled.<br>
+<header class="page-header">
+<a class="back-link" href="../index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Home</a>
+<h1>Plural Rule 4</h1>
+<p class="subtitle">Drop the F or FE: Add VES</p>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#words">Words</a>
+<a href="#rule">The Rule</a>
+<a href="#exceptions">Exceptions</a>
+<a href="#lyrics">Lyrics</a>
+</nav>
+<main>
+<section class="content-section" id="video">
+
+<div class="section-heading-row"><h2 class="section-heading">Watch the Video</h2><span class="heading-tag">PLURAL SPELLING RULE 4</span></div>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/6Bq1buYm0cs" title="Plural Rule 4 Drop F Add VES by Mr Spelling"></iframe>
+</div>
+<div class="video-description">
+<p>When a noun ends in <strong>F</strong> or <strong>FE</strong>, you usually cannot just add S to make it plural. Instead, <strong>drop the F or FE</strong> and <strong>add VES</strong>. So <em>elf</em> becomes <em>elves</em>, <em>leaf</em> becomes <em>leaves</em>, and <em>knife</em> becomes <em>knives</em>. Watch out for the exceptions: some F words just add S!</p>
+</div>
+</section>
+<section class="content-section" id="words">
+
+<div class="section-heading-row"><h2 class="section-heading">F/FE → VES Pairs</h2><span class="heading-tag">SPELLING WORDS</span></div>
+<div class="pair-grid">
+<div class="pair-card"><span class="pair-base">elf</span><span class="pair-arrow">→</span><span class="pair-plural">elves</span></div>
+<div class="pair-card"><span class="pair-base">wolf</span><span class="pair-arrow">→</span><span class="pair-plural">wolves</span></div>
+<div class="pair-card"><span class="pair-base">leaf</span><span class="pair-arrow">→</span><span class="pair-plural">leaves</span></div>
+<div class="pair-card"><span class="pair-base">calf</span><span class="pair-arrow">→</span><span class="pair-plural">calves</span></div>
+<div class="pair-card"><span class="pair-base">knife</span><span class="pair-arrow">→</span><span class="pair-plural">knives</span></div>
+<div class="pair-card"><span class="pair-base">life</span><span class="pair-arrow">→</span><span class="pair-plural">lives</span></div>
+<div class="pair-card"><span class="pair-base">shelf</span><span class="pair-arrow">→</span><span class="pair-plural">shelves</span></div>
+<div class="pair-card"><span class="pair-base">half</span><span class="pair-arrow">→</span><span class="pair-plural">halves</span></div>
+<div class="pair-card"><span class="pair-base">loaf</span><span class="pair-arrow">→</span><span class="pair-plural">loaves</span></div>
+<div class="pair-card"><span class="pair-base">wife</span><span class="pair-arrow">→</span><span class="pair-plural">wives</span></div>
+<div class="pair-card"><span class="pair-base">thief</span><span class="pair-arrow">→</span><span class="pair-plural">thieves</span></div>
+</div>
+<div class="word-group">
+<p class="word-group-label yellow">Base forms to spell (then write the plural)</p>
+<div class="chip-row beat-group">
+<span class="word-chip yellow beat-child">elf</span>
+<span class="word-chip yellow beat-child">wolf</span>
+<span class="word-chip yellow beat-child">leaf</span>
+<span class="word-chip yellow beat-child">calf</span>
+<span class="word-chip yellow beat-child">knife</span>
+<span class="word-chip yellow beat-child">life</span>
+<span class="word-chip yellow beat-child">shelf</span>
+<span class="word-chip cyan beat-child">half</span>
+<span class="word-chip cyan beat-child">loaf</span>
+<span class="word-chip cyan beat-child">wife</span>
+<span class="word-chip cyan beat-child">thief</span>
+<span class="word-chip cyan beat-child">self</span>
+<span class="word-chip cyan beat-child">hoof</span>
+<span class="word-chip cyan beat-child">scarf</span>
+<span class="word-chip cyan beat-child">dwarf</span>
+</div>
+</div>
+<div class="download-card">
+<h3>Spelling Word List</h3>
+<p>15 nouns ending in F or FE: write the base word and its VES plural.</p>
+<a class="download-btn" download="" href="../downloads/plural-rule-4-words.pdf"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"></path></svg> Download PDF</a>
+</div>
+</section>
+<section class="content-section" id="rule">
+
+<div class="section-heading-row"><h2 class="section-heading">Drop F or FE, Add VES</h2><span class="heading-tag">HOW IT WORKS</span></div>
+<div class="rule-box beat">
+<div class="rule-box-header">Plural Rule 4: Nouns Ending in F or FE</div>
+<div class="rule-formula-row">
+<span class="formula-chip yellow">word + F</span>
+<span class="formula-arrow">→</span>
+<span class="formula-chip strike">F</span>
+<span class="formula-arrow">+</span>
+<span class="formula-chip red">VES</span>
+</div>
+<div class="rule-formula-row">
+<span class="formula-chip yellow">word + FE</span>
+<span class="formula-arrow">→</span>
+<span class="formula-chip strike">FE</span>
+<span class="formula-arrow">+</span>
+<span class="formula-chip red">VES</span>
+</div>
+<p class="rule-desc">To make most F/FE nouns plural: <strong>1)</strong> Drop the F or FE from the end. <strong>2)</strong> Add VES. The F sound changes to a V sound in the plural: <em>leaf</em> → <em>leaves</em>, <em>knife</em> → <em>knives</em>.</p>
+</div>
+</section>
+<section class="content-section" id="exceptions">
+
+<div class="section-heading-row"><h2 class="section-heading">Exceptions to Rule 4</h2><span class="heading-tag">WATCH OUT</span></div>
+<div class="exceptions-box beat">
+<div class="exceptions-box-header">F words that just add S (don't drop the F)</div>
+<div class="exceptions-inner">
+<div class="exception-item">
+<span class="exception-word">roofs, beliefs</span>
+<p class="exception-note">Some F words just add S without dropping the F: <em>roof → roofs</em>, <em>belief → beliefs</em>, <em>chief → chiefs</em>. These are common exceptions: if unsure, check a dictionary.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">doubled F</span>
+<p class="exception-note">Nouns ending in a <strong>double F</strong> (like <em>cliff, staff, bluff</em>) just add S: never drop the FF: <em>cliffs, staffs, bluffs</em>. The doubling rule protects the short vowel; don't break it.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">scarves / scarfs</span>
+<p class="exception-note">A few nouns have <strong>two accepted plural forms</strong>: <em>scarves</em> OR <em>scarfs</em>, <em>dwarves</em> OR <em>dwarfs</em>, <em>hooves</em> OR <em>hoofs</em>. Both spellings are correct for these words.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="content-section" id="lyrics">
+
+<div class="section-heading-row"><h2 class="section-heading">Lyrics</h2></div>
+<div class="lyrics-box beat">
+<div class="lyrics-box-header">Plural Rule 4: Drop the F, Add VES</div>
+<div class="lyrics-inner">
+<p class="lyric-intro">Are you ready to learn plural rule number four? I got this. Here we go.</p>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Here we go. Here we go. Here we go.<br/>
+          Drop the F and drop the FE. Add VES to make it plural, easy.<br/>
+          Don't drop the F if it's doubled.<br/>
           Don't let exceptions give you trouble.</p>
-          <p class="lyric-label">VERSE 1</p>
-          <p class="lyric-verse">Elf. Drop the F. Add VES. Elves is the plural. Yes.<br>
-          Wolf. Drop the F. Add VES. Wolves is the plural. Yes.<br>
-          Leaf. Drop the F. Add VES. Leaves is the plural. Yes.<br>
+<p class="lyric-label">VERSE 1</p>
+<p class="lyric-verse">Elf. Drop the F. Add VES. Elves is the plural. Yes.<br/>
+          Wolf. Drop the F. Add VES. Wolves is the plural. Yes.<br/>
+          Leaf. Drop the F. Add VES. Leaves is the plural. Yes.<br/>
           Calf. Drop the F. Add VES. Calves is the plural. Yes.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Drop the F and drop the FE. Add VES to make it plural, easy.<br>
-          Don't drop the F if it's doubled.<br>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Drop the F and drop the FE. Add VES to make it plural, easy.<br/>
+          Don't drop the F if it's doubled.<br/>
           Don't let exceptions give you trouble.</p>
-          <p class="lyric-label">VERSE 2</p>
-          <p class="lyric-verse">Life. Drop the FE. Add VES. Lives is the plural. Yes.<br>
-          Shelf. Drop the F. Add VES. Shelves is the plural. Yes.<br>
+<p class="lyric-label">VERSE 2</p>
+<p class="lyric-verse">Life. Drop the FE. Add VES. Lives is the plural. Yes.<br/>
+          Shelf. Drop the F. Add VES. Shelves is the plural. Yes.<br/>
           Knife. Drop the FE. Add VES. Knives is the plural. Yes.</p>
-          <p class="lyric-label">CHORUS</p>
-          <p class="lyric-chorus">Drop the F and drop the FE. Add VES to make it plural, easy.<br>
-          Don't drop the F if it's doubled.<br>
+<p class="lyric-label">CHORUS</p>
+<p class="lyric-chorus">Drop the F and drop the FE. Add VES to make it plural, easy.<br/>
+          Don't drop the F if it's doubled.<br/>
           Don't let exceptions give you trouble.</p>
-          <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
-</body>
+<p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Mr Spelling: Not Misspelling</footer>
+<script src="../assets/site.js"></script></body>
 </html>

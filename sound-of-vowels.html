@@ -1,380 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr Spelling &mdash; The Sound of the Vowels</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sound of the Vowels | Mr Spelling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="assets/site.css" rel="stylesheet"/><style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #FFF7EC; font-family: 'Figtree', system-ui, sans-serif; color: #191320; min-height: 100vh; }
+    body { background: #FDF8EE; font-family: 'Figtree', system-ui, sans-serif; color: #1C1626; min-height: 100vh; }
 
-    .page-header { background: #FFE9A8; padding: 32px 24px 28px; text-align: center; border-bottom: 3px solid #191320; position: relative; }
-    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 6px 16px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; }
-    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: -0.02em; color: #191320; }
-    .page-header .subtitle { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: clamp(0.9rem, 2.8vw, 1.2rem); background: #191320; color: #FFF7EC; padding: 4px 18px; border-radius: 999px; margin-top: 8px; }
+    .page-header { background: #FBE2D6; padding: 32px 24px 28px; text-align: center; border-bottom: 3px solid #1C1626; position: relative; }
+    .back-link { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 6px 16px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; }
+    .page-header h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: -0.02em; color: #1C1626; }
+    .page-header .subtitle { display: inline-block; font-family: 'Figtree', sans-serif; font-weight: 700; font-size: clamp(0.9rem, 2.8vw, 1.2rem); background: #1C1626; color: #FDF8EE; padding: 4px 18px; border-radius: 999px; margin-top: 8px; }
 
-    .cat-nav { background: #FFF7EC; border-bottom: 3px solid #191320; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; position: sticky; top: 0; z-index: 10; }
-    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FFF7EC; color: #191320; text-decoration: none; padding: 7px 18px; border-radius: 8px; border: 2px solid #191320; box-shadow: 3px 3px 0 #191320; transition: all 0.1s; }
-    .cat-nav a:hover { background: #FFE9A8; color: #191320; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #191320; }
+    .cat-nav { background: #FDF8EE; border-bottom: 3px solid #1C1626; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; position: sticky; top: 0; z-index: 10; }
+    .cat-nav a { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.9rem; background: #FDF8EE; color: #1C1626; text-decoration: none; padding: 7px 18px; border-radius: 8px; border: 2px solid #1C1626; box-shadow: 3px 3px 0 #1C1626; transition: all 0.1s; }
+    .cat-nav a:hover { background: #FBE2D6; color: #1C1626; transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #1C1626; }
 
     main { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
     .content-section { margin-bottom: 52px; }
-    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -0.02em; color: #191320; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #191320; }
+    .section-heading { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -0.02em; color: #1C1626; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #1C1626; }
 
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #FFC93C; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 8px 8px 0 #F2B705; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-    .rule-box { background: #FFF7EC; border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #FFC93C; }
-    .rule-box-header { background: #C0392B; padding: 10px 22px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
-    .rule-desc { background: #fff; padding: 20px 24px; }
-    .rule-desc p { font-weight: 700; font-size: 1rem; color: #374151; line-height: 1.75; margin-bottom: 14px; }
+    .rule-box { background: #FDF8EE; border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 6px 6px 0 #F2B705; }
+    .rule-box-header { background: #A32916; padding: 10px 22px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.1rem; color: #FFFFFF; }
+    .rule-desc { background: #FFFFFF; padding: 20px 24px; }
+    .rule-desc p { font-weight: 700; font-size: 1rem; color: #1C1626; line-height: 1.75; margin-bottom: 14px; }
     .rule-desc p:last-child { margin-bottom: 0; }
     .rule-examples { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
-    .rule-eg { font-family: 'Figtree', sans-serif; font-size: 1.1rem; background: #FFF7EC; color: #191320; padding: 5px 14px; border-radius: 999px; border: 2px solid #191320; box-shadow: 2px 2px 0 #191320; }
+    .rule-eg { font-family: 'Figtree', sans-serif; font-size: 1.1rem; background: #FDF8EE; color: #1C1626; padding: 5px 14px; border-radius: 999px; border: 2px solid #1C1626; box-shadow: 2px 2px 0 #1C1626; }
 
-    .lyrics-box { background: #191320; border: 3px solid #191320; border-radius: 14px; padding: 28px; box-shadow: 5px 5px 0 #C0392B; }
+    .lyrics-box { background: #1C1626; border: 3px solid #1C1626; border-radius: 14px; padding: 28px; box-shadow: 5px 5px 0 #A32916; }
     .lyric-block { margin-bottom: 20px; }
     .lyric-block:last-child { margin-bottom: 0; }
-    .lyric-chorus { color: #FFC93C; font-weight: 900; font-size: 1.02rem; line-height: 1.75; }
-    .lyric-verse  { color: #f1f5f9; font-weight: 700; font-size: 0.97rem; line-height: 1.75; padding-left: 16px; border-left: 3px solid #C0392B; }
-    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 2px; color: #C0392B; display: block; margin-bottom: 4px; }
+    .lyric-chorus { color: #F2B705; font-weight: 900; font-size: 1.02rem; line-height: 1.75; }
+    .lyric-verse  { color: #FDF8EE; font-weight: 700; font-size: 0.97rem; line-height: 1.75; padding-left: 16px; border-left: 3px solid #A32916; }
+    .lyric-label  { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 2px; color: #A32916; display: block; margin-bottom: 4px; }
 
-    .restart-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; letter-spacing: 2px; background: #191320; color: #FFC93C; border: 3px solid #191320; border-radius: 999px; padding: 12px 36px; cursor: pointer; box-shadow: 5px 5px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #C0392B; }
+    .restart-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; letter-spacing: 2px; background: #1C1626; color: #F2B705; border: 3px solid #1C1626; border-radius: 999px; padding: 12px 36px; cursor: pointer; box-shadow: 5px 5px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .restart-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #A32916; }
 
-    footer { background: #191320; text-align: center; padding: 20px; font-weight: 900; font-size: 0.95rem; color: #191320; border-top: 3px solid #191320; color: #FFF7EC; }
+    footer { background: #1C1626; text-align: center; padding: 20px; font-weight: 900; font-size: 0.95rem; color: #1C1626; border-top: 3px solid #1C1626; color: #FDF8EE; }
 
     /* ── VOWEL SOUND GAME ── */
-    .vgame-outer { background: #fff; border: 4px solid #191320; border-radius: 20px; padding: 28px 20px 32px; box-shadow: 7px 7px 0 #191320; text-align: center; }
-    .vgame-instruction { font-weight: 900; font-size: 1rem; color: #374151; margin-bottom: 18px; }
-    .vgame-instruction strong { color: #C0392B; }
-    .vgame-prog-text { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: #6b7280; margin-bottom: 6px; }
-    .vgame-prog-text strong { color: #C0392B; }
-    .vgame-prog-track { max-width: 300px; margin: 0 auto 22px; height: 10px; background: #e5e7eb; border-radius: 999px; border: 2px solid #191320; overflow: hidden; }
-    .vgame-prog-fill { height: 100%; background: linear-gradient(90deg, #FFC93C, #C0392B); border-radius: 999px; transition: width 0.4s ease; }
-    .vgame-card { background: #191320; border-radius: 16px; padding: 20px 32px; display: inline-block; min-width: 200px; margin-bottom: 18px; box-shadow: 4px 4px 0 #C0392B; }
+    .vgame-outer { background: #FFFFFF; border: 4px solid #1C1626; border-radius: 20px; padding: 28px 20px 32px; box-shadow: 7px 7px 0 #1C1626; text-align: center; }
+    .vgame-instruction { font-weight: 900; font-size: 1rem; color: #1C1626; margin-bottom: 18px; }
+    .vgame-instruction strong { color: #A32916; }
+    .vgame-prog-text { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: #564C63; margin-bottom: 6px; }
+    .vgame-prog-text strong { color: #A32916; }
+    .vgame-prog-track { max-width: 300px; margin: 0 auto 22px; height: 10px; background: #EAE1FB; border-radius: 999px; border: 2px solid #1C1626; overflow: hidden; }
+    .vgame-prog-fill { height: 100%; background: linear-gradient(90deg, #F2B705, #A32916); border-radius: 999px; transition: width 0.4s ease; }
+    .vgame-card { background: #1C1626; border-radius: 16px; padding: 20px 32px; display: inline-block; min-width: 200px; margin-bottom: 18px; box-shadow: 4px 4px 0 #A32916; }
     .vgame-emoji { font-size: clamp(2.6rem, 8vw, 3.6rem); display: block; margin-bottom: 6px; }
-    .vgame-word { font-family: 'Figtree', sans-serif; font-size: clamp(2.2rem, 8vw, 3.2rem); color: #FFC93C; letter-spacing: 4px; display: block; }
-    .vowel-hl { background: #fff; color: #C0392B; border-radius: 4px; padding: 0 2px; }
-    .vgame-question { font-weight: 900; font-size: 0.95rem; color: #374151; margin-bottom: 16px; }
+    .vgame-word { font-family: 'Figtree', sans-serif; font-size: clamp(2.2rem, 8vw, 3.2rem); color: #F2B705; letter-spacing: 4px; display: block; }
+    .vowel-hl { background: #FFFFFF; color: #A32916; border-radius: 4px; padding: 0 2px; }
+    .vgame-question { font-weight: 900; font-size: 0.95rem; color: #1C1626; margin-bottom: 16px; }
     .vowel-options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 16px; max-width: 580px; margin-left: auto; margin-right: auto; }
-    .vopt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.3rem; letter-spacing: 2px; padding: 10px 20px; border-radius: 12px; border: 3px solid #191320; cursor: pointer; box-shadow: 3px 3px 0 #191320; transition: transform 0.1s, box-shadow 0.1s; min-width: 100px; }
-    .vopt:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 5px 5px 0 #191320; }
-    .vopt.opt-short   { background: #fde68a; color: #191320; }
+    .vopt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.3rem; letter-spacing: 2px; padding: 10px 20px; border-radius: 12px; border: 3px solid #1C1626; cursor: pointer; box-shadow: 3px 3px 0 #1C1626; transition: transform 0.1s, box-shadow 0.1s; min-width: 100px; }
+    .vopt:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 5px 5px 0 #1C1626; }
+    .vopt.opt-short   { background: #fde68a; color: #1C1626; }
     .vopt.opt-long    { background: #a7f3d0; color: #065f46; }
     .vopt.opt-schwa   { background: #e2e8f0; color: #334155; }
-    .vopt.opt-bossyr  { background: #C0392B; color: #fff; }
+    .vopt.opt-bossyr  { background: #A32916; color: #FFFFFF; }
     .vopt.opt-bossyy  { background: #c4b5fd; color: #3b0764; }
-    .vopt.correct { background: #bbf7d0 !important; border-color: #16a34a !important; box-shadow: 3px 3px 0 #16a34a !important; cursor: default; }
-    .vopt.wrong   { background: #fee2e2 !important; border-color: #C0392B !important; animation: qshake 0.4s ease; }
+    .vopt.correct { background: #D9F1E8 !important; border-color: #0B7C6C !important; box-shadow: 3px 3px 0 #0B7C6C !important; cursor: default; }
+    .vopt.wrong   { background: #FBE2D6 !important; border-color: #A32916 !important; animation: qshake 0.4s ease; }
     @keyframes qshake { 0%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} 100%{transform:translateX(0)} }
-    .vgame-explain { font-weight: 900; font-size: 0.9rem; color: #16a34a; min-height: 1.4rem; margin-bottom: 12px; font-style: italic; }
-    .vgame-next-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.3rem; letter-spacing: 2px; background: #191320; color: #FFC93C; border: 3px solid #191320; border-radius: 999px; padding: 10px 32px; cursor: pointer; box-shadow: 4px 4px 0 #C0392B; transition: transform 0.1s, box-shadow 0.1s; }
-    .vgame-next-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #C0392B; }
+    .vgame-explain { font-weight: 900; font-size: 0.9rem; color: #0B7C6C; min-height: 1.4rem; margin-bottom: 12px; font-style: italic; }
+    .vgame-next-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.3rem; letter-spacing: 2px; background: #1C1626; color: #F2B705; border: 3px solid #1C1626; border-radius: 999px; padding: 10px 32px; cursor: pointer; box-shadow: 4px 4px 0 #A32916; transition: transform 0.1s, box-shadow 0.1s; }
+    .vgame-next-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #A32916; }
     .vgame-complete { padding: 10px 0; }
     .vgame-complete-emoji { font-size: clamp(3rem, 10vw, 5rem); display: block; margin-bottom: 10px; }
-    .vgame-complete h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 3px; color: #C0392B; text-shadow: 3px 3px 0 #191320; margin-bottom: 8px; }
-    .vgame-complete p { font-weight: 900; font-size: 1.05rem; color: #374151; margin-bottom: 20px; }
+    .vgame-complete h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 3px; color: #A32916; text-shadow: 3px 3px 0 #1C1626; margin-bottom: 8px; }
+    .vgame-complete p { font-weight: 900; font-size: 1.05rem; color: #1C1626; margin-bottom: 20px; }
 
     /* ── VOWEL SOUND CARDS (rule section) ── */
-    .vowel-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; padding: 20px 24px; background: #fff; }
-    .vowel-card { border: 3px solid #191320; border-radius: 14px; overflow: hidden; box-shadow: 4px 4px 0 #191320; }
-    .vc-header { padding: 8px 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; letter-spacing: 2px; color: #fff; }
+    .vowel-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; padding: 20px 24px; background: #FFFFFF; }
+    .vowel-card { border: 3px solid #1C1626; border-radius: 14px; overflow: hidden; box-shadow: 4px 4px 0 #1C1626; }
+    .vc-header { padding: 8px 14px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; letter-spacing: 2px; color: #FFFFFF; }
     .vc-header.short-h   { background: #b45309; }
     .vc-header.long-h    { background: #065f46; }
     .vc-header.schwa-h   { background: #334155; }
-    .vc-header.bossyr-h  { background: #C0392B; }
+    .vc-header.bossyr-h  { background: #A32916; }
     .vc-header.bossyy-h  { background: #7c3aed; }
     .vc-body { padding: 12px 14px; background: #fafafa; }
-    .vc-symbol { font-family: 'Figtree', sans-serif; font-size: 1.5rem; color: #C0392B; display: block; margin-bottom: 6px; }
-    .vc-desc { font-size: 0.83rem; font-weight: 700; color: #374151; line-height: 1.5; margin-bottom: 8px; }
-    .vc-examples { font-family: 'Figtree', sans-serif; font-size: 0.88rem; color: #6b7280; }
+    .vc-symbol { font-family: 'Figtree', sans-serif; font-size: 1.5rem; color: #A32916; display: block; margin-bottom: 6px; }
+    .vc-desc { font-size: 0.83rem; font-weight: 700; color: #1C1626; line-height: 1.5; margin-bottom: 8px; }
+    .vc-examples { font-family: 'Figtree', sans-serif; font-size: 0.88rem; color: #564C63; }
 
     /* ── SLIDES GALLERY ── */
-    .slides-intro { font-weight: 700; font-size: 1rem; color: #374151; line-height: 1.7; margin-bottom: 20px; }
+    .slides-intro { font-weight: 700; font-size: 1rem; color: #1C1626; line-height: 1.7; margin-bottom: 20px; }
     .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px; }
-    .slide-card { border: 3px solid #191320; border-radius: 12px; overflow: hidden; box-shadow: 4px 4px 0 #191320; }
+    .slide-card { border: 3px solid #1C1626; border-radius: 12px; overflow: hidden; box-shadow: 4px 4px 0 #1C1626; }
     .slide-card img { width: 100%; display: block; }
-    .slide-label { background: #191320; color: #FFC93C; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 2px; padding: 6px 14px; }
+    .slide-label { background: #1C1626; color: #F2B705; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; letter-spacing: 2px; padding: 6px 14px; }
 
     /* ── DOWNLOADS ── */
-    .dl-section-intro { font-weight: 700; font-size: 1rem; color: #374151; margin-bottom: 20px; }
+    .dl-section-intro { font-weight: 700; font-size: 1rem; color: #1C1626; margin-bottom: 20px; }
     .dl-group { margin-bottom: 24px; }
-    .dl-group-label { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 2px; color: #6b7280; text-transform: uppercase; margin-bottom: 10px; }
+    .dl-group-label { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 2px; color: #564C63; text-transform: uppercase; margin-bottom: 10px; }
     .dl-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .dl-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 1.5px; padding: 12px 26px; border-radius: 999px; border: 3px solid #191320; text-decoration: none; box-shadow: 4px 4px 0 #191320; transition: transform 0.1s, box-shadow 0.1s; display: inline-flex; align-items: center; gap: 10px; }
-    .dl-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #191320; }
-    .dl-btn--pptx { background: #d97706; color: #fff; }
-    .dl-btn--word { background: #2563eb; color: #fff; }
-    .dl-btn--pdf  { background: #C0392B; color: #fff; }
+    .dl-btn { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; letter-spacing: 1.5px; padding: 12px 26px; border-radius: 999px; border: 3px solid #1C1626; text-decoration: none; box-shadow: 4px 4px 0 #1C1626; transition: transform 0.1s, box-shadow 0.1s; display: inline-flex; align-items: center; gap: 10px; }
+    .dl-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #1C1626; }
+    .dl-btn--pptx { background: #d97706; color: #FFFFFF; }
+    .dl-btn--word { background: #2563eb; color: #FFFFFF; }
+    .dl-btn--pdf  { background: #A32916; color: #FFFFFF; }
     .dl-count { font-family: 'Figtree', sans-serif; font-size: 0.72rem; font-weight: 900; opacity: 0.85; background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 999px; }
-    .dl-note { font-size: 0.82rem; font-weight: 700; color: #6b7280; font-style: italic; margin-top: 10px; }
+    .dl-note { font-size: 0.82rem; font-weight: 700; color: #564C63; font-style: italic; margin-top: 10px; }
   </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+/* -- structural alignment to the cream-editorial system (migration) -- */
+.page-header { background: var(--tint-rose) !important; background-image: none !important; text-shadow: none !important; }
+.page-header h1 { color: var(--ink) !important; text-shadow: none !important; }
+.page-header .subtitle { color: var(--violet) !important; background: none !important; text-shadow: none !important; }
+.cat-nav { background: var(--cream) !important; }
+.cat-nav a { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+.cat-nav a:hover { background: var(--cream-deep) !important; color: var(--ink) !important; }
+.back-link { background: var(--paper) !important; color: var(--ink) !important; border-color: var(--ink) !important; }
+footer { background: var(--ink) !important; color: var(--cream) !important; }
+footer a { color: var(--marigold) !important; }
+</style></head>
 <body>
-
-  <header class="page-header">
-    <a class="back-link" href="index.html">&#8592; Home</a>
-    <h1>Sound of the Vowels</h1>
-    <span class="subtitle">Short &bull; Long &bull; Schwa &bull; Bossy R &bull; Bossy Y</span>
-  </header>
-
-  <nav class="cat-nav">
-    <a href="#video">Video</a>
-    <a href="#game">Play the Game</a>
-    <a href="#rule">The Rule</a>
-    <a href="#slides">Lesson Slides</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#lyrics">Song Lyrics</a>
-  </nav>
-
-  <main>
-
-    <!-- VIDEO -->
-    <section class="content-section" id="video">
-      <h2 class="section-heading">Watch the Video</h2>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/KumMG3zKbYM" title="The Sound of the Vowels by Mr Spelling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-
-    <!-- VOWEL SOUND GAME -->
-    <section class="content-section" id="game">
-      <h2 class="section-heading">What Sound Is the Vowel Making?</h2>
-      <div class="vgame-outer">
-        <div id="vgame-ui">
-          <p class="vgame-instruction">Look at the <strong>highlighted vowel</strong> in the word. What sound is it making?</p>
-          <p class="vgame-prog-text">Word <strong id="vg-cur">1</strong> of 20</p>
-          <div class="vgame-prog-track"><div class="vgame-prog-fill" id="vg-fill" style="width:0%"></div></div>
-          <div class="vgame-card">
-            <span class="vgame-emoji" id="vg-emoji">&#128568;</span>
-            <span class="vgame-word" id="vg-word"></span>
-          </div>
-          <p class="vgame-question">What sound is the highlighted vowel making?</p>
-          <div class="vowel-options">
-            <button class="vopt opt-short"  data-ans="short">Short</button>
-            <button class="vopt opt-long"   data-ans="long">Long</button>
-            <button class="vopt opt-schwa"  data-ans="schwa">Schwa</button>
-            <button class="vopt opt-bossyr" data-ans="bossy-r">Bossy R</button>
-            <button class="vopt opt-bossyy" data-ans="bossy-y">Bossy Y</button>
-          </div>
-          <p class="vgame-explain" id="vg-explain"></p>
-          <div id="vg-next-wrap" style="display:none">
-            <button class="vgame-next-btn" id="vg-next-btn">Next &#8594;</button>
-          </div>
-        </div>
-        <div class="vgame-complete" id="vgame-complete" style="display:none">
-          <span class="vgame-complete-emoji">&#127881;</span>
-          <h3>Amazing Work!</h3>
-          <p>You identified all 20 vowel sounds!</p>
-          <button class="restart-btn" id="vg-restart-btn">Play Again</button>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- THE RULE -->
-    <section class="content-section" id="rule">
-      <h2 class="section-heading">The Rule</h2>
-      <div class="rule-box">
-        <div class="rule-box-header">THE SOUND OF THE VOWELS</div>
-        <div class="rule-desc">
-          <p>A vowel can make <strong>many different sounds</strong> depending on the syllable type it is in and the letters around it. There are five main vowel sounds to know:</p>
-        </div>
-        <div class="vowel-cards">
-          <div class="vowel-card">
-            <div class="vc-header short-h">Short</div>
-            <div class="vc-body">
-              <span class="vc-symbol">&#x103; &#x115; &#x12D; &#x14F; &#x16D;</span>
-              <p class="vc-desc">Vowel in a <strong>closed syllable</strong>. A consonant traps it, making it short.</p>
-              <span class="vc-examples">cat &middot; bed &middot; pig &middot; hot &middot; sun</span>
-            </div>
-          </div>
-          <div class="vowel-card">
-            <div class="vc-header long-h">Long</div>
-            <div class="vc-body">
-              <span class="vc-symbol">&#x101; &#x113; &#x12B; &#x14D; &#x16B;</span>
-              <p class="vc-desc">Vowel in an <strong>open syllable</strong>. Nothing traps it &mdash; it says its name.</p>
-              <span class="vc-examples">table &middot; fever &middot; tiger &middot; robot</span>
-            </div>
-          </div>
-          <div class="vowel-card">
-            <div class="vc-header schwa-h">Schwa</div>
-            <div class="vc-body">
-              <span class="vc-symbol">&#601;</span>
-              <p class="vc-desc">Vowel in an <strong>unstressed syllable</strong>. Lazy vowel makes the /uh/ sound.</p>
-              <span class="vc-examples">sofa &middot; pencil &middot; lemon &middot; circus</span>
-            </div>
-          </div>
-          <div class="vowel-card">
-            <div class="vc-header bossyr-h">Bossy R</div>
-            <div class="vc-body">
-              <span class="vc-symbol">AR ER IR OR UR</span>
-              <p class="vc-desc">The letter <strong>R controls</strong> the vowel before it, changing its sound.</p>
-              <span class="vc-examples">star &middot; bird &middot; fern &middot; corn &middot; fur</span>
-            </div>
-          </div>
-          <div class="vowel-card">
-            <div class="vc-header bossyy-h">Bossy Y</div>
-            <div class="vc-body">
-              <span class="vc-symbol">y &#8594; &#275; / &#299;</span>
-              <p class="vc-desc">The letter <strong>Y acts as a vowel</strong>: long E at the end of a long word, long I in a short word.</p>
-              <span class="vc-examples">baby &middot; candy &middot; fly &middot; sky</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- LESSON SLIDES -->
-    <section class="content-section" id="slides">
-      <h2 class="section-heading">Lesson Slides</h2>
-      <p class="slides-intro">Key overview slides from the PowerPoint presentation &mdash; one for each vowel sound type.</p>
-      <div class="slides-grid">
-        <div class="slide-card">
-          <img src="slides/sound-of-vowels/slide-01.png" alt="Short Vowels slide" loading="lazy" />
-          <div class="slide-label">Short Vowels</div>
-        </div>
-        <div class="slide-card">
-          <img src="slides/sound-of-vowels/slide-02.png" alt="Long Vowels slide" loading="lazy" />
-          <div class="slide-label">Long Vowels</div>
-        </div>
-        <div class="slide-card">
-          <img src="slides/sound-of-vowels/slide-03.png" alt="Schwa (Lazy Vowels) slide" loading="lazy" />
-          <div class="slide-label">Schwa (Lazy Vowels)</div>
-        </div>
-        <div class="slide-card">
-          <img src="slides/sound-of-vowels/slide-04.png" alt="R-Controlled Vowels (Bossy R) slide" loading="lazy" />
-          <div class="slide-label">R-Controlled (Bossy R)</div>
-        </div>
-        <div class="slide-card">
-          <img src="slides/sound-of-vowels/slide-05.png" alt="Letter Y Vowel Sounds slide" loading="lazy" />
-          <div class="slide-label">Bossy Y</div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- DOWNLOADS -->
-    <section class="content-section" id="downloads">
-      <h2 class="section-heading">Downloads</h2>
-      <p class="dl-section-intro">Download the PowerPoint and printable spelling list for classroom use.</p>
-
-      <div class="dl-group">
-        <p class="dl-group-label">PowerPoint</p>
-        <div class="dl-row">
-          <a class="dl-btn dl-btn--pptx" href="downloads/sound-of-vowels-overview.pptx" download="sound-of-vowels-overview.pptx" onclick="trackDl('pptx')">
-            &#9654; Vowel Sounds Overview <span class="dl-count" id="pptx-count"></span>
-          </a>
-        </div>
-      </div>
-
-      <div class="dl-group">
-        <p class="dl-group-label">Spelling List</p>
-        <div class="dl-row">
-          <a class="dl-btn dl-btn--word" href="downloads/sound-of-vowels-spelling-list.docx" download="sound-of-vowels-spelling-list.docx" onclick="trackDl('word')">
-            &#128196; Word Document <span class="dl-count" id="word-count"></span>
-          </a>
-          <a class="dl-btn dl-btn--pdf" href="downloads/sound-of-vowels-spelling-list.pdf" download="sound-of-vowels-spelling-list.pdf" onclick="trackDl('pdf')">
-            &#128196; PDF <span class="dl-count" id="pdf-count"></span>
-          </a>
-        </div>
-      </div>
-
-      <p class="dl-note">Download counts shown are for your current browser only. For real analytics use a link tracker such as bit.ly.</p>
-    </section>
-
-
-    <!-- SONG LYRICS -->
-    <section class="content-section" id="lyrics">
-      <h2 class="section-heading">Song Lyrics</h2>
-      <div class="lyrics-box">
-        <div class="lyric-block">
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
-          Vowels can be controlled by R.<br>
-          Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
+<header class="page-header">
+<a class="back-link" href="index.html"><svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Home</a>
+<h1>Sound of the Vowels</h1>
+<span class="subtitle">Short • Long • Schwa • Bossy R • Bossy Y</span>
+</header>
+<nav class="cat-nav">
+<a href="#video">Video</a>
+<a href="#game">Play the Game</a>
+<a href="#rule">The Rule</a>
+<a href="#slides">Lesson Slides</a>
+<a href="#downloads">Downloads</a>
+<a href="#lyrics">Song Lyrics</a>
+</nav>
+<main>
+<!-- VIDEO -->
+<section class="content-section" id="video">
+<h2 class="section-heading">Watch the Video</h2>
+<div class="video-wrap beat">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/KumMG3zKbYM" title="The Sound of the Vowels by Mr Spelling"></iframe>
+</div>
+</section>
+<!-- VOWEL SOUND GAME -->
+<section class="content-section" id="game">
+<h2 class="section-heading">What Sound Is the Vowel Making?</h2>
+<div class="vgame-outer">
+<div id="vgame-ui">
+<p class="vgame-instruction">Look at the <strong>highlighted vowel</strong> in the word. What sound is it making?</p>
+<p class="vgame-prog-text">Word <strong id="vg-cur">1</strong> of 20</p>
+<div class="vgame-prog-track"><div class="vgame-prog-fill" id="vg-fill" style="width:0%"></div></div>
+<div class="vgame-card">
+<span class="vgame-emoji" id="vg-emoji">😸</span>
+<span class="vgame-word" id="vg-word"></span>
+</div>
+<p class="vgame-question">What sound is the highlighted vowel making?</p>
+<div class="vowel-options">
+<button class="vopt opt-short" data-ans="short">Short</button>
+<button class="vopt opt-long" data-ans="long">Long</button>
+<button class="vopt opt-schwa" data-ans="schwa">Schwa</button>
+<button class="vopt opt-bossyr" data-ans="bossy-r">Bossy R</button>
+<button class="vopt opt-bossyy" data-ans="bossy-y">Bossy Y</button>
+</div>
+<p class="vgame-explain" id="vg-explain"></p>
+<div id="vg-next-wrap" style="display:none">
+<button class="vgame-next-btn" id="vg-next-btn">Next →</button>
+</div>
+</div>
+<div class="vgame-complete" id="vgame-complete" style="display:none">
+<span class="vgame-complete-emoji">🎉</span>
+<h3>Amazing Work!</h3>
+<p>You identified all 20 vowel sounds!</p>
+<button class="restart-btn" id="vg-restart-btn">Play Again</button>
+</div>
+</div>
+</section>
+<!-- THE RULE -->
+<section class="content-section" id="rule">
+<h2 class="section-heading">The Rule</h2>
+<div class="rule-box beat">
+<div class="rule-box-header">THE SOUND OF THE VOWELS</div>
+<div class="rule-desc">
+<p>A vowel can make <strong>many different sounds</strong> depending on the syllable type it is in and the letters around it. There are five main vowel sounds to know:</p>
+</div>
+<div class="vowel-cards">
+<div class="vowel-card">
+<div class="vc-header short-h">Short</div>
+<div class="vc-body">
+<span class="vc-symbol">ă ĕ ĭ ŏ ŭ</span>
+<p class="vc-desc">Vowel in a <strong>closed syllable</strong>. A consonant traps it, making it short.</p>
+<span class="vc-examples">cat · bed · pig · hot · sun</span>
+</div>
+</div>
+<div class="vowel-card">
+<div class="vc-header long-h">Long</div>
+<div class="vc-body">
+<span class="vc-symbol">ā ē ī ō ū</span>
+<p class="vc-desc">Vowel in an <strong>open syllable</strong>. Nothing traps it: it says its name.</p>
+<span class="vc-examples">table · fever · tiger · robot</span>
+</div>
+</div>
+<div class="vowel-card">
+<div class="vc-header schwa-h">Schwa</div>
+<div class="vc-body">
+<span class="vc-symbol">ə</span>
+<p class="vc-desc">Vowel in an <strong>unstressed syllable</strong>. Lazy vowel makes the /uh/ sound.</p>
+<span class="vc-examples">sofa · pencil · lemon · circus</span>
+</div>
+</div>
+<div class="vowel-card">
+<div class="vc-header bossyr-h">Bossy R</div>
+<div class="vc-body">
+<span class="vc-symbol">AR ER IR OR UR</span>
+<p class="vc-desc">The letter <strong>R controls</strong> the vowel before it, changing its sound.</p>
+<span class="vc-examples">star · bird · fern · corn · fur</span>
+</div>
+</div>
+<div class="vowel-card">
+<div class="vc-header bossyy-h">Bossy Y</div>
+<div class="vc-body">
+<span class="vc-symbol">y → ē / ī</span>
+<p class="vc-desc">The letter <strong>Y acts as a vowel</strong>: long E at the end of a long word, long I in a short word.</p>
+<span class="vc-examples">baby · candy · fly · sky</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LESSON SLIDES -->
+<section class="content-section" id="slides">
+<h2 class="section-heading">Lesson Slides</h2>
+<p class="slides-intro">Key overview slides from the PowerPoint presentation: one for each vowel sound type.</p>
+<div class="slides-grid">
+<div class="slide-card">
+<img alt="Short Vowels slide" loading="lazy" src="slides/sound-of-vowels/slide-01.png"/>
+<div class="slide-label">Short Vowels</div>
+</div>
+<div class="slide-card">
+<img alt="Long Vowels slide" loading="lazy" src="slides/sound-of-vowels/slide-02.png"/>
+<div class="slide-label">Long Vowels</div>
+</div>
+<div class="slide-card">
+<img alt="Schwa (Lazy Vowels) slide" loading="lazy" src="slides/sound-of-vowels/slide-03.png"/>
+<div class="slide-label">Schwa (Lazy Vowels)</div>
+</div>
+<div class="slide-card">
+<img alt="R-Controlled Vowels (Bossy R) slide" loading="lazy" src="slides/sound-of-vowels/slide-04.png"/>
+<div class="slide-label">R-Controlled (Bossy R)</div>
+</div>
+<div class="slide-card">
+<img alt="Letter Y Vowel Sounds slide" loading="lazy" src="slides/sound-of-vowels/slide-05.png"/>
+<div class="slide-label">Bossy Y</div>
+</div>
+</div>
+</section>
+<!-- DOWNLOADS -->
+<section class="content-section" id="downloads">
+<h2 class="section-heading">Downloads</h2>
+<p class="dl-section-intro">Download the PowerPoint and printable spelling list for classroom use.</p>
+<div class="dl-group">
+<p class="dl-group-label">PowerPoint</p>
+<div class="dl-row">
+<a class="dl-btn dl-btn--pptx" download="sound-of-vowels-overview.pptx" href="downloads/sound-of-vowels-overview.pptx" onclick="trackDl('pptx')">
+            ▶ Vowel Sounds Overview <span class="dl-count" id="pptx-count"></span>
+</a>
+</div>
+</div>
+<div class="dl-group">
+<p class="dl-group-label">Spelling List</p>
+<div class="dl-row">
+<a class="dl-btn dl-btn--word" download="sound-of-vowels-spelling-list.docx" href="downloads/sound-of-vowels-spelling-list.docx" onclick="trackDl('word')">
+<svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg> Word Document <span class="dl-count" id="word-count"></span>
+</a>
+<a class="dl-btn dl-btn--pdf" download="sound-of-vowels-spelling-list.pdf" href="downloads/sound-of-vowels-spelling-list.pdf" onclick="trackDl('pdf')">
+<svg class="icon" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg> PDF <span class="dl-count" id="pdf-count"></span>
+</a>
+</div>
+</div>
+<p class="dl-note">Download counts shown are for your current browser only. For real analytics use a link tracker such as bit.ly.</p>
+</section>
+<!-- SONG LYRICS -->
+<section class="content-section" id="lyrics">
+<h2 class="section-heading">Song Lyrics</h2>
+<div class="lyrics-box beat">
+<div class="lyric-block">
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
+          Vowels can be controlled by R.<br/>
+          Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-        </div>
-        <div class="lyric-block">
-          <span class="lyric-label">Short Vowels</span>
-          <p class="lyric-verse">&#x103; &nbsp; &#x115; &nbsp; &#x12D; &nbsp; &#x14F; &nbsp; &#x16D;</p>
-        </div>
-        <div class="lyric-block">
-          <span class="lyric-label">Long Vowels</span>
-          <p class="lyric-verse">&#x101; &nbsp; &#x113; &nbsp; &#x12B; &nbsp; &#x14D; &nbsp; &#x16B; &nbsp; / yo&#x35A;o</p>
-        </div>
-        <div class="lyric-block">
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
-          Vowels can be controlled by R.<br>
-          Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
+</div>
+<div class="lyric-block">
+<span class="lyric-label">Short Vowels</span>
+<p class="lyric-verse">ă   ĕ   ĭ   ŏ   ŭ</p>
+</div>
+<div class="lyric-block">
+<span class="lyric-label">Long Vowels</span>
+<p class="lyric-verse">ā   ē   ī   ō   ū   / yo͚o</p>
+</div>
+<div class="lyric-block">
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
+          Vowels can be controlled by R.<br/>
+          Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-        </div>
-        <div class="lyric-block">
-          <span class="lyric-label">Lazy Vowels (Schwa)</span>
-          <p class="lyric-verse">&#601; &nbsp; &#601; &nbsp; &#601; &nbsp; &#601; &nbsp; &#601;</p>
-        </div>
-        <div class="lyric-block">
-          <span class="lyric-label">R-Controlled Vowels</span>
-          <p class="lyric-verse">AR &nbsp; ER &nbsp; IR &nbsp; OR &nbsp; UR</p>
-        </div>
-        <div class="lyric-block">
-          <p class="lyric-chorus">Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
-          Vowels can be controlled by R.<br>
-          Let's review the vowel sounds in this song.<br>
-          Vowels can be short and vowels can be long.<br>
-          Vowels can be lazy, that's called the schwa.<br>
+</div>
+<div class="lyric-block">
+<span class="lyric-label">Lazy Vowels (Schwa)</span>
+<p class="lyric-verse">ə   ə   ə   ə   ə</p>
+</div>
+<div class="lyric-block">
+<span class="lyric-label">R-Controlled Vowels</span>
+<p class="lyric-verse">AR   ER   IR   OR   UR</p>
+</div>
+<div class="lyric-block">
+<p class="lyric-chorus">Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
+          Vowels can be controlled by R.<br/>
+          Let's review the vowel sounds in this song.<br/>
+          Vowels can be short and vowels can be long.<br/>
+          Vowels can be lazy, that's called the schwa.<br/>
           Vowels can be controlled by R.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>&copy; 2026 Mr Spelling &mdash; Not Misspelling</footer>
-
-  <script>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Mr Spelling: Not Misspelling</footer>
+<script>
     // ── VOWEL SOUND GAME ──
     const WORDS = [
       // Short vowels
-      { word:"cat",    hl:"a",  hlAt:1, answer:"short",   emoji:"🐱",  explain:"Closed syllable — the consonant traps the vowel short." },
-      { word:"bed",    hl:"e",  hlAt:1, answer:"short",   emoji:"🛏️",  explain:"Closed syllable — the consonant traps the vowel short." },
-      { word:"swim",   hl:"i",  hlAt:2, answer:"short",   emoji:"🏊",  explain:"Closed syllable — the consonant traps the vowel short." },
-      { word:"frog",   hl:"o",  hlAt:2, answer:"short",   emoji:"🐸",  explain:"Closed syllable — the consonant traps the vowel short." },
-      { word:"drum",   hl:"u",  hlAt:2, answer:"short",   emoji:"🥁",  explain:"Closed syllable — the consonant traps the vowel short." },
+      { word:"cat",    hl:"a",  hlAt:1, answer:"short",   emoji:"🐱",  explain:"Closed syllable : the consonant traps the vowel short." },
+      { word:"bed",    hl:"e",  hlAt:1, answer:"short",   emoji:"🛏️",  explain:"Closed syllable : the consonant traps the vowel short." },
+      { word:"swim",   hl:"i",  hlAt:2, answer:"short",   emoji:"🏊",  explain:"Closed syllable : the consonant traps the vowel short." },
+      { word:"frog",   hl:"o",  hlAt:2, answer:"short",   emoji:"🐸",  explain:"Closed syllable : the consonant traps the vowel short." },
+      { word:"drum",   hl:"u",  hlAt:2, answer:"short",   emoji:"🥁",  explain:"Closed syllable : the consonant traps the vowel short." },
       // Long vowels (open syllable)
-      { word:"table",  hl:"a",  hlAt:1, answer:"long",    emoji:"🍽️",  explain:"Open syllable — the vowel is free and says its name!" },
-      { word:"fever",  hl:"e",  hlAt:1, answer:"long",    emoji:"🌡️",  explain:"Open syllable — the vowel is free and says its name!" },
-      { word:"tiger",  hl:"i",  hlAt:1, answer:"long",    emoji:"🐯",  explain:"Open syllable — the vowel is free and says its name!" },
-      { word:"robot",  hl:"o",  hlAt:1, answer:"long",    emoji:"🤖",  explain:"Open syllable — the vowel is free and says its name!" },
-      { word:"tulip",  hl:"u",  hlAt:1, answer:"long",    emoji:"🌷",  explain:"Open syllable — the vowel is free and says its name!" },
+      { word:"table",  hl:"a",  hlAt:1, answer:"long",    emoji:"🍽️",  explain:"Open syllable : the vowel is free and says its name!" },
+      { word:"fever",  hl:"e",  hlAt:1, answer:"long",    emoji:"🌡️",  explain:"Open syllable : the vowel is free and says its name!" },
+      { word:"tiger",  hl:"i",  hlAt:1, answer:"long",    emoji:"🐯",  explain:"Open syllable : the vowel is free and says its name!" },
+      { word:"robot",  hl:"o",  hlAt:1, answer:"long",    emoji:"🤖",  explain:"Open syllable : the vowel is free and says its name!" },
+      { word:"tulip",  hl:"u",  hlAt:1, answer:"long",    emoji:"🌷",  explain:"Open syllable : the vowel is free and says its name!" },
       // Schwa
-      { word:"sofa",   hl:"a",  hlAt:3, answer:"schwa",   emoji:"🛋️",  explain:"Unstressed syllable — lazy vowel makes the /uh/ schwa." },
-      { word:"pencil", hl:"i",  hlAt:4, answer:"schwa",   emoji:"✏️",  explain:"Unstressed syllable — lazy vowel makes the /uh/ schwa." },
-      { word:"lemon",  hl:"o",  hlAt:3, answer:"schwa",   emoji:"🍋",  explain:"Unstressed syllable — lazy vowel makes the /uh/ schwa." },
-      { word:"circus", hl:"u",  hlAt:4, answer:"schwa",   emoji:"🎪",  explain:"Unstressed syllable — lazy vowel makes the /uh/ schwa." },
+      { word:"sofa",   hl:"a",  hlAt:3, answer:"schwa",   emoji:"🛋️",  explain:"Unstressed syllable : lazy vowel makes the /uh/ schwa." },
+      { word:"pencil", hl:"i",  hlAt:4, answer:"schwa",   emoji:"✏️",  explain:"Unstressed syllable : lazy vowel makes the /uh/ schwa." },
+      { word:"lemon",  hl:"o",  hlAt:3, answer:"schwa",   emoji:"🍋",  explain:"Unstressed syllable : lazy vowel makes the /uh/ schwa." },
+      { word:"circus", hl:"u",  hlAt:4, answer:"schwa",   emoji:"🎪",  explain:"Unstressed syllable : lazy vowel makes the /uh/ schwa." },
       // Bossy R
-      { word:"star",   hl:"ar", hlAt:2, answer:"bossy-r", emoji:"⭐",  explain:"R-controlled — Bossy R takes control of the vowel!" },
-      { word:"bird",   hl:"ir", hlAt:1, answer:"bossy-r", emoji:"🐦",  explain:"R-controlled — Bossy R takes control of the vowel!" },
-      { word:"corn",   hl:"or", hlAt:1, answer:"bossy-r", emoji:"🌽",  explain:"R-controlled — Bossy R takes control of the vowel!" },
-      { word:"nurse",  hl:"ur", hlAt:1, answer:"bossy-r", emoji:"👩‍⚕️", explain:"R-controlled — Bossy R takes control of the vowel!" },
+      { word:"star",   hl:"ar", hlAt:2, answer:"bossy-r", emoji:"⭐",  explain:"R-controlled : Bossy R takes control of the vowel!" },
+      { word:"bird",   hl:"ir", hlAt:1, answer:"bossy-r", emoji:"🐦",  explain:"R-controlled : Bossy R takes control of the vowel!" },
+      { word:"corn",   hl:"or", hlAt:1, answer:"bossy-r", emoji:"🌽",  explain:"R-controlled : Bossy R takes control of the vowel!" },
+      { word:"nurse",  hl:"ur", hlAt:1, answer:"bossy-r", emoji:"👩‍⚕️", explain:"R-controlled : Bossy R takes control of the vowel!" },
       // Bossy Y
-      { word:"baby",   hl:"y",  hlAt:3, answer:"bossy-y", emoji:"👶",  explain:"Bossy Y — at the end of a long word, Y sounds like long E." },
-      { word:"fly",    hl:"y",  hlAt:2, answer:"bossy-y", emoji:"🦋",  explain:"Bossy Y — at the end of a short word, Y sounds like long I." },
+      { word:"baby",   hl:"y",  hlAt:3, answer:"bossy-y", emoji:"👶",  explain:"Bossy Y : at the end of a long word, Y sounds like long E." },
+      { word:"fly",    hl:"y",  hlAt:2, answer:"bossy-y", emoji:"🦋",  explain:"Bossy Y : at the end of a short word, Y sounds like long I." },
     ];
 
     function shuffle(a) {
@@ -460,6 +452,5 @@
 
     startGame();
   </script>
-
-</body>
+<script src="assets/site.js"></script></body>
 </html>
