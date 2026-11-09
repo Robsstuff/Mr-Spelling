@@ -86,6 +86,14 @@ main { max-width: 880px; margin: 0 auto; padding: 56px 24px 90px; }
 .lyric-verse  { color: var(--ink); padding-left: 2px; }
 .lyric-outro  { color: var(--ink-soft); font-style: italic; margin-top: 10px; }
 
+.word-list-note { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 24px; }
+.word-list-plain { display: flex; flex-direction: column; gap: 24px; }
+.word-list-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.word-list-label.c1 { color: var(--terracotta); }
+.word-list-label.c2 { color: var(--teal-deep); }
+.word-list-label.c3 { color: var(--violet); }
+.word-list-words { font-size: 1.05rem; line-height: 1.9; color: var(--ink); }
+
 @media (max-width: 640px) {
   .back-link { position: static; margin-bottom: 16px; }
   .page-header { padding: 24px 18px 28px; }
