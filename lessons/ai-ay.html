@@ -75,6 +75,12 @@
     .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
     .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
     footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
+    .word-list-note { font-size: 0.95rem; color: #564C63; margin-bottom: 24px; font-weight: 600; }
+    .word-list-plain { display: flex; flex-direction: column; gap: 24px; }
+    .word-list-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .word-list-label.yellow { color: #A32916; }
+    .word-list-label.cyan { color: #0E9C88; }
+    .word-list-words { font-size: 1.05rem; line-height: 1.9; color: #1C1626; }
   </style>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
 /* -- structural alignment to the cream-editorial system (migration) -- */
@@ -100,6 +106,7 @@ footer a { color: var(--marigold) !important; }
 <a href="#rule">The Rule</a>
 <a href="#exceptions">Watch Out</a>
 <a href="#lyrics">Lyrics</a>
+<a href="#word-list">Word List</a>
 </nav>
 <main>
 <section class="content-section" id="video">
@@ -171,16 +178,16 @@ footer a { color: var(--marigold) !important; }
 <div class="exceptions-box-header">Words that don't follow the rule</div>
 <div class="exceptions-inner">
 <div class="exception-item">
-<span class="exception-word">they, grey</span>
-<p class="exception-note">These use <strong>EY</strong> to make the long A sound at the end. Not all words use AY at the end: some use the EY digraph instead. Both are correct for those words; you must learn them.</p>
+<span class="exception-word">bonsai, chai, banzai</span>
+<p class="exception-note"><strong>AI at the end of the word.</strong> The rule says AI appears at the start or middle, not the end. These words break that position rule. They are loanwords from Japanese and Hindi, where ending in I is normal. English-origin words almost never end in I.</p>
 </div>
 <div class="exception-item">
-<span class="exception-word">eight, weight</span>
-<p class="exception-note">Some words use <strong>EIGH</strong> to make the long A sound. This is a less common pattern but appears in several common words: eight, weight, freight, neighbour.</p>
+<span class="exception-word">mayor, crayon, kayak</span>
+<p class="exception-note"><strong>AY in the middle of the word.</strong> The rule says AY appears at the end, but these words have AY mid-word with more letters after it. These are loanwords or older borrowings where the AY sits in an unusual position.</p>
 </div>
 <div class="exception-item">
-<span class="exception-word">birthday</span>
-<p class="exception-note">A compound word: <em>birth</em> + <em>day</em>. The AY is at the end of the word <em>day</em>, which confirms the rule: AY comes at the end. Many compound words ending in –day, –way, –play follow this pattern.</p>
+<span class="exception-word">layer, player, payment, maybe</span>
+<p class="exception-note"><strong>AY words with a suffix added.</strong> These look like AY is in the middle, but the base word ends in AY: <em>lay</em>, <em>play</em>, <em>pay</em>, <em>may</em>. The suffix (-er, -ment, -be) is added after. The rule still applies to the base word.</p>
 </div>
 </div>
 </div>
@@ -227,6 +234,21 @@ footer a { color: var(--marigold) !important; }
           In the English language, words rarely end in I.</p>
 <p class="lyric-outro">Mr. Spelling.com</p>
 </div>
+</div>
+</section>
+
+<section class="content-section" id="word-list">
+<div class="section-heading-row"><h2 class="section-heading">Word List</h2></div>
+<p class="word-list-note beat">Common AI and AY words for spelling lists. Exceptions are not included.</p>
+<div class="word-list-plain">
+  <div class="word-list-group beat">
+    <p class="word-list-label yellow">AI words (start or middle of word)</p>
+    <p class="word-list-words">aid, aim, bail, bait, brain, chain, claim, drain, fail, flail, frail, gain, grail, hail, jail, mail, main, nail, paid, pain, plain, quail, rail, rain, sail, snail, stain, strain, tail, train, trail, vain, wail, wait</p>
+  </div>
+  <div class="word-list-group beat">
+    <p class="word-list-label cyan">AY words (end of word)</p>
+    <p class="word-list-words">bay, clay, day, fray, gray, hay, jay, lay, may, pay, play, pray, ray, say, spray, stay, stray, sway, tray, way</p>
+  </div>
 </div>
 </section>
 </main>
