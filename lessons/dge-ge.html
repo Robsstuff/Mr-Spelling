@@ -74,6 +74,18 @@
     .lyric-chorus { color: #A32916; font-weight: 800; }
     .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
     .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    .rule-note { background: #EAE1FB; border: 2px solid #6B46E5; border-radius: 12px; padding: 20px 24px; margin-top: 24px; }
+    .rule-note-label { font-family: 'Figtree', sans-serif; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6B46E5; margin-bottom: 8px; }
+    .rule-note p { font-size: 0.95rem; line-height: 1.7; color: #1C1626; font-weight: 500; margin: 0; }
+    .rule-note strong { color: #6B46E5; }
+    .rule-note em { font-style: normal; font-weight: 700; }
+    .word-list-note { font-size: 0.95rem; color: #564C63; margin-bottom: 24px; font-weight: 500; }
+    .word-list-plain { display: flex; flex-direction: column; gap: 24px; }
+    .word-list-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; font-family: 'Figtree', sans-serif; }
+    .word-list-label.yellow { color: #A32916; }
+    .word-list-label.cyan { color: #0E9C88; }
+    .word-list-label.violet { color: #6B46E5; }
+    .word-list-words { font-size: 1.05rem; line-height: 1.9; color: #1C1626; }
     footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
@@ -100,6 +112,7 @@ footer a { color: var(--marigold) !important; }
 <a href="#rule">The Rule</a>
 <a href="#exceptions">Watch Out</a>
 <a href="#lyrics">Lyrics</a>
+<a href="#word-list">Word List</a>
 </nav>
 <main>
 <section class="content-section" id="video">
@@ -115,35 +128,6 @@ footer a { color: var(--marigold) !important; }
 <section class="content-section" id="words">
 
 <div class="section-heading-row"><h2 class="section-heading">DGE and GE Words</h2><span class="heading-tag">SPELLING WORDS</span></div>
-<div class="split-grid">
-<div class="split-card dge">
-<div class="split-card-title">DGE</div>
-<div class="split-card-rule">after a short vowel</div>
-<div class="split-word-chips">
-<span class="split-chip">judge</span>
-<span class="split-chip">badge</span>
-<span class="split-chip">fridge</span>
-<span class="split-chip">bridge</span>
-<span class="split-chip">hedge</span>
-<span class="split-chip">lodge</span>
-<span class="split-chip">ridge</span>
-<span class="split-chip">nudge</span>
-</div>
-</div>
-<div class="split-card ge">
-<div class="split-card-title">GE</div>
-<div class="split-card-rule">after a long vowel or consonant</div>
-<div class="split-word-chips">
-<span class="split-chip">page</span>
-<span class="split-chip">cage</span>
-<span class="split-chip">rage</span>
-<span class="split-chip">age</span>
-<span class="split-chip">stage</span>
-<span class="split-chip">huge</span>
-<span class="split-chip">bulge</span>
-</div>
-</div>
-</div>
 <div class="word-group">
 <p class="word-group-label yellow">DGE words (short vowel + DGE)</p>
 <div class="chip-row beat-group">
@@ -189,6 +173,14 @@ footer a { color: var(--marigold) !important; }
 </ul>
 </div>
 </div>
+<div class="rule-note">
+<p class="rule-note-label">Why does "strange" have a long A?</p>
+<p><em>Strange, range, change</em> look like they should have a short A: the A appears to sit between consonants. But the A is <strong>long</strong> because the E at the end of GE is a magic E: it reaches back and makes the A say its long name. <em>Strange</em> = str + <strong>ay</strong> + nge. This is correct GE (long vowel before GE), not DGE.</p>
+</div>
+<div class="rule-note">
+<p class="rule-note-label">Two-syllable words: cabbage, village, damage</p>
+<p>Many 2-syllable words ending in <strong>-age</strong> do not sound like the word <em>age</em>. In <em>cabbage, village, damage, manage, storage</em>, the second syllable is unstressed and the vowel reduces to a quick /ij/ sound. This is called the <strong>schwa pattern</strong>: unstressed syllables often reduce their vowel. The spelling still uses GE (not DGE), but the unstressed vowel does not sound long.</p>
+</div>
 </section>
 <section class="content-section" id="exceptions">
 
@@ -197,16 +189,8 @@ footer a { color: var(--marigold) !important; }
 <div class="exceptions-box-header">Words with a final J sound that don't follow the rule</div>
 <div class="exceptions-inner">
 <div class="exception-item">
-<span class="exception-word">loanwords</span>
-<p class="exception-note">Words borrowed from other languages CAN end in J: <em>raj, hadj, taj</em>. These are not native English words, so the no-J rule doesn't apply. In everyday English spelling, avoid ending a word with just J.</p>
-</div>
-<div class="exception-item">
-<span class="exception-word">age / cage</span>
-<p class="exception-note">In some short words (like <em>age</em>), the vowel sounds short when you say it quickly but still takes GE, not DGE. That's because the A here is actually a long A spelled with silent E (AG+E). Always ask: is the vowel letter followed by DGE or GE? Not just how it sounds in fast speech.</p>
-</div>
-<div class="exception-item">
-<span class="exception-word">fudge vs. huge</span>
-<p class="exception-note">A good pair to compare: <em>fudge</em> (short U → DGE) vs. <em>huge</em> (long U → GE). Same vowel letter, different length: the vowel length changes the spelling from DGE to GE.</p>
+<span class="exception-word">raj, hadj, taj</span>
+<p class="exception-note">These words borrowed from Arabic and Hindi DO end in the letter J. They are not native English words, so the no-J rule does not apply. In native English spelling, never end a word with just the letter J.</p>
 </div>
 </div>
 </div>
@@ -247,6 +231,28 @@ footer a { color: var(--marigold) !important; }
 <p class="lyric-chorus">Native English words don't end with the letter J.<br/>
           Use DGE or GE to make the J sound today.</p>
 <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+</div>
+</div>
+</section>
+<section class="content-section" id="word-list">
+<div class="section-heading-row"><h2 class="section-heading">Word List by Pattern</h2></div>
+<p class="word-list-note">Common 1-syllable words grouped by spelling pattern. Two-syllable words like cabbage, village, and damage follow the schwa pattern and are not included here.</p>
+<div class="word-list-plain">
+<div class="word-list-group">
+<p class="word-list-label yellow">DGE words: short vowel before DGE</p>
+<p class="word-list-words">badge, bridge, budge, cadge, dodge, dredge, edge, fledge, fridge, fudge, grudge, hedge, judge, ledge, lodge, nudge, pledge, ridge, smudge, trudge, wedge</p>
+</div>
+<div class="word-list-group">
+<p class="word-list-label cyan">GE words: long vowel before GE (magic E)</p>
+<p class="word-list-words">age, cage, change, huge, luge, page, rage, range, rouge, sage, stage, strange, wage</p>
+</div>
+<div class="word-list-group">
+<p class="word-list-label cyan">GE words: consonant before GE</p>
+<p class="word-list-words">barge, bulge, charge, forge, gorge, hinge, large, lunge, merge, plunge, purge, singe, splurge, surge, urge</p>
+</div>
+<div class="word-list-group">
+<p class="word-list-label violet">Words ending in J: loanwords only</p>
+<p class="word-list-words">haj, hadj, raj, taj</p>
 </div>
 </div>
 </section>
