@@ -72,6 +72,13 @@
     .lyric-chorus { color: #A32916; font-weight: 800; }
     .lyric-verse  { color: #1C1626; padding-left: 16px; border-left: 3px solid #F2B705; }
     .lyric-outro  { color: #564C63; font-style: italic; margin-top: 8px; }
+    .word-list-note { font-size: 0.95rem; color: #564C63; margin-bottom: 24px; font-weight: 500; }
+    .word-list-plain { display: flex; flex-direction: column; gap: 24px; }
+    .word-list-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; font-family: 'Figtree', sans-serif; }
+    .word-list-label.yellow { color: #A32916; }
+    .word-list-label.cyan { color: #0E9C88; }
+    .word-list-label.violet { color: #6B46E5; }
+    .word-list-words { font-size: 1.05rem; line-height: 1.9; color: #1C1626; }
     footer { background: #1C1626; text-align: center; padding: 24px 20px; font-weight: 700; font-size: 0.9rem; color: #FDF8EE; border-top: 3px solid #1C1626; }
   </style>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
@@ -98,6 +105,7 @@ footer a { color: var(--marigold) !important; }
 <a href="#rule">The Rule</a>
 <a href="#exceptions">Watch Out</a>
 <a href="#lyrics">Lyrics</a>
+<a href="#word-list">Word List</a>
 </nav>
 <main>
 <section class="content-section" id="video">
@@ -179,16 +187,16 @@ footer a { color: var(--marigold) !important; }
 <div class="exceptions-box-header">Words that don't soften as expected</div>
 <div class="exceptions-inner">
 <div class="exception-item">
-<span class="exception-word">get, give</span>
-<p class="exception-note">Even though G is followed by E or I, these words keep the <strong>hard G</strong> sound (/g/). Soft G before E, I, or Y is very common but not 100% guaranteed: especially for short common words like <em>get, give, gear, girl, gift</em>.</p>
+<span class="exception-word">girl, give, gift</span>
+<p class="exception-note">G before I keeps the <strong>hard /g/ sound</strong> in many very common words. These are the most important to memorise: <em>girl, give, gift, begin, gig</em>. The soft G rule is not guaranteed before I.</p>
+</div>
+<div class="exception-item">
+<span class="exception-word">get, gear, geese</span>
+<p class="exception-note">G before E also sometimes stays hard: <em>get, gear, geese, tiger, eager, finger, hunger, anger</em>. Soft G is <strong>not as reliable as soft C</strong>: always check these common words. When unsure, soft G is a good first guess, but memorise the exceptions.</p>
 </div>
 <div class="exception-item">
 <span class="exception-word">magic, logic</span>
-<p class="exception-note">These end in <strong>-IC</strong> (not -ICE or -ICE). The C makes the /k/ sound here, not /s/. When C comes before a consonant or at the very end of a word (with no following vowel), it says /k/ even if the preceding vowel was I.</p>
-</div>
-<div class="exception-item">
-<span class="exception-word">cat vs. cent</span>
-<p class="exception-note">This pair shows the rule in action: <em>cat</em> has C before A, so it's hard (/k/). <em>Cent</em> has C before E, so it's soft (/s/). Both are correct: the following vowel decides which sound you use.</p>
+<p class="exception-note">The rule says C <strong>before</strong> E/I/Y says /s/. In <em>magic</em> and <em>logic</em>, the C comes <strong>after</strong> the I (magi-C, logi-C): the rule needs C to come first. Because the C follows the I rather than leads it, the C stays hard (/k/). Note: the G in <em>magic</em> IS correctly soft (G before I says /j/).</p>
 </div>
 </div>
 </div>
@@ -205,7 +213,7 @@ footer a { color: var(--marigold) !important; }
           the sound of C, it may soften. It sounds like S, you see.<br/>
           If you see the letter G followed by Y, I or E,<br/>
           the sound of G, it may soften. It sounds like J, you see.</p>
-<p class="lyric-label">VERSE 1: SOFT C WORDS</p>
+<p class="lyric-label">VERSE 1: SOFT C AND SOFT G WORDS</p>
 <p class="lyric-verse">circle: C I R C L E, soft C before the E.<br/>
           cycle: C Y C L E, soft C before the Y.<br/>
           mice: M I C E, soft C before the E.<br/>
@@ -219,6 +227,24 @@ footer a { color: var(--marigold) !important; }
           If you see the letter G followed by Y, I or E,<br/>
           the sound of G, it may soften. It sounds like J, you see.</p>
 <p class="lyric-outro">Mr. Spelling. Bye-bye.</p>
+</div>
+</div>
+</section>
+<section class="content-section" id="word-list">
+<div class="section-heading-row"><h2 class="section-heading">Word List by Sound</h2></div>
+<p class="word-list-note">Common words grouped by the sound C or G makes. Hard G exceptions (G before E/I/Y but stays hard) are listed separately.</p>
+<div class="word-list-plain">
+<div class="word-list-group">
+<p class="word-list-label yellow">Soft C words: C says /s/</p>
+<p class="word-list-words">ace, cell, center, century, circle, city, cycle, face, fancy, fence, force, ice, juice, mice, nice, pace, pencil, place, price, race, rice, since, slice, space, spice, trace, voice</p>
+</div>
+<div class="word-list-group">
+<p class="word-list-label cyan">Soft G words: G says /j/</p>
+<p class="word-list-words">age, cage, change, engine, gel, gem, general, gentle, giant, giraffe, gym, huge, image, large, magic, page, range, stage, wage</p>
+</div>
+<div class="word-list-group">
+<p class="word-list-label violet">Hard G before E or I: exceptions to memorise</p>
+<p class="word-list-words">anger, begin, eager, finger, gear, geese, get, gift, girl, give, hunger, tiger</p>
 </div>
 </div>
 </section>
